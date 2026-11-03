@@ -1,0 +1,7 @@
+---
+// `/` has no content of its own: it redirects to the default locale. In a static
+// build Astro renders this as a redirect page; the server may add a real 3xx.
+import { defaultLocale } from '../lib/i18n';
+
+return Astro.redirect(`/${defaultLocale}/`);
+---

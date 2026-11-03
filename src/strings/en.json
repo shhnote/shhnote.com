@@ -1,0 +1,33 @@
+{
+  "site": {
+    "name": "shhnote",
+    "title": "shhnote — share secrets securely with self-destructing links",
+    "description": "Open-source, end-to-end encrypted, zero-knowledge secret sharing. Text and files. The server never sees your data."
+  },
+  "nav": {
+    "skip": "Skip to content",
+    "home": "shhnote home",
+    "how": "How it works",
+    "security": "Security",
+    "faq": "FAQ",
+    "docs": "Docs",
+    "create": "Create a secret",
+    "language": "Language",
+    "theme": "Toggle theme"
+  },
+  "footer": {
+    "product": "Product",
+    "legal": "Legal",
+    "openSource": "Open source",
+    "privacy": "Privacy policy",
+    "terms": "Terms of service",
+    "acceptableUse": "Acceptable use",
+    "about": "About",
+    "contact": "Contact",
+    "github": "GitHub",
+    "issue": "Report an issue",
+    "selfHost": "Self-hosting guide",
+    "copyright": "© 2026 shhnote. Open source under AGPLv3.",
+    "claims": "No cookies · No tracking · No external requests"
+  }
+}

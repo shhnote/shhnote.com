@@ -1,0 +1,74 @@
+/* Design tokens. Dark is the default theme; `data-theme` on <html> selects. */
+
+:root {
+  --color-background: #0e0e10;
+  --color-surface: #161618;
+  --color-surface-alt: #1e1e21;
+  --color-border: #2a2a2e;
+  --color-border-hover: #3a3a3f;
+  --color-grid: #222226;
+  --color-text: #ededee;
+  --color-text-muted: #9a9a9f;
+  --color-text-faint: #65656b;
+  --color-accent: #d07a4f;
+  --color-accent-hover: #e08a5c;
+  --color-accent-text: #d07a4f;
+  --color-text-on-accent: #161618;
+  --color-success: #5f8c66;
+  --color-success-text: #7faa86;
+  --color-text-on-success: #0f1a11;
+  --color-danger: #c25a4e;
+  --color-danger-text: #d4756a;
+  --color-text-on-danger: #1f0c09;
+
+  --font-sans: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: ui-monospace, 'SF Mono', 'Cascadia Code', 'Roboto Mono', Menlo, Consolas,
+    monospace;
+
+  --font-size-h1: 2.75rem;
+  --font-size-h2: 1.75rem;
+  --font-size-h3: 1.125rem;
+  --font-size-16: 1rem;
+  --font-size-15: 0.922rem;
+  --font-size-14: 0.875rem;
+  --font-size-13: 0.813rem;
+  --font-size-12: 0.75rem;
+  --font-size-11: 0.685rem;
+
+  --radius: 0.25rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;
+
+  --gap: 1rem;
+  --shell-max: 60rem;
+  --container-max: 1080px;
+  --header-height: 64px;
+
+  --spacing-button-height: 44px;
+
+  color-scheme: dark;
+}
+
+[data-theme='light'] {
+  --color-background: #faf9f7;
+  --color-surface: #f3f2ef;
+  --color-surface-alt: #e9e7e2;
+  --color-border: #d9d6cf;
+  --color-border-hover: #c4c0b6;
+  --color-grid: #e2dfd8;
+  --color-text: #1a1815;
+  --color-text-muted: #6a665e;
+  --color-text-faint: #9b968c;
+  --color-accent: #b35a34;
+  --color-accent-hover: #9c4a28;
+  --color-accent-text: #9c4a28;
+  --color-text-on-accent: #ffffff;
+  --color-success: #4a7350;
+  --color-success-text: #3d6042;
+  --color-text-on-success: #eef5ef;
+  --color-danger: #b04539;
+  --color-danger-text: #963a30;
+  --color-text-on-danger: #fbe9e5;
+
+  color-scheme: light;
+}

@@ -1,0 +1,25 @@
+---
+import Base from '../../layouts/Base.astro';
+import { defaultLocale, type Locale } from '../../lib/i18n';
+import { getStrings } from '../../lib/strings';
+
+export function getStaticPaths() {
+  // Only `en` content exists for now; other locales follow.
+  return [{ params: { locale: defaultLocale } }];
+}
+
+const locale = Astro.params.locale as Locale;
+const t = getStrings(locale);
+---
+
+<Base locale={locale}>
+  <article class="page page--home">
+    <section id="create" class="section section--hero">
+      <div class="container">
+        <header class="section__header-group">
+          <h1>{t.site.title}</h1>
+        </header>
+      </div>
+    </section>
+  </article>
+</Base>
