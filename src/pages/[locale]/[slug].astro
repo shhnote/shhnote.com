@@ -1,22 +1,29 @@
 ---
 import { getCollection, render } from 'astro:content';
 import Content from '../../layouts/Content.astro';
-import { isLocale, type Locale } from '../../lib/i18n';
+import { availableLocales, isLocale, type Locale } from '../../lib/i18n';
 
 export async function getStaticPaths() {
-  const entries = await getCollection('pages');
-  return entries.flatMap((entry) => {
-    const [locale, slug] = entry.id.split('/');
-    if (!locale || !slug || !isLocale(locale)) return [];
-    return [{ params: { locale, slug }, props: { entry } }];
+  const entries = (await getCollection('pages')).flatMap((entry) => {
+    const [locale, slug, ...more] = entry.id.split('/');
+    if (!locale || !slug || more.length || !isLocale(locale) || !availableLocales.includes(locale)) return [];
+    return [{ entry, locale, slug }];
   });
+  // The locales each page exists in, for its hreflang alternates and the switcher.
+  const localesOf = new Map<string, Locale[]>();
+  for (const { locale, slug } of entries) localesOf.set(slug, [...(localesOf.get(slug) ?? []), locale]);
+  return entries.map(({ entry, locale, slug }) => ({
+    params: { locale, slug },
+    props: { entry, locales: availableLocales.filter((code) => localesOf.get(slug)?.includes(code)) },
+  }));
 }
 
-const { entry } = Astro.props;
+const { entry, locales } = Astro.props;
 const locale = Astro.params.locale as Locale;
+const slug = Astro.params.slug as string;
 const { Content: Body } = await render(entry);
 ---
 
-<Content locale={locale} {...entry.data}>
+<Content locale={locale} locales={locales} slug={slug} {...entry.data}>
   <Body />
 </Content>

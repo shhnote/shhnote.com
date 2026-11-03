@@ -34,21 +34,22 @@ What each one relies on in this repository:
 ## Routes and redirects
 
 The share, burn and report links are built without a locale (`/s#…`, `/burn#…`,
-`/report`) and the pages live under the locale prefix. Redirect with a real
-3xx: browsers carry the URL fragment across an HTTP redirect, which is what the
-client relies on. Never rewrite these with a meta refresh.
+`/report`). The site builds those three pages at the root as well (English), so the
+links work on any static host with no redirect: `/s` → `301` → `/s/` is the file
+server's own slash redirect, and browsers carry the URL fragment across it.
+
+Optionally send visitors to their language instead; use a real 3xx (never a meta
+refresh, which drops the fragment), and `302` so a later change in language
+negotiation is not cached:
 
 ```caddyfile
 redir / /en/ 301
-redir /s /en/s/ 302
-redir /burn /en/burn/ 302
-redir /report /en/report/ 302
+# optional, e.g. after Accept-Language negotiation:
+# redir /s /de/s/ 302
 ```
 
-Use `302` for the secret routes so a future language negotiation
-(`Accept-Language` → `/<lang>/s/`) is not cached by browsers. Astro also writes a
-static `/index.html` that meta-refreshes to `/en/`; the `redir` above takes
-precedence and should stay.
+Astro also writes a static `/index.html` that meta-refreshes to `/en/`; the `redir`
+above takes precedence and should stay.
 
 The API is proxied to the shhnote server; everything else is the static site:
 

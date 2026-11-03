@@ -1,5 +1,5 @@
 ---
-import type { Locale } from '../lib/i18n';
+import { defaultLocale, type Locale } from '../lib/i18n';
 import { getStrings } from '../lib/strings';
 import { site } from '../lib/site';
 import LocaleMenu from './LocaleMenu.astro';
@@ -7,15 +7,20 @@ import ThemeMenu from './ThemeMenu.astro';
 
 interface Props {
   locale: Locale;
+  /** The locales the current page is built in, for the language switcher. */
+  locales: readonly Locale[];
 }
 
-const { locale } = Astro.props;
+const { locale, locales } = Astro.props;
 const t = getStrings(locale);
 const base = `/${locale}/`;
+// The API documentation is built in English only.
+const docs = `/${defaultLocale}/docs/`;
+const docsLang = locale === defaultLocale ? undefined : defaultLocale;
 ---
 
 <header id="header" class="header">
-  <nav class="container" aria-label="Main">
+  <nav class="container" aria-label={t.nav.main}>
     <div class="header__logo">
       <a href={base} class="logo__text" aria-label={t.nav.home}><span class="color-accent">shh</span>note</a>
     </div>
@@ -24,11 +29,11 @@ const base = `/${locale}/`;
       <li class="nav__item"><a href={`${base}how-it-works/`} class="nav__link">{t.nav.how}</a></li>
       <li class="nav__item"><a href={`${base}security/`} class="nav__link">{t.nav.security}</a></li>
       <li class="nav__item"><a href={`${base}faq/`} class="nav__link">{t.nav.faq}</a></li>
-      <li class="nav__item"><a href={`${base}docs/`} class="nav__link">{t.nav.api}</a></li>
+      <li class="nav__item"><a href={docs} hreflang={docsLang} class="nav__link">{t.nav.api}</a></li>
     </ul>
 
     <ul class="header__user-controls">
-      <li class="nav__item"><LocaleMenu locale={locale} icon="translate" /></li>
+      <li class="nav__item"><LocaleMenu locale={locale} locales={locales} icon="translate" /></li>
       <li class="nav__item"><ThemeMenu locale={locale} /></li>
       <li class="nav__item">
         <a href={site.repo} class="icon-link" aria-label={t.nav.poweredBy} target="_blank" rel="noopener">

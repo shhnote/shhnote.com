@@ -1,0 +1,35 @@
+---
+import { getCollection, render } from 'astro:content';
+import Content from '../../../layouts/Content.astro';
+import { availableLocales, isLocale, type Locale } from '../../../lib/i18n';
+
+// The `compare/` and `use-cases/` sections: an overview (`<section>/index.md`) and one
+// page per entry (`<section>/<page>.md`). They exist in English only for now.
+export async function getStaticPaths() {
+  const sections = new Set(['compare', 'use-cases']);
+  const entries = (await getCollection('pages')).flatMap((entry) => {
+    const [locale, section, ...rest] = entry.id.split('/');
+    if (!locale || !section || !rest.length || !isLocale(locale) || !sections.has(section)) return [];
+    if (!availableLocales.includes(locale)) return [];
+    const page = rest.filter((part) => part !== 'index').join('/');
+    return [{ entry, locale, section, page }];
+  });
+  const key = (section: string, page: string) => `${section}/${page}`;
+  const localesOf = new Map<string, Locale[]>();
+  for (const { locale, section, page } of entries) {
+    localesOf.set(key(section, page), [...(localesOf.get(key(section, page)) ?? []), locale]);
+  }
+  return entries.map(({ entry, locale, section, page }) => ({
+    params: { locale, section, page: page || undefined },
+    props: { entry, locales: availableLocales.filter((code) => localesOf.get(key(section, page))?.includes(code)) },
+  }));
+}
+
+const { entry, locales } = Astro.props;
+const locale = Astro.params.locale as Locale;
+const { Content: Body } = await render(entry);
+---
+
+<Content locale={locale} locales={locales} {...entry.data}>
+  <Body />
+</Content>

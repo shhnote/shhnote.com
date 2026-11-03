@@ -1,0 +1,358 @@
+{
+  "site": {
+    "name": "shhnote",
+    "title": "shhnote — kendini imha eden bağlantılarla sır paylaşın",
+    "description": "Açık kaynaklı, uçtan uca şifreli, sıfır bilgi ilkesine dayalı sır paylaşımı. Metin ve dosyalar. Sunucu verilerinizi asla görmez."
+  },
+  "nav": {
+    "skip": "İçeriğe geç",
+    "home": "shhnote ana sayfa",
+    "main": "Ana menü",
+    "how": "Nasıl çalışır",
+    "security": "Güvenlik",
+    "faq": "SSS",
+    "docs": "Belgeler",
+    "language": "Dil",
+    "api": "API",
+    "languageList": "Diller",
+    "languageSoon": "Yakında",
+    "poweredBy": "shhnote altyapısıyla"
+  },
+  "footer": {
+    "product": "Ürün",
+    "legal": "Yasal",
+    "openSource": "Açık kaynak",
+    "privacy": "Gizlilik politikası",
+    "terms": "Kullanım koşulları",
+    "acceptableUse": "Kabul edilebilir kullanım",
+    "about": "Hakkında",
+    "contact": "İletişim",
+    "github": "GitHub",
+    "issue": "Sorun bildir",
+    "selfHost": "Kendi sunucunda barındırma rehberi",
+    "copyright": "© 2026 shhnote. AGPLv3 lisansıyla açık kaynak.",
+    "poweredBy": "Altyapı:",
+    "backend": "sunucu",
+    "report": "Bağlantı bildir",
+    "compare": "Karşılaştır",
+    "useCases": "Kullanım örnekleri"
+  },
+  "home": {
+    "hero": {
+      "title": "Kendini imha eden bağlantılarla sırlarınızı güvenle paylaşın",
+      "intro": "Sırlarınızı gizli tutun; sohbet, e-posta, Slack ve Teams kayıtlarından uzak kalsınlar",
+      "noscript": "Sır oluşturmak için JavaScript gerekir: şifreleme, hiçbir şey gönderilmeden önce tarayıcınızda yapılır. Devam etmek için bu sitede JavaScript'i etkinleştirin."
+    },
+    "form": {
+      "noteLabel": "Sırrınız",
+      "notePlaceholder": "Mesajınızı buraya yazın...",
+      "filesLabel": "Eklenecek dosyalar",
+      "filesDrop": "Dosyaları buraya bırakın",
+      "filesClick": "ya da eklemek için tıklayın",
+      "filesHint": "Yüklenmeden önce tarayıcınızda şifrelenir · en fazla 25 MB, 25 dosya",
+      "filesRemove": "Kaldır",
+      "expiryLabel": "Geçerlilik süresi",
+      "expiry": {
+        "900": "15 dakika",
+        "1800": "30 dakika",
+        "3600": "1 saat",
+        "21600": "6 saat",
+        "43200": "12 saat",
+        "86400": "1 gün",
+        "259200": "3 gün",
+        "604800": "7 gün",
+        "1209600": "14 gün"
+      },
+      "burnLabel": "Tek seferlik görüntüleme",
+      "burnHint": "İlk görüntülemeden sonra imha edilir. Süresi dolana kadar birden fazla görüntülemeye izin vermek için kapatın.",
+      "passphraseLabel": "Şifre/parola",
+      "passphraseOptional": "(isteğe bağlı)",
+      "passphraseToggle": "Parolayı göster veya gizle",
+      "passphraseHint": "Ek güvenlik için bir parola ekleyin.",
+      "disclaimer": "Bir sır oluşturarak veya bir sırra erişerek",
+      "disclaimerLink": "kullanım koşullarımızı",
+      "disclaimerEnd": " okuduğunuzu ve bunlara uymayı açıkça kabul ettiğinizi onaylamış olursunuz.",
+      "submit": "Sırrı şifrele"
+    },
+    "chips": {
+      "e2e": "Uçtan uca şifreli",
+      "zeroKnowledge": "Sıfır bilgi",
+      "noLogs": "Kayıt tutulmaz",
+      "openSource": "Açık kaynak"
+    },
+    "result": {
+      "eyebrow": "Bağlantı hazır",
+      "title": "Gönderin, sonra unutun.",
+      "intro": "Bağlantıyı kopyalayın ve dilediğiniz şekilde paylaşın. Güvenliğiniz için onu bir daha göstermeyeceğiz; bu sayfadan ayrıldığınızda buradan da kaybolur.",
+      "shareLabel": "Tek seferlik bağlantı",
+      "copy": "Kopyala",
+      "copied": "Kopyalandı",
+      "chipsLabel": "Sır ayarları",
+      "chipLifetime": "Tek seferlik görüntüleme",
+      "chipExpiry": "1 gün sonra sona erer",
+      "passphraseReminder": "Bu sırrın bir parolası var. Parolayı bağlantının kendisinden farklı bir kanaldan gönderin.",
+      "calloutTitle": "Tek bağlantı, tek okuma.",
+      "callout": "Tam bağlantıya sahip olan herkes sırrı açabilir; ama yalnızca bir kez. Parola belirlediyseniz onu bağlantının kendisinden farklı bir kanaldan gönderin.",
+      "divider": "özel kontroller · kendinize saklayın",
+      "burnLabel": "İmha bağlantısı",
+      "burnAside": "— dilediğiniz an kendiniz imha edin",
+      "burnHint": "Bunu gizli bir yerde saklayın. Açıldığında sır, başka biri görmeden hemen imha edilir. İmha edildikten sonra biz bile geri getiremeyiz.",
+      "open": "Bağlantıyı aç",
+      "destroy": "Şimdi imha et",
+      "another": "Yeni bir sır oluştur"
+    },
+    "how": {
+      "eyebrow": "Nasıl çalışır",
+      "title": "Üç adım. Hesap gerekmez.",
+      "intro": "shhnote, sırrınızı herhangi bir şey ağa çıkmadan önce tarayıcıda şifreler. Şifreleme anahtarı URL parçasında, yani tarayıcıların sunuculara asla göndermediği kısımda durur.",
+      "steps": [
+        {
+          "title": "Şifrele",
+          "aside": "metin/dosya(lar)",
+          "body": "Sırrınız, hiçbir şey gönderilmeden önce kendi cihazınızda şifrelenir. Onu açan anahtar asla yüklenmez."
+        },
+        {
+          "title": "Paylaş",
+          "aside": "bağlantıyı",
+          "body": "Anahtar, bağlantıdaki # işaretinden sonraki kısımda durur; tarayıcılar bu kısmı yerelde tutar ve hiçbir sunucuya göndermez."
+        },
+        {
+          "title": "Aç",
+          "aside": "ve yok olur",
+          "body": "Alıcının tarayıcısı sırrı yerelde açar ve sunucu kendi kopyasını imha eder. Biz bile geri getiremeyiz."
+        }
+      ]
+    },
+    "hood": {
+      "eyebrow": "Perde arkası",
+      "title": "Kriptografi, açık açık.",
+      "intro": "Laf kalabalığı yok. Sırrınızı tam olarak neyin koruduğunu ve her parçanın nerede çalıştığını burada görebilirsiniz; böylece iddialara güvenmek yerine onları doğrulayabilirsiniz.",
+      "specs": [
+        {
+          "label": "Şifreleme",
+          "value": "AES-256-GCM",
+          "body": "Kimlik doğrulamalı simetrik şifreleme. Her sır 256 bitlik bir anahtar ve bir bütünlük etiketiyle mühürlenir; böylece kurcalama yalnızca okunamaz hâle gelmekle kalmaz, tespit de edilir."
+        },
+        {
+          "label": "Anahtar türetme",
+          "value": "Argon2id",
+          "body": "İsteğe bağlı parolalar bellek yoğun bir KDF ile güçlendirilir; bu da çevrimdışı kaba kuvvet saldırılarını özel donanımda bile yavaş ve pahalı kılar."
+        },
+        {
+          "label": "Rastgelelik",
+          "value": "WebCrypto CSPRNG",
+          "body": "Anahtarlar ve nonce değerleri tarayıcının kriptografik olarak güvenli üretecinden alınır. Asla Math.random() değil, asla tahmin edilebilir değil."
+        },
+        {
+          "label": "Anahtarın saklanması",
+          "value": "URL parçası #",
+          "body": "Şifre çözme anahtarı, bağlantınızdaki # işaretinden sonra yer alır. Tarayıcılar bu parçayı asla iletmez; bu yüzden sırrı açan anahtar sunucularımıza hiç ulaşmaz."
+        },
+        {
+          "label": "Aktarımda",
+          "value": "TLS 1.3",
+          "body": "Cihazınızdan yalnızca şifreli metin çıkar ve modern TLS üzerinden taşınır. Bize ulaşan, açmamızın hiçbir yolu olmayan opak bir veri bloğudur."
+        },
+        {
+          "label": "Depolamada",
+          "value": "Şifreli metin + TTL",
+          "body": "Yalnızca şifreli bir veri bloğu ve bir son geçerlilik zaman damgası saklarız, başka hiçbir şey. Düz metin yok, anahtar yok, gönderen veya alıcıya dair üst veri yok."
+        }
+      ]
+    },
+    "useCases": {
+      "eyebrow": "Kullanım örnekleri",
+      "title": "Her şey için bir shhnote oluşturun",
+      "intro": "İnsanların shhnote'u her gün nasıl kullandığına göz atın",
+      "items": [
+        {
+          "label": "DevOps ve mühendislik",
+          "title": "Kimlik bilgileri ve anahtarlar",
+          "body": "API anahtarlarını, veritabanı şifrelerini ve SSH anahtarlarını sohbet akışlarına yapıştırmayı bırakın. Bunları kullanıldıktan sonra kendini imha eden tek seferlik bağlantılarla paylaşın. API sayesinde CI/CD hatlarınıza entegre edin."
+        },
+        {
+          "label": "Gizliliğe önem verenler",
+          "title": "İz bırakmadan paylaşın",
+          "body": "Tor üzerinden hiçbir işlev kaybı olmadan çalışır. CAPTCHA yok, tarayıcı parmak izi yok, harici istek yok. Tüm yazı tipleri ve dosyalar kendi sunucumuzda barındırılır. Sıfır üst veri sızıntısı."
+        },
+        {
+          "label": "BT ve işe alım",
+          "title": "Erişimi güvenle tanımlayın",
+          "body": "Yeni çalışanlara ilk giriş bilgilerini, VPN yapılandırmalarını veya Wi-Fi şifrelerini e-posta yazışmalarında ya da destek talebi sistemlerinde iz bırakmadan gönderin. Toplu işe alımlar için birden fazla benzersiz bağlantı oluşturun."
+        },
+        {
+          "label": "Hukuk ve mevzuat",
+          "title": "Uyumluluk açısından hassas kayıtlar",
+          "body": "Bir hasta kaydını, dava dosyasını veya mali tabloyu, delil incelemesine, denetime ya da veri ihlali bildirimine konu olabilecek bir gelen kutusunda beklemeden bir müşteriye veya meslektaşa gönderin."
+        },
+        {
+          "label": "Kişisel",
+          "title": "Gündelik sırlar",
+          "body": "Muhasebecinize vergi belgelerinin şifrelerini gönderin. Dizi/film platformu giriş bilgilerini ailenizle paylaşın. Bir ustaya alarm kodunuzu verin. Hassas dosyaları güvenle gönderin. Herkesin kullanabileceği kadar basit."
+        },
+        {
+          "label": "Diğer",
+          "title": "Hediye kodları veya sürprizler",
+          "body": "Bir hediye kartı kodunu, bir sürprizi, bir hazine avı ipucunu ya da görüldükten sonra kaybolan bir açıklamayı gönderin."
+        }
+      ]
+    },
+    "cta": {
+      "title": "Hassas bilgileri düz metin olarak paylaşmayı bırakın",
+      "intro": "Saniyeler içinde tek seferlik, şifreli bir bağlantı oluşturun. Ya da birkaç saat veya gün içinde süresi dolan, birden fazla kez görüntülenebilen şifreli bir bağlantı oluşturun. Bir parolayla ek koruma ekleyin. Hesap gerekmez. Veri toplanmaz.",
+      "button": "Tek seferlik bir sır oluştur"
+    }
+  },
+  "secret": {
+    "title": "Biri sizinle bir sır paylaştı",
+    "armed": {
+      "badge": "Henüz hiçbir şey alınmadı",
+      "title": "Biri sizinle bir sır paylaştı",
+      "intro": "Sır, tarayıcınızda çözülür. Tek seferlik görüntüleme olarak gönderildiyse açtığınız anda silinir; bu yüzden onu yalnızca okuyup kaydetmeye hazır olduğunuzda gösterin.",
+      "noscript": "Bu sırrı tarayıcınızda çözmek için JavaScript gerekir. Sırrı görmek için lütfen JavaScript'i açın.",
+      "reveal": "Sırrı göster",
+      "passphraseNote": "Gönderen bir parola belirlediyse, düğmeye bastıktan sonra parola sorulur.",
+      "callout": "Henüz hiçbir şey alınmadı; otomatik bir taramanın göreceği tek şey bu sayfa. Göstermeyi bilerek elle yaptırıyoruz; böylece e-posta güvenliği, sohbet önizlemeleri ve antivirüs programları sırrınızı sizden önce açamaz.",
+      "chipE2e": "Uçtan uca şifreli",
+      "chipNoAccount": "Hesap gerekmez"
+    },
+    "working": {
+      "badge": "İşleniyor",
+      "title": "Tarayıcınızda çözülüyor…",
+      "intro": "Şifreli metin alınıyor ve bağlantınızdaki anahtarla yerelde açılıyor. Okunabilir hâliyle bu sekmeden asla çıkmaz.",
+      "fetching": "Şifreli sır alınıyor…",
+      "decrypting": "Tarayıcınızda çözülüyor…"
+    },
+    "passphrase": {
+      "badge": "Kilitli",
+      "title": "Bu sır için parola gerekiyor",
+      "intro": "Gönderen ikinci bir kilit ekledi. Denemeler tarayıcınızda yapılır; sunucuya hiçbir şey gönderilmez.",
+      "label": "Parola",
+      "submit": "Kilidi aç",
+      "wrong": "Bu parola işe yaramadı. Tekrar deneyin."
+    },
+    "revealed": {
+      "singleView": "İmha edildi · bu tek görüntülemeydi",
+      "title": "İşte burada. İhtiyacınız olanı şimdi kaydedin.",
+      "intro": "Bu sır tarayıcınızda çözüldü. Sayfayı yenilerseniz buradan kaybolur.",
+      "outputLabel": "sır · yerelde çözüldü",
+      "copy": "Kopyala",
+      "download": "İndir",
+      "closeWarning": "Dikkatli olun: bu sekmeyi kapattığınızda onu bir daha ne sizden ne de bizden almanın bir yolu olmaz.",
+      "createOwn": "Kendi sırrınızı oluşturun"
+    },
+    "notFound": {
+      "badge": "Sır bulunamadı",
+      "title": "Burada bir sır yok.",
+      "intro": "Bu bağlantı geçersiz ya da gösterdiği sır zaten görüntülenmiş, süresi dolmuş veya imha edilmiş. Gizliliğiniz için bu site hangisinin olduğuna dair kayıt tutmaz; bir sırrın geçmişine dair hiçbir şey saklanmaz.",
+      "callout": "Sırra hâlâ ihtiyacınız varsa gönderenden yeni bir bağlantı oluşturmasını isteyin ve # işaretinden sonraki kısım dâhil URL'nin tamamını kopyaladığınızdan emin olun.",
+      "create": "Bir sır oluştur",
+      "how": "shhnote nasıl çalışır"
+    },
+    "errors": {
+      "network": "Sunucuya ulaşılamadı. Birazdan tekrar deneyin.",
+      "corrupt": "Bu sır çözülemedi. Bağlantı eksik olabilir.",
+      "wasm": "Bu parola için WebAssembly gerekiyor, ancak tarayıcınız ya da güvenlik seviyesi onu kapatmış (örneğin “Daha Güvenli” seviyesindeki Tor Browser). İzin verip tekrar deneyin."
+    }
+  },
+  "burn": {
+    "title": "Bu sırrı imha et",
+    "armed": {
+      "badge": "Hazır · henüz hiçbir şey olmadı",
+      "title": "Bu sır imha edilsin mi?",
+      "intro": "Bu bir imha bağlantısı. Henüz hiçbir şey olmadı. Onayladığınızda şifreli sır ve dosya(lar)ı, başka biri açmadan önce kalıcı olarak silinir.",
+      "noscript": "Bu sayfanın çalışması için JavaScript gerekir. Lütfen JavaScript'i açın.",
+      "confirm": "Sırrı imha et",
+      "cancel": "Ana sayfaya git",
+      "working": "İmha ediliyor…"
+    },
+    "done": {
+      "badge": "Yakıldı · sır imha edildi",
+      "title": "Bu sır imha edildi.",
+      "intro": "İmha bağlantısını kullandınız. Şifreli sır ve dosya(lar)ı, başka biri açamadan sunucularımızdan kalıcı olarak silindi.",
+      "callout": "Bundan sonra özgün paylaşım bağlantısını açan herkese yalnızca sır bulunamadığı söylenir; görüntülenmiş mi, süresi mi dolmuş, yoksa imha mı edilmiş, anlaşılmaz. Sırra dair hiçbir şey saklanmaz.",
+      "create": "Yeni bir sır oluştur",
+      "how": "shhnote nasıl çalışır"
+    },
+    "notFound": {
+      "badge": "İmha edilecek bir şey yok",
+      "title": "İmha edilecek bir şey yok.",
+      "intro": "Bu imha bağlantısı geçersiz ya da sır zaten görüntülenmiş, süresi dolmuş veya imha edilmiş.",
+      "home": "Ana sayfaya git"
+    }
+  },
+  "report": {
+    "title": "Bir sır bağlantısını bildirin",
+    "armed": {
+      "badge": "Kötüye kullanım bildirimi",
+      "title": "Bir sır bağlantısını bildirin",
+      "intro": "Paylaşılmaması gereken bir şeyi paylaştığını düşündüğünüz bir bağlantıyı yapıştırın. Sır hâlâ etkinse hemen kaldırılır. İçeriğini göremeyiz; bu yüzden incelenecek ya da size bildirilecek bir şey yoktur.",
+      "noscript": "Bu sayfanın çalışması için JavaScript gerekir. Lütfen JavaScript'i açın.",
+      "label": "Sır bağlantısı",
+      "placeholder": "https://shhnote.com/s#…",
+      "help": "# işaretinden sonraki kısım dâhil bağlantının tamamı. Yalnızca sırrı bulmak için kullanılır, saklanmaz.",
+      "submit": "Bu sırrı kaldır",
+      "working": "Gönderiliyor…",
+      "invalid": "Bu, bu siteye ait bir sır bağlantısına benzemiyor."
+    },
+    "done": {
+      "badge": "Alındı",
+      "title": "Teşekkürler, gereği yapıldı.",
+      "intro": "Bu bağlantı etkin bir sırra işaret ediyorduysa artık yok. Yalnızca bir bildirim alındığını kaydederiz, fazlasını değil.",
+      "home": "Ana sayfaya git"
+    }
+  },
+  "content": {
+    "updated": "Son güncelleme:",
+    "translationNote": "Bu çeviri kolaylık olsun diye sunulmuştur. İngilizce sürümle farklılık gösterirse İngilizce sürüm geçerlidir.",
+    "translationLink": "İngilizce sürümü okuyun",
+    "depthLabel": "Açıklama ayrıntı düzeyini seçin",
+    "depthSimple": "Basit",
+    "depthDetailed": "Ayrıntılı / teknik",
+    "cta": {
+      "title": "Deneyin, on saniye sürer",
+      "intro": "Gizli bir şey yazın, tek seferlik bağlantınızı alın ve kayboluşunu izleyin.",
+      "button": "Bir sır oluştur"
+    }
+  },
+  "docs": {
+    "title": "API belgeleri",
+    "eyebrow": "Belgeler",
+    "description": "Bu sitenin üzerinde çalıştığı shhnote API'si: uç noktalar, hatalar, sınırlar ve kendi istemcinizi nasıl geliştireceğiniz.",
+    "intro": "Bu sitenin yaptığı her şey aşağıdaki API üzerinden geçer; betikleriniz ve araçlarınız da onu aynı şekilde kullanabilir. {ref} sürümündeki shhnote kaynak kodundan oluşturulmuştur."
+  },
+  "theme": {
+    "label": "Tema",
+    "light": "Açık",
+    "dark": "Koyu",
+    "light-hc": "Açık, yüksek kontrast",
+    "dark-hc": "Koyu, yüksek kontrast",
+    "system": "Sistem"
+  },
+  "ui": {
+    "form-files-remove": "Kaldır",
+    "result-copied": "Kopyalandı",
+    "result-destroyed": "İmha edildi. Sır artık sunucuda yok.",
+    "result-chip-single": "Tek seferlik görüntüleme",
+    "result-chip-multi": "Süresi dolana kadar açık",
+    "result-chip-expires": "{period} sonra sona erer",
+    "create-encrypting": "Tarayıcınızda şifreleniyor…",
+    "create-uploading": "Yükleniyor…",
+    "create-error-empty": "Biraz metin ya da en az bir dosya ekleyin.",
+    "create-error-too-large": "Bu, sitenin kabul ettiğinden fazla. Bazı dosyaları kaldırın ya da metni kısaltın.",
+    "create-error-network": "Sunucuya ulaşılamadı. Bağlantınızı kontrol edip tekrar deneyin.",
+    "create-error-failed": "Sır oluşturulurken bir sorun oluştu. Lütfen tekrar deneyin.",
+    "create-error-wasm": "Parolalar için WebAssembly gerekiyor, ancak tarayıcınız ya da güvenlik seviyesi onu kapatmış. İzin verin ya da sırrı parolasız oluşturun.",
+    "reveal-fetching": "Şifreli sır alınıyor…",
+    "reveal-decrypting": "Tarayıcınızda çözülüyor…",
+    "reveal-wrong-passphrase": "Bu parola işe yaramadı. Tekrar deneyin.",
+    "reveal-single-view": "İmha edildi · bu tek görüntülemeydi",
+    "reveal-download": "İndir",
+    "reveal-error-network": "Sunucuya ulaşılamadı. Birazdan tekrar deneyin.",
+    "reveal-error-corrupt": "Bu sır çözülemedi. Bağlantı eksik olabilir.",
+    "reveal-error-wasm": "Bu parola için WebAssembly gerekiyor, ancak tarayıcınız ya da güvenlik seviyesi onu kapatmış (örneğin “Daha Güvenli” seviyesindeki Tor Browser). İzin verip tekrar deneyin.",
+    "burn-working": "İmha ediliyor…",
+    "report-working": "Gönderiliyor…",
+    "report-error-invalid": "Bu, bu siteye ait bir sır bağlantısına benzemiyor."
+  }
+}

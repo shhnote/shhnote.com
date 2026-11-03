@@ -1,0 +1,358 @@
+{
+  "site": {
+    "name": "shhnote",
+    "title": "shhnote — deel geheimen met zelfvernietigende links",
+    "description": "Open source, end-to-end versleuteld, zero-knowledge geheimen delen. Tekst en bestanden. De server ziet je gegevens nooit."
+  },
+  "nav": {
+    "skip": "Naar de inhoud",
+    "home": "shhnote startpagina",
+    "main": "Hoofdmenu",
+    "how": "Hoe het werkt",
+    "security": "Beveiliging",
+    "faq": "Veelgestelde vragen",
+    "docs": "Documentatie",
+    "language": "Taal",
+    "api": "API",
+    "languageList": "Talen",
+    "languageSoon": "Binnenkort",
+    "poweredBy": "Mogelijk gemaakt door shhnote"
+  },
+  "footer": {
+    "product": "Product",
+    "legal": "Juridisch",
+    "openSource": "Open source",
+    "privacy": "Privacybeleid",
+    "terms": "Gebruiksvoorwaarden",
+    "acceptableUse": "Aanvaardbaar gebruik",
+    "about": "Over ons",
+    "contact": "Contact",
+    "github": "GitHub",
+    "issue": "Probleem melden",
+    "selfHost": "Zelf hosten",
+    "copyright": "© 2026 shhnote. Open source onder AGPLv3.",
+    "poweredBy": "Mogelijk gemaakt door",
+    "backend": "server",
+    "report": "Link melden",
+    "compare": "Vergelijken",
+    "useCases": "Toepassingen"
+  },
+  "home": {
+    "hero": {
+      "title": "Deel geheimen veilig met zelfvernietigende links",
+      "intro": "Houd je geheimen privé en uit de logs van chat, e-mail, Slack en Teams",
+      "noscript": "Voor het aanmaken van een geheim is JavaScript nodig: de versleuteling gebeurt in je browser, voordat er iets wordt verstuurd. Schakel het in voor deze site om verder te gaan."
+    },
+    "form": {
+      "noteLabel": "Je geheim",
+      "notePlaceholder": "Typ hier je bericht...",
+      "filesLabel": "Bijlagen",
+      "filesDrop": "Sleep bestanden hierheen",
+      "filesClick": "of klik om toe te voegen",
+      "filesHint": "Versleuteld in je browser vóór het uploaden · tot 25 MB, 25 bestanden",
+      "filesRemove": "Verwijderen",
+      "expiryLabel": "Verloopt over",
+      "expiry": {
+        "900": "15 minuten",
+        "1800": "30 minuten",
+        "3600": "1 uur",
+        "21600": "6 uur",
+        "43200": "12 uur",
+        "86400": "1 dag",
+        "259200": "3 dagen",
+        "604800": "7 dagen",
+        "1209600": "14 dagen"
+      },
+      "burnLabel": "Eenmalig bekijken",
+      "burnHint": "Wordt na de eerste keer bekijken vernietigd. Zet dit uit om het tot het verloopt vaker te laten bekijken.",
+      "passphraseLabel": "Wachtwoord/wachtwoordzin",
+      "passphraseOptional": "(optioneel)",
+      "passphraseToggle": "Wachtwoord tonen of verbergen",
+      "passphraseHint": "Voeg een wachtwoord toe voor extra beveiliging.",
+      "disclaimer": "Door een geheim aan te maken of te openen, bevestig je dat je onze",
+      "disclaimerLink": "gebruiksvoorwaarden",
+      "disclaimerEnd": " hebt gelezen en uitdrukkelijk akkoord gaat om je eraan te houden.",
+      "submit": "Geheim versleutelen"
+    },
+    "chips": {
+      "e2e": "End-to-end versleuteld",
+      "zeroKnowledge": "Zero-knowledge",
+      "noLogs": "Geen logs",
+      "openSource": "Open source"
+    },
+    "result": {
+      "eyebrow": "Link klaar",
+      "title": "Verstuur hem en vergeet hem.",
+      "intro": "Kopieer de link en deel hem zoals je wilt. Voor je veiligheid tonen we hem niet nog eens: zodra je deze pagina verlaat, is hij hier verdwenen.",
+      "shareLabel": "Eenmalige link",
+      "copy": "Kopiëren",
+      "copied": "Gekopieerd",
+      "chipsLabel": "Instellingen van het geheim",
+      "chipLifetime": "Eenmalig bekijken",
+      "chipExpiry": "Verloopt over 1 dag",
+      "passphraseReminder": "Dit geheim heeft een wachtwoordzin. Stuur die via een ander kanaal dan de link zelf.",
+      "calloutTitle": "Eén link, één keer lezen.",
+      "callout": "Iedereen met de volledige link kan het geheim openen, één keer. Heb je een wachtwoordzin ingesteld, stuur die dan via een ander kanaal dan de link zelf.",
+      "divider": "privé-opties · houd dit voor jezelf",
+      "burnLabel": "Vernietigingslink",
+      "burnAside": "— vernietig het zelf, wanneer je maar wilt",
+      "burnHint": "Bewaar deze link op een veilige plek. Als je hem opent, wordt het geheim direct vernietigd, voordat iemand anders het kan bekijken. Eenmaal vernietigd kunnen zelfs wij het niet terughalen.",
+      "open": "Link openen",
+      "destroy": "Nu vernietigen",
+      "another": "Nog een geheim aanmaken"
+    },
+    "how": {
+      "eyebrow": "Hoe het werkt",
+      "title": "Drie stappen. Geen account nodig.",
+      "intro": "shhnote versleutelt je geheim in de browser, voordat er iets over het netwerk gaat. De sleutel staat in het fragment van de URL: een deel van de URL dat browsers nooit naar servers sturen.",
+      "steps": [
+        {
+          "title": "Versleutelen",
+          "aside": "tekst/bestand(en)",
+          "body": "Je geheim wordt op je eigen apparaat versleuteld, voordat er iets wordt verstuurd. De sleutel om het te openen wordt nooit geüpload."
+        },
+        {
+          "title": "Delen",
+          "aside": "de link",
+          "body": "De sleutel staat in het deel van de link na de #, dat browsers lokaal houden en nooit naar een server sturen."
+        },
+        {
+          "title": "Openen",
+          "aside": "en weg is het",
+          "body": "De browser van de ontvanger ontsleutelt het lokaal en de server vernietigt zijn kopie. Zelfs wij kunnen het niet terughalen."
+        }
+      ]
+    },
+    "hood": {
+      "eyebrow": "Onder de motorkap",
+      "title": "De cryptografie, haarfijn uitgelegd.",
+      "intro": "Geen vage beloftes. Dit is precies wat je geheim beschermt en waar elk onderdeel draait, zodat je de beweringen zelf kunt controleren in plaats van ons op ons woord te geloven.",
+      "specs": [
+        {
+          "label": "Versleuteling",
+          "value": "AES-256-GCM",
+          "body": "Geauthenticeerde symmetrische versleuteling. Elk geheim wordt verzegeld met een 256-bit sleutel en een integriteitstag, zodat knoeien wordt gedetecteerd en niet alleen onleesbaar blijft."
+        },
+        {
+          "label": "Sleutelafleiding",
+          "value": "Argon2id",
+          "body": "Optionele wachtwoordzinnen worden opgerekt met een geheugenintensieve KDF, waardoor offline brute-force-aanvallen traag en duur worden, zelfs op speciaal gebouwde hardware."
+        },
+        {
+          "label": "Willekeur",
+          "value": "WebCrypto CSPRNG",
+          "body": "Sleutels en nonces komen uit de cryptografisch veilige generator van de browser. Nooit Math.random(), nooit voorspelbaar."
+        },
+        {
+          "label": "Sleutelbeheer",
+          "value": "URL-fragment #",
+          "body": "De ontsleutelingssleutel staat na de # in je link. Browsers versturen het fragment nooit, dus de sleutel die het geheim opent bereikt onze servers nooit."
+        },
+        {
+          "label": "Onderweg",
+          "value": "TLS 1.3",
+          "body": "Alleen versleutelde data verlaat je apparaat, via moderne TLS. Wat wij ontvangen is een ondoorzichtige blob die we op geen enkele manier kunnen openen."
+        },
+        {
+          "label": "Opgeslagen",
+          "value": "Versleutelde data + TTL",
+          "body": "We bewaren een versleutelde blob en een vervaltijdstip, verder niets. Geen leesbare tekst, geen sleutels, geen metadata over afzender of ontvanger."
+        }
+      ]
+    },
+    "useCases": {
+      "eyebrow": "Toepassingen",
+      "title": "Maak een shhnote voor alles",
+      "intro": "Zo gebruiken mensen shhnote elke dag",
+      "items": [
+        {
+          "label": "DevOps & engineering",
+          "title": "Inloggegevens & sleutels",
+          "body": "Stop met het plakken van API-sleutels, databasewachtwoorden en SSH-sleutels in chatgesprekken. Deel ze als eenmalige links die zichzelf na gebruik vernietigen. Koppel het via de API aan je CI/CD-pipelines."
+        },
+        {
+          "label": "Privacybewuste gebruikers",
+          "title": "Delen zonder sporen",
+          "body": "Werkt via Tor zonder in te leveren op functionaliteit. Geen CAPTCHA's, geen browser-fingerprinting, geen externe verzoeken. Elk lettertype en elk bestand wordt zelf gehost. Geen enkel lek van metadata."
+        },
+        {
+          "label": "IT & onboarding",
+          "title": "Veilig toegang regelen",
+          "body": "Stuur nieuwe collega's hun eerste inloggegevens, VPN-configuraties of wifi-wachtwoorden zonder sporen achter te laten in e-mailgesprekken of ticketsystemen. Maak meerdere unieke links aan voor onboarding in één keer."
+        },
+        {
+          "label": "Juridisch & compliance",
+          "title": "Gevoelige dossiers",
+          "body": "Stuur een patiëntendossier, zaakdossier of financieel overzicht naar een cliënt of collega zonder dat het in een inbox blijft staan die onder een onderzoek, audit of meldplicht bij een datalek kan vallen."
+        },
+        {
+          "label": "Persoonlijk",
+          "title": "Alledaagse geheimen",
+          "body": "Stuur je boekhouder de wachtwoorden van je belastingdocumenten. Deel inloggegevens voor streaming met je familie. Geef een klusjesman je alarmcode. Verstuur gevoelige bestanden veilig. Simpel genoeg voor iedereen."
+        },
+        {
+          "label": "Overig",
+          "title": "Cadeaucodes en verrassingen",
+          "body": "Stuur een cadeaukaartcode, een verrassing, een aanwijzing voor een speurtocht of een onthulling die verdwijnt zodra die gezien is."
+        }
+      ]
+    },
+    "cta": {
+      "title": "Stop met het delen van gevoelige informatie als leesbare tekst",
+      "intro": "Maak in een paar seconden een eenmalige versleutelde link. Of maak een versleutelde link die vaker te openen is en na een paar uur of dagen verloopt. Bescherm hem extra met een wachtwoord. Geen account nodig. Er worden geen gegevens verzameld.",
+      "button": "Eenmalig geheim aanmaken"
+    }
+  },
+  "secret": {
+    "title": "Iemand heeft een geheim met je gedeeld",
+    "armed": {
+      "badge": "Nog niets opgehaald",
+      "title": "Iemand heeft een geheim met je gedeeld",
+      "intro": "Het wordt in je browser ontsleuteld. Is het verstuurd om eenmalig te bekijken, dan wordt het verwijderd op het moment dat je het opent. Toon het dus pas als je klaar bent om het te lezen en te bewaren.",
+      "noscript": "Er is JavaScript nodig om dit geheim in je browser te ontsleutelen. Schakel het in om het geheim te bekijken.",
+      "reveal": "Geheim tonen",
+      "passphraseNote": "Als de afzender een wachtwoordzin heeft ingesteld, wordt je daarom gevraagd nadat je op de knop hebt gedrukt.",
+      "callout": "Er is nog niets opgehaald: dit is alles wat een geautomatiseerde scanner ziet. We laten het tonen bewust handmatig, zodat e-mailbeveiliging, chatvoorbeelden en virusscanners je geheim niet eerder kunnen openen dan jij.",
+      "chipE2e": "End-to-end versleuteld",
+      "chipNoAccount": "Geen account nodig"
+    },
+    "working": {
+      "badge": "Bezig",
+      "title": "Ontsleutelen in je browser…",
+      "intro": "De versleutelde data wordt opgehaald en lokaal geopend met de sleutel uit je link. Leesbaar verlaat het dit tabblad nooit.",
+      "fetching": "Versleuteld geheim ophalen…",
+      "decrypting": "Ontsleutelen in je browser…"
+    },
+    "passphrase": {
+      "badge": "Vergrendeld",
+      "title": "Dit geheim heeft een wachtwoordzin nodig",
+      "intro": "De afzender heeft een tweede slot toegevoegd. Nieuwe pogingen gebeuren in je browser; er wordt niets naar de server gestuurd.",
+      "label": "Wachtwoordzin",
+      "submit": "Ontgrendelen",
+      "wrong": "Die wachtwoordzin werkte niet. Probeer het opnieuw."
+    },
+    "revealed": {
+      "singleView": "Vernietigd · dit kon maar één keer bekeken worden",
+      "title": "Hier is het. Bewaar nu wat je nodig hebt.",
+      "intro": "Dit geheim is in je browser ontsleuteld. Vernieuw je deze pagina, dan is het hier verdwenen.",
+      "outputLabel": "geheim · lokaal ontsleuteld",
+      "copy": "Kopiëren",
+      "download": "Downloaden",
+      "closeWarning": "Ga er zorgvuldig mee om: zodra je dit tabblad sluit, kun je het op geen enkele manier terughalen, niet bij jou en niet bij ons.",
+      "createOwn": "Zelf een geheim aanmaken"
+    },
+    "notFound": {
+      "badge": "Geen geheim gevonden",
+      "title": "Hier is geen geheim te vinden.",
+      "intro": "Deze link is ongeldig, of het geheim waar hij naar verwees is al bekeken, verlopen of vernietigd. Voor je privacy houdt deze site niet bij welke van de drie: er wordt nooit iets over de geschiedenis van een geheim opgeslagen.",
+      "callout": "Heb je het geheim nog nodig? Vraag de afzender om een nieuwe link, en controleer of je de hele URL hebt gekopieerd, inclusief het deel na de #.",
+      "create": "Geheim aanmaken",
+      "how": "Hoe shhnote werkt"
+    },
+    "errors": {
+      "network": "De server is niet bereikbaar. Probeer het zo opnieuw.",
+      "corrupt": "Dit geheim kon niet worden ontsleuteld. Misschien is de link onvolledig.",
+      "wasm": "Voor deze wachtwoordzin is WebAssembly nodig, maar je browser of het beveiligingsniveau ervan heeft dat uitgeschakeld (bijvoorbeeld Tor Browser op „Veiliger”). Sta het toe en probeer het opnieuw."
+    }
+  },
+  "burn": {
+    "title": "Dit geheim vernietigen",
+    "armed": {
+      "badge": "Klaar · er is nog niets gebeurd",
+      "title": "Dit geheim vernietigen?",
+      "intro": "Dit is een vernietigingslink. Er is nog niets gebeurd. Als je bevestigt, worden het versleutelde geheim en de bijbehorende bestand(en) definitief verwijderd, voordat iemand anders ze kan openen.",
+      "noscript": "Deze pagina heeft JavaScript nodig om iets te doen. Schakel het in.",
+      "confirm": "Geheim vernietigen",
+      "cancel": "Naar de startpagina",
+      "working": "Vernietigen…"
+    },
+    "done": {
+      "badge": "Vernietigd · geheim gewist",
+      "title": "Dit geheim is vernietigd.",
+      "intro": "Je hebt zojuist de vernietigingslink gebruikt. Het versleutelde geheim en de bijbehorende bestand(en) zijn definitief van onze servers gewist, voordat iemand anders ze kon openen.",
+      "callout": "Wie de oorspronkelijke deellink vanaf nu opent, krijgt alleen te zien dat er geen geheim is gevonden, zonder te kunnen zien of het bekeken, verlopen of vernietigd is. Er wordt niets over bewaard.",
+      "create": "Nieuw geheim aanmaken",
+      "how": "Hoe shhnote werkt"
+    },
+    "notFound": {
+      "badge": "Niets te vernietigen",
+      "title": "Niets te vernietigen.",
+      "intro": "Deze vernietigingslink is ongeldig, of het geheim is al bekeken, verlopen of vernietigd.",
+      "home": "Naar de startpagina"
+    }
+  },
+  "report": {
+    "title": "Geheime link melden",
+    "armed": {
+      "badge": "Misbruikmelding",
+      "title": "Geheime link melden",
+      "intro": "Plak een link waarvan je denkt dat hij iets deelt wat niet zou mogen. Is het geheim nog actief, dan wordt het direct verwijderd. We kunnen niet zien wat erin staat, dus er valt niets te beoordelen en niets aan jou terug te melden.",
+      "noscript": "Deze pagina heeft JavaScript nodig om iets te doen. Schakel het in.",
+      "label": "Geheime link",
+      "placeholder": "https://shhnote.com/s#…",
+      "help": "De volledige link, inclusief het deel na de #. Die wordt alleen gebruikt om het geheim te vinden en wordt niet opgeslagen.",
+      "submit": "Dit geheim verwijderen",
+      "working": "Versturen…",
+      "invalid": "Dat lijkt geen geheime link van deze site."
+    },
+    "done": {
+      "badge": "Ontvangen",
+      "title": "Bedankt, het is geregeld.",
+      "intro": "Als die link naar een actief geheim verwees, is dat nu verdwenen. We houden bij dat er een melding is ontvangen, meer niet.",
+      "home": "Naar de startpagina"
+    }
+  },
+  "content": {
+    "updated": "Laatst bijgewerkt:",
+    "translationNote": "Dit is een vertaling voor je gemak. Als die afwijkt van de Engelse versie, geldt de Engelse versie.",
+    "translationLink": "Lees de Engelse versie",
+    "depthLabel": "Kies hoe diepgaand de uitleg is",
+    "depthSimple": "Eenvoudig",
+    "depthDetailed": "Uitgebreid / technisch",
+    "cta": {
+      "title": "Probeer het: het kost tien seconden",
+      "intro": "Schrijf iets geheims, krijg je eenmalige link en zie het verdwijnen.",
+      "button": "Geheim aanmaken"
+    }
+  },
+  "docs": {
+    "title": "API-documentatie",
+    "eyebrow": "Documentatie",
+    "description": "De shhnote-API waar deze site op draait: endpoints, fouten, limieten en hoe je zelf een client bouwt.",
+    "intro": "Alles wat deze site doet, loopt via de API hieronder, en je scripts en tools kunnen die op dezelfde manier gebruiken. Gegenereerd uit de shhnote-broncode op {ref}."
+  },
+  "theme": {
+    "label": "Thema",
+    "light": "Licht",
+    "dark": "Donker",
+    "light-hc": "Licht, hoog contrast",
+    "dark-hc": "Donker, hoog contrast",
+    "system": "Systeem"
+  },
+  "ui": {
+    "form-files-remove": "Verwijderen",
+    "result-copied": "Gekopieerd",
+    "result-destroyed": "Vernietigd. Het geheim is van de server verdwenen.",
+    "result-chip-single": "Eenmalig bekijken",
+    "result-chip-multi": "Te openen tot het verloopt",
+    "result-chip-expires": "Verloopt over {period}",
+    "create-encrypting": "Versleutelen in je browser…",
+    "create-uploading": "Uploaden…",
+    "create-error-empty": "Voeg wat tekst of minstens één bestand toe.",
+    "create-error-too-large": "Dat is meer dan deze site accepteert. Verwijder een paar bestanden of maak de tekst korter.",
+    "create-error-network": "De server is niet bereikbaar. Controleer je verbinding en probeer het opnieuw.",
+    "create-error-failed": "Er ging iets mis bij het aanmaken van het geheim. Probeer het opnieuw.",
+    "create-error-wasm": "Voor wachtwoordzinnen is WebAssembly nodig, maar je browser of het beveiligingsniveau ervan heeft dat uitgeschakeld. Sta het toe, of maak het geheim aan zonder wachtwoordzin.",
+    "reveal-fetching": "Versleuteld geheim ophalen…",
+    "reveal-decrypting": "Ontsleutelen in je browser…",
+    "reveal-wrong-passphrase": "Die wachtwoordzin werkte niet. Probeer het opnieuw.",
+    "reveal-single-view": "Vernietigd · dit kon maar één keer bekeken worden",
+    "reveal-download": "Downloaden",
+    "reveal-error-network": "De server is niet bereikbaar. Probeer het zo opnieuw.",
+    "reveal-error-corrupt": "Dit geheim kon niet worden ontsleuteld. Misschien is de link onvolledig.",
+    "reveal-error-wasm": "Voor deze wachtwoordzin is WebAssembly nodig, maar je browser of het beveiligingsniveau ervan heeft dat uitgeschakeld (bijvoorbeeld Tor Browser op „Veiliger”). Sta het toe en probeer het opnieuw.",
+    "burn-working": "Vernietigen…",
+    "report-working": "Versturen…",
+    "report-error-invalid": "Dat lijkt geen geheime link van deze site."
+  }
+}

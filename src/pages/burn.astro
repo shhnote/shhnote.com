@@ -1,0 +1,5 @@
+---
+// The links the client builds are locale-less (`/burn#…`); serve the English page here so they
+// work on any host. Caddy may still redirect to the visitor's language.
+return Astro.rewrite('/en/burn/');
+---

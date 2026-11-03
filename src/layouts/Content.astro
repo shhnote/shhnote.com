@@ -1,10 +1,14 @@
 ---
 import Base from './Base.astro';
-import type { Locale } from '../lib/i18n';
+import { defaultLocale, type Locale } from '../lib/i18n';
 import { getStrings } from '../lib/strings';
 
 interface Props {
   locale: Locale;
+  /** The locales this page is built in (see Base). */
+  locales?: readonly Locale[];
+  /** The page's slug, for content pages; policy pages note that English is authoritative. */
+  slug?: string;
   title: string;
   description: string;
   eyebrow?: string;
@@ -14,12 +18,14 @@ interface Props {
   updated?: string;
 }
 
-const { locale, title, description, eyebrow, intro, wide = false, depth, updated } = Astro.props;
+const { locale, locales, slug, title, description, eyebrow, intro, wide = false, depth, updated } = Astro.props;
 const t = getStrings(locale);
 const base = `/${locale}/`;
+const policies = new Set(['terms', 'privacy', 'acceptable-use']);
+const translatedPolicy = locale !== defaultLocale && slug !== undefined && policies.has(slug);
 ---
 
-<Base locale={locale} title={`${title} — ${t.site.name}`} description={description}>
+<Base locale={locale} locales={locales} title={`${title} — ${t.site.name}`} description={description}>
   <article class="page page--content">
     <section class="section section--hero section--hero-content">
       <div class="container">
@@ -28,6 +34,12 @@ const base = `/${locale}/`;
           <h1>{title}</h1>
           {intro && <p class="section__intro">{intro}</p>}
           {updated && <p class="updated">{t.content.updated} {updated}</p>}
+          {translatedPolicy && (
+            <p class="translation-note">
+              {t.content.translationNote}{' '}
+              <a href={`/${defaultLocale}/${slug}/`} hreflang={defaultLocale}>{t.content.translationLink}</a>
+            </p>
+          )}
         </header>
         {depth && (
           <nav class="doc-switch" aria-label={t.content.depthLabel}>

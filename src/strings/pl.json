@@ -1,0 +1,358 @@
+{
+  "site": {
+    "name": "shhnote",
+    "title": "shhnote — udostępniaj sekrety przez linki, które same się niszczą",
+    "description": "Otwartoźródłowe, szyfrowane end-to-end udostępnianie sekretów w modelu zero-knowledge. Tekst i pliki. Serwer nigdy nie widzi twoich danych."
+  },
+  "nav": {
+    "skip": "Przejdź do treści",
+    "home": "Strona główna shhnote",
+    "main": "Menu główne",
+    "how": "Jak to działa",
+    "security": "Bezpieczeństwo",
+    "faq": "FAQ",
+    "docs": "Dokumentacja",
+    "language": "Język",
+    "api": "API",
+    "languageList": "Języki",
+    "languageSoon": "Wkrótce",
+    "poweredBy": "Działa na shhnote"
+  },
+  "footer": {
+    "product": "Produkt",
+    "legal": "Informacje prawne",
+    "openSource": "Open source",
+    "privacy": "Polityka prywatności",
+    "terms": "Regulamin",
+    "acceptableUse": "Zasady korzystania",
+    "about": "O nas",
+    "contact": "Kontakt",
+    "github": "GitHub",
+    "issue": "Zgłoś problem",
+    "selfHost": "Własna instalacja",
+    "copyright": "© 2026 shhnote. Open source na licencji AGPLv3.",
+    "poweredBy": "Działa na",
+    "backend": "serwer",
+    "report": "Zgłoś link",
+    "compare": "Porównanie",
+    "useCases": "Zastosowania"
+  },
+  "home": {
+    "hero": {
+      "title": "Bezpiecznie udostępniaj sekrety przez linki, które same się niszczą",
+      "intro": "Zachowaj swoje sekrety dla siebie — z dala od historii czatów, e-maili, Slacka i Teams",
+      "noscript": "Do utworzenia sekretu potrzebny jest JavaScript: szyfrowanie odbywa się w twojej przeglądarce, zanim cokolwiek zostanie wysłane. Włącz go dla tej strony, aby kontynuować."
+    },
+    "form": {
+      "noteLabel": "Twój sekret",
+      "notePlaceholder": "Wpisz tutaj wiadomość…",
+      "filesLabel": "Załączniki",
+      "filesDrop": "Upuść pliki tutaj",
+      "filesClick": "lub kliknij, aby dołączyć",
+      "filesHint": "Szyfrowane w przeglądarce przed wysłaniem · do 25 MB, 25 plików",
+      "filesRemove": "Usuń",
+      "expiryLabel": "Wygasa za",
+      "expiry": {
+        "900": "15 minut",
+        "1800": "30 minut",
+        "3600": "1 godzinę",
+        "21600": "6 godzin",
+        "43200": "12 godzin",
+        "86400": "1 dzień",
+        "259200": "3 dni",
+        "604800": "7 dni",
+        "1209600": "14 dni"
+      },
+      "burnLabel": "Jednorazowe wyświetlenie",
+      "burnHint": "Niszczony po pierwszym wyświetleniu. Wyłącz, aby pozwolić na wielokrotne wyświetlanie aż do wygaśnięcia.",
+      "passphraseLabel": "Hasło",
+      "passphraseOptional": "(opcjonalnie)",
+      "passphraseToggle": "Pokaż lub ukryj hasło",
+      "passphraseHint": "Dodaj hasło, aby zwiększyć bezpieczeństwo.",
+      "disclaimer": "Tworząc sekret lub otwierając go, potwierdzasz, że znasz nasz",
+      "disclaimerLink": "regulamin",
+      "disclaimerEnd": " i wyraźnie zgadzasz się go przestrzegać.",
+      "submit": "Zaszyfruj sekret"
+    },
+    "chips": {
+      "e2e": "Szyfrowanie end-to-end",
+      "zeroKnowledge": "Zero-knowledge",
+      "noLogs": "Bez logów",
+      "openSource": "Open source"
+    },
+    "result": {
+      "eyebrow": "Link gotowy",
+      "title": "Wyślij i zapomnij.",
+      "intro": "Skopiuj link i udostępnij go, jak chcesz. Ze względów bezpieczeństwa nie pokażemy go ponownie — gdy opuścisz tę stronę, zniknie stąd.",
+      "shareLabel": "Link jednorazowy",
+      "copy": "Kopiuj",
+      "copied": "Skopiowano",
+      "chipsLabel": "Ustawienia sekretu",
+      "chipLifetime": "Jednorazowe wyświetlenie",
+      "chipExpiry": "Wygasa za 1 dzień",
+      "passphraseReminder": "Ten sekret ma hasło. Wyślij je innym kanałem niż sam link.",
+      "calloutTitle": "Jeden link, jedno odczytanie.",
+      "callout": "Każdy, kto ma pełny link, może otworzyć sekret — jeden raz. Jeśli sekret ma hasło, wyślij je innym kanałem niż sam link.",
+      "divider": "prywatne opcje · zachowaj dla siebie",
+      "burnLabel": "Link do spalenia",
+      "burnAside": "— zniszcz sekret samodzielnie, w dowolnej chwili",
+      "burnHint": "Zapisz go w bezpiecznym miejscu. Jego otwarcie natychmiast niszczy sekret — zanim ktokolwiek inny go zobaczy. Spalonego sekretu nie odzyskamy nawet my.",
+      "open": "Otwórz link",
+      "destroy": "Zniszcz teraz",
+      "another": "Utwórz kolejny sekret"
+    },
+    "how": {
+      "eyebrow": "Jak to działa",
+      "title": "Trzy kroki. Bez zakładania konta.",
+      "intro": "shhnote szyfruje twój sekret w przeglądarce, zanim cokolwiek trafi do sieci. Klucz szyfrowania znajduje się we fragmencie adresu URL — części adresu, której przeglądarki nigdy nie wysyłają do serwerów.",
+      "steps": [
+        {
+          "title": "Zaszyfruj",
+          "aside": "tekst/plik(i)",
+          "body": "Twój sekret jest szyfrowany na twoim urządzeniu, zanim cokolwiek zostanie wysłane. Klucz do jego odczytania nigdy nie jest przesyłany."
+        },
+        {
+          "title": "Udostępnij",
+          "aside": "link",
+          "body": "Klucz znajduje się w części linku po znaku # — którą przeglądarki zatrzymują lokalnie i nigdy nie wysyłają do serwera."
+        },
+        {
+          "title": "Odbierz",
+          "aside": "i już go nie ma",
+          "body": "Przeglądarka odbiorcy odszyfrowuje sekret lokalnie, a serwer niszczy swoją kopię. Nawet my nie możemy go odzyskać."
+        }
+      ]
+    },
+    "hood": {
+      "eyebrow": "Pod maską",
+      "title": "Kryptografia bez niedomówień.",
+      "intro": "Bez ogólników. Oto dokładnie, co chroni twój sekret i gdzie działa każdy element — możesz więc sprawdzić nasze zapewnienia, zamiast brać je na wiarę.",
+      "specs": [
+        {
+          "label": "Szyfrowanie",
+          "value": "AES-256-GCM",
+          "body": "Uwierzytelnione szyfrowanie symetryczne. Każdy sekret jest zapieczętowany 256-bitowym kluczem i znacznikiem integralności, więc każda manipulacja zostaje wykryta — a nie tylko kończy się nieczytelnymi danymi."
+        },
+        {
+          "label": "Wyprowadzanie klucza",
+          "value": "Argon2id",
+          "body": "Opcjonalne hasła są wzmacniane funkcją KDF wymagającą dużo pamięci, przez co ataki brute-force offline są powolne i kosztowne nawet na specjalistycznym sprzęcie."
+        },
+        {
+          "label": "Losowość",
+          "value": "WebCrypto CSPRNG",
+          "body": "Klucze i wartości nonce pochodzą z kryptograficznie bezpiecznego generatora przeglądarki. Nigdy Math.random(), nigdy nic przewidywalnego."
+        },
+        {
+          "label": "Przechowywanie klucza",
+          "value": "Fragment URL #",
+          "body": "Klucz deszyfrujący znajduje się w twoim linku po znaku #. Przeglądarki nigdy nie przesyłają fragmentu, więc klucz otwierający sekret nigdy nie trafia na nasze serwery."
+        },
+        {
+          "label": "W transmisji",
+          "value": "TLS 1.3",
+          "body": "Twoje urządzenie opuszcza wyłącznie szyfrogram, przesyłany przez nowoczesny TLS. Otrzymujemy nieprzejrzysty blob, którego nie mamy jak otworzyć."
+        },
+        {
+          "label": "W spoczynku",
+          "value": "Szyfrogram + TTL",
+          "body": "Zapisujemy zaszyfrowany blob i znacznik czasu wygaśnięcia — nic więcej. Żadnego tekstu jawnego, żadnych kluczy, żadnych metadanych o nadawcy czy odbiorcy."
+        }
+      ]
+    },
+    "useCases": {
+      "eyebrow": "Zastosowania",
+      "title": "Utwórz shhnote na każdą okazję",
+      "intro": "Zobacz, jak ludzie korzystają z shhnote na co dzień",
+      "items": [
+        {
+          "label": "DevOps i inżynieria",
+          "title": "Dane logowania i klucze",
+          "body": "Przestań wklejać klucze API, hasła do baz danych i klucze SSH w wątki na czacie. Udostępniaj je jako jednorazowe linki, które same się niszczą po użyciu. Zintegruj z potokami CI/CD przez API."
+        },
+        {
+          "label": "Dbający o prywatność",
+          "title": "Udostępniaj bez śladu",
+          "body": "Działa przez Tor bez ograniczeń funkcjonalności. Bez CAPTCHA, bez fingerprintingu przeglądarki, bez zewnętrznych żądań. Każda czcionka i każdy zasób są hostowane lokalnie. Zero wycieku metadanych."
+        },
+        {
+          "label": "IT i onboarding",
+          "title": "Bezpieczne nadawanie dostępów",
+          "body": "Wysyłaj nowym pracownikom pierwsze dane logowania, konfiguracje VPN czy hasła do Wi-Fi bez zostawiania śladów w wątkach e-mail lub systemach zgłoszeń. Generuj wiele unikalnych linków przy wdrażaniu całych grup."
+        },
+        {
+          "label": "Prawo i regulacje",
+          "title": "Dokumenty wymagające zgodności",
+          "body": "Wyślij dokumentację pacjenta, akta sprawy lub wyciąg finansowy klientowi albo współpracownikowi, tak by nie leżały w skrzynce podlegającej ujawnieniu w sporze, audytowi czy zgłoszeniu naruszenia."
+        },
+        {
+          "label": "Prywatnie",
+          "title": "Codzienne sekrety",
+          "body": "Wyślij księgowej hasła do dokumentów podatkowych. Udostępnij rodzinie dane do serwisu streamingowego. Podaj fachowcowi kod do alarmu. Bezpiecznie wysyłaj poufne pliki. Na tyle proste, że każdy sobie poradzi."
+        },
+        {
+          "label": "Inne",
+          "title": "Kody podarunkowe i niespodzianki",
+          "body": "Wyślij kod karty podarunkowej, niespodziankę, wskazówkę do gry w podchody albo wiadomość, która zniknie, gdy tylko ktoś ją zobaczy."
+        }
+      ]
+    },
+    "cta": {
+      "title": "Przestań udostępniać poufne dane otwartym tekstem",
+      "intro": "Utwórz jednorazowy zaszyfrowany link w kilka sekund. Albo zaszyfrowany link do wielokrotnego wyświetlania, który wygaśnie po kilku godzinach lub dniach. Dodaj hasło dla dodatkowej ochrony. Bez konta. Bez zbierania danych.",
+      "button": "Utwórz jednorazowy sekret"
+    }
+  },
+  "secret": {
+    "title": "Ktoś udostępnił ci sekret",
+    "armed": {
+      "badge": "Jeszcze nic nie pobrano",
+      "title": "Ktoś udostępnił ci sekret",
+      "intro": "Zostanie odszyfrowany w twojej przeglądarce. Jeśli wysłano go do jednorazowego wyświetlenia, zostanie usunięty w chwili otwarcia — odsłoń go więc dopiero wtedy, gdy możesz go spokojnie przeczytać i zapisać.",
+      "noscript": "Do odszyfrowania tego sekretu w przeglądarce potrzebny jest JavaScript. Włącz go, aby zobaczyć sekret.",
+      "reveal": "Odsłoń sekret",
+      "passphraseNote": "Jeśli nadawca ustawił hasło, poprosimy o nie po naciśnięciu przycisku.",
+      "callout": "Jeszcze nic nie pobrano — tyle widzi automatyczny skaner. Odsłonięcie celowo wymaga ręcznego kliknięcia, żeby filtry poczty, podglądy linków na czatach i antywirusy nie otworzyły twojego sekretu przed tobą.",
+      "chipE2e": "Szyfrowanie end-to-end",
+      "chipNoAccount": "Bez zakładania konta"
+    },
+    "working": {
+      "badge": "W toku",
+      "title": "Odszyfrowywanie w przeglądarce…",
+      "intro": "Pobieramy szyfrogram i odszyfrowujemy go lokalnie kluczem z twojego linku. W czytelnej postaci nigdy nie opuszcza tej karty.",
+      "fetching": "Pobieranie zaszyfrowanego sekretu…",
+      "decrypting": "Odszyfrowywanie w przeglądarce…"
+    },
+    "passphrase": {
+      "badge": "Zablokowany",
+      "title": "Ten sekret wymaga hasła",
+      "intro": "Nadawca dodał drugi zamek. Kolejne próby odbywają się w twojej przeglądarce; nic nie jest wysyłane do serwera.",
+      "label": "Hasło",
+      "submit": "Odblokuj",
+      "wrong": "To hasło nie pasuje. Spróbuj ponownie."
+    },
+    "revealed": {
+      "singleView": "Zniszczony · to było jedyne wyświetlenie",
+      "title": "Oto on. Zapisz teraz to, czego potrzebujesz.",
+      "intro": "Ten sekret został odszyfrowany w twojej przeglądarce. Po odświeżeniu strony zniknie stąd.",
+      "outputLabel": "sekret · odszyfrowany lokalnie",
+      "copy": "Kopiuj",
+      "download": "Pobierz",
+      "closeWarning": "Obchodź się z nim ostrożnie — po zamknięciu tej karty nie da się go już odzyskać, ani u ciebie, ani u nas.",
+      "createOwn": "Utwórz własny sekret"
+    },
+    "notFound": {
+      "badge": "Nie znaleziono sekretu",
+      "title": "Nie ma tu żadnego sekretu.",
+      "intro": "Ten link jest nieprawidłowy albo sekret, do którego prowadził, został już wyświetlony, wygasł lub został zniszczony. Dla ochrony twojej prywatności ta strona nie zapisuje, co z tego zaszło — żadna historia sekretu nigdy nie jest przechowywana.",
+      "callout": "Jeśli nadal potrzebujesz sekretu, poproś nadawcę o nowy link — i sprawdź, czy skopiowano cały adres URL, łącznie z częścią po znaku #.",
+      "create": "Utwórz sekret",
+      "how": "Jak działa shhnote"
+    },
+    "errors": {
+      "network": "Nie udało się połączyć z serwerem. Spróbuj ponownie za chwilę.",
+      "corrupt": "Nie udało się odszyfrować tego sekretu. Link może być niekompletny.",
+      "wasm": "To hasło wymaga WebAssembly, które twoja przeglądarka lub jej poziom bezpieczeństwa wyłączyły (na przykład Tor Browser na poziomie „Bezpieczniejszy”). Zezwól na nie i spróbuj ponownie."
+    }
+  },
+  "burn": {
+    "title": "Zniszcz ten sekret",
+    "armed": {
+      "badge": "W gotowości · nic się jeszcze nie stało",
+      "title": "Zniszczyć ten sekret?",
+      "intro": "To jest link do spalenia. Nic się jeszcze nie stało. Potwierdzenie trwale usunie zaszyfrowany sekret i jego plik(i) — zanim ktokolwiek inny zdąży je otworzyć.",
+      "noscript": "Ta strona potrzebuje JavaScriptu, aby cokolwiek zrobić. Włącz go.",
+      "confirm": "Zniszcz sekret",
+      "cancel": "Przejdź na stronę główną",
+      "working": "Niszczenie…"
+    },
+    "done": {
+      "badge": "Spalony · sekret zniszczony",
+      "title": "Ten sekret został zniszczony.",
+      "intro": "Właśnie użyto linku do spalenia. Zaszyfrowany sekret i jego plik(i) zostały trwale usunięte z naszych serwerów — zanim ktokolwiek inny zdążył je otworzyć.",
+      "callout": "Każdy, kto od teraz otworzy pierwotny link do sekretu, zobaczy po prostu informację, że nie znaleziono sekretu — bez możliwości ustalenia, czy został wyświetlony, wygasł, czy został spalony. Nic na jego temat nie jest przechowywane.",
+      "create": "Utwórz nowy sekret",
+      "how": "Jak działa shhnote"
+    },
+    "notFound": {
+      "badge": "Nie ma czego niszczyć",
+      "title": "Nie ma czego niszczyć.",
+      "intro": "Ten link do spalenia jest nieprawidłowy albo sekret został już wyświetlony, wygasł lub został zniszczony.",
+      "home": "Przejdź na stronę główną"
+    }
+  },
+  "report": {
+    "title": "Zgłoś link do sekretu",
+    "armed": {
+      "badge": "Zgłoszenie nadużycia",
+      "title": "Zgłoś link do sekretu",
+      "intro": "Wklej link, który twoim zdaniem udostępnia coś, czego nie powinien. Jeśli sekret jest nadal aktywny, zostanie natychmiast usunięty. Nie widzimy jego zawartości, więc nie ma czego sprawdzać ani o czym cię informować.",
+      "noscript": "Ta strona potrzebuje JavaScriptu, aby cokolwiek zrobić. Włącz go.",
+      "label": "Link do sekretu",
+      "placeholder": "https://shhnote.com/s#…",
+      "help": "Pełny link, łącznie z częścią po znaku #. Służy wyłącznie do odnalezienia sekretu i nie jest przechowywany.",
+      "submit": "Usuń ten sekret",
+      "working": "Wysyłanie…",
+      "invalid": "To nie wygląda na link do sekretu z tej strony."
+    },
+    "done": {
+      "badge": "Odebrano",
+      "title": "Dziękujemy, załatwione.",
+      "intro": "Jeśli link prowadził do aktywnego sekretu, sekretu już nie ma. Zapisujemy tylko to, że wpłynęło zgłoszenie, nic więcej.",
+      "home": "Przejdź na stronę główną"
+    }
+  },
+  "content": {
+    "updated": "Ostatnia aktualizacja:",
+    "translationNote": "To tłumaczenie przygotowano dla twojej wygody. Jeśli różni się od wersji angielskiej, obowiązuje wersja angielska.",
+    "translationLink": "Przeczytaj wersję angielską",
+    "depthLabel": "Wybierz poziom szczegółowości",
+    "depthSimple": "Prosto",
+    "depthDetailed": "Szczegółowo / technicznie",
+    "cta": {
+      "title": "Wypróbuj — zajmie ci to dziesięć sekund",
+      "intro": "Napisz coś tajnego, odbierz jednorazowy link i zobacz, jak sekret znika.",
+      "button": "Utwórz sekret"
+    }
+  },
+  "docs": {
+    "title": "Dokumentacja API",
+    "eyebrow": "Dokumentacja",
+    "description": "API shhnote, na którym działa ta strona: endpointy, błędy, limity i jak zbudować własnego klienta.",
+    "intro": "Wszystko, co robi ta strona, przechodzi przez poniższe API, a twoje skrypty i narzędzia mogą korzystać z niego w ten sam sposób. Wygenerowano z kodu źródłowego shhnote w wersji {ref}."
+  },
+  "theme": {
+    "label": "Motyw",
+    "light": "Jasny",
+    "dark": "Ciemny",
+    "light-hc": "Jasny, wysoki kontrast",
+    "dark-hc": "Ciemny, wysoki kontrast",
+    "system": "Systemowy"
+  },
+  "ui": {
+    "form-files-remove": "Usuń",
+    "result-copied": "Skopiowano",
+    "result-destroyed": "Zniszczono. Sekretu nie ma już na serwerze.",
+    "result-chip-single": "Jednorazowe wyświetlenie",
+    "result-chip-multi": "Dostępny do wygaśnięcia",
+    "result-chip-expires": "Wygasa za {period}",
+    "create-encrypting": "Szyfrowanie w przeglądarce…",
+    "create-uploading": "Wysyłanie…",
+    "create-error-empty": "Dodaj tekst lub co najmniej jeden plik.",
+    "create-error-too-large": "To więcej, niż przyjmuje ta strona. Usuń część plików lub skróć tekst.",
+    "create-error-network": "Nie udało się połączyć z serwerem. Sprawdź połączenie i spróbuj ponownie.",
+    "create-error-failed": "Podczas tworzenia sekretu coś poszło nie tak. Spróbuj ponownie.",
+    "create-error-wasm": "Hasła wymagają WebAssembly, które twoja przeglądarka lub jej poziom bezpieczeństwa wyłączyły. Zezwól na nie albo utwórz sekret bez hasła.",
+    "reveal-fetching": "Pobieranie zaszyfrowanego sekretu…",
+    "reveal-decrypting": "Odszyfrowywanie w przeglądarce…",
+    "reveal-wrong-passphrase": "To hasło nie pasuje. Spróbuj ponownie.",
+    "reveal-single-view": "Zniszczony · to było jedyne wyświetlenie",
+    "reveal-download": "Pobierz",
+    "reveal-error-network": "Nie udało się połączyć z serwerem. Spróbuj ponownie za chwilę.",
+    "reveal-error-corrupt": "Nie udało się odszyfrować tego sekretu. Link może być niekompletny.",
+    "reveal-error-wasm": "To hasło wymaga WebAssembly, które twoja przeglądarka lub jej poziom bezpieczeństwa wyłączyły (na przykład Tor Browser na poziomie „Bezpieczniejszy”). Zezwól na nie i spróbuj ponownie.",
+    "burn-working": "Niszczenie…",
+    "report-working": "Wysyłanie…",
+    "report-error-invalid": "To nie wygląda na link do sekretu z tej strony."
+  }
+}

@@ -1,0 +1,358 @@
+{
+  "site": {
+    "name": "shhnote",
+    "title": "shhnote – dela hemligheter med länkar som förstör sig själva",
+    "description": "Öppen källkod, totalsträckskryptering och nollkunskap för att dela hemligheter. Text och filer. Servern ser aldrig dina data."
+  },
+  "nav": {
+    "skip": "Hoppa till innehållet",
+    "home": "shhnote startsida",
+    "main": "Huvudmeny",
+    "how": "Så fungerar det",
+    "security": "Säkerhet",
+    "faq": "Vanliga frågor",
+    "docs": "Dokumentation",
+    "language": "Språk",
+    "api": "API",
+    "languageList": "Språk",
+    "languageSoon": "Kommer snart",
+    "poweredBy": "Drivs av shhnote"
+  },
+  "footer": {
+    "product": "Produkt",
+    "legal": "Juridik",
+    "openSource": "Öppen källkod",
+    "privacy": "Integritetspolicy",
+    "terms": "Användarvillkor",
+    "acceptableUse": "Godtagbar användning",
+    "about": "Om",
+    "contact": "Kontakt",
+    "github": "GitHub",
+    "issue": "Rapportera ett problem",
+    "selfHost": "Guide för egen drift",
+    "copyright": "© 2026 shhnote. Öppen källkod under AGPLv3.",
+    "poweredBy": "Drivs av",
+    "backend": "server",
+    "report": "Anmäl en länk",
+    "compare": "Jämför",
+    "useCases": "Användningsområden"
+  },
+  "home": {
+    "hero": {
+      "title": "Dela hemligheter säkert med länkar som förstör sig själva",
+      "intro": "Håll dina hemligheter privata och borta från loggar i chatt, e-post, Slack och Teams",
+      "noscript": "För att skapa en hemlighet behövs JavaScript: krypteringen sker i din webbläsare innan något skickas. Aktivera det för den här webbplatsen för att fortsätta."
+    },
+    "form": {
+      "noteLabel": "Din hemlighet",
+      "notePlaceholder": "Skriv ditt meddelande här...",
+      "filesLabel": "Filer att bifoga",
+      "filesDrop": "Släpp filer här",
+      "filesClick": "eller klicka för att bifoga",
+      "filesHint": "Krypteras i din webbläsare före uppladdning · upp till 25 MB, 25 filer",
+      "filesRemove": "Ta bort",
+      "expiryLabel": "Upphör om",
+      "expiry": {
+        "900": "15 minuter",
+        "1800": "30 minuter",
+        "3600": "1 timme",
+        "21600": "6 timmar",
+        "43200": "12 timmar",
+        "86400": "1 dag",
+        "259200": "3 dagar",
+        "604800": "7 dagar",
+        "1209600": "14 dagar"
+      },
+      "burnLabel": "Engångsvisning",
+      "burnHint": "Förstörs efter första visningen. Stäng av för att tillåta flera visningar tills den upphör.",
+      "passphraseLabel": "Lösenord/lösenfras",
+      "passphraseOptional": "(valfritt)",
+      "passphraseToggle": "Visa eller dölj lösenord",
+      "passphraseHint": "Lägg till ett lösenord för extra säkerhet.",
+      "disclaimer": "Genom att skapa eller öppna en hemlighet bekräftar du att du har läst och uttryckligen godkänner att följa våra",
+      "disclaimerLink": "användarvillkor",
+      "disclaimerEnd": ".",
+      "submit": "Kryptera hemligheten"
+    },
+    "chips": {
+      "e2e": "Totalsträckskrypterad",
+      "zeroKnowledge": "Nollkunskap",
+      "noLogs": "Inga loggar",
+      "openSource": "Öppen källkod"
+    },
+    "result": {
+      "eyebrow": "Länken är klar",
+      "title": "Skicka den och glöm den.",
+      "intro": "Kopiera länken och dela den hur du vill. För din säkerhet visar vi den inte igen – när du lämnar sidan är den borta härifrån.",
+      "shareLabel": "Engångslänk",
+      "copy": "Kopiera",
+      "copied": "Kopierad",
+      "chipsLabel": "Inställningar för hemligheten",
+      "chipLifetime": "Engångsvisning",
+      "chipExpiry": "Upphör om 1 dag",
+      "passphraseReminder": "Den här hemligheten har en lösenfras. Skicka den via en annan kanal än själva länken.",
+      "calloutTitle": "En länk, en läsning.",
+      "callout": "Den som har hela länken kan öppna hemligheten – en gång. Om du har angett en lösenfras ska du skicka den via en annan kanal än själva länken.",
+      "divider": "privata kontroller · behåll för dig själv",
+      "burnLabel": "Raderingslänk",
+      "burnAside": "– förstör den själv, när som helst",
+      "burnHint": "Spara den här någonstans privat. Om du öppnar den förstörs hemligheten direkt – innan någon annan hinner se den. När den väl är raderad kan inte ens vi återställa den.",
+      "open": "Öppna länken",
+      "destroy": "Förstör nu",
+      "another": "Skapa en ny hemlighet"
+    },
+    "how": {
+      "eyebrow": "Så fungerar det",
+      "title": "Tre steg. Inget konto behövs.",
+      "intro": "shhnote krypterar din hemlighet i webbläsaren innan något når nätverket. Krypteringsnyckeln ligger i URL-fragmentet – en del av adressen som webbläsare aldrig skickar till servrar.",
+      "steps": [
+        {
+          "title": "Kryptera",
+          "aside": "text/fil(er)",
+          "body": "Din hemlighet krypteras på din egen enhet innan något skickas. Nyckeln som låser upp den laddas aldrig upp."
+        },
+        {
+          "title": "Dela",
+          "aside": "länken",
+          "body": "Nyckeln ligger i den del av länken som kommer efter # – den behåller webbläsare lokalt och skickar aldrig till en server."
+        },
+        {
+          "title": "Hämta",
+          "aside": "och den är borta",
+          "body": "Mottagarens webbläsare låser upp den lokalt och servern förstör sin kopia. Inte ens vi kan återställa den."
+        }
+      ]
+    },
+    "hood": {
+      "eyebrow": "Under huven",
+      "title": "Kryptografin, steg för steg.",
+      "intro": "Inga vaga löften. Här är exakt vad som skyddar din hemlighet och var varje del körs – så att du kan kontrollera påståendena i stället för att ta dem på tro.",
+      "specs": [
+        {
+          "label": "Kryptering",
+          "value": "AES-256-GCM",
+          "body": "Autentiserad symmetrisk kryptering. Varje hemlighet förseglas med en 256-bitarsnyckel och en integritetstagg, så manipulation upptäcks – den blir inte bara oläslig."
+        },
+        {
+          "label": "Nyckelhärledning",
+          "value": "Argon2id",
+          "body": "Valfria lösenfraser sträcks med en minneskrävande KDF, vilket gör offline-attacker med råstyrka långsamma och dyra, även på specialbyggd hårdvara."
+        },
+        {
+          "label": "Slumptal",
+          "value": "WebCrypto CSPRNG",
+          "body": "Nycklar och nonce-värden hämtas från webbläsarens kryptografiskt säkra slumptalsgenerator. Aldrig Math.random(), aldrig förutsägbart."
+        },
+        {
+          "label": "Nyckelförvaring",
+          "value": "URL-fragment #",
+          "body": "Dekrypteringsnyckeln följer med efter # i din länk. Webbläsare skickar aldrig fragmentet, så nyckeln som låser upp hemligheten når aldrig våra servrar."
+        },
+        {
+          "label": "Under överföring",
+          "value": "TLS 1.3",
+          "body": "Bara chiffertext lämnar någonsin din enhet, och den överförs med modern TLS. Det vi tar emot är en ogenomskinlig klump data som vi inte har någon möjlighet att öppna."
+        },
+        {
+          "label": "I lagring",
+          "value": "Chiffertext + TTL",
+          "body": "Vi sparar en krypterad klump data och en tidpunkt då den upphör – inget annat. Ingen klartext, inga nycklar, inga metadata om avsändare eller mottagare."
+        }
+      ]
+    },
+    "useCases": {
+      "eyebrow": "Användningsområden",
+      "title": "Skapa en shhnote för vad som helst",
+      "intro": "Se hur människor använder shhnote i vardagen",
+      "items": [
+        {
+          "label": "DevOps och utveckling",
+          "title": "Inloggningsuppgifter och nycklar",
+          "body": "Sluta klistra in API-nycklar, databaslösenord och SSH-nycklar i chattrådar. Dela dem som engångslänkar som förstör sig själva efter användning. Integrera med CI/CD-pipelines via API:et."
+        },
+        {
+          "label": "Integritetsmedvetna användare",
+          "title": "Dela utan att lämna spår",
+          "body": "Fungerar fullt ut över Tor. Inga CAPTCHA, inget webbläsarfingeravtryck, inga externa anrop. Alla typsnitt och resurser ligger på vår egen server. Inga metadata läcker."
+        },
+        {
+          "label": "IT och introduktion",
+          "title": "Dela ut åtkomst säkert",
+          "body": "Skicka första inloggningsuppgifter, VPN-konfigurationer eller Wi-Fi-lösenord till nyanställda utan att lämna spår i e-posttrådar eller ärendesystem. Skapa flera unika länkar när många ska börja samtidigt."
+        },
+        {
+          "label": "Juridik och regelefterlevnad",
+          "title": "Känsliga handlingar",
+          "body": "Skicka en patientjournal, en akt eller ett kontoutdrag till en klient eller kollega utan att det blir liggande i en inkorg som kan omfattas av granskning, revision eller anmälningsplikt vid dataintrång."
+        },
+        {
+          "label": "Privat",
+          "title": "Vardagens hemligheter",
+          "body": "Skicka lösenord till skattedokument till din revisor. Dela inloggningen till streamingtjänsten med familjen. Ge en hantverkare koden till larmet. Skicka känsliga filer säkert. Så enkelt att alla kan använda det."
+        },
+        {
+          "label": "Övrigt",
+          "title": "Presentkoder och överraskningar",
+          "body": "Skicka en presentkortskod, en överraskning, en ledtråd till en skattjakt eller en avslöjande hälsning som försvinner när den har setts."
+        }
+      ]
+    },
+    "cta": {
+      "title": "Sluta dela känslig information i klartext",
+      "intro": "Skapa en krypterad engångslänk på några sekunder. Eller skapa en krypterad länk som kan öppnas flera gånger och upphör efter några timmar eller dagar. Lägg till extra skydd med ett lösenord. Inget konto behövs. Inga data samlas in.",
+      "button": "Skapa en engångshemlighet"
+    }
+  },
+  "secret": {
+    "title": "Någon har delat en hemlighet med dig",
+    "armed": {
+      "badge": "Inget hämtat än",
+      "title": "Någon har delat en hemlighet med dig",
+      "intro": "Den dekrypteras i din webbläsare. Om den skickades för en enda visning raderas den i samma stund som du öppnar den – så visa den först när du är redo att läsa och spara den.",
+      "noscript": "JavaScript behövs för att dekryptera hemligheten i din webbläsare. Aktivera det för att se hemligheten.",
+      "reveal": "Visa hemligheten",
+      "passphraseNote": "Om avsändaren har angett en lösenfras får du ange den efter att du har tryckt på knappen.",
+      "callout": "Inget har hämtats än – det här är allt en automatisk skanner ser. Vi låter visningen vara manuell med flit, så att e-postskydd, förhandsvisningar i chattar och antivirusprogram inte kan öppna din hemlighet före dig.",
+      "chipE2e": "Totalsträckskrypterad",
+      "chipNoAccount": "Inget konto behövs"
+    },
+    "working": {
+      "badge": "Arbetar",
+      "title": "Dekrypterar i din webbläsare…",
+      "intro": "Hämtar chiffertexten och låser upp den lokalt med nyckeln från din länk. Den lämnar aldrig den här fliken i läsbar form.",
+      "fetching": "Hämtar den krypterade hemligheten…",
+      "decrypting": "Dekrypterar i din webbläsare…"
+    },
+    "passphrase": {
+      "badge": "Låst",
+      "title": "Den här hemligheten kräver en lösenfras",
+      "intro": "Avsändaren har lagt till ett extra lås. Nya försök görs i din webbläsare; inget skickas till servern.",
+      "label": "Lösenfras",
+      "submit": "Lås upp",
+      "wrong": "Lösenfrasen fungerade inte. Försök igen."
+    },
+    "revealed": {
+      "singleView": "Förstörd · det här var den enda visningen",
+      "title": "Här är den. Spara det du behöver nu.",
+      "intro": "Hemligheten dekrypterades i din webbläsare. Om du laddar om sidan är den borta härifrån.",
+      "outputLabel": "hemlighet · dekrypterad lokalt",
+      "copy": "Kopiera",
+      "download": "Ladda ner",
+      "closeWarning": "Var rädd om den – när du stänger fliken går den inte att hämta igen, varken från dig eller från oss.",
+      "createOwn": "Skapa en egen hemlighet"
+    },
+    "notFound": {
+      "badge": "Ingen hemlighet hittades",
+      "title": "Det finns ingen hemlighet här.",
+      "intro": "Länken är ogiltig, eller så har hemligheten den pekade på redan visats, upphört eller förstörts. Av hänsyn till din integritet sparar den här webbplatsen inget om vilket – ingenting om en hemlighets historik lagras någonsin.",
+      "callout": "Om du fortfarande behöver hemligheten kan du be avsändaren skapa en ny länk – och kontrollera att du kopierade hela adressen, även delen efter #.",
+      "create": "Skapa en hemlighet",
+      "how": "Så fungerar shhnote"
+    },
+    "errors": {
+      "network": "Det gick inte att nå servern. Försök igen om en stund.",
+      "corrupt": "Hemligheten kunde inte dekrypteras. Länken kan vara ofullständig.",
+      "wasm": "Den här lösenfrasen kräver WebAssembly, som din webbläsare eller dess säkerhetsnivå har stängt av (till exempel Tor Browser på ”Säkrare”). Tillåt det och försök igen."
+    }
+  },
+  "burn": {
+    "title": "Förstör den här hemligheten",
+    "armed": {
+      "badge": "Redo · inget har hänt än",
+      "title": "Förstöra den här hemligheten?",
+      "intro": "Det här är en raderingslänk. Inget har hänt än. Om du bekräftar raderas den krypterade hemligheten och dess fil(er) för alltid – innan någon annan hinner öppna dem.",
+      "noscript": "Den här sidan behöver JavaScript för att fungera. Aktivera det.",
+      "confirm": "Förstör hemligheten",
+      "cancel": "Gå till startsidan",
+      "working": "Förstör…"
+    },
+    "done": {
+      "badge": "Raderad · hemligheten är förstörd",
+      "title": "Hemligheten har förstörts.",
+      "intro": "Du använde just raderingslänken. Den krypterade hemligheten och dess fil(er) har raderats för alltid från våra servrar – innan någon annan hann öppna dem.",
+      "callout": "Den som hädanefter öppnar den ursprungliga delningslänken får bara veta att ingen hemlighet hittades – utan att kunna se om den visades, upphörde eller raderades. Ingenting om den sparas.",
+      "create": "Skapa en ny hemlighet",
+      "how": "Så fungerar shhnote"
+    },
+    "notFound": {
+      "badge": "Inget att förstöra",
+      "title": "Det finns inget att förstöra.",
+      "intro": "Raderingslänken är ogiltig, eller så har hemligheten redan visats, upphört eller förstörts.",
+      "home": "Gå till startsidan"
+    }
+  },
+  "report": {
+    "title": "Anmäl en hemlig länk",
+    "armed": {
+      "badge": "Anmälan om missbruk",
+      "title": "Anmäl en hemlig länk",
+      "intro": "Klistra in en länk som du tror delar något den inte borde. Om hemligheten fortfarande är aktiv tas den bort direkt. Vi kan inte se vad den innehåller, så det finns inget att granska och inget att berätta för dig.",
+      "noscript": "Den här sidan behöver JavaScript för att fungera. Aktivera det.",
+      "label": "Hemlig länk",
+      "placeholder": "https://shhnote.com/s#…",
+      "help": "Hela länken, även delen efter #. Den används bara för att hitta hemligheten och sparas inte.",
+      "submit": "Ta bort hemligheten",
+      "working": "Skickar…",
+      "invalid": "Det där ser inte ut som en hemlig länk från den här webbplatsen."
+    },
+    "done": {
+      "badge": "Mottagen",
+      "title": "Tack, det är åtgärdat.",
+      "intro": "Om länken pekade på en aktiv hemlighet är den borta nu. Vi sparar att en anmälan har tagits emot, inget mer.",
+      "home": "Gå till startsidan"
+    }
+  },
+  "content": {
+    "updated": "Senast uppdaterad:",
+    "translationNote": "Det här är en översättning för din bekvämlighet. Om den skiljer sig från den engelska versionen gäller den engelska versionen.",
+    "translationLink": "Läs den engelska versionen",
+    "depthLabel": "Välj hur detaljerad förklaringen ska vara",
+    "depthSimple": "Enkel",
+    "depthDetailed": "Detaljerad/teknisk",
+    "cta": {
+      "title": "Prova – det tar tio sekunder",
+      "intro": "Skriv något hemligt, få din engångslänk och se den försvinna.",
+      "button": "Skapa en hemlighet"
+    }
+  },
+  "docs": {
+    "title": "API-dokumentation",
+    "eyebrow": "Dokumentation",
+    "description": "shhnote-API:et som den här webbplatsen bygger på: endpoints, fel, gränser och hur du bygger en egen klient.",
+    "intro": "Allt den här webbplatsen gör går via API:et nedan, och dina skript och verktyg kan använda det på samma sätt. Genererad från shhnotes källkod vid {ref}."
+  },
+  "theme": {
+    "label": "Tema",
+    "light": "Ljust",
+    "dark": "Mörkt",
+    "light-hc": "Ljust, hög kontrast",
+    "dark-hc": "Mörkt, hög kontrast",
+    "system": "System"
+  },
+  "ui": {
+    "form-files-remove": "Ta bort",
+    "result-copied": "Kopierad",
+    "result-destroyed": "Förstörd. Hemligheten är borta från servern.",
+    "result-chip-single": "Engångsvisning",
+    "result-chip-multi": "Öppen tills den upphör",
+    "result-chip-expires": "Upphör om {period}",
+    "create-encrypting": "Krypterar i din webbläsare…",
+    "create-uploading": "Laddar upp…",
+    "create-error-empty": "Lägg till text eller minst en fil.",
+    "create-error-too-large": "Det är mer än den här webbplatsen tar emot. Ta bort några filer eller korta ner texten.",
+    "create-error-network": "Det gick inte att nå servern. Kontrollera anslutningen och försök igen.",
+    "create-error-failed": "Något gick fel när hemligheten skulle skapas. Försök igen.",
+    "create-error-wasm": "Lösenfraser kräver WebAssembly, som din webbläsare eller dess säkerhetsnivå har stängt av. Tillåt det, eller skapa hemligheten utan lösenfras.",
+    "reveal-fetching": "Hämtar den krypterade hemligheten…",
+    "reveal-decrypting": "Dekrypterar i din webbläsare…",
+    "reveal-wrong-passphrase": "Lösenfrasen fungerade inte. Försök igen.",
+    "reveal-single-view": "Förstörd · det här var den enda visningen",
+    "reveal-download": "Ladda ner",
+    "reveal-error-network": "Det gick inte att nå servern. Försök igen om en stund.",
+    "reveal-error-corrupt": "Hemligheten kunde inte dekrypteras. Länken kan vara ofullständig.",
+    "reveal-error-wasm": "Den här lösenfrasen kräver WebAssembly, som din webbläsare eller dess säkerhetsnivå har stängt av (till exempel Tor Browser på ”Säkrare”). Tillåt det och försök igen.",
+    "burn-working": "Förstör…",
+    "report-working": "Skickar…",
+    "report-error-invalid": "Det där ser inte ut som en hemlig länk från den här webbplatsen."
+  }
+}

@@ -1,0 +1,358 @@
+{
+  "site": {
+    "name": "shhnote",
+    "title": "shhnote — trimite secrete prin linkuri care se autodistrug",
+    "description": "Partajare de secrete open source, criptată end-to-end, zero-knowledge. Text și fișiere. Serverul nu îți vede niciodată datele."
+  },
+  "nav": {
+    "skip": "Sari la conținut",
+    "home": "Pagina principală shhnote",
+    "main": "Principal",
+    "how": "Cum funcționează",
+    "security": "Securitate",
+    "faq": "Întrebări frecvente",
+    "docs": "Documentație",
+    "language": "Limbă",
+    "api": "API",
+    "languageList": "Limbi",
+    "languageSoon": "În curând",
+    "poweredBy": "Rulează pe shhnote"
+  },
+  "footer": {
+    "product": "Produs",
+    "legal": "Legal",
+    "openSource": "Open source",
+    "privacy": "Politica de confidențialitate",
+    "terms": "Termeni de utilizare",
+    "acceptableUse": "Utilizare acceptabilă",
+    "about": "Despre",
+    "contact": "Contact",
+    "github": "GitHub",
+    "issue": "Raportează o problemă",
+    "selfHost": "Ghid de găzduire proprie",
+    "copyright": "© 2026 shhnote. Open source sub licența AGPLv3.",
+    "poweredBy": "Rulează pe",
+    "backend": "server",
+    "report": "Raportează un link",
+    "compare": "Comparații",
+    "useCases": "Cazuri de utilizare"
+  },
+  "home": {
+    "hero": {
+      "title": "Trimite secrete în siguranță, prin linkuri care se autodistrug",
+      "intro": "Păstrează-ți secretele private, departe de istoricul din chat, e-mail, Slack și Teams",
+      "noscript": "Pentru a crea un secret ai nevoie de JavaScript: criptarea are loc în browserul tău, înainte să fie trimis ceva. Activează-l pentru acest site ca să continui."
+    },
+    "form": {
+      "noteLabel": "Secretul tău",
+      "notePlaceholder": "Scrie mesajul aici...",
+      "filesLabel": "Fișiere de atașat",
+      "filesDrop": "Trage fișierele aici",
+      "filesClick": "sau dă clic pentru a atașa",
+      "filesHint": "Criptate în browser înainte de încărcare · maximum 25 MB, 25 de fișiere",
+      "filesRemove": "Elimină",
+      "expiryLabel": "Expiră în",
+      "expiry": {
+        "900": "15 minute",
+        "1800": "30 de minute",
+        "3600": "1 oră",
+        "21600": "6 ore",
+        "43200": "12 ore",
+        "86400": "1 zi",
+        "259200": "3 zile",
+        "604800": "7 zile",
+        "1209600": "14 zile"
+      },
+      "burnLabel": "Vizualizare unică",
+      "burnHint": "Se distruge după prima vizualizare. Dezactivează opțiunea ca să permiți mai multe vizualizări până la expirare.",
+      "passphraseLabel": "Parolă/frază de acces",
+      "passphraseOptional": "(opțional)",
+      "passphraseToggle": "Afișează sau ascunde parola",
+      "passphraseHint": "Adaugă o parolă pentru un plus de securitate.",
+      "disclaimer": "Prin crearea sau accesarea unui secret, confirmi că ai citit și că accepți în mod explicit să respecți",
+      "disclaimerLink": "termenii de utilizare",
+      "disclaimerEnd": ".",
+      "submit": "Criptează secretul"
+    },
+    "chips": {
+      "e2e": "Criptare end-to-end",
+      "zeroKnowledge": "Zero-knowledge",
+      "noLogs": "Fără jurnale",
+      "openSource": "Open source"
+    },
+    "result": {
+      "eyebrow": "Linkul e gata",
+      "title": "Trimite-l, apoi uită de el.",
+      "intro": "Copiază linkul și trimite-l cum vrei. Pentru siguranța ta nu ți-l mai arătăm încă o dată — după ce pleci de pe această pagină, dispare de aici.",
+      "shareLabel": "Link de unică folosință",
+      "copy": "Copiază",
+      "copied": "Copiat",
+      "chipsLabel": "Setările secretului",
+      "chipLifetime": "Vizualizare unică",
+      "chipExpiry": "Expiră în 1 zi",
+      "passphraseReminder": "Acest secret are o frază de acces. Trimite-o pe alt canal decât linkul.",
+      "calloutTitle": "Un link, o singură citire.",
+      "callout": "Oricine are linkul complet poate deschide secretul — o singură dată. Dacă ai setat o frază de acces, trimite-o pe alt canal decât linkul.",
+      "divider": "controale private · păstrează-le pentru tine",
+      "burnLabel": "Link de distrugere",
+      "burnAside": "— distruge-l tu, oricând",
+      "burnHint": "Păstrează-l într-un loc privat. Deschiderea lui distruge imediat secretul — înainte ca altcineva să-l poată vedea. Odată distrus, nici măcar noi nu-l mai putem recupera.",
+      "open": "Deschide linkul",
+      "destroy": "Distruge acum",
+      "another": "Creează alt secret"
+    },
+    "how": {
+      "eyebrow": "Cum funcționează",
+      "title": "Trei pași. Fără cont.",
+      "intro": "shhnote îți criptează secretul în browser, înainte ca ceva să ajungă în rețea. Cheia de criptare stă în fragmentul URL — o parte a adresei pe care browserele nu o trimit niciodată serverelor.",
+      "steps": [
+        {
+          "title": "Criptezi",
+          "aside": "text/fișier(e)",
+          "body": "Secretul tău e criptat chiar pe dispozitivul tău, înainte să fie trimis ceva. Cheia care îl deblochează nu e încărcată niciodată."
+        },
+        {
+          "title": "Trimiți",
+          "aside": "linkul",
+          "body": "Cheia stă în partea linkului de după # — pe care browserele o păstrează local și nu o trimit niciodată unui server."
+        },
+        {
+          "title": "Deschizi",
+          "aside": "și a dispărut",
+          "body": "Browserul destinatarului îl deblochează local, iar serverul își distruge copia. Nici măcar noi nu-l mai putem recupera."
+        }
+      ]
+    },
+    "hood": {
+      "eyebrow": "Sub capotă",
+      "title": "Criptografia, pe față.",
+      "intro": "Fără vorbe goale. Iată exact ce îți protejează secretul și unde rulează fiecare piesă — ca să poți verifica afirmațiile, în loc să le crezi pe cuvânt.",
+      "specs": [
+        {
+          "label": "Criptare",
+          "value": "AES-256-GCM",
+          "body": "Criptare simetrică autentificată. Fiecare secret e sigilat cu o cheie de 256 de biți și o etichetă de integritate, așa că orice modificare e detectată — nu doar lăsată ilizibilă."
+        },
+        {
+          "label": "Derivarea cheii",
+          "value": "Argon2id",
+          "body": "Frazele de acces opționale sunt întărite cu un KDF memory-hard, care face atacurile offline prin forță brută lente și costisitoare chiar și pe hardware dedicat."
+        },
+        {
+          "label": "Aleatoriu",
+          "value": "WebCrypto CSPRNG",
+          "body": "Cheile și nonce-urile provin din generatorul criptografic sigur al browserului. Niciodată Math.random(), niciodată previzibile."
+        },
+        {
+          "label": "Păstrarea cheii",
+          "value": "Fragment URL #",
+          "body": "Cheia de decriptare stă după # în linkul tău. Browserele nu transmit niciodată fragmentul, așa că cheia care deblochează secretul nu ajunge niciodată pe serverele noastre."
+        },
+        {
+          "label": "În tranzit",
+          "value": "TLS 1.3",
+          "body": "De pe dispozitivul tău pleacă doar text cifrat, transportat prin TLS modern. Ce primim noi e un blob opac pe care nu avem cum să-l deschidem."
+        },
+        {
+          "label": "În repaus",
+          "value": "Text cifrat + TTL",
+          "body": "Păstrăm un blob criptat și momentul expirării — nimic altceva. Fără text în clar, fără chei, fără metadate despre expeditor sau destinatar."
+        }
+      ]
+    },
+    "useCases": {
+      "eyebrow": "Cazuri de utilizare",
+      "title": "Creează un shhnote pentru orice",
+      "intro": "Vezi cum folosesc oamenii shhnote în fiecare zi",
+      "items": [
+        {
+          "label": "DevOps și inginerie",
+          "title": "Credențiale și chei",
+          "body": "Nu mai lipi chei API, parole de baze de date și chei SSH în conversații. Trimite-le prin linkuri de unică folosință care se autodistrug după utilizare. Integrează-le în pipeline-urile CI/CD prin API."
+        },
+        {
+          "label": "Pentru cei atenți la confidențialitate",
+          "title": "Trimite fără să lași urme",
+          "body": "Funcționează prin Tor fără funcționalitate redusă. Fără CAPTCHA, fără amprentarea browserului, fără cereri externe. Toate fonturile și resursele sunt găzduite local. Zero scurgeri de metadate."
+        },
+        {
+          "label": "IT și onboarding",
+          "title": "Acordă acces în siguranță",
+          "body": "Trimite noilor colegi credențialele inițiale, configurațiile VPN sau parolele de Wi-Fi fără să lași urme în firele de e-mail sau în sistemele de tichete. Generează mai multe linkuri unice pentru onboarding în serie."
+        },
+        {
+          "label": "Juridic și reglementare",
+          "title": "Documente sensibile pentru conformitate",
+          "body": "Trimite unui client sau coleg o fișă medicală, un dosar sau o situație financiară fără ca acestea să rămână într-o căsuță de e-mail care poate face obiectul unei investigații, al unui audit sau al unei notificări de breșă."
+        },
+        {
+          "label": "Personal",
+          "title": "Secrete de zi cu zi",
+          "body": "Trimite-i contabilului parolele documentelor fiscale. Împarte cu familia datele de acces la streaming. Dă-i unui meseriaș codul alarmei. Trimite fișiere sensibile în siguranță. Destul de simplu pentru oricine."
+        },
+        {
+          "label": "Diverse",
+          "title": "Coduri cadou sau surprize",
+          "body": "Trimite un cod de card cadou, o surpriză, un indiciu pentru o vânătoare de comori sau o dezvăluire care dispare după ce a fost văzută."
+        }
+      ]
+    },
+    "cta": {
+      "title": "Nu mai trimite informații sensibile în text simplu",
+      "intro": "Creează în câteva secunde un link criptat de unică folosință. Sau un link criptat cu mai multe vizualizări, care expiră în câteva ore sau zile. Adaugă o parolă pentru protecție suplimentară. Fără cont. Fără colectare de date.",
+      "button": "Creează un secret de unică folosință"
+    }
+  },
+  "secret": {
+    "title": "Cineva ți-a trimis un secret",
+    "armed": {
+      "badge": "Nimic descărcat încă",
+      "title": "Cineva ți-a trimis un secret",
+      "intro": "Secretul se decriptează în browserul tău. Dacă a fost trimis cu vizualizare unică, se șterge în clipa în care îl deschizi — așa că afișează-l doar când ești gata să-l citești și să-l salvezi.",
+      "noscript": "Ai nevoie de JavaScript ca să decriptezi acest secret în browser. Activează-l ca să vezi secretul.",
+      "reveal": "Afișează secretul",
+      "passphraseNote": "Dacă expeditorul a setat o frază de acces, ți se va cere după ce apeși butonul.",
+      "callout": "Încă nu s-a descărcat nimic — asta e tot ce vede un scanner automat. Afișarea e manuală intenționat, ca filtrele de securitate pentru e-mail, previzualizările din chat și antivirusurile să nu-ți poată deschide secretul înaintea ta.",
+      "chipE2e": "Criptare end-to-end",
+      "chipNoAccount": "Fără cont"
+    },
+    "working": {
+      "badge": "Se lucrează",
+      "title": "Se decriptează în browserul tău…",
+      "intro": "Descărcăm textul cifrat și îl deblocăm local cu cheia din linkul tău. În formă lizibilă nu părăsește niciodată această filă.",
+      "fetching": "Se descarcă secretul criptat…",
+      "decrypting": "Se decriptează în browserul tău…"
+    },
+    "passphrase": {
+      "badge": "Blocat",
+      "title": "Acest secret are nevoie de o frază de acces",
+      "intro": "Expeditorul a adăugat un al doilea lacăt. Încercările au loc în browserul tău; nimic nu e trimis la server.",
+      "label": "Frază de acces",
+      "submit": "Deblochează",
+      "wrong": "Fraza de acces nu a funcționat. Încearcă din nou."
+    },
+    "revealed": {
+      "singleView": "Distrus · aceasta a fost singura vizualizare",
+      "title": "Iată-l. Salvează acum ce ai nevoie.",
+      "intro": "Acest secret a fost decriptat în browserul tău. Dacă reîncarci pagina, dispare de aici.",
+      "outputLabel": "secret · decriptat local",
+      "copy": "Copiază",
+      "download": "Descarcă",
+      "closeWarning": "Ai grijă cu el — după ce închizi această filă nu mai există nicio cale de a-l recupera, nici de la tine, nici de la noi.",
+      "createOwn": "Creează-ți propriul secret"
+    },
+    "notFound": {
+      "badge": "Niciun secret găsit",
+      "title": "Aici nu există niciun secret.",
+      "intro": "Linkul nu este valid sau secretul la care trimitea a fost deja vizualizat, a expirat ori a fost distrus. Pentru confidențialitatea ta, acest site nu ține evidența motivului — nu se stochează nimic despre istoricul unui secret.",
+      "callout": "Dacă mai ai nevoie de secret, roagă expeditorul să creeze un link nou — și verifică dacă ai copiat adresa întreagă, inclusiv partea de după #.",
+      "create": "Creează un secret",
+      "how": "Cum funcționează shhnote"
+    },
+    "errors": {
+      "network": "Serverul nu a putut fi contactat. Încearcă din nou peste câteva momente.",
+      "corrupt": "Acest secret nu a putut fi decriptat. Este posibil ca linkul să fie incomplet.",
+      "wasm": "Această frază de acces necesită WebAssembly, pe care browserul tău sau nivelul lui de securitate l-a dezactivat (de exemplu, Tor Browser la nivelul „Mai sigur”). Permite-l și încearcă din nou."
+    }
+  },
+  "burn": {
+    "title": "Distruge acest secret",
+    "armed": {
+      "badge": "Pregătit · nu s-a întâmplat încă nimic",
+      "title": "Distrugi acest secret?",
+      "intro": "Acesta este un link de distrugere. Nu s-a întâmplat încă nimic. Dacă confirmi, secretul criptat și fișierele lui sunt șterse definitiv — înainte ca altcineva să le poată deschide.",
+      "noscript": "Această pagină are nevoie de JavaScript ca să funcționeze. Te rugăm să-l activezi.",
+      "confirm": "Distruge secretul",
+      "cancel": "Mergi la pagina principală",
+      "working": "Se distruge…"
+    },
+    "done": {
+      "badge": "Distrus · secretul nu mai există",
+      "title": "Acest secret a fost distrus.",
+      "intro": "Tocmai ai folosit linkul de distrugere. Secretul criptat și fișierele lui au fost șterse definitiv de pe serverele noastre — înainte ca altcineva să le poată deschide.",
+      "callout": "Oricine deschide de acum încolo linkul de partajare original va afla doar că nu a fost găsit niciun secret — fără să poată ști dacă a fost vizualizat, a expirat sau a fost distrus. Nu se păstrează nimic despre el.",
+      "create": "Creează un secret nou",
+      "how": "Cum funcționează shhnote"
+    },
+    "notFound": {
+      "badge": "Nimic de distrus",
+      "title": "Nu e nimic de distrus.",
+      "intro": "Acest link de distrugere nu este valid sau secretul a fost deja vizualizat, a expirat ori a fost distrus.",
+      "home": "Mergi la pagina principală"
+    }
+  },
+  "report": {
+    "title": "Raportează un link secret",
+    "armed": {
+      "badge": "Raportare abuz",
+      "title": "Raportează un link secret",
+      "intro": "Lipește un link despre care crezi că partajează ceva ce nu ar trebui. Dacă secretul este încă activ, e eliminat imediat. Nu putem vedea ce conține, așa că nu avem ce verifica și nici ce să-ți comunicăm.",
+      "noscript": "Această pagină are nevoie de JavaScript ca să funcționeze. Te rugăm să-l activezi.",
+      "label": "Link secret",
+      "placeholder": "https://shhnote.com/s#…",
+      "help": "Linkul complet, inclusiv partea de după #. Este folosit doar pentru a găsi secretul și nu este stocat.",
+      "submit": "Elimină acest secret",
+      "working": "Se trimite…",
+      "invalid": "Acesta nu pare a fi un link secret de pe acest site."
+    },
+    "done": {
+      "badge": "Primit",
+      "title": "Mulțumim, ne-am ocupat.",
+      "intro": "Dacă linkul trimitea la un secret activ, acesta a dispărut acum. Păstrăm doar evidența faptului că am primit o raportare, nimic mai mult.",
+      "home": "Mergi la pagina principală"
+    }
+  },
+  "content": {
+    "updated": "Ultima actualizare:",
+    "translationNote": "Aceasta este o traducere oferită pentru comoditate. Dacă diferă de versiunea în limba engleză, se aplică versiunea în limba engleză.",
+    "translationLink": "Citește versiunea în limba engleză",
+    "depthLabel": "Alege nivelul de detaliu",
+    "depthSimple": "Simplu",
+    "depthDetailed": "Detaliat / tehnic",
+    "cta": {
+      "title": "Încearcă — durează zece secunde",
+      "intro": "Scrie ceva secret, primește linkul de unică folosință și vezi-l cum dispare.",
+      "button": "Creează un secret"
+    }
+  },
+  "docs": {
+    "title": "Documentația API",
+    "eyebrow": "Documentație",
+    "description": "API-ul shhnote pe care rulează acest site: endpointuri, erori, limite și cum îți construiești propriul client.",
+    "intro": "Tot ce face acest site trece prin API-ul de mai jos, iar scripturile și instrumentele tale îl pot folosi la fel. Generată din sursa shhnote la {ref}."
+  },
+  "theme": {
+    "label": "Temă",
+    "light": "Luminoasă",
+    "dark": "Întunecată",
+    "light-hc": "Luminoasă, contrast ridicat",
+    "dark-hc": "Întunecată, contrast ridicat",
+    "system": "Sistem"
+  },
+  "ui": {
+    "form-files-remove": "Elimină",
+    "result-copied": "Copiat",
+    "result-destroyed": "Distrus. Secretul nu mai există pe server.",
+    "result-chip-single": "Vizualizare unică",
+    "result-chip-multi": "Deschis până la expirare",
+    "result-chip-expires": "Expiră în {period}",
+    "create-encrypting": "Se criptează în browserul tău…",
+    "create-uploading": "Se încarcă…",
+    "create-error-empty": "Adaugă un text sau cel puțin un fișier.",
+    "create-error-too-large": "Depășește limita acceptată de acest site. Elimină câteva fișiere sau scurtează textul.",
+    "create-error-network": "Serverul nu a putut fi contactat. Verifică-ți conexiunea și încearcă din nou.",
+    "create-error-failed": "Ceva nu a mers bine la crearea secretului. Te rugăm să încerci din nou.",
+    "create-error-wasm": "Frazele de acces necesită WebAssembly, pe care browserul tău sau nivelul lui de securitate l-a dezactivat. Permite-l sau creează secretul fără frază de acces.",
+    "reveal-fetching": "Se descarcă secretul criptat…",
+    "reveal-decrypting": "Se decriptează în browserul tău…",
+    "reveal-wrong-passphrase": "Fraza de acces nu a funcționat. Încearcă din nou.",
+    "reveal-single-view": "Distrus · aceasta a fost singura vizualizare",
+    "reveal-download": "Descarcă",
+    "reveal-error-network": "Serverul nu a putut fi contactat. Încearcă din nou peste câteva momente.",
+    "reveal-error-corrupt": "Acest secret nu a putut fi decriptat. Este posibil ca linkul să fie incomplet.",
+    "reveal-error-wasm": "Această frază de acces necesită WebAssembly, pe care browserul tău sau nivelul lui de securitate l-a dezactivat (de exemplu, Tor Browser la nivelul „Mai sigur”). Permite-l și încearcă din nou.",
+    "burn-working": "Se distruge…",
+    "report-working": "Se trimite…",
+    "report-error-invalid": "Acesta nu pare a fi un link secret de pe acest site."
+  }
+}

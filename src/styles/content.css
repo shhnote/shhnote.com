@@ -16,6 +16,16 @@
   color: var(--color-text-faint);
   opacity: 1;
 }
+#content .page--content .section--hero-content .translation-note {
+  margin-block-start: 0.75rem;
+  font-size: var(--font-size-14);
+  color: var(--color-text-muted);
+}
+#content .page--content .section--hero-content .translation-note a {
+  color: var(--color-accent);
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
 #content .page--content .section--body {
   padding-block-start: 4rem;
 }
@@ -348,4 +358,28 @@
 }
 .prose .prose-note a {
   color: var(--color-accent-text);
+}
+
+/* Tables in prose (the comparison pages). Wide tables scroll inside themselves. */
+.prose table {
+  display: block;
+  max-width: 100%;
+  overflow-x: auto;
+  border-collapse: collapse;
+  font-size: var(--font-size-14);
+}
+.prose th,
+.prose td {
+  padding: 0.6rem 0.75rem;
+  border-block-end: 1px solid var(--color-border);
+  text-align: start;
+  vertical-align: top;
+}
+.prose th {
+  color: var(--color-text);
+  font-weight: 600;
+}
+.prose td:first-child {
+  color: var(--color-text-muted);
+  white-space: nowrap;
 }

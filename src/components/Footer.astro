@@ -1,6 +1,6 @@
 ---
 import pkg from '../../package.json';
-import type { Locale } from '../lib/i18n';
+import { defaultLocale, type Locale } from '../lib/i18n';
 import { getStrings } from '../lib/strings';
 import { site } from '../lib/site';
 import LocaleMenu from './LocaleMenu.astro';
@@ -8,11 +8,18 @@ import ThemeMenu from './ThemeMenu.astro';
 
 interface Props {
   locale: Locale;
+  /** The locales the current page is built in, for the language switcher. */
+  locales: readonly Locale[];
 }
 
-const { locale } = Astro.props;
+const { locale, locales } = Astro.props;
 const t = getStrings(locale);
 const base = `/${locale}/`;
+// The API documentation is built in English only.
+const docs = `/${defaultLocale}/docs/`;
+const docsLang = locale === defaultLocale ? undefined : defaultLocale;
+// The comparison and use-case pages exist in English only so far.
+const en = `/${defaultLocale}/`;
 const repo = site.repo;
 ---
 
@@ -23,7 +30,7 @@ const repo = site.repo;
         <a href={base} class="logo__text" aria-label={t.nav.home}><span class="color-accent">shh</span>note</a>
         <p>{t.site.description}</p>
         <div class="footer-controls">
-          <LocaleMenu locale={locale} icon="globe" />
+          <LocaleMenu locale={locale} locales={locales} icon="globe" />
           <ThemeMenu locale={locale} />
         </div>
       </div>
@@ -33,7 +40,9 @@ const repo = site.repo;
           <li><a href={`${base}how-it-works/`}>{t.nav.how}</a></li>
           <li><a href={`${base}security/`}>{t.nav.security}</a></li>
           <li><a href={`${base}faq/`}>{t.nav.faq}</a></li>
-          <li><a href={`${base}docs/`}>{t.nav.api}</a></li>
+          <li><a href={docs} hreflang={docsLang}>{t.nav.api}</a></li>
+          <li><a href={`${en}use-cases/`} hreflang={docsLang}>{t.footer.useCases}</a></li>
+          <li><a href={`${en}compare/`} hreflang={docsLang}>{t.footer.compare}</a></li>
         </ul>
       </div>
       <div class="footer-col">

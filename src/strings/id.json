@@ -1,0 +1,358 @@
+{
+  "site": {
+    "name": "shhnote",
+    "title": "shhnote — bagikan rahasia dengan tautan yang menghancurkan diri",
+    "description": "Berbagi rahasia sumber terbuka, terenkripsi ujung ke ujung, tanpa pengetahuan (zero-knowledge). Teks dan file. Server tidak pernah melihat data Anda."
+  },
+  "nav": {
+    "skip": "Lewati ke konten",
+    "home": "Beranda shhnote",
+    "main": "Utama",
+    "how": "Cara kerja",
+    "security": "Keamanan",
+    "faq": "FAQ",
+    "docs": "Dokumentasi",
+    "language": "Bahasa",
+    "api": "API",
+    "languageList": "Bahasa",
+    "languageSoon": "Segera hadir",
+    "poweredBy": "Didukung oleh shhnote"
+  },
+  "footer": {
+    "product": "Produk",
+    "legal": "Hukum",
+    "openSource": "Sumber terbuka",
+    "privacy": "Kebijakan privasi",
+    "terms": "Ketentuan layanan",
+    "acceptableUse": "Penggunaan yang dapat diterima",
+    "about": "Tentang",
+    "contact": "Kontak",
+    "github": "GitHub",
+    "issue": "Laporkan masalah",
+    "selfHost": "Panduan hosting mandiri",
+    "copyright": "© 2026 shhnote. Sumber terbuka di bawah AGPLv3.",
+    "poweredBy": "Didukung oleh",
+    "backend": "server",
+    "report": "Laporkan tautan",
+    "compare": "Bandingkan",
+    "useCases": "Contoh penggunaan"
+  },
+  "home": {
+    "hero": {
+      "title": "Bagikan rahasia dengan aman lewat tautan yang menghancurkan diri",
+      "intro": "Jaga rahasia Anda tetap pribadi dan jauh dari riwayat chat, email, Slack, dan Teams",
+      "noscript": "Membuat rahasia memerlukan JavaScript: enkripsi berlangsung di browser Anda, sebelum apa pun dikirim. Aktifkan JavaScript untuk situs ini agar dapat melanjutkan."
+    },
+    "form": {
+      "noteLabel": "Rahasia Anda",
+      "notePlaceholder": "Tulis pesan di sini...",
+      "filesLabel": "File untuk dilampirkan",
+      "filesDrop": "Letakkan file di sini",
+      "filesClick": "atau klik untuk melampirkan",
+      "filesHint": "Dienkripsi di browser Anda sebelum diunggah · hingga 25 MB, 25 file",
+      "filesRemove": "Hapus",
+      "expiryLabel": "Kedaluwarsa dalam",
+      "expiry": {
+        "900": "15 menit",
+        "1800": "30 menit",
+        "3600": "1 jam",
+        "21600": "6 jam",
+        "43200": "12 jam",
+        "86400": "1 hari",
+        "259200": "3 hari",
+        "604800": "7 hari",
+        "1209600": "14 hari"
+      },
+      "burnLabel": "Sekali lihat",
+      "burnHint": "Dimusnahkan setelah dilihat pertama kali. Matikan untuk mengizinkan dilihat berulang kali sampai kedaluwarsa.",
+      "passphraseLabel": "Kata sandi/frasa sandi",
+      "passphraseOptional": "(opsional)",
+      "passphraseToggle": "Tampilkan atau sembunyikan kata sandi",
+      "passphraseHint": "Tambahkan kata sandi untuk keamanan ekstra.",
+      "disclaimer": "Dengan membuat atau mengakses rahasia, Anda menyatakan telah membaca dan secara tegas setuju untuk mematuhi",
+      "disclaimerLink": "ketentuan layanan",
+      "disclaimerEnd": " kami.",
+      "submit": "Enkripsi rahasia"
+    },
+    "chips": {
+      "e2e": "Terenkripsi ujung ke ujung",
+      "zeroKnowledge": "Zero-knowledge",
+      "noLogs": "Tanpa log",
+      "openSource": "Sumber terbuka"
+    },
+    "result": {
+      "eyebrow": "Tautan siap",
+      "title": "Kirim, lalu lupakan.",
+      "intro": "Salin tautannya dan bagikan dengan cara apa pun yang Anda suka. Demi keamanan Anda, tautan ini tidak akan ditampilkan lagi — begitu Anda meninggalkan halaman ini, tautan itu hilang dari sini.",
+      "shareLabel": "Tautan sekali pakai",
+      "copy": "Salin",
+      "copied": "Tersalin",
+      "chipsLabel": "Pengaturan rahasia",
+      "chipLifetime": "Sekali lihat",
+      "chipExpiry": "Kedaluwarsa dalam 1 hari",
+      "passphraseReminder": "Rahasia ini memiliki frasa sandi. Kirimkan frasa sandi lewat saluran yang berbeda dari tautannya.",
+      "calloutTitle": "Satu tautan, sekali baca.",
+      "callout": "Siapa pun yang memegang tautan lengkapnya dapat membuka rahasia ini — satu kali. Jika Anda memasang frasa sandi, kirimkan lewat saluran yang berbeda dari tautannya.",
+      "divider": "kontrol pribadi · simpan untuk diri sendiri",
+      "burnLabel": "Tautan pemusnah",
+      "burnAside": "— musnahkan sendiri, kapan saja",
+      "burnHint": "Simpan ini di tempat yang aman. Membukanya akan langsung memusnahkan rahasia — sebelum orang lain sempat melihatnya. Setelah dimusnahkan, bahkan kami pun tidak bisa memulihkannya.",
+      "open": "Buka tautan",
+      "destroy": "Musnahkan sekarang",
+      "another": "Buat rahasia lain"
+    },
+    "how": {
+      "eyebrow": "Cara kerja",
+      "title": "Tiga langkah. Tanpa perlu akun.",
+      "intro": "shhnote mengenkripsi rahasia Anda di browser sebelum apa pun menyentuh jaringan. Kunci enkripsinya berada di fragmen URL — bagian URL yang tidak pernah dikirim browser ke server.",
+      "steps": [
+        {
+          "title": "Enkripsi",
+          "aside": "teks/file",
+          "body": "Rahasia Anda dienkripsi di perangkat Anda sendiri sebelum apa pun dikirim. Kunci untuk membukanya tidak pernah diunggah."
+        },
+        {
+          "title": "Bagikan",
+          "aside": "tautannya",
+          "body": "Kunci itu berada di bagian tautan setelah tanda # — bagian yang disimpan browser secara lokal dan tidak pernah dikirim ke server."
+        },
+        {
+          "title": "Buka",
+          "aside": "lalu hilang",
+          "body": "Browser penerima membukanya secara lokal dan server memusnahkan salinannya. Bahkan kami pun tidak bisa memulihkannya."
+        }
+      ]
+    },
+    "hood": {
+      "eyebrow": "Di balik layar",
+      "title": "Kriptografinya, dijelaskan apa adanya.",
+      "intro": "Tanpa basa-basi. Inilah persisnya yang melindungi rahasia Anda, dan di mana setiap bagiannya berjalan — jadi Anda bisa memeriksa klaimnya alih-alih sekadar percaya.",
+      "specs": [
+        {
+          "label": "Enkripsi",
+          "value": "AES-256-GCM",
+          "body": "Enkripsi simetris terautentikasi. Setiap rahasia disegel dengan kunci 256-bit dan tag integritas, sehingga perubahan apa pun terdeteksi — bukan sekadar menjadi tak terbaca."
+        },
+        {
+          "label": "Derivasi kunci",
+          "value": "Argon2id",
+          "body": "Frasa sandi opsional diperkuat dengan KDF yang boros memori, sehingga serangan brute-force offline menjadi lambat dan mahal, bahkan dengan perangkat keras khusus."
+        },
+        {
+          "label": "Keacakan",
+          "value": "WebCrypto CSPRNG",
+          "body": "Kunci dan nonce diambil dari generator acak browser yang aman secara kriptografis. Tidak pernah Math.random(), tidak pernah bisa ditebak."
+        },
+        {
+          "label": "Penyimpanan kunci",
+          "value": "Fragmen URL #",
+          "body": "Kunci dekripsi ikut di belakang tanda # pada tautan Anda. Browser tidak pernah mengirimkan fragmen, jadi kunci yang membuka rahasia tidak pernah sampai ke server kami."
+        },
+        {
+          "label": "Saat transit",
+          "value": "TLS 1.3",
+          "body": "Hanya ciphertext yang pernah meninggalkan perangkat Anda, dikirim lewat TLS modern. Yang kami terima hanyalah gumpalan data buram yang tidak bisa kami buka."
+        },
+        {
+          "label": "Saat disimpan",
+          "value": "Ciphertext + TTL",
+          "body": "Kami hanya menyimpan gumpalan data terenkripsi dan stempel waktu kedaluwarsa — tidak lebih. Tanpa plaintext, tanpa kunci, tanpa metadata pengirim atau penerima."
+        }
+      ]
+    },
+    "useCases": {
+      "eyebrow": "Contoh penggunaan",
+      "title": "Buat shhnote untuk apa saja",
+      "intro": "Lihat bagaimana orang menggunakan shhnote setiap hari",
+      "items": [
+        {
+          "label": "DevOps & Engineering",
+          "title": "Kredensial & kunci",
+          "body": "Berhenti menempelkan API key, kata sandi database, dan kunci SSH ke utas chat. Bagikan sebagai tautan sekali pakai yang menghancurkan diri setelah digunakan. Integrasikan dengan pipeline CI/CD lewat API."
+        },
+        {
+          "label": "Pengguna yang peduli privasi",
+          "title": "Berbagi tanpa jejak",
+          "body": "Berfungsi lewat Tor tanpa fitur yang berkurang. Tanpa CAPTCHA, tanpa sidik jari browser, tanpa permintaan eksternal. Setiap font dan aset di-host sendiri. Nol kebocoran metadata."
+        },
+        {
+          "label": "TI & Onboarding",
+          "title": "Berikan akses dengan aman",
+          "body": "Kirim kredensial awal, konfigurasi VPN, atau kata sandi Wi-Fi kepada karyawan baru tanpa meninggalkan jejak di utas email atau sistem tiket. Buat banyak tautan unik sekaligus untuk onboarding massal."
+        },
+        {
+          "label": "Hukum & Regulasi",
+          "title": "Dokumen yang sensitif terhadap kepatuhan",
+          "body": "Kirim rekam medis pasien, berkas perkara, atau laporan keuangan kepada klien atau kolega tanpa dokumen itu mengendap di kotak masuk yang bisa terkena e-discovery, audit, atau kewajiban pengungkapan kebocoran data."
+        },
+        {
+          "label": "Pribadi",
+          "title": "Rahasia sehari-hari",
+          "body": "Kirim kata sandi dokumen pajak ke akuntan Anda. Bagikan akun streaming dengan keluarga. Berikan kode alarm rumah kepada kontraktor. Kirim file sensitif dengan aman. Cukup mudah untuk siapa saja."
+        },
+        {
+          "label": "Lain-lain",
+          "title": "Kode hadiah atau kejutan",
+          "body": "Kirim kode kartu hadiah, kejutan, petunjuk perburuan harta karun, atau pengumuman yang lenyap setelah dilihat."
+        }
+      ]
+    },
+    "cta": {
+      "title": "Berhenti berbagi info sensitif dalam bentuk teks biasa",
+      "intro": "Buat tautan terenkripsi sekali pakai dalam hitungan detik. Atau buat tautan terenkripsi yang bisa dilihat berkali-kali dan kedaluwarsa dalam beberapa jam atau hari. Tambahkan perlindungan ekstra dengan kata sandi. Tanpa akun. Tanpa pengumpulan data.",
+      "button": "Buat rahasia sekali lihat"
+    }
+  },
+  "secret": {
+    "title": "Seseorang membagikan rahasia kepada Anda",
+    "armed": {
+      "badge": "Belum ada yang diambil",
+      "title": "Seseorang membagikan rahasia kepada Anda",
+      "intro": "Rahasia ini didekripsi di browser Anda. Jika dikirim sebagai sekali lihat, rahasia ini dihapus begitu Anda membukanya — jadi tampilkan hanya saat Anda siap membaca dan menyimpannya.",
+      "noscript": "JavaScript diperlukan untuk mendekripsi rahasia ini di browser Anda. Aktifkan JavaScript untuk melihat rahasianya.",
+      "reveal": "Tampilkan rahasia",
+      "passphraseNote": "Jika pengirim memasang frasa sandi, Anda akan dimintai frasa sandi itu setelah menekan tombol.",
+      "callout": "Belum ada yang diambil — hanya inilah yang dilihat pemindai otomatis. Kami sengaja membuat penampilan rahasia ini manual, agar keamanan email, pratinjau chat, dan antivirus tidak bisa membuka rahasia Anda lebih dulu.",
+      "chipE2e": "Terenkripsi ujung ke ujung",
+      "chipNoAccount": "Tanpa perlu akun"
+    },
+    "working": {
+      "badge": "Memproses",
+      "title": "Mendekripsi di browser Anda…",
+      "intro": "Mengambil ciphertext dan membukanya secara lokal dengan kunci dari tautan Anda. Isinya tidak pernah meninggalkan tab ini dalam bentuk yang bisa dibaca.",
+      "fetching": "Mengambil rahasia terenkripsi…",
+      "decrypting": "Mendekripsi di browser Anda…"
+    },
+    "passphrase": {
+      "badge": "Terkunci",
+      "title": "Rahasia ini memerlukan frasa sandi",
+      "intro": "Pengirim menambahkan kunci kedua. Percobaan ulang berlangsung di browser Anda; tidak ada yang dikirim ke server.",
+      "label": "Frasa sandi",
+      "submit": "Buka kunci",
+      "wrong": "Frasa sandi itu tidak cocok. Coba lagi."
+    },
+    "revealed": {
+      "singleView": "Dimusnahkan · ini satu-satunya kesempatan melihat",
+      "title": "Ini dia. Simpan yang Anda perlukan sekarang.",
+      "intro": "Rahasia ini didekripsi di browser Anda. Muat ulang halaman ini dan rahasianya hilang dari sini.",
+      "outputLabel": "rahasia · didekripsi secara lokal",
+      "copy": "Salin",
+      "download": "Unduh",
+      "closeWarning": "Tangani dengan hati-hati — begitu Anda menutup tab ini, tidak ada cara untuk mengambilnya lagi, baik dari Anda maupun dari kami.",
+      "createOwn": "Buat rahasia Anda sendiri"
+    },
+    "notFound": {
+      "badge": "Rahasia tidak ditemukan",
+      "title": "Tidak ada rahasia di sini.",
+      "intro": "Tautan ini tidak valid, atau rahasia yang ditujunya sudah dilihat, sudah kedaluwarsa, atau sudah dimusnahkan. Demi privasi Anda, situs ini tidak menyimpan catatan mana yang terjadi — riwayat sebuah rahasia tidak pernah disimpan.",
+      "callout": "Jika Anda masih memerlukan rahasianya, minta pengirim membuat tautan baru — dan pastikan Anda menyalin seluruh URL, termasuk bagian setelah tanda #.",
+      "create": "Buat rahasia",
+      "how": "Cara kerja shhnote"
+    },
+    "errors": {
+      "network": "Tidak dapat terhubung ke server. Coba lagi sebentar lagi.",
+      "corrupt": "Rahasia ini tidak dapat didekripsi. Tautannya mungkin tidak lengkap.",
+      "wasm": "Frasa sandi ini memerlukan WebAssembly, yang dimatikan oleh browser Anda atau tingkat keamanannya (misalnya Tor Browser pada tingkat \"Safer\"). Izinkan WebAssembly, lalu coba lagi."
+    }
+  },
+  "burn": {
+    "title": "Musnahkan rahasia ini",
+    "armed": {
+      "badge": "Siap · belum terjadi apa-apa",
+      "title": "Musnahkan rahasia ini?",
+      "intro": "Ini adalah tautan pemusnah. Belum terjadi apa-apa. Jika Anda mengonfirmasi, rahasia terenkripsi beserta filenya akan dihapus permanen — sebelum orang lain sempat membukanya.",
+      "noscript": "Halaman ini memerlukan JavaScript agar dapat berfungsi. Aktifkan JavaScript.",
+      "confirm": "Musnahkan rahasia",
+      "cancel": "Ke beranda",
+      "working": "Memusnahkan…"
+    },
+    "done": {
+      "badge": "Dimusnahkan · rahasia sudah hilang",
+      "title": "Rahasia ini telah dimusnahkan.",
+      "intro": "Anda baru saja menggunakan tautan pemusnah. Rahasia terenkripsi beserta filenya telah dihapus permanen dari server kami — sebelum orang lain sempat membukanya.",
+      "callout": "Siapa pun yang membuka tautan berbagi aslinya mulai sekarang hanya akan diberi tahu bahwa rahasia tidak ditemukan — tanpa bisa mengetahui apakah rahasia itu sudah dilihat, kedaluwarsa, atau dimusnahkan. Tidak ada yang disimpan tentangnya.",
+      "create": "Buat rahasia baru",
+      "how": "Cara kerja shhnote"
+    },
+    "notFound": {
+      "badge": "Tidak ada yang bisa dimusnahkan",
+      "title": "Tidak ada yang bisa dimusnahkan.",
+      "intro": "Tautan pemusnah ini tidak valid, atau rahasianya sudah dilihat, sudah kedaluwarsa, atau sudah dimusnahkan.",
+      "home": "Ke beranda"
+    }
+  },
+  "report": {
+    "title": "Laporkan tautan rahasia",
+    "armed": {
+      "badge": "Laporan penyalahgunaan",
+      "title": "Laporkan tautan rahasia",
+      "intro": "Tempelkan tautan yang menurut Anda membagikan sesuatu yang tidak semestinya. Jika rahasianya masih aktif, rahasia itu langsung dihapus. Kami tidak bisa melihat isinya, jadi tidak ada yang perlu ditinjau dan tidak ada yang bisa kami sampaikan kepada Anda.",
+      "noscript": "Halaman ini memerlukan JavaScript agar dapat berfungsi. Aktifkan JavaScript.",
+      "label": "Tautan rahasia",
+      "placeholder": "https://shhnote.com/s#…",
+      "help": "Tautan lengkap termasuk bagian setelah tanda #. Tautan ini hanya dipakai untuk menemukan rahasianya dan tidak disimpan.",
+      "submit": "Hapus rahasia ini",
+      "working": "Mengirim…",
+      "invalid": "Itu sepertinya bukan tautan rahasia dari situs ini."
+    },
+    "done": {
+      "badge": "Diterima",
+      "title": "Terima kasih, sudah ditangani.",
+      "intro": "Jika tautan itu mengarah ke rahasia yang masih aktif, rahasia itu sekarang sudah hilang. Kami hanya mencatat bahwa sebuah laporan telah diterima, tidak lebih.",
+      "home": "Ke beranda"
+    }
+  },
+  "content": {
+    "updated": "Terakhir diperbarui:",
+    "translationNote": "Ini adalah terjemahan untuk kemudahan Anda. Jika ada perbedaan dengan versi bahasa Inggris, yang berlaku adalah versi bahasa Inggris.",
+    "translationLink": "Baca versi bahasa Inggris",
+    "depthLabel": "Pilih tingkat penjelasan",
+    "depthSimple": "Sederhana",
+    "depthDetailed": "Rinci / teknis",
+    "cta": {
+      "title": "Coba sekarang — hanya sepuluh detik",
+      "intro": "Tulis sesuatu yang rahasia, dapatkan tautan sekali pakai Anda, dan lihat rahasia itu lenyap.",
+      "button": "Buat rahasia"
+    }
+  },
+  "docs": {
+    "title": "Dokumentasi API",
+    "eyebrow": "Dokumentasi",
+    "description": "API shhnote yang menjalankan situs ini: endpoint, error, batasan, dan cara membuat klien Anda sendiri.",
+    "intro": "Semua yang dilakukan situs ini berjalan melalui API di bawah, dan skrip serta alat Anda dapat menggunakannya dengan cara yang sama. Dibuat dari kode sumber shhnote pada {ref}."
+  },
+  "theme": {
+    "label": "Tema",
+    "light": "Terang",
+    "dark": "Gelap",
+    "light-hc": "Terang, kontras tinggi",
+    "dark-hc": "Gelap, kontras tinggi",
+    "system": "Sistem"
+  },
+  "ui": {
+    "form-files-remove": "Hapus",
+    "result-copied": "Tersalin",
+    "result-destroyed": "Dimusnahkan. Rahasia sudah hilang dari server.",
+    "result-chip-single": "Sekali lihat",
+    "result-chip-multi": "Bisa dibuka sampai kedaluwarsa",
+    "result-chip-expires": "Kedaluwarsa dalam {period}",
+    "create-encrypting": "Mengenkripsi di browser Anda…",
+    "create-uploading": "Mengunggah…",
+    "create-error-empty": "Tambahkan teks atau setidaknya satu file.",
+    "create-error-too-large": "Itu melebihi batas yang diterima situs ini. Hapus beberapa file atau persingkat teksnya.",
+    "create-error-network": "Tidak dapat terhubung ke server. Periksa koneksi Anda, lalu coba lagi.",
+    "create-error-failed": "Terjadi kesalahan saat membuat rahasia. Silakan coba lagi.",
+    "create-error-wasm": "Frasa sandi memerlukan WebAssembly, yang dimatikan oleh browser Anda atau tingkat keamanannya. Izinkan WebAssembly, atau buat rahasia tanpa frasa sandi.",
+    "reveal-fetching": "Mengambil rahasia terenkripsi…",
+    "reveal-decrypting": "Mendekripsi di browser Anda…",
+    "reveal-wrong-passphrase": "Frasa sandi itu tidak cocok. Coba lagi.",
+    "reveal-single-view": "Dimusnahkan · ini satu-satunya kesempatan melihat",
+    "reveal-download": "Unduh",
+    "reveal-error-network": "Tidak dapat terhubung ke server. Coba lagi sebentar lagi.",
+    "reveal-error-corrupt": "Rahasia ini tidak dapat didekripsi. Tautannya mungkin tidak lengkap.",
+    "reveal-error-wasm": "Frasa sandi ini memerlukan WebAssembly, yang dimatikan oleh browser Anda atau tingkat keamanannya (misalnya Tor Browser pada tingkat \"Safer\"). Izinkan WebAssembly, lalu coba lagi.",
+    "burn-working": "Memusnahkan…",
+    "report-working": "Mengirim…",
+    "report-error-invalid": "Itu sepertinya bukan tautan rahasia dari situs ini."
+  }
+}

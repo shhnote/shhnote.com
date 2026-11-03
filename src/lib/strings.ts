@@ -4,7 +4,7 @@ import { defaultLocale, type Locale } from './i18n';
 
 export type Strings = typeof en;
 
-type Deep = { [key: string]: string | Deep };
+type Deep = { [key: string]: string | Deep | Deep[] };
 
 const files = import.meta.glob<{ default: Deep }>('../strings/*.json', { eager: true });
 
@@ -13,7 +13,9 @@ function merge(base: Deep, over: Deep | undefined): Deep {
   const out: Deep = { ...base };
   for (const [k, v] of Object.entries(over)) {
     const b = base[k];
-    out[k] = typeof v === 'object' && typeof b === 'object' ? merge(b, v) : v;
+    // Objects merge key by key; strings and arrays (step and card lists) replace whole.
+    const isMap = (x: unknown): x is Deep => typeof x === 'object' && x !== null && !Array.isArray(x);
+    out[k] = isMap(v) && isMap(b) ? merge(b, v) : v;
   }
   return out;
 }

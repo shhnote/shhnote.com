@@ -1,0 +1,358 @@
+{
+  "site": {
+    "name": "shhnote",
+    "title": "shhnote — 用自毁链接分享密信",
+    "description": "开源、端到端加密、零知识的密信分享工具。支持文字和文件。服务器永远看不到你的数据。"
+  },
+  "nav": {
+    "skip": "跳到正文",
+    "home": "shhnote 首页",
+    "main": "主导航",
+    "how": "工作原理",
+    "security": "安全",
+    "faq": "常见问题",
+    "docs": "文档",
+    "language": "语言",
+    "api": "API",
+    "languageList": "语言列表",
+    "languageSoon": "即将推出",
+    "poweredBy": "基于 shhnote 构建"
+  },
+  "footer": {
+    "product": "产品",
+    "legal": "法律",
+    "openSource": "开源",
+    "privacy": "隐私政策",
+    "terms": "服务条款",
+    "acceptableUse": "可接受使用政策",
+    "about": "关于",
+    "contact": "联系我们",
+    "github": "GitHub",
+    "issue": "报告问题",
+    "selfHost": "自托管指南",
+    "copyright": "© 2026 shhnote。基于 AGPLv3 开源。",
+    "poweredBy": "基于",
+    "backend": "服务器",
+    "report": "举报链接",
+    "compare": "对比",
+    "useCases": "使用场景"
+  },
+  "home": {
+    "hero": {
+      "title": "用自毁链接安全分享密信",
+      "intro": "让你的秘密保持私密，不留在聊天、邮件、Slack 和 Teams 的记录里",
+      "noscript": "创建密信需要 JavaScript：加密在你的浏览器里完成，之后才会发送任何内容。请为本站启用 JavaScript 后继续。"
+    },
+    "form": {
+      "noteLabel": "你的密信",
+      "notePlaceholder": "在这里输入内容……",
+      "filesLabel": "附加文件",
+      "filesDrop": "把文件拖到这里",
+      "filesClick": "或点击添加",
+      "filesHint": "上传前在浏览器中加密 · 最多 25 MB、25 个文件",
+      "filesRemove": "移除",
+      "expiryLabel": "有效期",
+      "expiry": {
+        "900": "15 分钟",
+        "1800": "30 分钟",
+        "3600": "1 小时",
+        "21600": "6 小时",
+        "43200": "12 小时",
+        "86400": "1 天",
+        "259200": "3 天",
+        "604800": "7 天",
+        "1209600": "14 天"
+      },
+      "burnLabel": "阅后即焚",
+      "burnHint": "首次查看后即销毁。关闭此项则在过期前可多次查看。",
+      "passphraseLabel": "访问密码",
+      "passphraseOptional": "（可选）",
+      "passphraseToggle": "显示或隐藏密码",
+      "passphraseHint": "加一个访问密码，多一层保护。",
+      "disclaimer": "创建或访问密信，即表示你已阅读并明确同意遵守我们的",
+      "disclaimerLink": "服务条款",
+      "disclaimerEnd": "。",
+      "submit": "加密密信"
+    },
+    "chips": {
+      "e2e": "端到端加密",
+      "zeroKnowledge": "零知识",
+      "noLogs": "无日志",
+      "openSource": "开源"
+    },
+    "result": {
+      "eyebrow": "链接已就绪",
+      "title": "发出去，然后忘掉它。",
+      "intro": "复制链接，用你喜欢的任何方式分享。为了你的安全，我们不会再次显示它——离开此页面后，这里就找不到它了。",
+      "shareLabel": "阅后即焚链接",
+      "copy": "复制",
+      "copied": "已复制",
+      "chipsLabel": "密信设置",
+      "chipLifetime": "阅后即焚",
+      "chipExpiry": "1 天后过期",
+      "passphraseReminder": "这条密信设有访问密码。请通过与链接不同的渠道发送密码。",
+      "calloutTitle": "一个链接，只读一次。",
+      "callout": "任何拿到完整链接的人都能打开这条密信——只有一次。如果你设置了访问密码，请通过与链接不同的渠道发送它。",
+      "divider": "私密控制 · 请自己保管",
+      "burnLabel": "销毁链接",
+      "burnAside": "——随时由你亲手销毁",
+      "burnHint": "把它保存在私密的地方。打开它会立即销毁密信——赶在任何人查看之前。一旦销毁，连我们也无法恢复。",
+      "open": "打开链接",
+      "destroy": "立即销毁",
+      "another": "再创建一条密信"
+    },
+    "how": {
+      "eyebrow": "工作原理",
+      "title": "三步完成，无需注册。",
+      "intro": "shhnote 在内容接触网络之前，就在浏览器里加密你的密信。加密密钥位于 URL 片段中——浏览器永远不会把 URL 的这一部分发送给服务器。",
+      "steps": [
+        {
+          "title": "加密",
+          "aside": "文字/文件",
+          "body": "你的密信在你自己的设备上加密，之后才会发送。解锁它的密钥从不上传。"
+        },
+        {
+          "title": "分享",
+          "aside": "链接",
+          "body": "密钥位于链接 # 之后的部分——浏览器只把这部分留在本地，从不发送给服务器。"
+        },
+        {
+          "title": "读取",
+          "aside": "随即消失",
+          "body": "收件人的浏览器在本地解锁，服务器随即销毁它的副本。连我们也无法恢复。"
+        }
+      ]
+    },
+    "hood": {
+      "eyebrow": "技术内幕",
+      "title": "密码学细节，一一讲明。",
+      "intro": "不含糊其辞。这里清楚说明了保护你密信的是什么、每一部分在哪里运行——你可以亲自验证，而不必凭信任接受。",
+      "specs": [
+        {
+          "label": "加密",
+          "value": "AES-256-GCM",
+          "body": "带认证的对称加密。每条密信都用 256 位密钥和完整性标签封存，篡改会被发现——而不只是变得无法读取。"
+        },
+        {
+          "label": "密钥派生",
+          "value": "Argon2id",
+          "body": "可选的访问密码会经过内存困难型 KDF 拉伸，即使用专用硬件，离线暴力破解也既慢又昂贵。"
+        },
+        {
+          "label": "随机性",
+          "value": "WebCrypto CSPRNG",
+          "body": "密钥和 nonce 取自浏览器的密码学安全随机数生成器。绝不用 Math.random()，绝不可预测。"
+        },
+        {
+          "label": "密钥保管",
+          "value": "URL 片段 #",
+          "body": "解密密钥跟在链接的 # 之后。浏览器从不传输 URL 片段，因此解锁密信的密钥永远不会到达我们的服务器。"
+        },
+        {
+          "label": "传输中",
+          "value": "TLS 1.3",
+          "body": "离开你设备的只有密文，经由现代 TLS 传输。我们收到的是一团无法打开的不透明数据。"
+        },
+        {
+          "label": "存储时",
+          "value": "密文 + TTL",
+          "body": "我们只保存一份加密数据和一个过期时间戳，别无其他。没有明文，没有密钥，没有发件人或收件人元数据。"
+        }
+      ]
+    },
+    "useCases": {
+      "eyebrow": "使用场景",
+      "title": "什么都能用 shhnote 发",
+      "intro": "看看大家每天都怎么用 shhnote",
+      "items": [
+        {
+          "label": "DevOps 与工程",
+          "title": "凭据与密钥",
+          "body": "别再把 API 密钥、数据库密码和 SSH 密钥贴进聊天记录了。用阅后即焚链接分享，用完即自毁。还可以通过 API 接入 CI/CD 流水线。"
+        },
+        {
+          "label": "注重隐私的用户",
+          "title": "分享不留痕",
+          "body": "通过 Tor 使用，功能不打折扣。没有验证码，没有浏览器指纹识别，没有外部请求。所有字体和资源都由本站自托管。零元数据泄露。"
+        },
+        {
+          "label": "IT 与入职",
+          "title": "安全地开通权限",
+          "body": "给新员工发送初始凭据、VPN 配置或 Wi-Fi 密码，不在邮件往来或工单系统里留下痕迹。批量入职时可生成多个独立链接。"
+        },
+        {
+          "label": "法务与合规",
+          "title": "合规敏感记录",
+          "body": "把病历、案卷或财务报表发给客户或同事，而不让它躺在可能面临证据开示、审计或泄露通报的收件箱里。"
+        },
+        {
+          "label": "个人",
+          "title": "日常小秘密",
+          "body": "把报税文件的密码发给会计。和家人共享流媒体账号。把门禁报警密码告诉装修师傅。安全发送敏感文件。人人都能轻松上手。"
+        },
+        {
+          "label": "其他",
+          "title": "礼品码或惊喜揭晓",
+          "body": "发送礼品卡兑换码、一个惊喜、寻宝游戏线索，或是对方看过就消失的揭晓。"
+        }
+      ]
+    },
+    "cta": {
+      "title": "别再用明文分享敏感信息",
+      "intro": "几秒钟就能创建一个阅后即焚的加密链接。也可以创建可多次查看、几小时或几天后过期的加密链接。再加一个密码，多一层保护。无需账号，不收集任何数据。",
+      "button": "创建阅后即焚密信"
+    }
+  },
+  "secret": {
+    "title": "有人给你分享了一条密信",
+    "armed": {
+      "badge": "尚未获取任何内容",
+      "title": "有人给你分享了一条密信",
+      "intro": "它会在你的浏览器中解密。如果它是阅后即焚的，打开的那一刻就会被删除——所以请在准备好阅读并保存时再查看。",
+      "noscript": "需要 JavaScript 才能在浏览器中解密这条密信。请启用后查看。",
+      "reveal": "查看密信",
+      "passphraseNote": "如果发件人设置了访问密码，按下按钮后会要求你输入。",
+      "callout": "目前还没有获取任何内容——自动扫描程序能看到的就只有这些。我们特意让查看必须手动操作，这样邮件安全网关、聊天预览和杀毒软件就无法抢在你之前打开密信。",
+      "chipE2e": "端到端加密",
+      "chipNoAccount": "无需账号"
+    },
+    "working": {
+      "badge": "处理中",
+      "title": "正在浏览器中解密……",
+      "intro": "正在获取密文，并用链接中的密钥在本地解锁。它从不会以可读形式离开这个标签页。",
+      "fetching": "正在获取加密密信……",
+      "decrypting": "正在浏览器中解密……"
+    },
+    "passphrase": {
+      "badge": "已锁定",
+      "title": "这条密信需要访问密码",
+      "intro": "发件人加了第二道锁。重试在你的浏览器中进行，不会向服务器发送任何内容。",
+      "label": "访问密码",
+      "submit": "解锁",
+      "wrong": "访问密码不正确，请重试。"
+    },
+    "revealed": {
+      "singleView": "已销毁 · 这是唯一一次查看",
+      "title": "就是这些。现在就保存你需要的内容。",
+      "intro": "这条密信已在你的浏览器中解密。刷新此页面，这里就再也找不到它了。",
+      "outputLabel": "密信 · 已在本地解密",
+      "copy": "复制",
+      "download": "下载",
+      "closeWarning": "请妥善处理——关闭这个标签页后，无论从你这里还是从我们这里，都无法再次找回。",
+      "createOwn": "创建你自己的密信"
+    },
+    "notFound": {
+      "badge": "未找到密信",
+      "title": "这里没有密信。",
+      "intro": "这个链接无效，或者它指向的密信已被查看、已过期或已被销毁。为保护你的隐私，本站不记录是哪一种情况——密信的任何历史都不会被保存。",
+      "callout": "如果你仍然需要这条密信，请让发件人重新创建一个链接——并确认你复制了完整的 URL，包括 # 之后的部分。",
+      "create": "创建密信",
+      "how": "shhnote 的工作原理"
+    },
+    "errors": {
+      "network": "无法连接服务器，请稍后重试。",
+      "corrupt": "这条密信无法解密，链接可能不完整。",
+      "wasm": "此访问密码需要 WebAssembly，但你的浏览器或其安全级别已将其关闭（例如 Tor Browser 的“更安全”级别）。请允许后重试。"
+    }
+  },
+  "burn": {
+    "title": "销毁这条密信",
+    "armed": {
+      "badge": "待确认 · 尚未执行任何操作",
+      "title": "要销毁这条密信吗？",
+      "intro": "这是一个销毁链接，目前还没有执行任何操作。确认后，加密的密信及其文件将被永久删除——赶在任何人打开之前。",
+      "noscript": "此页面需要 JavaScript 才能工作，请启用。",
+      "confirm": "销毁密信",
+      "cancel": "返回首页",
+      "working": "正在销毁……"
+    },
+    "done": {
+      "badge": "已销毁 · 密信已被销毁",
+      "title": "这条密信已被销毁。",
+      "intro": "你刚刚使用了销毁链接。加密的密信及其文件已从我们的服务器上永久清除——赶在任何人打开之前。",
+      "callout": "此后任何人打开原来的分享链接，都只会被告知未找到密信——无从得知它是被查看了、过期了还是被销毁了。关于它的任何信息都不会保留。",
+      "create": "创建新密信",
+      "how": "shhnote 的工作原理"
+    },
+    "notFound": {
+      "badge": "没有可销毁的内容",
+      "title": "没有可销毁的内容。",
+      "intro": "这个销毁链接无效，或者密信已被查看、已过期或已被销毁。",
+      "home": "返回首页"
+    }
+  },
+  "report": {
+    "title": "举报密信链接",
+    "armed": {
+      "badge": "滥用举报",
+      "title": "举报密信链接",
+      "intro": "粘贴你认为分享了不当内容的链接。如果密信仍然有效，会被立即删除。我们看不到其中的内容，所以既没有什么需要审核，也没有什么可以告诉你。",
+      "noscript": "此页面需要 JavaScript 才能工作，请启用。",
+      "label": "密信链接",
+      "placeholder": "https://shhnote.com/s#…",
+      "help": "完整链接，包括 # 之后的部分。它只用于找到这条密信，不会被保存。",
+      "submit": "删除这条密信",
+      "working": "正在发送……",
+      "invalid": "这看起来不像是本站的密信链接。"
+    },
+    "done": {
+      "badge": "已收到",
+      "title": "谢谢，已经处理好了。",
+      "intro": "如果该链接指向一条有效的密信，它现在已经被删除了。我们只记录收到过一次举报，仅此而已。",
+      "home": "返回首页"
+    }
+  },
+  "content": {
+    "updated": "最后更新：",
+    "translationNote": "本译文仅为方便阅读而提供。如与英文版本有出入，以英文版本为准。",
+    "translationLink": "阅读英文版本",
+    "depthLabel": "选择讲解深度",
+    "depthSimple": "简明",
+    "depthDetailed": "详细 / 技术",
+    "cta": {
+      "title": "试试看——只要十秒钟",
+      "intro": "写下一段秘密，拿到你的阅后即焚链接，看着它消失。",
+      "button": "创建密信"
+    }
+  },
+  "docs": {
+    "title": "API 文档",
+    "eyebrow": "文档",
+    "description": "本站所用的 shhnote API：端点、错误、限制，以及如何构建你自己的客户端。",
+    "intro": "本站的一切操作都通过下面的 API 完成，你的脚本和工具也可以用同样的方式调用它。本文档根据 shhnote 源码 {ref} 生成。"
+  },
+  "theme": {
+    "label": "主题",
+    "light": "浅色",
+    "dark": "深色",
+    "light-hc": "浅色，高对比度",
+    "dark-hc": "深色，高对比度",
+    "system": "跟随系统"
+  },
+  "ui": {
+    "form-files-remove": "移除",
+    "result-copied": "已复制",
+    "result-destroyed": "已销毁。这条密信已从服务器上消失。",
+    "result-chip-single": "阅后即焚",
+    "result-chip-multi": "过期前可多次打开",
+    "result-chip-expires": "{period}后过期",
+    "create-encrypting": "正在浏览器中加密……",
+    "create-uploading": "正在上传……",
+    "create-error-empty": "请输入一些文字，或至少添加一个文件。",
+    "create-error-too-large": "超出了本站接受的大小。请移除部分文件或缩短文字。",
+    "create-error-network": "无法连接服务器。请检查网络连接后重试。",
+    "create-error-failed": "创建密信时出了点问题，请重试。",
+    "create-error-wasm": "访问密码需要 WebAssembly，但你的浏览器或其安全级别已将其关闭。请允许它，或者创建不带访问密码的密信。",
+    "reveal-fetching": "正在获取加密密信……",
+    "reveal-decrypting": "正在浏览器中解密……",
+    "reveal-wrong-passphrase": "访问密码不正确，请重试。",
+    "reveal-single-view": "已销毁 · 这是唯一一次查看",
+    "reveal-download": "下载",
+    "reveal-error-network": "无法连接服务器，请稍后重试。",
+    "reveal-error-corrupt": "这条密信无法解密，链接可能不完整。",
+    "reveal-error-wasm": "此访问密码需要 WebAssembly，但你的浏览器或其安全级别已将其关闭（例如 Tor Browser 的“更安全”级别）。请允许后重试。",
+    "burn-working": "正在销毁……",
+    "report-working": "正在发送……",
+    "report-error-invalid": "这看起来不像是本站的密信链接。"
+  }
+}

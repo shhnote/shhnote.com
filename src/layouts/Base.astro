@@ -2,7 +2,7 @@
 import '../styles/global.css';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
-import { dir, type Locale } from '../lib/i18n';
+import { availableLocales, defaultLocale, dir, type Locale } from '../lib/i18n';
 import { site } from '../lib/site';
 import { getStrings, uiStrings } from '../lib/strings';
 import { apiBase, argon2Url, clientVersion, maxBlobBytes } from '../lib/instance';
@@ -15,13 +15,19 @@ interface Props {
   noindex?: boolean;
   /** Home and /s fetch the Argon2 module on every visit (conformance item 10). */
   prefetchArgon2?: boolean;
+  /** The locales this page is built in; the hreflang alternates and the switcher use it. */
+  locales?: readonly Locale[];
 }
 
-const { locale, title, description, noindex = false, prefetchArgon2 = false } = Astro.props;
+const { locale, title, description, noindex = false, prefetchArgon2 = false, locales = availableLocales } = Astro.props;
 const t = getStrings(locale);
 const pageTitle = title ?? t.site.title;
 const pageDescription = description ?? t.site.description;
 const canonical = new URL(Astro.url.pathname, site.url).href;
+// The same page in every locale it is built in; `x-default` is the English version.
+const rest = Astro.url.pathname.replace(/^\/[^/]+\/?/, '');
+const alternates = locales.map((code) => ({ code, href: new URL(`/${code}/${rest}`, site.url).href }));
+const xDefault = new URL(`/${defaultLocale}/${rest}`, site.url).href;
 ---
 
 <!doctype html>
@@ -34,6 +40,8 @@ const canonical = new URL(Astro.url.pathname, site.url).href;
     <meta name="referrer" content="no-referrer" />
     {noindex && <meta name="robots" content="noindex" />}
     <link rel="canonical" href={canonical} />
+    {alternates.map(({ code, href }) => <link rel="alternate" hreflang={code} href={href} />)}
+    <link rel="alternate" hreflang="x-default" href={xDefault} />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#0e0e10" />
     <meta name="theme-color" media="(prefers-color-scheme: light)" content="#faf9f7" />
@@ -50,10 +58,10 @@ const canonical = new URL(Astro.url.pathname, site.url).href;
   <body data-shh-api={apiBase} data-shh-asset-version={clientVersion} data-shh-max-blob-bytes={maxBlobBytes}>
     <script type="application/json" data-shh-i18n is:inline set:html={JSON.stringify(uiStrings(locale))} />
     <a class="skip-link" href="#content">{t.nav.skip}</a>
-    <Header locale={locale} />
+    <Header locale={locale} locales={locales} />
     <main id="content" tabindex="-1">
       <slot />
     </main>
-    <Footer locale={locale} />
+    <Footer locale={locale} locales={locales} />
   </body>
 </html>

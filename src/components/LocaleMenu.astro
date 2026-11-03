@@ -4,15 +4,21 @@ import { getStrings } from '../lib/strings';
 
 interface Props {
   locale: Locale;
+  /** The locales the current page is built in; others link to their home page. */
+  locales: readonly Locale[];
   /** `translate` in the header, `globe` in the footer. */
   icon: 'translate' | 'globe';
   /** Open the panel upwards (footer). */
   up?: boolean;
 }
 
-const { locale, icon, up = false } = Astro.props;
+const { locale, locales: pageLocales, icon, up = false } = Astro.props;
 const t = getStrings(locale);
 const available = new Set<Locale>(availableLocales);
+const onPage = new Set<Locale>(pageLocales);
+// The path after the locale segment: `/de/faq/` → `faq/`.
+const rest = Astro.url.pathname.replace(/^\/[^/]+\/?/, '');
+const hrefFor = (code: Locale) => (onPage.has(code) ? `/${code}/${rest}` : `/${code}/`);
 ---
 
 <details class:list={['menu', 'menu--locale', { 'menu--up': up }]} data-shh-menu>
@@ -27,7 +33,7 @@ const available = new Set<Locale>(availableLocales);
   <div class="menu__panel menu__panel--grid" role="list" aria-label={t.nav.languageList}>
     {locales.map((code) =>
       available.has(code) ? (
-        <a role="listitem" class="menu__item" href={`/${code}/`} hreflang={code} lang={code} aria-current={code === locale ? 'true' : undefined}>{localeNames[code]}</a>
+        <a role="listitem" class="menu__item" href={hrefFor(code)} hreflang={code} lang={code} aria-current={code === locale ? 'true' : undefined}>{localeNames[code]}</a>
       ) : (
         <span role="listitem" class="menu__item menu__item--soon" lang={code} aria-disabled="true" title={t.nav.languageSoon}>{localeNames[code]}</span>
       ),

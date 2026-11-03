@@ -1,5 +1,8 @@
 User-agent: *
 Allow: /
+Disallow: /s/
+Disallow: /burn/
+Disallow: /report/
 Disallow: /*/s/
 Disallow: /*/burn/
 Disallow: /*/report/

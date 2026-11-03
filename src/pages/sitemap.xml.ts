@@ -1,21 +1,21 @@
 import type { APIRoute } from 'astro';
 import { getCollection } from 'astro:content';
-import { availableLocales, isLocale } from '../lib/i18n';
+import { availableLocales, defaultLocale, isLocale } from '../lib/i18n';
 import { site } from '../lib/site';
 
-// Every indexable page: the home page, the content pages and the API docs, per built
-// locale. The secret interstitials (/s, /burn, /report) are deliberately left out.
+// Every indexable page: the home page and the content pages per built locale (the
+// compare and use-case pages exist in English only), and the API docs (English only). The secret interstitials (/s, /burn, /report) are deliberately left out.
 export const GET: APIRoute = async () => {
   const pages = await getCollection('pages');
   const urls = new Set<string>();
-  for (const locale of availableLocales) {
-    urls.add(`${site.url}/${locale}/`);
-    urls.add(`${site.url}/${locale}/docs/`);
-  }
+  for (const locale of availableLocales) urls.add(`${site.url}/${locale}/`);
+  urls.add(`${site.url}/${defaultLocale}/docs/`);
   for (const entry of pages) {
-    const [locale, slug] = entry.id.split('/');
-    if (locale && slug && isLocale(locale) && availableLocales.includes(locale)) {
-      urls.add(`${site.url}/${locale}/${slug}/`);
+    // `<locale>/<slug>`, or `<locale>/<section>/<page>` with `index` as the section overview.
+    const [locale, ...path] = entry.id.split('/');
+    if (locale && path.length && isLocale(locale) && availableLocales.includes(locale)) {
+      const rest = path.filter((part) => part !== 'index').join('/');
+      urls.add(`${site.url}/${locale}/${rest}/`);
     }
   }
   const body =

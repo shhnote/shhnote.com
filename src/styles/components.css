@@ -170,8 +170,9 @@
   top: 50%;
   width: 8px;
   height: 8px;
-  border-inline-end: 2px solid var(--color-text-muted);
-  border-block-end: 2px solid var(--color-text-muted);
+  /* Physical sides on purpose: a down-pointing chevron in either direction. */
+  border-right: 2px solid var(--color-text-muted);
+  border-bottom: 2px solid var(--color-text-muted);
   transform: translateY(-70%) rotate(45deg);
   pointer-events: none;
 }
@@ -245,6 +246,10 @@
   transform: translate(1.1rem, -50%);
   background: var(--color-text-on-accent);
 }
+/* Right to left: the knob starts at the right and slides left when on. */
+[dir='rtl'] .toggle input:checked + .track::before {
+  transform: translate(-1.1rem, -50%);
+}
 .toggle input:focus-visible + .track {
   box-shadow: 0 0 0 2px color-mix(in srgb, var(--color-accent) 35%, transparent);
 }
@@ -262,7 +267,7 @@
   content: '';
   position: absolute;
   top: 50%;
-  left: 3px;
+  inset-inline-start: 3px;
   width: 1.05rem;
   height: 1.05rem;
   transform: translateY(-50%);

@@ -1,0 +1,358 @@
+{
+  "site": {
+    "name": "shhnote",
+    "title": "shhnote — condividi segreti con link che si autodistruggono",
+    "description": "Condivisione di segreti open source, cifrata end-to-end e zero-knowledge. Testo e file. Il server non vede mai i tuoi dati."
+  },
+  "nav": {
+    "skip": "Vai al contenuto",
+    "home": "Home di shhnote",
+    "main": "Principale",
+    "how": "Come funziona",
+    "security": "Sicurezza",
+    "faq": "FAQ",
+    "docs": "Documentazione",
+    "language": "Lingua",
+    "api": "API",
+    "languageList": "Lingue",
+    "languageSoon": "In arrivo",
+    "poweredBy": "Basato su shhnote"
+  },
+  "footer": {
+    "product": "Prodotto",
+    "legal": "Note legali",
+    "openSource": "Open source",
+    "privacy": "Informativa sulla privacy",
+    "terms": "Termini di servizio",
+    "acceptableUse": "Uso consentito",
+    "about": "Chi siamo",
+    "contact": "Contatti",
+    "github": "GitHub",
+    "issue": "Segnala un problema",
+    "selfHost": "Guida al self-hosting",
+    "copyright": "© 2026 shhnote. Open source con licenza AGPLv3.",
+    "poweredBy": "Basato su",
+    "backend": "server",
+    "report": "Segnala un link",
+    "compare": "Confronto",
+    "useCases": "Casi d'uso"
+  },
+  "home": {
+    "hero": {
+      "title": "Condividi segreti in sicurezza con link che si autodistruggono",
+      "intro": "Tieni i tuoi segreti al riparo, fuori dalle cronologie di chat, email, Slack e Teams",
+      "noscript": "Per creare un segreto serve JavaScript: la cifratura avviene nel tuo browser, prima che venga inviato qualsiasi dato. Attivalo per questo sito per continuare."
+    },
+    "form": {
+      "noteLabel": "Il tuo segreto",
+      "notePlaceholder": "Scrivi qui il messaggio...",
+      "filesLabel": "File da allegare",
+      "filesDrop": "Trascina qui i file",
+      "filesClick": "oppure fai clic per allegarli",
+      "filesHint": "Cifrati nel tuo browser prima del caricamento · fino a 25 MB, 25 file",
+      "filesRemove": "Rimuovi",
+      "expiryLabel": "Scade tra",
+      "expiry": {
+        "900": "15 minuti",
+        "1800": "30 minuti",
+        "3600": "1 ora",
+        "21600": "6 ore",
+        "43200": "12 ore",
+        "86400": "1 giorno",
+        "259200": "3 giorni",
+        "604800": "7 giorni",
+        "1209600": "14 giorni"
+      },
+      "burnLabel": "Visualizzazione singola",
+      "burnHint": "Viene distrutto dopo la prima apertura. Disattiva l'opzione per permettere più aperture fino alla scadenza.",
+      "passphraseLabel": "Password/passphrase",
+      "passphraseOptional": "(facoltativa)",
+      "passphraseToggle": "Mostra o nascondi la password",
+      "passphraseHint": "Aggiungi una password per una protezione in più.",
+      "disclaimer": "Creando o aprendo un segreto, dichiari di aver letto e di accettare espressamente i nostri",
+      "disclaimerLink": "termini di servizio",
+      "disclaimerEnd": ".",
+      "submit": "Cifra il segreto"
+    },
+    "chips": {
+      "e2e": "Cifratura end-to-end",
+      "zeroKnowledge": "Zero-knowledge",
+      "noLogs": "Nessun log",
+      "openSource": "Open source"
+    },
+    "result": {
+      "eyebrow": "Link pronto",
+      "title": "Invialo, poi dimenticalo.",
+      "intro": "Copia il link e condividilo come preferisci. Per la tua sicurezza non lo mostreremo di nuovo: quando lasci questa pagina, qui non ci sarà più.",
+      "shareLabel": "Link monouso",
+      "copy": "Copia",
+      "copied": "Copiato",
+      "chipsLabel": "Impostazioni del segreto",
+      "chipLifetime": "Visualizzazione singola",
+      "chipExpiry": "Scade tra 1 giorno",
+      "passphraseReminder": "Questo segreto ha una passphrase. Inviala su un canale diverso da quello del link.",
+      "calloutTitle": "Un link, una lettura.",
+      "callout": "Chiunque abbia il link completo può aprire il segreto, una sola volta. Se hai impostato una passphrase, inviala su un canale diverso da quello del link.",
+      "divider": "controlli privati · tienili per te",
+      "burnLabel": "Link di distruzione",
+      "burnAside": "— distruggilo tu, quando vuoi",
+      "burnHint": "Conservalo in un posto riservato. Aprirlo distrugge subito il segreto, prima che chiunque altro possa vederlo. Una volta distrutto, nemmeno noi possiamo recuperarlo.",
+      "open": "Apri il link",
+      "destroy": "Distruggi ora",
+      "another": "Crea un altro segreto"
+    },
+    "how": {
+      "eyebrow": "Come funziona",
+      "title": "Tre passaggi. Nessun account.",
+      "intro": "shhnote cifra il tuo segreto nel browser prima che qualsiasi dato tocchi la rete. La chiave di cifratura si trova nel frammento dell'URL, una parte dell'indirizzo che i browser non inviano mai ai server.",
+      "steps": [
+        {
+          "title": "Cifra",
+          "aside": "testo/file",
+          "body": "Il tuo segreto viene cifrato sul tuo dispositivo prima che venga inviato qualsiasi dato. La chiave per sbloccarlo non viene mai caricata."
+        },
+        {
+          "title": "Condividi",
+          "aside": "il link",
+          "body": "La chiave sta nella parte del link dopo il #, che i browser tengono in locale e non inviano mai a un server."
+        },
+        {
+          "title": "Apri",
+          "aside": "e sparisce",
+          "body": "Il browser del destinatario lo sblocca in locale e il server distrugge la sua copia. Nemmeno noi possiamo recuperarlo."
+        }
+      ]
+    },
+    "hood": {
+      "eyebrow": "Sotto il cofano",
+      "title": "La crittografia, nel dettaglio.",
+      "intro": "Niente giri di parole. Ecco esattamente cosa protegge il tuo segreto e dove viene eseguito ogni pezzo, così puoi verificare quello che diciamo invece di fidarti sulla parola.",
+      "specs": [
+        {
+          "label": "Cifratura",
+          "value": "AES-256-GCM",
+          "body": "Cifratura simmetrica autenticata. Ogni segreto è sigillato con una chiave a 256 bit e un tag di integrità, quindi ogni manomissione viene rilevata, non solo resa illeggibile."
+        },
+        {
+          "label": "Derivazione della chiave",
+          "value": "Argon2id",
+          "body": "Le passphrase facoltative vengono rafforzate con una KDF memory-hard, che rende gli attacchi brute force offline lenti e costosi anche su hardware dedicato."
+        },
+        {
+          "label": "Casualità",
+          "value": "WebCrypto CSPRNG",
+          "body": "Chiavi e nonce provengono dal generatore crittograficamente sicuro del browser. Mai Math.random(), mai prevedibili."
+        },
+        {
+          "label": "Custodia della chiave",
+          "value": "Frammento dell'URL #",
+          "body": "La chiave di decifratura viaggia dopo il # nel tuo link. I browser non trasmettono mai il frammento, quindi la chiave che sblocca il segreto non raggiunge mai i nostri server."
+        },
+        {
+          "label": "In transito",
+          "value": "TLS 1.3",
+          "body": "Dal tuo dispositivo esce solo testo cifrato, trasportato su TLS moderno. Quello che riceviamo è un blob opaco che non abbiamo modo di aprire."
+        },
+        {
+          "label": "A riposo",
+          "value": "Testo cifrato + TTL",
+          "body": "Conserviamo un blob cifrato e un orario di scadenza, nient'altro. Niente testo in chiaro, niente chiavi, nessun metadato su mittente o destinatario."
+        }
+      ]
+    },
+    "useCases": {
+      "eyebrow": "Casi d'uso",
+      "title": "Crea uno shhnote per qualsiasi cosa",
+      "intro": "Scopri come le persone usano shhnote ogni giorno",
+      "items": [
+        {
+          "label": "DevOps e sviluppo",
+          "title": "Credenziali e chiavi",
+          "body": "Smetti di incollare chiavi API, password di database e chiavi SSH nelle chat. Condividile come link monouso che si autodistruggono dopo l'uso. Integra il servizio nelle pipeline CI/CD tramite l'API."
+        },
+        {
+          "label": "Chi tiene alla privacy",
+          "title": "Condividi senza lasciare tracce",
+          "body": "Funziona su Tor senza perdere funzionalità. Niente CAPTCHA, niente fingerprinting del browser, nessuna richiesta esterna. Ogni font e risorsa è ospitato da noi. Zero fughe di metadati."
+        },
+        {
+          "label": "IT e onboarding",
+          "title": "Fornisci accessi in sicurezza",
+          "body": "Invia ai nuovi assunti le credenziali iniziali, le configurazioni VPN o le password del Wi-Fi senza lasciare tracce nelle email o nei sistemi di ticketing. Genera più link univoci per l'onboarding di gruppo."
+        },
+        {
+          "label": "Legale e normativo",
+          "title": "Documenti soggetti a compliance",
+          "body": "Invia una cartella clinica, un fascicolo o un estratto conto a un cliente o a un collega senza che resti in una casella di posta soggetta a richieste di esibizione, audit o notifiche di violazione."
+        },
+        {
+          "label": "Personale",
+          "title": "Segreti di tutti i giorni",
+          "body": "Manda al commercialista le password dei documenti fiscali. Condividi l'accesso allo streaming con la famiglia. Dai a un tecnico il codice dell'allarme. Invia file riservati in sicurezza. Semplice per chiunque."
+        },
+        {
+          "label": "Varie",
+          "title": "Codici regalo e sorprese",
+          "body": "Invia il codice di una gift card, una sorpresa, un indizio per una caccia al tesoro o una rivelazione che sparisce dopo che l'hanno vista."
+        }
+      ]
+    },
+    "cta": {
+      "title": "Smetti di condividere informazioni riservate in chiaro",
+      "intro": "Crea un link cifrato monouso in pochi secondi. Oppure un link cifrato apribile più volte che scade dopo qualche ora o qualche giorno. Aggiungi una password per una protezione in più. Nessun account necessario. Nessun dato raccolto.",
+      "button": "Crea un segreto monouso"
+    }
+  },
+  "secret": {
+    "title": "Qualcuno ha condiviso un segreto con te",
+    "armed": {
+      "badge": "Ancora nulla recuperato",
+      "title": "Qualcuno ha condiviso un segreto con te",
+      "intro": "Viene decifrato nel tuo browser. Se è stato inviato per una visualizzazione singola, viene eliminato nel momento in cui lo apri: mostralo solo quando sei pronto a leggerlo e salvarlo.",
+      "noscript": "Serve JavaScript per decifrare questo segreto nel tuo browser. Attivalo per vedere il segreto.",
+      "reveal": "Mostra il segreto",
+      "passphraseNote": "Se il mittente ha impostato una passphrase, ti verrà chiesta dopo aver premuto il pulsante.",
+      "callout": "Finora non è stato recuperato nulla: questo è tutto ciò che vede uno scanner automatico. Lasciamo apposta l'apertura manuale, così i filtri di sicurezza delle email, le anteprime delle chat e gli antivirus non possono aprire il tuo segreto prima di te.",
+      "chipE2e": "Cifratura end-to-end",
+      "chipNoAccount": "Nessun account necessario"
+    },
+    "working": {
+      "badge": "In corso",
+      "title": "Decifratura nel tuo browser…",
+      "intro": "Recupero del testo cifrato e sblocco in locale con la chiave del tuo link. In forma leggibile non esce mai da questa scheda.",
+      "fetching": "Recupero del segreto cifrato…",
+      "decrypting": "Decifratura nel tuo browser…"
+    },
+    "passphrase": {
+      "badge": "Bloccato",
+      "title": "Questo segreto richiede una passphrase",
+      "intro": "Il mittente ha aggiunto un secondo lucchetto. I tentativi avvengono nel tuo browser: al server non viene inviato nulla.",
+      "label": "Passphrase",
+      "submit": "Sblocca",
+      "wrong": "Passphrase non corretta. Riprova."
+    },
+    "revealed": {
+      "singleView": "Distrutto · era l'unica visualizzazione",
+      "title": "Eccolo. Salva subito ciò che ti serve.",
+      "intro": "Questo segreto è stato decifrato nel tuo browser. Se ricarichi la pagina, qui non ci sarà più.",
+      "outputLabel": "segreto · decifrato in locale",
+      "copy": "Copia",
+      "download": "Scarica",
+      "closeWarning": "Maneggialo con cura: una volta chiusa questa scheda non c'è modo di recuperarlo, né da parte tua né da parte nostra.",
+      "createOwn": "Crea il tuo segreto"
+    },
+    "notFound": {
+      "badge": "Nessun segreto trovato",
+      "title": "Qui non c'è nessun segreto.",
+      "intro": "Questo link non è valido, oppure il segreto a cui puntava è già stato visualizzato, è scaduto o è stato distrutto. Per la tua privacy, questo sito non registra quale dei tre: non viene mai conservato nulla sulla storia di un segreto.",
+      "callout": "Se ti serve ancora il segreto, chiedi al mittente di creare un nuovo link, e verifica di aver copiato l'URL completo, compresa la parte dopo il #.",
+      "create": "Crea un segreto",
+      "how": "Come funziona shhnote"
+    },
+    "errors": {
+      "network": "Impossibile raggiungere il server. Riprova tra un momento.",
+      "corrupt": "Non è stato possibile decifrare questo segreto. Il link potrebbe essere incompleto.",
+      "wasm": "Questa passphrase richiede WebAssembly, che il tuo browser o il suo livello di sicurezza ha disattivato (per esempio Tor Browser al livello «Più sicuro»). Consentilo e riprova."
+    }
+  },
+  "burn": {
+    "title": "Distruggi questo segreto",
+    "armed": {
+      "badge": "Pronto · non è ancora successo nulla",
+      "title": "Distruggere questo segreto?",
+      "intro": "Questo è un link di distruzione. Non è ancora successo nulla. Confermando elimini per sempre il segreto cifrato e i suoi file, prima che chiunque altro possa aprirli.",
+      "noscript": "Questa pagina ha bisogno di JavaScript per funzionare. Attivalo.",
+      "confirm": "Distruggi il segreto",
+      "cancel": "Vai alla home page",
+      "working": "Distruzione in corso…"
+    },
+    "done": {
+      "badge": "Distrutto · segreto eliminato",
+      "title": "Questo segreto è stato distrutto.",
+      "intro": "Hai appena usato il link di distruzione. Il segreto cifrato e i suoi file sono stati cancellati per sempre dai nostri server, prima che chiunque altro potesse aprirli.",
+      "callout": "Chi apre il link di condivisione originale d'ora in poi vedrà solo che non è stato trovato nessun segreto, senza poter sapere se è stato visualizzato, è scaduto o è stato distrutto. Non ne viene conservato nulla.",
+      "create": "Crea un nuovo segreto",
+      "how": "Come funziona shhnote"
+    },
+    "notFound": {
+      "badge": "Niente da distruggere",
+      "title": "Niente da distruggere.",
+      "intro": "Questo link di distruzione non è valido, oppure il segreto è già stato visualizzato, è scaduto o è stato distrutto.",
+      "home": "Vai alla home page"
+    }
+  },
+  "report": {
+    "title": "Segnala un link segreto",
+    "armed": {
+      "badge": "Segnalazione di abuso",
+      "title": "Segnala un link segreto",
+      "intro": "Incolla un link che secondo te condivide qualcosa che non dovrebbe. Se il segreto è ancora attivo, viene rimosso subito. Non possiamo vedere cosa contiene, quindi non c'è niente da esaminare e niente da comunicarti.",
+      "noscript": "Questa pagina ha bisogno di JavaScript per funzionare. Attivalo.",
+      "label": "Link segreto",
+      "placeholder": "https://shhnote.com/s#…",
+      "help": "Il link completo, compresa la parte dopo il #. Serve solo a trovare il segreto e non viene conservato.",
+      "submit": "Rimuovi questo segreto",
+      "working": "Invio in corso…",
+      "invalid": "Non sembra un link segreto di questo sito."
+    },
+    "done": {
+      "badge": "Ricevuta",
+      "title": "Grazie, fatto.",
+      "intro": "Se quel link puntava a un segreto attivo, ora non esiste più. Registriamo solo che è arrivata una segnalazione, nient'altro.",
+      "home": "Vai alla home page"
+    }
+  },
+  "content": {
+    "updated": "Ultimo aggiornamento:",
+    "translationNote": "Questa traduzione è fornita per comodità. In caso di differenze con la versione inglese, prevale la versione inglese.",
+    "translationLink": "Leggi la versione inglese",
+    "depthLabel": "Scegli il livello di dettaglio",
+    "depthSimple": "Semplice",
+    "depthDetailed": "Dettagliato / tecnico",
+    "cta": {
+      "title": "Provalo: bastano dieci secondi",
+      "intro": "Scrivi qualcosa di segreto, ottieni il tuo link monouso e guardalo sparire.",
+      "button": "Crea un segreto"
+    }
+  },
+  "docs": {
+    "title": "Documentazione dell'API",
+    "eyebrow": "Documentazione",
+    "description": "L'API shhnote su cui gira questo sito: endpoint, errori, limiti e come creare un tuo client.",
+    "intro": "Tutto ciò che fa questo sito passa dall'API qui sotto, e i tuoi script e strumenti possono usarla allo stesso modo. Generata dal sorgente di shhnote alla versione {ref}."
+  },
+  "theme": {
+    "label": "Tema",
+    "light": "Chiaro",
+    "dark": "Scuro",
+    "light-hc": "Chiaro, alto contrasto",
+    "dark-hc": "Scuro, alto contrasto",
+    "system": "Sistema"
+  },
+  "ui": {
+    "form-files-remove": "Rimuovi",
+    "result-copied": "Copiato",
+    "result-destroyed": "Distrutto. Il segreto non è più sul server.",
+    "result-chip-single": "Visualizzazione singola",
+    "result-chip-multi": "Apribile fino alla scadenza",
+    "result-chip-expires": "Scade tra {period}",
+    "create-encrypting": "Cifratura nel tuo browser…",
+    "create-uploading": "Caricamento…",
+    "create-error-empty": "Aggiungi del testo o almeno un file.",
+    "create-error-too-large": "È più di quanto accetta questo sito. Rimuovi qualche file o accorcia il testo.",
+    "create-error-network": "Impossibile raggiungere il server. Controlla la connessione e riprova.",
+    "create-error-failed": "Si è verificato un problema durante la creazione del segreto. Riprova.",
+    "create-error-wasm": "Le passphrase richiedono WebAssembly, che il tuo browser o il suo livello di sicurezza ha disattivato. Consentilo, oppure crea il segreto senza passphrase.",
+    "reveal-fetching": "Recupero del segreto cifrato…",
+    "reveal-decrypting": "Decifratura nel tuo browser…",
+    "reveal-wrong-passphrase": "Passphrase non corretta. Riprova.",
+    "reveal-single-view": "Distrutto · era l'unica visualizzazione",
+    "reveal-download": "Scarica",
+    "reveal-error-network": "Impossibile raggiungere il server. Riprova tra un momento.",
+    "reveal-error-corrupt": "Non è stato possibile decifrare questo segreto. Il link potrebbe essere incompleto.",
+    "reveal-error-wasm": "Questa passphrase richiede WebAssembly, che il tuo browser o il suo livello di sicurezza ha disattivato (per esempio Tor Browser al livello «Più sicuro»). Consentilo e riprova.",
+    "burn-working": "Distruzione in corso…",
+    "report-working": "Invio in corso…",
+    "report-error-invalid": "Non sembra un link segreto di questo sito."
+  }
+}

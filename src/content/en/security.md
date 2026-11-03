@@ -215,7 +215,7 @@ depth: detailed
 - Pick the shortest expiry that works for you.
 - Use a one-time secret for passwords and other information that should be read exactly once.
 
-## Reporting a vulnerability
+<h2 id="reporting-a-vulnerability">Reporting a vulnerability</h2>
 
 If you think you've found a security problem with this site, please email [security@shhnote.com](mailto:security@shhnote.com) and tell us privately before telling anyone else. Include what you found and how to reproduce it.
 

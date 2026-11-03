@@ -24,7 +24,14 @@ export type Locale = (typeof locales)[number];
 export const defaultLocale: Locale = 'en';
 
 /** Locales that have pages built; the switcher links only to these. */
-export const availableLocales: readonly Locale[] = ['en'];
+export const availableLocales: readonly Locale[] = [
+  'en',
+  'de',
+  ...(['es', 'fr', 'nl', 'hi'] as const),
+  ...(['ja', 'pl', 'zh', 'el'] as const),
+  ...(['id', 'ko', 'pt', 'sv'] as const),
+  ...(['he', 'it', 'ro', 'tr'] as const),
+];
 
 /** Each language in its own name, for the switcher. */
 export const localeNames: Record<Locale, string> = {

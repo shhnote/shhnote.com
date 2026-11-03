@@ -1,11 +1,10 @@
 ---
 import Base from '../../layouts/Base.astro';
-import { defaultLocale, type Locale } from '../../lib/i18n';
+import { availableLocales, type Locale } from '../../lib/i18n';
 import { getStrings } from '../../lib/strings';
 
 export function getStaticPaths() {
-  // Only `en` content exists for now; other locales follow.
-  return [{ params: { locale: defaultLocale } }];
+  return availableLocales.map((locale) => ({ params: { locale } }));
 }
 
 const locale = Astro.params.locale as Locale;
@@ -86,7 +85,7 @@ const defaultExpiry = '86400';
               </div>
 
               <div class="form-field">
-                <p class="disclaimer">{h.form.disclaimer} <a href={`${base}terms/`} target="_blank" rel="noopener">{h.form.disclaimerLink}</a>.</p>
+                <p class="disclaimer">{h.form.disclaimer} <a href={`${base}terms/`} target="_blank" rel="noopener">{h.form.disclaimerLink}</a>{h.form.disclaimerEnd}</p>
                 <button type="submit" class="btn btn--primary w-full"><span>{h.form.submit}</span></button>
                 <p class="status" role="status" aria-live="polite" data-shh-status></p>
               </div>
