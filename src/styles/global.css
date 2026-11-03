@@ -305,7 +305,7 @@ body {
   max-width: 280px;
   line-height: 1.55;
 }
-.footer .footer-col h4 {
+.footer .footer-col .footer-col__title {
   font-size: var(--font-size-13);
   font-weight: 600;
   color: var(--color-text-muted);
@@ -354,6 +354,10 @@ body {
 .footer .footer-versions {
   font-family: var(--font-mono);
   font-size: var(--font-size-12);
+}
+.footer .footer-versions a {
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
 }
 .footer .footer-controls {
   display: flex;

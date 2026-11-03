@@ -12,7 +12,9 @@ if [ ! -d "$dist" ]; then
 fi
 
 # host[/path-prefix] entries; a URL passes when it starts with one of them.
-allow='https?://(www\.)?(shhnote\.com|shhnote\.org|github\.com/shhnote)([/?#]|$)'
+# The last two are XML namespace identifiers (the SVG favicon, the sitemap), not
+# addresses anything is fetched from.
+allow='https?://(www\.)?(shhnote\.com|shhnote\.org|github\.com/shhnote|www\.w3\.org/2000/svg|www\.sitemaps\.org/schemas/sitemap/0\.9)([/?#"]|$)'
 
 found=$(grep -rEo 'https?://[^"'"'"' <>)]+' "$dist" | grep -Ev "^[^:]+:$allow" || true)
 

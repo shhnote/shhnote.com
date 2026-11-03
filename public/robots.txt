@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Disallow: /*/s/
+Disallow: /*/burn/
+Disallow: /*/report/
+
+Sitemap: https://shhnote.com/sitemap.xml

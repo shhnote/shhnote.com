@@ -77,7 +77,7 @@
 }
 #content .page .section--hero .section__header-group p {
   color: var(--color-text-muted);
-  opacity: 0.7;
+  opacity: 0.85;
 }
 #content .page .section--hero .section__header-group p:last-child {
   margin-block-end: 0;
@@ -147,7 +147,9 @@
   margin-block-end: 0.5rem;
 }
 #content .page .form-wrapper .create-form .settings .disclaimer a {
-  color: color-mix(in srgb, var(--color-accent-text) 70%, transparent);
+  color: var(--color-accent-text);
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
 }
 #content .page .form-wrapper .create-form .settings .disclaimer a:hover {
   text-decoration: underline;

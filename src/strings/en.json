@@ -1,7 +1,7 @@
 {
   "site": {
     "name": "shhnote",
-    "title": "shhnote — share secrets securely with self-destructing links",
+    "title": "shhnote — share secrets with self-destructing links",
     "description": "Open-source, end-to-end encrypted, zero-knowledge secret sharing. Text and files. The server never sees your data."
   },
   "nav": {
