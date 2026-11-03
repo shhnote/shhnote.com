@@ -220,6 +220,12 @@ body {
   display: flex;
   gap: 2px;
 }
+@media (max-width: 599px) {
+  .menu__panel--row {
+    flex-wrap: wrap;
+    max-width: calc(100vw - 2rem);
+  }
+}
 .menu__item {
   display: flex;
   align-items: center;
@@ -257,9 +263,12 @@ body {
 .menu__item--stack {
   flex-direction: column;
   gap: 0.35rem;
-  min-width: 5rem;
-  padding: 0.6rem 0.75rem;
+  min-width: 5.5rem;
+  padding: 0.6rem 0.6rem;
   font-size: var(--font-size-12);
+  white-space: normal;
+  text-align: center;
+  line-height: 1.2;
 }
 @media (max-width: 599px) {
   .menu__panel--grid {
@@ -279,7 +288,9 @@ body {
 }
 html:not([data-theme]) .theme-mode[data-mode='system'],
 [data-theme='light'] .theme-mode[data-mode='light'],
-[data-theme='dark'] .theme-mode[data-mode='dark'] {
+[data-theme='dark'] .theme-mode[data-mode='dark'],
+[data-theme='light-hc'] .theme-mode[data-mode='light-hc'],
+[data-theme='dark-hc'] .theme-mode[data-mode='dark-hc'] {
   display: inline-flex;
 }
 

@@ -319,6 +319,8 @@
     "label": "Theme",
     "light": "Light",
     "dark": "Dark",
+    "light-hc": "Light, high contrast",
+    "dark-hc": "Dark, high contrast",
     "system": "System"
   },
   "ui": {
