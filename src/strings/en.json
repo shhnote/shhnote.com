@@ -31,7 +31,8 @@
     "selfHost": "Self-hosting guide",
     "copyright": "© 2026 shhnote. Open source under AGPLv3.",
     "poweredBy": "Powered by",
-    "backend": "server"
+    "backend": "server",
+    "report": "Report a link"
   },
   "home": {
     "hero": {

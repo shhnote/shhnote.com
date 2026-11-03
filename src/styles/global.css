@@ -277,7 +277,7 @@ body {
   display: none;
   line-height: 0;
 }
-[data-theme='system'] .theme-mode[data-mode='system'],
+html:not([data-theme]) .theme-mode[data-mode='system'],
 [data-theme='light'] .theme-mode[data-mode='light'],
 [data-theme='dark'] .theme-mode[data-mode='dark'] {
   display: inline-flex;
