@@ -18,6 +18,10 @@ export default defineConfig({
       // Never inline small scripts or assets into the HTML.
       assetsInlineLimit: 0,
     },
+    server: {
+      // Dev only: the API on the same origin, as in production behind Caddy.
+      proxy: { '/api': process.env['SHH_DEV_PROXY'] ?? 'http://localhost:3000' },
+    },
   },
   markdown: {
     // Highlighting emits inline style attributes, which the CSP (style-src 'self') blocks.

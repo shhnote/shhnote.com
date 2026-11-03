@@ -17,7 +17,7 @@ const defaultExpiry = '86400';
 ---
 
 <Base locale={locale} prefetchArgon2>
-  <article class="page page--home">
+  <article class="page page--home" data-shh-page="create">
     <section id="create" class="section section--hero">
       <div class="container">
         <header class="section__header-group">
@@ -249,3 +249,13 @@ const defaultExpiry = '86400';
     </section>
   </article>
 </Base>
+
+<script>
+  import { wireCreate } from '@shhnote/client/ui';
+  import { t } from '../../scripts/t';
+
+  // The create flow: encrypt in the browser, upload, show the links. Strings come from the
+  // page's data-shh-i18n block; the API base and asset version from <body>.
+  const page = document.querySelector<HTMLElement>('[data-shh-page="create"]');
+  if (page) wireCreate(page, { t });
+</script>
