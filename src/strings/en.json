@@ -304,5 +304,11 @@
       "intro": "Write something secret, get your one-time link, and see it disappear.",
       "button": "Create a secret"
     }
+  },
+  "docs": {
+    "title": "API documentation",
+    "eyebrow": "Docs",
+    "description": "The shhnote API this site runs on: endpoints, errors, limits, and how to build a client of your own.",
+    "intro": "Everything this site does goes through the API below, and your scripts and tools can use it the same way. Rendered from the shhnote source at {ref}."
   }
 }

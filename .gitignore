@@ -15,3 +15,6 @@ npm-debug.log*
 
 # editors and OS
 .DS_Store
+
+# rendered from the main repository by scripts/fetch-upstream.sh
+src/generated/

@@ -1,0 +1,32 @@
+---
+import { getEntry, render } from 'astro:content';
+import Content from '../../layouts/Content.astro';
+import { defaultLocale, type Locale } from '../../lib/i18n';
+import { getStrings } from '../../lib/strings';
+
+export function getStaticPaths() {
+  // The API documentation is rendered from the main repository and stays English.
+  return [{ params: { locale: defaultLocale } }];
+}
+
+const locale = Astro.params.locale as Locale;
+const t = getStrings(locale);
+
+// Written by scripts/fetch-upstream.sh (npm's prebuild/predev hook) from the main
+// repository at the tag in .shhnote-ref.
+const entry = await getEntry('upstream', 'docs');
+if (!entry) {
+  throw new Error('docs: src/generated/docs.md is missing; run scripts/fetch-upstream.sh');
+}
+const { Content: Body } = await render(entry);
+---
+
+<Content
+  locale={locale}
+  title={t.docs.title}
+  description={t.docs.description}
+  eyebrow={t.docs.eyebrow}
+  intro={t.docs.intro.replace('{ref}', entry.data.ref)}
+>
+  <Body />
+</Content>

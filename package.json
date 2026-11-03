@@ -4,7 +4,9 @@
   "private": true,
   "type": "module",
   "scripts": {
+    "predev": "scripts/fetch-upstream.sh",
     "dev": "astro dev",
+    "prebuild": "scripts/fetch-upstream.sh",
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro"

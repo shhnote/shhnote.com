@@ -15,6 +15,10 @@ export default defineConfig({
       assetsInlineLimit: 0,
     },
   },
+  markdown: {
+    // Highlighting emits inline style attributes, which the CSP (style-src 'self') blocks.
+    syntaxHighlight: false,
+  },
   i18n: {
     defaultLocale,
     locales: [...locales],

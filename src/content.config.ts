@@ -17,4 +17,10 @@ const pages = defineCollection({
   }),
 });
 
-export const collections = { pages };
+// The main repository's API documentation, written by scripts/fetch-upstream.sh.
+const upstream = defineCollection({
+  loader: glob({ pattern: 'docs.md', base: './src/generated' }),
+  schema: z.object({ ref: z.string() }),
+});
+
+export const collections = { pages, upstream };
