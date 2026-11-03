@@ -23,6 +23,31 @@ export type Locale = (typeof locales)[number];
 
 export const defaultLocale: Locale = 'en';
 
+/** Locales that have pages built; the switcher links only to these. */
+export const availableLocales: readonly Locale[] = ['en'];
+
+/** Each language in its own name, for the switcher. */
+export const localeNames: Record<Locale, string> = {
+  en: 'English',
+  de: 'Deutsch',
+  es: 'Español',
+  fr: 'Français',
+  nl: 'Nederlands',
+  hi: 'हिन्दी',
+  ja: '日本語',
+  pl: 'Polski',
+  zh: '中文',
+  el: 'Ελληνικά',
+  id: 'Bahasa Indonesia',
+  ko: '한국어',
+  pt: 'Português',
+  sv: 'Svenska',
+  he: 'עברית',
+  it: 'Italiano',
+  ro: 'Română',
+  tr: 'Türkçe',
+};
+
 const rtl: ReadonlySet<Locale> = new Set<Locale>(['he']);
 
 export function isLocale(value: string): value is Locale {

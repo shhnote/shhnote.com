@@ -1,6 +1,10 @@
 ---
+import pkg from '../../package.json';
 import type { Locale } from '../lib/i18n';
 import { getStrings } from '../lib/strings';
+import { site } from '../lib/site';
+import LocaleMenu from './LocaleMenu.astro';
+import ThemeMenu from './ThemeMenu.astro';
 
 interface Props {
   locale: Locale;
@@ -9,7 +13,7 @@ interface Props {
 const { locale } = Astro.props;
 const t = getStrings(locale);
 const base = `/${locale}/`;
-const repo = 'https://github.com/shhnote/shhnote';
+const repo = site.repo;
 ---
 
 <footer id="footer" class="footer">
@@ -18,6 +22,10 @@ const repo = 'https://github.com/shhnote/shhnote';
       <div class="footer-brand">
         <a href={base} class="logo__text" aria-label={t.nav.home}><span class="color-accent">shh</span>note</a>
         <p>{t.site.description}</p>
+        <div class="footer-controls">
+          <LocaleMenu locale={locale} icon="globe" />
+          <ThemeMenu locale={locale} />
+        </div>
       </div>
       <div class="footer-col">
         <h4>{t.footer.product}</h4>
@@ -25,7 +33,7 @@ const repo = 'https://github.com/shhnote/shhnote';
           <li><a href={`${base}how-it-works/`}>{t.nav.how}</a></li>
           <li><a href={`${base}security/`}>{t.nav.security}</a></li>
           <li><a href={`${base}faq/`}>{t.nav.faq}</a></li>
-          <li><a href={`${base}docs/`}>{t.nav.docs}</a></li>
+          <li><a href={`${base}docs/`}>{t.nav.api}</a></li>
         </ul>
       </div>
       <div class="footer-col">
@@ -41,16 +49,21 @@ const repo = 'https://github.com/shhnote/shhnote';
       <div class="footer-col">
         <h4>{t.footer.openSource}</h4>
         <ul>
-          <li><a href={repo} rel="noopener">{t.footer.github}</a></li>
-          <li><a href={`${repo}/issues`} rel="noopener">{t.footer.issue}</a></li>
-          <li><a href={`${repo}#readme`} rel="noopener">{t.footer.selfHost}</a></li>
+          <li><a href={repo} target="_blank" rel="noopener">{t.footer.github}</a></li>
+          <li><a href={`${repo}/issues`} target="_blank" rel="noopener">{t.footer.issue}</a></li>
+          <li><a href={`${repo}#readme`} target="_blank" rel="noopener">{t.footer.selfHost}</a></li>
         </ul>
       </div>
     </div>
 
     <div class="footer-bottom">
-      <div>{t.footer.copyright}</div>
-      <div>{t.footer.claims}</div>
+      <div class="footer-bottom__text">
+        <div>{t.footer.copyright}</div>
+        <div class="footer-versions">
+          {t.footer.poweredBy} <a href={repo} target="_blank" rel="noopener">shhnote</a> ({pkg.version})
+          · {t.footer.backend} <span data-shh-server-version>—</span>
+        </div>
+      </div>
     </div>
   </div>
 </footer>

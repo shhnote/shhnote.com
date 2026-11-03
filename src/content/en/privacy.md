@@ -9,7 +9,7 @@ updated: "[date]"
 
 ## The short version
 
-shhnote.com ("this site") is run by the operator named at the bottom of this page. We can't read your secrets. They are encrypted on your device, and the key never reaches us. We keep as little else as we can, and delete it as soon as we can.
+shhnote.com ("this site") can't read your secrets. They are encrypted on your device, and the key never reaches us. We keep as little else as we can, and delete it as soon as we can.
 
 ## What we store
 
@@ -50,4 +50,4 @@ Depending on where you live, you may have the right to ask what data we hold abo
 
 ## Contact
 
-[Operator name], [address], [contact@shhnote.com](mailto:contact@shhnote.com).
+Questions about this policy: [contact@shhnote.com](mailto:contact@shhnote.com).

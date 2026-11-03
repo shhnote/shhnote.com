@@ -38,13 +38,17 @@ const base = `/${locale}/`;
       </div>
     </section>
 
-    <section class="section section--body">
-      <div class="container">
-        <div class:list={['prose', { 'prose--wide': wide }]}>
-          <slot />
+    {wide ? (
+      <slot />
+    ) : (
+      <section class="section section--body">
+        <div class="container">
+          <div class="prose">
+            <slot />
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+    )}
 
     <section class="section section--cta">
       <div class="container">

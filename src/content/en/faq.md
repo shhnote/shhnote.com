@@ -6,6 +6,8 @@ intro: "The short answers first, the technical ones after. If yours isn't here, 
 wide: true
 ---
 
+<section class="section">
+<div class="container">
 <div class="faq">
   <details open>
     <summary>Do I need an account?</summary>
@@ -39,14 +41,6 @@ wide: true
     <summary>Does it work in Tor Browser or with JavaScript off?</summary>
     <p>Creating and revealing a secret needs JavaScript, because the encryption happens in your browser. It works in Tor Browser at the "Safer" level; at "Safest", WebAssembly is off, so passphrase-protected secrets can't be opened and the page says so. Every other page works without JavaScript.</p>
   </details>
-</div>
-
-<header class="section__header-group">
-  <p class="eyebrow">Technical FAQ</p>
-  <h2 class="section__heading">For the security-minded</h2>
-</header>
-
-<div class="faq">
   <details>
     <summary>How is the one-time guarantee enforced against races?</summary>
     <p>The reveal runs a single conditional update that moves the row from "active" to "claimed". Two simultaneous requests can't both succeed; the second observes an already-claimed record and gets the same "no secret found" response as anyone else. The claim is never reverted: if the download is lost, the holder of the claim token re-downloads within the window, and otherwise the secret is destroyed unread.</p>
@@ -74,3 +68,5 @@ wide: true
 </div>
 
 <p class="prose-note">Still wondering? Read <a href="/en/how-it-works/">how it works</a>, the <a href="/en/security/">security details</a>, or <a href="/en/contact/">ask us</a>.</p>
+</div>
+</section>

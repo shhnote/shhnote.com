@@ -16,7 +16,7 @@ const t = getStrings(locale);
 ---
 
 <!doctype html>
-<html lang={locale} dir={dir(locale)} data-theme="dark">
+<html lang={locale} dir={dir(locale)} data-theme="system">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -24,6 +24,7 @@ const t = getStrings(locale);
     <meta name="description" content={description ?? t.site.description} />
     <link rel="preload" href="/fonts/instrument-sans-latin.woff2" as="font" type="font/woff2" crossorigin />
     <script src="../scripts/theme.ts"></script>
+    <script src="../scripts/pwd-toggle.ts"></script>
   </head>
   <body>
     <a class="skip-link" href="#content">{t.nav.skip}</a>

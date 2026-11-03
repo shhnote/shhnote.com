@@ -11,9 +11,11 @@
     "security": "Security",
     "faq": "FAQ",
     "docs": "Docs",
-    "create": "Create a secret",
     "language": "Language",
-    "theme": "Toggle theme"
+    "api": "API",
+    "languageList": "Languages",
+    "languageSoon": "Coming soon",
+    "poweredBy": "Powered by shhnote"
   },
   "footer": {
     "product": "Product",
@@ -28,7 +30,8 @@
     "issue": "Report an issue",
     "selfHost": "Self-hosting guide",
     "copyright": "© 2026 shhnote. Open source under AGPLv3.",
-    "claims": "No cookies · No tracking · No external requests"
+    "poweredBy": "Powered by",
+    "backend": "server"
   },
   "home": {
     "hero": {
@@ -310,5 +313,11 @@
     "eyebrow": "Docs",
     "description": "The shhnote API this site runs on: endpoints, errors, limits, and how to build a client of your own.",
     "intro": "Everything this site does goes through the API below, and your scripts and tools can use it the same way. Rendered from the shhnote source at {ref}."
+  },
+  "theme": {
+    "label": "Theme",
+    "light": "Light",
+    "dark": "Dark",
+    "system": "System"
   }
 }

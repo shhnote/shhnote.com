@@ -7,6 +7,8 @@ wide: true
 depth: detailed
 ---
 
+<section class="section">
+<div class="container">
 <div class="explainer">
   <div class="explainer__row">
     <div class="explainer__aside">
@@ -98,7 +100,11 @@ depth: detailed
     </div>
   </div>
 </div>
+</div>
+</section>
 
+<section class="section">
+<div class="container">
 <header class="section__header-group">
   <p class="eyebrow">Threat model</p>
   <h2 class="section__heading">What shhnote can and cannot see</h2>
@@ -122,7 +128,11 @@ depth: detailed
     <p>Anyone with the full link (and passphrase, if set) can read a one-time secret — treat the link as the secret. After a secret is shown, the page overwrites what it can when you leave, but JavaScript can't guarantee it; close the tab when you're done. A browser driven by automation that injects real input can open a one-time secret the way a person would — the recipient then finds nothing, which is the honest outcome. Deleting a secret removes the record; encrypted leftovers may linger in journals, free disk space or backups until overwritten, as ciphertext without a key. Large secrets stored outside the database carry the time the file was written. And as with any web app, you trust the code served to your browser — that's why shhnote is open source and self-hostable.</p>
   </div>
 </div>
+</div>
+</section>
 
+<section class="section">
+<div class="container">
 <header class="section__header-group">
   <p class="eyebrow">Cryptographic specification</p>
   <h2 class="section__heading">Every primitive, in one place</h2>
@@ -160,7 +170,11 @@ depth: detailed
     <p>We persist an encrypted blob, one-way hashes of its credentials and a rounded expiry — no plaintext, no keys, no sender or recipient metadata.</p>
   </div>
 </div>
+</div>
+</section>
 
+<section class="section">
+<div class="container">
 <header class="section__header-group">
   <p class="eyebrow">Technical FAQ</p>
   <h2 class="section__heading">For the security-minded</h2>
@@ -188,6 +202,12 @@ depth: detailed
     <p>We keep no per-secret access logs or IP history. Rate limiting uses a keyed hash of the address under a salt that rotates and clears every counter with it. Abuse reports are counted per day; there is no record of which secret was reported.</p>
   </details>
 </div>
+</div>
+</section>
+
+<section class="section">
+<div class="container">
+<div class="prose">
 
 ## Tips for sharing safely
 
@@ -209,4 +229,8 @@ Please don't access other people's data, disrupt the service, or run automated s
 
 Vulnerabilities in the shhnote software itself: see the [project's security policy](https://github.com/shhnote/shhnote/security).
 
-<p class="btn-row btn-row--center"><a href="/en/#create" class="btn btn--primary"><span>Create a secret</span></a> <a href="https://github.com/shhnote/shhnote" rel="noopener" class="btn btn--ghost"><span>View source on GitHub</span></a></p>
+<p class="btn-row btn-row--center"><a href="/en/#create" class="btn btn--primary"><span>Create a secret</span></a> <a href="https://github.com/shhnote/shhnote" target="_blank" rel="noopener" class="btn btn--ghost"><span>View source on GitHub</span></a></p>
+
+</div>
+</div>
+</section>

@@ -1,5 +1,7 @@
 import { defineConfig } from 'astro/config';
 import { defaultLocale, locales } from './src/lib/i18n';
+import { satteri } from '@astrojs/markdown-satteri';
+import { externalLinks } from './src/lib/markdown-external-links';
 
 // https://astro.build/config
 export default defineConfig({
@@ -18,6 +20,7 @@ export default defineConfig({
   markdown: {
     // Highlighting emits inline style attributes, which the CSP (style-src 'self') blocks.
     syntaxHighlight: false,
+    processor: satteri({ hastPlugins: [externalLinks] }),
   },
   i18n: {
     defaultLocale,

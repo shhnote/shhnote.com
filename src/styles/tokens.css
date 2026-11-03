@@ -1,4 +1,6 @@
-/* Design tokens. Dark is the default theme; `data-theme` on <html> selects. */
+/* Design tokens. Dark is the base; `data-theme` on <html> is `light`, `dark` or `system`.
+   The light values appear twice (explicit light, and system + OS light) because custom
+   properties can't be grouped and reused. Keep both blocks identical. */
 
 :root {
   --color-background: #0e0e10;
@@ -71,4 +73,30 @@
   --color-text-on-danger: #fbe9e5;
 
   color-scheme: light;
+}
+
+@media (prefers-color-scheme: light) {
+  [data-theme='system'] {
+    --color-background: #faf9f7;
+    --color-surface: #f3f2ef;
+    --color-surface-alt: #e9e7e2;
+    --color-border: #d9d6cf;
+    --color-border-hover: #c4c0b6;
+    --color-grid: #e2dfd8;
+    --color-text: #1a1815;
+    --color-text-muted: #6a665e;
+    --color-text-faint: #9b968c;
+    --color-accent: #b35a34;
+    --color-accent-hover: #9c4a28;
+    --color-accent-text: #9c4a28;
+    --color-text-on-accent: #ffffff;
+    --color-success: #4a7350;
+    --color-success-text: #3d6042;
+    --color-text-on-success: #eef5ef;
+    --color-danger: #b04539;
+    --color-danger-text: #963a30;
+    --color-text-on-danger: #fbe9e5;
+
+    color-scheme: light;
+  }
 }

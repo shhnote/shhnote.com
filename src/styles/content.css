@@ -96,6 +96,9 @@
 .prose a:hover {
   color: var(--color-accent-hover);
 }
+.prose a:is(.btn) {
+  text-decoration: none;
+}
 .prose strong,
 .prose b {
   color: var(--color-text);

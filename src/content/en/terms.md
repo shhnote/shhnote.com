@@ -9,7 +9,7 @@ updated: "[date]"
 
 ## Who we are
 
-shhnote.com ("this site") is run by [operator name], [address] ("we", "us"). By using it, you agree to these terms.
+shhnote.com ("this site", "we", "us") is a hosted instance of the open-source shhnote software. By using it, you agree to these terms.
 
 ## What the service does
 

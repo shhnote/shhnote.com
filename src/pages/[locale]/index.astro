@@ -62,18 +62,16 @@ const defaultExpiry = '86400';
                 </div>
               </div>
 
-              <div class="form-field">
-                <div class="field-label">
-                  <label class="form-label" for="burn">{h.form.burnLabel}</label>
-                  <p class="input-help" id="burn-hint">{h.form.burnHint}</p>
-                </div>
-                <div>
-                  <span class="toggle">
-                    <input type="checkbox" id="burn" name="burn" value="1" role="switch" checked aria-describedby="burn-hint" />
-                    <span class="track" aria-hidden="true"></span>
-                  </span>
-                </div>
-              </div>
+              <label class="form-field form-field--toggle">
+                <span class="field-label">
+                  <span class="form-label">{h.form.burnLabel}</span>
+                  <span class="input-help" id="burn-hint">{h.form.burnHint}</span>
+                </span>
+                <span class="toggle">
+                  <input type="checkbox" id="burn" name="burn" value="1" role="switch" checked aria-describedby="burn-hint" />
+                  <span class="track" aria-hidden="true"></span>
+                </span>
+              </label>
 
               <div class="form-field">
                 <label class="form-label" for="passphrase">{h.form.passphraseLabel} <span class="color-faint">{h.form.passphraseOptional}</span></label>
@@ -88,7 +86,7 @@ const defaultExpiry = '86400';
               </div>
 
               <div class="form-field">
-                <p class="disclaimer">{h.form.disclaimer} <a href={`${base}terms/`}>{h.form.disclaimerLink}</a>.</p>
+                <p class="disclaimer">{h.form.disclaimer} <a href={`${base}terms/`} target="_blank" rel="noopener">{h.form.disclaimerLink}</a>.</p>
                 <button type="submit" class="btn btn--primary w-full"><span>{h.form.submit}</span></button>
                 <p class="status" role="status" aria-live="polite" data-shh-status></p>
               </div>

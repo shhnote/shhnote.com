@@ -7,6 +7,8 @@ wide: true
 depth: simple
 ---
 
+<section class="section">
+<div class="container">
 <div class="flow">
   <div class="flow__step">
     <div class="flow__num">1</div>
@@ -35,7 +37,11 @@ depth: simple
   <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M12 3l7 3v5c0 4.2-3 7.4-7 9-4-1.6-7-4.8-7-9V6z"/><path d="M9 12l2 2 4-4"/></svg>
   <span><b>Think of it like a note that burns after one reader.</b> You seal it, hand it off, and once it's been read, it's gone. Even we — the people who run this site — can never read what's inside or bring it back.</span>
 </div>
+</div>
+</section>
 
+<section class="section">
+<div class="container">
 <header class="section__header-group">
   <p class="eyebrow">Why it's safe</p>
   <h2 class="section__heading">Three promises, in one line each</h2>
@@ -58,7 +64,11 @@ depth: simple
     <p>shhnote is open source. Security experts can — and do — read exactly how it works.</p>
   </div>
 </div>
+</div>
+</section>
 
+<section class="section">
+<div class="container">
 <header class="section__header-group">
   <p class="eyebrow">Common questions</p>
   <h2 class="section__heading">The short answers</h2>
@@ -84,3 +94,6 @@ depth: simple
 </div>
 
 <p class="prose-note">Want the real cryptography behind these promises? <a href="/en/security/">Read the detailed version →</a> Or see <a href="/en/faq/">all questions</a>.</p>
+</div>
+</section>
+

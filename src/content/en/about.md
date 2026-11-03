@@ -10,7 +10,7 @@ Sensitive things often end up in chat histories and email inboxes, where they st
 
 shhnote is built so that whoever runs it can't read what you share. Your secret is encrypted on your device, and the key never reaches the server.
 
-This site, shhnote.com, is one instance of shhnote, run by the operator named on the [contact page](/en/contact/). The software is open source under AGPLv3, and anyone can run their own.
+This site, shhnote.com, is one instance of shhnote. The software is open source under AGPLv3, and anyone can run their own. Questions? See the [contact page](/en/contact/).
 
 - [Read how it works](/en/how-it-works/)
 - [The security details](/en/security/)
