@@ -29,5 +29,170 @@
     "selfHost": "Self-hosting guide",
     "copyright": "© 2026 shhnote. Open source under AGPLv3.",
     "claims": "No cookies · No tracking · No external requests"
+  },
+  "home": {
+    "hero": {
+      "title": "Share secrets securely with self-destructing links",
+      "intro": "Keep your secrets private and out of chat, email, Slack and Teams logs",
+      "noscript": "Creating a secret needs JavaScript: the encryption happens in your browser, before anything is sent. Enable it for this site to continue."
+    },
+    "form": {
+      "noteLabel": "Your secret",
+      "notePlaceholder": "Enter message here...",
+      "filesLabel": "Files to attach",
+      "filesDrop": "Drop files here",
+      "filesClick": "or click to attach",
+      "filesHint": "Encrypted in your browser before upload · up to 25 MB, 25 files",
+      "filesRemove": "Remove",
+      "expiryLabel": "Expires in",
+      "expiry": {
+        "900": "15 Minutes",
+        "1800": "30 Minutes",
+        "3600": "1 Hour",
+        "21600": "6 Hours",
+        "43200": "12 Hours",
+        "86400": "1 Day",
+        "259200": "3 Days",
+        "604800": "7 Days",
+        "1209600": "14 Days"
+      },
+      "burnLabel": "One-time view",
+      "burnHint": "Destroyed after the first view. Switch off to allow repeat views until it expires.",
+      "passphraseLabel": "Password/passphrase",
+      "passphraseOptional": "(optional)",
+      "passphraseToggle": "Show or hide password",
+      "passphraseHint": "Add a password for extra security.",
+      "disclaimer": "By creating or accessing a secret, you acknowledge that you have read and explicitly agree to abide by our",
+      "disclaimerLink": "terms of service",
+      "submit": "Encrypt secret"
+    },
+    "chips": {
+      "e2e": "End-to-end Encrypted",
+      "zeroKnowledge": "Zero-Knowledge",
+      "noLogs": "No logs",
+      "openSource": "Open source"
+    },
+    "result": {
+      "eyebrow": "Link Ready",
+      "title": "Send it, then forget it.",
+      "intro": "Copy the link and share it however you like. For your security we won't show it again — once you leave this page, it's gone from here.",
+      "shareLabel": "One-time link",
+      "copy": "Copy",
+      "copied": "Copied",
+      "chipsLabel": "Secret settings",
+      "chipLifetime": "One-time view",
+      "chipExpiry": "Expires in 1 Day",
+      "passphraseReminder": "This secret has a passphrase. Send it over a different channel than the link itself.",
+      "calloutTitle": "One link, one read.",
+      "callout": "Anyone with the full link can open the secret — once. If you set a passphrase, send it over a different channel than the link itself.",
+      "divider": "private controls · keep to yourself",
+      "burnLabel": "Burn link",
+      "burnAside": "— destroy it yourself, anytime",
+      "burnHint": "Save this somewhere private. Opening it destroys the secret immediately — before anyone else can view it. Once burned, not even we can recover it.",
+      "open": "Open the link",
+      "destroy": "Destroy now",
+      "another": "Create another secret"
+    },
+    "how": {
+      "eyebrow": "How It Works",
+      "title": "Three steps. No accounts required.",
+      "intro": "shhnote encrypts your secret in the browser before anything touches the network. The encryption key lives in the URL fragment — a part of the URL that browsers never send to servers.",
+      "steps": [
+        {
+          "title": "Encrypt",
+          "aside": "text/file(s)",
+          "body": "Your secret is encrypted on your own device before anything is sent. The key to unlock it is never uploaded."
+        },
+        {
+          "title": "Share",
+          "aside": "the link",
+          "body": "It lives in the part of the link after the # — which browsers keep local and never send to a server."
+        },
+        {
+          "title": "Retrieve",
+          "aside": "and it's gone",
+          "body": "The recipient's browser unlocks it locally and the server destroys its copy. Even we can't recover it."
+        }
+      ]
+    },
+    "hood": {
+      "eyebrow": "Under The Hood",
+      "title": "The cryptography, spelled out.",
+      "intro": "No hand-waving. Here's exactly what protects your secret, and where each piece runs — so you can verify the claims instead of taking them on faith.",
+      "specs": [
+        {
+          "label": "Encryption",
+          "value": "AES-256-GCM",
+          "body": "Authenticated symmetric encryption. Every secret is sealed with a 256-bit key and an integrity tag, so tampering is detected — not just left unreadable."
+        },
+        {
+          "label": "Key derivation",
+          "value": "Argon2id",
+          "body": "Optional passphrases are stretched with a memory-hard KDF, making offline brute-force attacks slow and costly even on purpose-built hardware."
+        },
+        {
+          "label": "Randomness",
+          "value": "WebCrypto CSPRNG",
+          "body": "Keys and nonces are drawn from the browser's cryptographically secure generator. Never Math.random(), never predictable."
+        },
+        {
+          "label": "Key custody",
+          "value": "URL fragment #",
+          "body": "The decryption key rides after the # in your link. Browsers never transmit the fragment, so the key that unlocks the secret never reaches our servers."
+        },
+        {
+          "label": "In transit",
+          "value": "TLS 1.3",
+          "body": "Only ciphertext ever leaves your device, carried over modern TLS. What we receive is an opaque blob we have no way to open."
+        },
+        {
+          "label": "At rest",
+          "value": "Ciphertext + TTL",
+          "body": "We persist an encrypted blob and an expiry timestamp — nothing else. No plaintext, no keys, no sender or recipient metadata."
+        }
+      ]
+    },
+    "useCases": {
+      "eyebrow": "Use cases",
+      "title": "Create a shhnote for anything",
+      "intro": "See how people are using shhnote everyday",
+      "items": [
+        {
+          "label": "DevOps & Engineering",
+          "title": "Credentials & Keys",
+          "body": "Stop pasting API keys, database passwords, and SSH keys into chat threads. Share them as one-time links that self-destruct after use. Integrate with CI/CD pipelines via the API."
+        },
+        {
+          "label": "Privacy-conscious users",
+          "title": "Share without a trace",
+          "body": "Works over Tor without degraded functionality. No CAPTCHAs, no browser fingerprinting, no external requests. Every font and asset is self-hosted. Zero metadata leakage."
+        },
+        {
+          "label": "IT & Onboarding",
+          "title": "Provision access securely",
+          "body": "Send new hires initial credentials, VPN configs, or Wi-Fi passwords without leaving traces in email threads or ticketing systems. Generate multiple unique links for batch onboarding."
+        },
+        {
+          "label": "Legal & Regulatory",
+          "title": "Compliance-sensitive records",
+          "body": "Send a patient record, case file, or financial statement to a client or colleague without it sitting in an inbox that's subject to discovery, audit, or breach disclosure."
+        },
+        {
+          "label": "Personal",
+          "title": "Everyday secrets",
+          "body": "Send your accountant tax document passwords. Share streaming credentials with family. Give a contractor your alarm code. Send sensitive files securely. Simple enough for anyone."
+        },
+        {
+          "label": "Misc",
+          "title": "Gift codes or surprise reveals",
+          "body": "Send a gift card code, a surprise, scavenger/treasure hunt clue, or a reveal that vanishes after they've seen it."
+        }
+      ]
+    },
+    "cta": {
+      "title": "Stop sharing sensitive info in plaintext",
+      "intro": "Create a one-time encrypted link in seconds. Or create a multi-view encrypted link that expires in a few hours or days. Add extra protection with a password. No account needed. No data collected.",
+      "button": "Create a one-time secret"
+    }
   }
 }
