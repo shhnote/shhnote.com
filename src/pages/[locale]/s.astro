@@ -39,7 +39,7 @@ const base = `/${locale}/`;
             </noscript>
 
             <form class="stack--sm" data-shh-form="reveal">
-              <button type="submit" class="btn btn--primary btn--lg w-full"><span>{s.armed.reveal}</span></button>
+              <button type="submit" class="btn btn--primary btn--lg w-full" data-shh-reveal><span>{s.armed.reveal}</span></button>
               <p class="input-help text-center">{s.armed.passphraseNote}</p>
               <p class="status text-center" role="status" aria-live="polite" data-shh-status></p>
             </form>
@@ -168,3 +168,13 @@ const base = `/${locale}/`;
     </section>
   </article>
 </Base>
+
+<script>
+  import { wireReveal } from '@shhnote/client/ui';
+  import { t } from '../../scripts/t';
+
+  // Nothing is fetched until a trusted click or key press on the button; the controller
+  // enforces that, switches the states and scrubs the fragment after a reveal.
+  const page = document.querySelector<HTMLElement>('[data-shh-page="reveal"]');
+  if (page) wireReveal(page, { t });
+</script>
