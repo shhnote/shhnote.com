@@ -1,0 +1,59 @@
+---
+import Base from './Base.astro';
+import type { Locale } from '../lib/i18n';
+import { getStrings } from '../lib/strings';
+
+interface Props {
+  locale: Locale;
+  title: string;
+  description: string;
+  eyebrow?: string;
+  intro?: string;
+  wide?: boolean;
+  depth?: 'simple' | 'detailed';
+  updated?: string;
+}
+
+const { locale, title, description, eyebrow, intro, wide = false, depth, updated } = Astro.props;
+const t = getStrings(locale);
+const base = `/${locale}/`;
+---
+
+<Base locale={locale} title={`${title} — ${t.site.name}`} description={description}>
+  <article class="page page--content">
+    <section class="section section--hero section--hero-content">
+      <div class="container">
+        <header class="section__header-group">
+          {eyebrow && <p class="eyebrow">{eyebrow}</p>}
+          <h1>{title}</h1>
+          {intro && <p class="section__intro">{intro}</p>}
+          {updated && <p class="updated">{t.content.updated} {updated}</p>}
+        </header>
+        {depth && (
+          <nav class="doc-switch" aria-label={t.content.depthLabel}>
+            <a href={`${base}how-it-works/`} aria-current={depth === 'simple' ? 'true' : undefined}>{t.content.depthSimple}</a>
+            <a href={`${base}security/`} aria-current={depth === 'detailed' ? 'true' : undefined}>{t.content.depthDetailed}</a>
+          </nav>
+        )}
+      </div>
+    </section>
+
+    <section class="section section--body">
+      <div class="container">
+        <div class:list={['prose', { 'prose--wide': wide }]}>
+          <slot />
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--cta">
+      <div class="container">
+        <header class="section__header-group">
+          <h2 class="section__heading">{t.content.cta.title}</h2>
+          <p class="section__intro">{t.content.cta.intro}</p>
+          <p><a href={`${base}#create`} class="btn btn--primary"><span>{t.content.cta.button}</span></a></p>
+        </header>
+      </div>
+    </section>
+  </article>
+</Base>

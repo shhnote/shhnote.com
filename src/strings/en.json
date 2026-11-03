@@ -293,5 +293,16 @@
       "intro": "If that link pointed at an active secret, it is gone now. We keep a record that a report was received, nothing more.",
       "home": "Go to the home page"
     }
+  },
+  "content": {
+    "updated": "Last updated:",
+    "depthLabel": "Choose explanation depth",
+    "depthSimple": "Simple",
+    "depthDetailed": "Detailed / technical",
+    "cta": {
+      "title": "Try it — it takes ten seconds",
+      "intro": "Write something secret, get your one-time link, and see it disappear.",
+      "button": "Create a secret"
+    }
   }
 }

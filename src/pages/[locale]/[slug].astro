@@ -1,0 +1,22 @@
+---
+import { getCollection, render } from 'astro:content';
+import Content from '../../layouts/Content.astro';
+import { isLocale, type Locale } from '../../lib/i18n';
+
+export async function getStaticPaths() {
+  const entries = await getCollection('pages');
+  return entries.flatMap((entry) => {
+    const [locale, slug] = entry.id.split('/');
+    if (!locale || !slug || !isLocale(locale)) return [];
+    return [{ params: { locale, slug }, props: { entry } }];
+  });
+}
+
+const { entry } = Astro.props;
+const locale = Astro.params.locale as Locale;
+const { Content: Body } = await render(entry);
+---
+
+<Content locale={locale} {...entry.data}>
+  <Body />
+</Content>

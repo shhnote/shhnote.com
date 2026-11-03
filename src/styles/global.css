@@ -3,6 +3,7 @@
 @import './reset.css';
 @import './components.css';
 @import './sections.css';
+@import './content.css';
 
 html {
   min-height: 100%;
