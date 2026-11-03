@@ -1,0 +1,73 @@
+---
+import Base from '../../layouts/Base.astro';
+import { defaultLocale, type Locale } from '../../lib/i18n';
+import { getStrings } from '../../lib/strings';
+
+export function getStaticPaths() {
+  return [{ params: { locale: defaultLocale } }];
+}
+
+const locale = Astro.params.locale as Locale;
+const t = getStrings(locale);
+const r = t.report;
+const base = `/${locale}/`;
+---
+
+<Base locale={locale} title={`${r.title} — shhnote`}>
+  <article class="page page--secret" data-shh-page="report">
+    <section class="section section--panel">
+      <div class="container">
+        <div class="vault" data-shh-state="armed">
+          <div class="panel panel--center stack">
+            <span class="badge badge--muted"><span class="dot"></span>{r.armed.badge}</span>
+
+            <div class="lock-badge lock-badge--muted">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 21V4"/><path d="M4 4h12l-2 4 2 4H4"/></svg>
+            </div>
+
+            <div class="stack--sm">
+              <h1 class="panel__heading">{r.armed.title}</h1>
+              <p>{r.armed.intro}</p>
+            </div>
+
+            <noscript>
+              <p class="callout callout--notice">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M10.3 4.3 1.8 19a1.5 1.5 0 0 0 1.3 2.2h17.8a1.5 1.5 0 0 0 1.3-2.2L13.7 4.3a1.5 1.5 0 0 0-2.6 0z"/><path d="M12 9.5v4"/><path d="M12 17h.01"/></svg>
+                <span>{r.armed.noscript}</span>
+              </p>
+            </noscript>
+
+            <form class="stack--sm" data-shh-form="report">
+              <div class="form-field">
+                <label class="form-label visually-hidden" for="report-link">{r.armed.label}</label>
+                <input class="form-input form-input--mono" id="report-link" name="link" type="url" inputmode="url" autocomplete="off" spellcheck="false" placeholder={r.armed.placeholder} required />
+                <p class="input-help">{r.armed.help}</p>
+              </div>
+              <button type="submit" class="btn btn--primary btn--lg w-full"><span>{r.armed.submit}</span></button>
+              <p class="status text-center" role="status" aria-live="polite" data-shh-status></p>
+            </form>
+          </div>
+        </div>
+
+        <div class="vault" data-shh-state="done" hidden>
+          <div class="panel panel--center stack">
+            <span class="badge"><span class="dot"></span>{r.done.badge}</span>
+
+            <div class="lock-badge">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M12 3l7 3v5c0 4.2-3 7.4-7 9-4-1.6-7-4.8-7-9V6z"/><path d="M9 12l2 2 4-4"/></svg>
+            </div>
+
+            <div class="stack--sm">
+              <h1 class="panel__heading">{r.done.title}</h1>
+              <p>{r.done.intro}</p>
+            </div>
+
+            <div class="btn-row btn-row--center">
+              <a class="btn btn--quiet" href={base}><span>{r.done.home}</span></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </article>
+</Base>

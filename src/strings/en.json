@@ -194,5 +194,104 @@
       "intro": "Create a one-time encrypted link in seconds. Or create a multi-view encrypted link that expires in a few hours or days. Add extra protection with a password. No account needed. No data collected.",
       "button": "Create a one-time secret"
     }
+  },
+  "secret": {
+    "title": "Someone shared a secret with you",
+    "armed": {
+      "badge": "Nothing fetched yet",
+      "title": "Someone shared a secret with you",
+      "intro": "It's decrypted in your browser. If it was sent as a single view, it's deleted the moment you open it — so reveal it only when you're ready to read and save it.",
+      "noscript": "JavaScript is needed to decrypt this secret in your browser. Please turn it on to view the secret.",
+      "reveal": "Reveal secret",
+      "passphraseNote": "If the sender set a passphrase, you'll be asked for it after you press the button.",
+      "callout": "Nothing has been fetched yet — this is all an automated scanner sees. We keep the reveal manual on purpose, so email security, chat previews and antivirus can't open your secret before you do.",
+      "chipE2e": "End-to-end encrypted",
+      "chipNoAccount": "No account needed"
+    },
+    "working": {
+      "badge": "Working",
+      "title": "Decrypting in your browser…",
+      "intro": "Fetching the ciphertext and unlocking it locally with the key from your link. It never leaves this tab in readable form.",
+      "fetching": "Fetching the encrypted secret…",
+      "decrypting": "Decrypting in your browser…"
+    },
+    "passphrase": {
+      "badge": "Locked",
+      "title": "This secret needs a passphrase",
+      "intro": "The sender added a second lock. Retries happen in your browser; nothing is sent to the server.",
+      "label": "Passphrase",
+      "submit": "Unlock",
+      "wrong": "That passphrase didn't work. Try again."
+    },
+    "revealed": {
+      "singleView": "Destroyed · this was the only view",
+      "title": "Here it is. Save what you need now.",
+      "intro": "This secret was decrypted in your browser. Refresh this page and it's gone from here.",
+      "outputLabel": "secret · decrypted locally",
+      "copy": "Copy",
+      "download": "Download",
+      "closeWarning": "Handle it carefully — once you close this tab there's no way to retrieve it again, from you or from us.",
+      "createOwn": "Create your own secret"
+    },
+    "notFound": {
+      "badge": "No secret found",
+      "title": "No secret found here.",
+      "intro": "This link is invalid, or the secret it pointed to has already been viewed, expired, or been destroyed. For your privacy, this site keeps no record of which — nothing about a secret's history is ever stored.",
+      "callout": "If you still need the secret, ask the sender to create a fresh link — and double-check you copied the whole URL, including the part after the #.",
+      "create": "Create a secret",
+      "how": "How shhnote works"
+    },
+    "errors": {
+      "network": "Couldn't reach the server. Try again in a moment.",
+      "corrupt": "This secret couldn't be decrypted. The link may be incomplete.",
+      "wasm": "This passphrase needs WebAssembly, which your browser or its security level has switched off (Tor Browser at \"Safer\", for example). Allow it and try again."
+    }
+  },
+  "burn": {
+    "title": "Destroy this secret",
+    "armed": {
+      "badge": "Armed · nothing happened yet",
+      "title": "Destroy this secret?",
+      "intro": "This is a burn link. Nothing has happened yet. Confirming deletes the encrypted secret and its file(s) permanently — before anyone else can open them.",
+      "noscript": "This page needs JavaScript to do anything. Please turn it on.",
+      "confirm": "Destroy the secret",
+      "cancel": "Go to the home page",
+      "working": "Destroying…"
+    },
+    "done": {
+      "badge": "Burned · secret destroyed",
+      "title": "This secret has been destroyed.",
+      "intro": "You just used the burn link. The encrypted secret and its file(s) have been permanently erased from our servers — before anyone else could open them.",
+      "callout": "Anyone who opens the original share link from here on will simply be told no secret was found — with no way to tell whether it was viewed, expired, or burned. Nothing about it is kept.",
+      "create": "Create a new secret",
+      "how": "How shhnote works"
+    },
+    "notFound": {
+      "badge": "Nothing to destroy",
+      "title": "Nothing to destroy.",
+      "intro": "This burn link is invalid, or the secret was already viewed, expired, or destroyed.",
+      "home": "Go to the home page"
+    }
+  },
+  "report": {
+    "title": "Report a secret link",
+    "armed": {
+      "badge": "Abuse report",
+      "title": "Report a secret link",
+      "intro": "Paste a link you believe shares something it shouldn't. If the secret is still active it is removed immediately. We can't see what it contains, so there is nothing to review and nothing to tell you.",
+      "noscript": "This page needs JavaScript to do anything. Please turn it on.",
+      "label": "Secret link",
+      "placeholder": "https://shhnote.com/s#…",
+      "help": "The full link including the part after the #. It is used only to find the secret; it is not stored.",
+      "submit": "Remove this secret",
+      "working": "Sending…",
+      "invalid": "That doesn't look like a secret link from this site."
+    },
+    "done": {
+      "badge": "Received",
+      "title": "Thanks, that's handled.",
+      "intro": "If that link pointed at an active secret, it is gone now. We keep a record that a report was received, nothing more.",
+      "home": "Go to the home page"
+    }
   }
 }

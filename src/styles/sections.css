@@ -428,3 +428,15 @@
   border-top: 1px solid var(--color-border);
   background-color: var(--color-surface);
 }
+
+/* Once a secret is created the page is only the result panel: the hero copy, the feature
+   chips and every other section go away until the visitor starts another secret. */
+#content .page--home:has(.create-result:not([hidden])) .section--hero > .container > .section__header-group,
+#content .page--home:has(.create-result:not([hidden])) .feature-chips,
+#content .page--home:has(.create-result:not([hidden])) .section:not(.section--hero) {
+  display: none;
+}
+#content .page--home:has(.create-result:not([hidden])) .section--hero {
+  border-bottom: 0;
+  padding-block-end: 3rem;
+}
