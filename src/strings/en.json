@@ -319,5 +319,31 @@
     "light": "Light",
     "dark": "Dark",
     "system": "System"
+  },
+  "ui": {
+    "form-files-remove": "Remove",
+    "result-copied": "Copied",
+    "result-destroyed": "Destroyed. The secret is gone from the server.",
+    "result-chip-single": "One-time view",
+    "result-chip-multi": "Open until it expires",
+    "result-chip-expires": "Expires in {period}",
+    "create-encrypting": "Encrypting in your browser…",
+    "create-uploading": "Uploading…",
+    "create-error-empty": "Add some text or at least one file.",
+    "create-error-too-large": "That's more than this site accepts. Remove some files or shorten the text.",
+    "create-error-network": "Couldn't reach the server. Check your connection and try again.",
+    "create-error-failed": "Something went wrong while creating the secret. Please try again.",
+    "create-error-wasm": "Passphrases need WebAssembly, which your browser or its security level has switched off. Allow it, or create the secret without a passphrase.",
+    "reveal-fetching": "Fetching the encrypted secret…",
+    "reveal-decrypting": "Decrypting in your browser…",
+    "reveal-wrong-passphrase": "That passphrase didn't work. Try again.",
+    "reveal-single-view": "Destroyed · this was the only view",
+    "reveal-download": "Download",
+    "reveal-error-network": "Couldn't reach the server. Try again in a moment.",
+    "reveal-error-corrupt": "This secret couldn't be decrypted. The link may be incomplete.",
+    "reveal-error-wasm": "This passphrase needs WebAssembly, which your browser or its security level has switched off (Tor Browser at \"Safer\", for example). Allow it and try again.",
+    "burn-working": "Destroying…",
+    "report-working": "Sending…",
+    "report-error-invalid": "That doesn't look like a secret link from this site."
   }
 }

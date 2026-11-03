@@ -2,11 +2,13 @@ import { defineConfig } from 'astro/config';
 import { defaultLocale, locales } from './src/lib/i18n';
 import { satteri } from '@astrojs/markdown-satteri';
 import { externalLinks } from './src/lib/markdown-external-links';
+import { argon2 } from './src/integrations/argon2';
 
 // https://astro.build/config
 export default defineConfig({
   site: 'https://shhnote.com',
   output: 'static',
+  integrations: [argon2()],
   build: {
     // The CSP has no 'unsafe-inline': every stylesheet and script is a file.
     inlineStylesheets: 'never',

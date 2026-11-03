@@ -4,7 +4,8 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import { dir, type Locale } from '../lib/i18n';
 import { site } from '../lib/site';
-import { getStrings } from '../lib/strings';
+import { getStrings, uiStrings } from '../lib/strings';
+import { apiBase, argon2Url, clientVersion } from '../lib/instance';
 
 interface Props {
   locale: Locale;
@@ -12,9 +13,11 @@ interface Props {
   description?: string;
   /** Pages that search engines should not index (the secret interstitials). */
   noindex?: boolean;
+  /** Home and /s fetch the Argon2 module on every visit (conformance item 10). */
+  prefetchArgon2?: boolean;
 }
 
-const { locale, title, description, noindex = false } = Astro.props;
+const { locale, title, description, noindex = false, prefetchArgon2 = false } = Astro.props;
 const t = getStrings(locale);
 const pageTitle = title ?? t.site.title;
 const pageDescription = description ?? t.site.description;
@@ -41,10 +44,12 @@ const canonical = new URL(Astro.url.pathname, site.url).href;
     <meta property="og:description" content={pageDescription} />
     <meta property="og:url" content={canonical} />
     <link rel="preload" href="/fonts/instrument-sans-latin.woff2" as="font" type="font/woff2" crossorigin />
+    {prefetchArgon2 && <link rel="prefetch" href={argon2Url} as="fetch" crossorigin="anonymous" />}
     <script src="../scripts/theme.ts"></script>
     <script src="../scripts/pwd-toggle.ts"></script>
   </head>
-  <body>
+  <body data-shh-api={apiBase} data-shh-asset-version={clientVersion}>
+    <script type="application/json" data-shh-i18n is:inline set:html={JSON.stringify(uiStrings(locale))} />
     <a class="skip-link" href="#content">{t.nav.skip}</a>
     <Header locale={locale} />
     <main id="content" tabindex="-1">
