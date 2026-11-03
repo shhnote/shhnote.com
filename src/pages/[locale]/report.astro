@@ -71,3 +71,12 @@ const base = `/${locale}/`;
     </section>
   </article>
 </Base>
+
+<script>
+  import { wireReport } from '@shhnote/client/ui';
+  import { t } from '../../scripts/t';
+
+  // Submitting sends the lookup value only; the answer is the same whatever the secret's state.
+  const page = document.querySelector<HTMLElement>('[data-shh-page="report"]');
+  if (page) wireReport(page, { t });
+</script>

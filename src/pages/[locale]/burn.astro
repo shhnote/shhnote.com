@@ -98,3 +98,12 @@ const base = `/${locale}/`;
     </section>
   </article>
 </Base>
+
+<script>
+  import { wireBurn } from '@shhnote/client/ui';
+  import { t } from '../../scripts/t';
+
+  // Opening the page destroys nothing; only a trusted submit does, and a share link pasted here is refused locally.
+  const page = document.querySelector<HTMLElement>('[data-shh-page="burn"]');
+  if (page) wireBurn(page, { t });
+</script>
