@@ -598,6 +598,7 @@
   min-width: 0;
 }
 .file-card__name {
+  display: block;
   font-weight: 600;
   color: var(--color-text);
   white-space: nowrap;
@@ -605,6 +606,7 @@
   text-overflow: ellipsis;
 }
 .file-card__sub {
+  display: block;
   font-family: var(--font-mono);
   font-size: var(--font-size-12);
   color: var(--color-text-faint);

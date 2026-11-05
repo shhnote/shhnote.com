@@ -128,6 +128,19 @@ const base = `/${locale}/`;
             </div>
 
             <ul class="file-cards" data-shh-files></ul>
+            {/* One delivered file, in the design's card; the controller clones this instead of its built-in item. */}
+            <template data-shh-template="file-card">
+              <li class="file-card">
+                <span class="file-card__icon" aria-hidden="true">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 0 0-3.375-3.375h-1.5A1.125 1.125 0 0 1 13.5 7.125v-1.5a3.375 3.375 0 0 0-3.375-3.375H8.25m2.25 0H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 0 0-9-9z"/></svg>
+                </span>
+                <span class="file-card__meta">
+                  <span class="file-card__name" data-shh-file-name></span>
+                  <span class="file-card__sub" data-shh-file-meta></span>
+                </span>
+                <a class="btn btn--ghost btn--sm" data-shh-file-download>{s.revealed.download}</a>
+              </li>
+            </template>
 
             <div class="callout callout--danger">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M12 3l7 3v5c0 4.2-3 7.4-7 9-4-1.6-7-4.8-7-9V6z"/></svg>
@@ -170,11 +183,12 @@ const base = `/${locale}/`;
 </Base>
 
 <script>
-  import { wireReveal } from '@shhnote/client/ui';
-  import { t } from '../../scripts/t';
+  import { createT, wireReveal } from '@shhnote/client/ui';
+  import { apiBase, argon2Url } from '../../lib/instance';
 
   // Nothing is fetched until a trusted click or key press on the button; the controller
-  // enforces that, switches the states and scrubs the fragment after a reveal.
+  // enforces that, switches the states and scrubs the fragment after a reveal. The body
+  // cap comes from /config, read by the controller after the press.
   const page = document.querySelector<HTMLElement>('[data-shh-page="reveal"]');
-  if (page) wireReveal(page, { t });
+  if (page) wireReveal(page, { t: createT(), apiBase, argon2Url });
 </script>

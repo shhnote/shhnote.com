@@ -5,7 +5,7 @@ import Footer from '../components/Footer.astro';
 import { availableLocales, defaultLocale, dir, type Locale } from '../lib/i18n';
 import { site } from '../lib/site';
 import { getStrings, uiStrings } from '../lib/strings';
-import { apiBase, argon2Url, clientVersion, maxBlobBytes } from '../lib/instance';
+import { argon2Url } from '../lib/instance';
 
 interface Props {
   locale: Locale;
@@ -55,7 +55,7 @@ const xDefault = new URL(`/${defaultLocale}/${rest}`, site.url).href;
     {prefetchArgon2 && <link rel="prefetch" href={argon2Url} as="fetch" crossorigin="anonymous" />}
     <script src="../scripts/chrome.ts"></script>
   </head>
-  <body data-shh-api={apiBase} data-shh-asset-version={clientVersion} data-shh-max-blob-bytes={maxBlobBytes}>
+  <body>
     <script type="application/json" data-shh-i18n is:inline set:html={JSON.stringify(uiStrings(locale))} />
     <a class="skip-link" href="#content">{t.nav.skip}</a>
     <Header locale={locale} locales={locales} />

@@ -234,6 +234,13 @@
   gap: 1rem;
   align-items: center;
 }
+#content .page .form-wrapper .create-form .dropzone-files .dropzone-file {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+#content .page .form-wrapper .create-form .dropzone-files .dropzone-file__meta {
+  color: var(--color-text-faint);
+}
 #content .page .form-wrapper .create-form .dropzone-files button {
   background: none;
   border: 0;

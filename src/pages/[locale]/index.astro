@@ -47,6 +47,13 @@ const defaultExpiry = '86400';
                 </span>
               </label>
               <ul class="dropzone-files" data-shh-file-list></ul>
+              {/* One chosen file; the controller clones this instead of its built-in item. */}
+              <template data-shh-template="dropzone-item">
+                <li>
+                  <span class="dropzone-file"><bdi data-shh-file-name></bdi> <span class="dropzone-file__meta" data-shh-file-meta></span></span>
+                  <button type="button" data-shh-file-remove>{t.ui['form-files-remove']}</button>
+                </li>
+              </template>
             </div>
 
             <div class="settings">
@@ -250,11 +257,12 @@ const defaultExpiry = '86400';
 </Base>
 
 <script>
-  import { wireCreate } from '@shhnote/client/ui';
-  import { t } from '../../scripts/t';
+  import { createT, wireCreate } from '@shhnote/client/ui';
+  import { apiBase, argon2Url } from '../../lib/instance';
 
   // The create flow: encrypt in the browser, upload, show the links. Strings come from the
-  // page's data-shh-i18n block; the API base and asset version from <body>.
+  // page's data-shh-i18n block (createT); the limits come from the instance's /config,
+  // which the controller reads and compares itself.
   const page = document.querySelector<HTMLElement>('[data-shh-page="create"]');
-  if (page) wireCreate(page, { t });
+  if (page) wireCreate(page, { t: createT(), apiBase, argon2Url });
 </script>

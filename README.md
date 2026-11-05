@@ -30,9 +30,9 @@ npm run preview             # serves dist/
   API share an origin as they do in production. Set `SHH_DEV_PROXY` to proxy
   somewhere else, e.g. `SHH_DEV_PROXY=http://localhost:8080 npm run dev`.
 - `PUBLIC_SHH_API_BASE` points the pages at an API on another origin instead of
-  `/api/v1` (that instance must list this origin in its allowed origins).
-  `PUBLIC_SHH_MAX_BLOB_BYTES` sets the largest body a reveal accepts before the
-  server's `/config` answers. Both are read at build time; see `.env.example`.
+  `/api/v1` (that instance must list this origin in its allowed origins). It is
+  read at build time; see `.env.example`. Every limit (blob size, text length,
+  lifetimes) comes from that instance's `GET /config` at runtime.
 - The `docs` page renders the main repository's API documentation at the tag in
   `.shhnote-ref` (`SHHNOTE_REF` overrides it). `scripts/fetch-upstream.sh` runs
   before `dev` and `build`; it reads a checkout at `../shhnote` (`SHHNOTE_DIR`

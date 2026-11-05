@@ -340,6 +340,7 @@
     "create-uploading": "Uploading…",
     "create-error-empty": "Add some text or at least one file.",
     "create-error-too-large": "That's more than this site accepts. Remove some files or shorten the text.",
+    "create-error-text-too-long": "That's more text than this site accepts (up to {max} bytes). Shorten it or attach it as a file.",
     "create-error-network": "Couldn't reach the server. Check your connection and try again.",
     "create-error-failed": "Something went wrong while creating the secret. Please try again.",
     "create-error-wasm": "Passphrases need WebAssembly, which your browser or its security level has switched off. Allow it, or create the secret without a passphrase.",
@@ -347,12 +348,16 @@
     "reveal-decrypting": "Decrypting in your browser…",
     "reveal-wrong-passphrase": "That passphrase didn't work. Try again.",
     "reveal-single-view": "Destroyed · this was the only view",
+    "reveal-single-view-destroyed": "Destroyed \u00b7 this was the only view and the server has deleted it",
     "reveal-download": "Download",
     "reveal-error-network": "Couldn't reach the server. Try again in a moment.",
+    "reveal-error-busy": "The server is busy or restarting. The link is fine \u2014 try again in a moment.",
+    "reveal-error-too-large": "This secret is larger than this site accepts, so it can't be shown here.",
     "reveal-error-corrupt": "This secret couldn't be decrypted. The link may be incomplete.",
     "reveal-error-wasm": "This passphrase needs WebAssembly, which your browser or its security level has switched off (Tor Browser at \"Safer\", for example). Allow it and try again.",
     "burn-working": "Destroying…",
     "report-working": "Sending…",
-    "report-error-invalid": "That doesn't look like a secret link from this site."
+    "report-error-invalid": "That doesn't look like a secret link from this site.",
+    "error-unsupported-protocol": "This site's pages are older than its server and can't open this secret. Reload in a moment; if it persists, tell us."
   }
 }

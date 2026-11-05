@@ -14,11 +14,11 @@ Chromium over the DevTools Protocol so clicks and key presses are trusted input.
 | 3 | Fragment scrubbed after use | **Verified** (by construction) | After a reveal and after a burn the URL is `/en/s/` resp. `/en/burn/` with no `#…`; `history.length` is unchanged (replaceState). |
 | 4 | Download names sanitised | **Verified** (by construction) | A file named `invoice‮fdp.exe` declared `text/html` is shown as `invoicefdp.exe` inside `<bdi>`, the download name is the cleaned one, and the blob URL serves `application/octet-stream`. |
 | 5 | Wrong passphrase costs no round trip; claim survives failure | **Partly verified** | Wrong then right passphrase: one `POST /secrets/reveal` in total, retries are local. **Reload between attempts** does *not* resend the claim token with this package version: the token lives only in the controller's closure, so after a reload the secret reads as "already viewed". Reported upstream (see below). |
-| 6 | Bodies capped | **By construction** | `<body data-shh-max-blob-bytes="67108864">` (this instance's `max_blob_bytes`; `PUBLIC_SHH_MAX_BLOB_BYTES` at build) is read by `maxBlobBytesFrom`; without it the package default is 4 GiB. |
+| 6 | Bodies capped | **By construction** | The reveal controller reads `max_blob_bytes` (a padded-size bucket) from `/config` after the press and caps the body at `blobLen` of it, announced and received; the page passes no cap of its own (`@shhnote/client` 0.4.0). |
 | 7 | Decrypted material wiped on leave | **By construction** | `wireReveal` registers the `pagehide` wipe; the pages add no copies of the payload elsewhere. |
 | 8 | No expiry information shown | **Verified** | A TTL secret reveals with no lifetime badge; a single-view one says "Destroyed · this was the only view". The interstitial carries no expiry chip (the design's "Expires in 23 hours" chip was dropped). |
 | 9 | WebAssembly unavailable is a clear failure | **By construction, manual check pending** | `loadArgon2` rejects with `argon2_unavailable`; the strings `reveal-error-wasm` / `create-error-wasm` are wired. Headless Chromium here could not be started without WebAssembly, so the on-screen message is to be confirmed in Tor Browser at "Safer" (below). |
-| 10 | `argon2.wasm` fetched on every create and reveal page | **Verified** | Loading `/en/` and `/en/s/` each requests `/static/argon2.wasm?v=0.3.0` (a `<link rel=prefetch>` plus the controller's `prefetchArgon2`; same URL, served from cache the second time). The module is served from this origin at both `/argon2.wasm` and `/static/argon2.wasm`. |
+| 10 | `argon2.wasm` fetched on every create and reveal page | **Verified** | Loading `/en/` and `/en/s/` each requests `/argon2.wasm?v=0.4.0` (a `<link rel=prefetch>` plus the controller's `prefetchArgon2`; same URL, served from cache the second time). The module is served from this origin at `/argon2.wasm`, the URL passed to the controllers as `argon2Url`. |
 | 11 | Empty passphrase is not a passphrase | **By construction** | The controllers skip a blank field. |
 | 12 | Content Security Policy | **Build verified, headers at deploy** | `dist/` contains no inline script, no `<style>`, no `style=` attribute and no `on*=` handler (checked on every build); the only inline `<script>` is a `type="application/json"` data block, which the CSP does not execute. The header itself (`docs/headers.md`) is Caddy's; confirm after deploy with `curl -sI`. |
 | 13 | No external origins | **Verified** | `scripts/check-external.sh` fails the build on any URL outside the allow-list (only XML namespace identifiers and `github.com/shhnote` links pass). Every request recorded while driving the pages went to the site origin. Fonts, styles, scripts and the wasm module are local. |
@@ -35,7 +35,7 @@ Chromium over the DevTools Protocol so clicks and key presses are trusted input.
 - **Tor Browser, "Safest":** every page renders; the create page shows the JavaScript
   notice; a passphrase reveal must show the WebAssembly message (item 9), not "corrupt".
 - **After deploy:** `curl -sI https://shhnote.com/en/` shows the CSP and the headers of
-  item 16; `curl -sI https://shhnote.com/static/argon2.wasm` says `application/wasm`;
+  item 16; `curl -sI https://shhnote.com/argon2.wasm` says `application/wasm`;
   adding a `<style>` in devtools is blocked by the CSP.
 
 ## Upstream
