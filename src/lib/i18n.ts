@@ -55,6 +55,28 @@ export const localeNames: Record<Locale, string> = {
   tr: 'Türkçe',
 };
 
+/** Open Graph `og:locale` values (language_TERRITORY), one per locale. */
+export const ogLocales: Record<Locale, string> = {
+  en: 'en_US',
+  de: 'de_DE',
+  es: 'es_ES',
+  fr: 'fr_FR',
+  nl: 'nl_NL',
+  hi: 'hi_IN',
+  ja: 'ja_JP',
+  pl: 'pl_PL',
+  zh: 'zh_CN',
+  el: 'el_GR',
+  id: 'id_ID',
+  ko: 'ko_KR',
+  pt: 'pt_PT',
+  sv: 'sv_SE',
+  he: 'he_IL',
+  it: 'it_IT',
+  ro: 'ro_RO',
+  tr: 'tr_TR',
+};
+
 const rtl: ReadonlySet<Locale> = new Set<Locale>(['he']);
 
 export function isLocale(value: string): value is Locale {

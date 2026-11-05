@@ -69,7 +69,7 @@
       "passphraseOptional": "(valfritt)",
       "passphraseToggle": "Visa eller dölj lösenord",
       "passphraseHint": "Lägg till ett lösenord för extra säkerhet.",
-      "disclaimer": "Genom att skapa eller öppna en hemlighet bekräftar du att du har läst och uttryckligen godkänner att följa våra",
+      "disclaimer": "Genom att skapa eller öppna en hemlighet bekräftar du att du har läst och uttryckligen godkänner att följa våra ",
       "disclaimerLink": "användarvillkor",
       "disclaimerEnd": ".",
       "submit": "Kryptera hemligheten"

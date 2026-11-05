@@ -70,7 +70,7 @@
       "passphraseOptional": "(optional)",
       "passphraseToggle": "Show or hide password",
       "passphraseHint": "Add a password for extra security.",
-      "disclaimer": "By creating or accessing a secret, you acknowledge that you have read and explicitly agree to abide by our",
+      "disclaimer": "By creating or accessing a secret, you acknowledge that you have read and explicitly agree to abide by our ",
       "disclaimerLink": "terms of service",
       "disclaimerEnd": ".",
       "submit": "Encrypt secret"

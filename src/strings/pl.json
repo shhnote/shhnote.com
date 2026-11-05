@@ -69,7 +69,7 @@
       "passphraseOptional": "(opcjonalnie)",
       "passphraseToggle": "Pokaż lub ukryj hasło",
       "passphraseHint": "Dodaj hasło, aby zwiększyć bezpieczeństwo.",
-      "disclaimer": "Tworząc sekret lub otwierając go, potwierdzasz, że znasz nasz",
+      "disclaimer": "Tworząc sekret lub otwierając go, potwierdzasz, że znasz nasz ",
       "disclaimerLink": "regulamin",
       "disclaimerEnd": " i wyraźnie zgadzasz się go przestrzegać.",
       "submit": "Zaszyfruj sekret"

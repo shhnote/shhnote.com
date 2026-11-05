@@ -69,7 +69,7 @@
       "passphraseOptional": "(isteğe bağlı)",
       "passphraseToggle": "Parolayı göster veya gizle",
       "passphraseHint": "Ek güvenlik için bir parola ekleyin.",
-      "disclaimer": "Bir sır oluşturarak veya bir sırra erişerek",
+      "disclaimer": "Bir sır oluşturarak veya bir sırra erişerek ",
       "disclaimerLink": "kullanım koşullarımızı",
       "disclaimerEnd": " okuduğunuzu ve bunlara uymayı açıkça kabul ettiğinizi onaylamış olursunuz.",
       "submit": "Sırrı şifrele"

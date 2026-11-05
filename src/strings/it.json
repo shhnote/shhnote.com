@@ -69,7 +69,7 @@
       "passphraseOptional": "(facoltativa)",
       "passphraseToggle": "Mostra o nascondi la password",
       "passphraseHint": "Aggiungi una password per una protezione in più.",
-      "disclaimer": "Creando o aprendo un segreto, dichiari di aver letto e di accettare espressamente i nostri",
+      "disclaimer": "Creando o aprendo un segreto, dichiari di aver letto e di accettare espressamente i nostri ",
       "disclaimerLink": "termini di servizio",
       "disclaimerEnd": ".",
       "submit": "Cifra il segreto"

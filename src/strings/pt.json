@@ -69,7 +69,7 @@
       "passphraseOptional": "(opcional)",
       "passphraseToggle": "Mostrar ou ocultar a senha",
       "passphraseHint": "Adicione uma senha para mais segurança.",
-      "disclaimer": "Ao criar ou acessar um segredo, você confirma que leu e concorda expressamente em cumprir os nossos",
+      "disclaimer": "Ao criar ou acessar um segredo, você confirma que leu e concorda expressamente em cumprir os nossos ",
       "disclaimerLink": "termos de serviço",
       "disclaimerEnd": ".",
       "submit": "Criptografar segredo"

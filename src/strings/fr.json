@@ -69,7 +69,7 @@
       "passphraseOptional": "(facultatif)",
       "passphraseToggle": "Afficher ou masquer le mot de passe",
       "passphraseHint": "Ajoutez un mot de passe pour plus de sécurité.",
-      "disclaimer": "En créant un secret ou en y accédant, vous reconnaissez avoir lu nos",
+      "disclaimer": "En créant un secret ou en y accédant, vous reconnaissez avoir lu nos ",
       "disclaimerLink": "conditions d’utilisation",
       "disclaimerEnd": " et vous engagez expressément à les respecter.",
       "submit": "Chiffrer le secret"

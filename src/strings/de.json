@@ -69,7 +69,7 @@
       "passphraseOptional": "(optional)",
       "passphraseToggle": "Passwort anzeigen oder verbergen",
       "passphraseHint": "Füge ein Passwort für zusätzliche Sicherheit hinzu.",
-      "disclaimer": "Mit dem Erstellen oder Öffnen eines Geheimnisses akzeptierst du ausdrücklich unsere",
+      "disclaimer": "Mit dem Erstellen oder Öffnen eines Geheimnisses akzeptierst du ausdrücklich unsere ",
       "disclaimerLink": "Nutzungsbedingungen",
       "disclaimerEnd": ".",
       "submit": "Geheimnis verschlüsseln"

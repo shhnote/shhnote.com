@@ -69,7 +69,7 @@
       "passphraseOptional": "(opțional)",
       "passphraseToggle": "Afișează sau ascunde parola",
       "passphraseHint": "Adaugă o parolă pentru un plus de securitate.",
-      "disclaimer": "Prin crearea sau accesarea unui secret, confirmi că ai citit și că accepți în mod explicit să respecți",
+      "disclaimer": "Prin crearea sau accesarea unui secret, confirmi că ai citit și că accepți în mod explicit să respecți ",
       "disclaimerLink": "termenii de utilizare",
       "disclaimerEnd": ".",
       "submit": "Criptează secretul"
