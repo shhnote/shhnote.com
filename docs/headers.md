@@ -34,22 +34,62 @@ What each one relies on in this repository:
 ## Routes and redirects
 
 The share, burn and report links are built without a locale (`/s#…`, `/burn#…`,
-`/report`). The site builds those three pages at the root as well (English), so the
-links work on any static host with no redirect: `/s` → `301` → `/s/` is the file
-server's own slash redirect, and browsers carry the URL fragment across it.
+`/report#…`). The site builds those three pages at the root as well, in English, so
+the links work on any static host with no redirect at all; `/` is an Astro redirect
+page to `/en/`. Both are fallbacks: the hosted instance sends the four unprefixed
+paths to the visitor's language with a real 3xx, as the main repository's
+`docs/deploy/own-frontend.md` describes for a frontend with language prefixes.
+Browsers carry the `#fragment` of a share or burn link across a redirect, so the
+secret survives it; a `<meta http-equiv="refresh">` would drop it, which is why the
+redirect has to come from the server.
 
-Optionally send visitors to their language instead; use a real 3xx (never a meta
-refresh, which drops the fragment), and `302` so a later change in language
-negotiation is not cached:
+Inside the site block, before the catch-all `handle`:
 
 ```caddyfile
-redir / /en/ 301
-# optional, e.g. after Accept-Language negotiation:
-# redir /s /de/s/ 302
+# The browser's first listed language if the site has it, otherwise English.
+map {header.Accept-Language} {shh_locale} {
+    ~^\s*de\b  de
+    ~^\s*es\b  es
+    ~^\s*fr\b  fr
+    ~^\s*nl\b  nl
+    ~^\s*hi\b  hi
+    ~^\s*ja\b  ja
+    ~^\s*pl\b  pl
+    ~^\s*zh\b  zh
+    ~^\s*el\b  el
+    ~^\s*id\b  id
+    ~^\s*ko\b  ko
+    ~^\s*pt\b  pt
+    ~^\s*sv\b  sv
+    ~^\s*he\b  he
+    ~^\s*it\b  it
+    ~^\s*ro\b  ro
+    ~^\s*tr\b  tr
+    default    en
+}
+@unprefixed path / /s /burn /report
+handle @unprefixed {
+    # The target depends on the request's language: caches must key on it.
+    header Vary Accept-Language
+    # `*` first: a target starting with `/` would otherwise be read as a matcher.
+    redir * /{shh_locale}{uri} 307
+}
 ```
 
-Astro also writes a static `/index.html` that meta-refreshes to `/en/`; the `redir`
-above takes precedence and should stay.
+One `map` line per locale in `src/lib/i18n.ts` `availableLocales`; keep them in
+step. The map looks only at the first language the browser lists, not at the `q=`
+weights. A `307` is not cached unless told to and keeps the method; a CDN in
+front must honour `Vary: Accept-Language` or bypass its cache for these four paths.
+
+A visitor who has picked a language in the site's switcher is then moved once more,
+in the browser, to that language (`src/scripts/locale.ts`, from the page's
+`hreflang` alternates, fragment kept), so the server-side guess only decides the
+first visit.
+
+With another server or a static host, do the same: answer those four paths with a
+`307` (or `302`) to the same path under the chosen prefix, keep the query string,
+add no fragment of your own, and send `Vary: Accept-Language`. Without any
+redirect the root pages simply serve English.
 
 The API is proxied to the shhnote server; everything else is the static site:
 
@@ -85,5 +125,6 @@ header @assets Cache-Control "public, max-age=31536000, immutable"
 ## Checking
 
 After a deploy, from outside: `curl -sI https://shhnote.com/en/` shows every
-header above; `curl -sI https://shhnote.com/s` is a `302` to `/en/s/`;
+header above; `curl -sI -H 'Accept-Language: de' https://shhnote.com/s` is a `307`
+to `/de/s` with `Vary: Accept-Language`, and without the header a `307` to `/en/s`;
 `curl -sI https://shhnote.com/argon2.wasm` says `application/wasm`.
