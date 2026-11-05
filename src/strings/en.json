@@ -2,7 +2,7 @@
   "site": {
     "name": "shhnote",
     "title": "shhnote — share secrets with self-destructing links",
-    "description": "Open-source, end-to-end encrypted, zero-knowledge secret sharing. Text and files. The server never sees your data."
+    "description": "Open-source, end-to-end encrypted, zero-knowledge secret sharing. Text and files. The server never sees your secrets."
   },
   "nav": {
     "skip": "Skip to content",
@@ -49,7 +49,8 @@
       "filesLabel": "Files to attach",
       "filesDrop": "Drop files here",
       "filesClick": "or click to attach",
-      "filesHint": "Encrypted in your browser before upload · up to 25 MB, 25 files",
+      "filesHint": "Encrypted in your browser before upload",
+      "filesLimit": "up to {limit} in total",
       "filesRemove": "Remove",
       "expiryLabel": "Expires in",
       "expiry": {
@@ -77,7 +78,7 @@
     "chips": {
       "e2e": "End-to-end Encrypted",
       "zeroKnowledge": "Zero-Knowledge",
-      "noLogs": "No logs",
+      "noLogs": "No access logs",
       "openSource": "Open source"
     },
     "result": {
@@ -91,8 +92,8 @@
       "chipLifetime": "One-time view",
       "chipExpiry": "Expires in 1 Day",
       "passphraseReminder": "This secret has a passphrase. Send it over a different channel than the link itself.",
-      "calloutTitle": "One link, one read.",
-      "callout": "Anyone with the full link can open the secret — once. If you set a passphrase, send it over a different channel than the link itself.",
+      "calloutTitle": "One link, one secret.",
+      "callout": "Anyone with the full link can open the secret — a one-time link once, a timed link until it expires. If you set a passphrase, send it over a different channel than the link itself.",
       "divider": "private controls · keep to yourself",
       "burnLabel": "Burn link",
       "burnAside": "— destroy it yourself, anytime",
@@ -119,7 +120,7 @@
         {
           "title": "Retrieve",
           "aside": "and it's gone",
-          "body": "The recipient's browser unlocks it locally and the server destroys its copy. Even we can't recover it."
+          "body": "The recipient's browser unlocks it locally. A one-time secret is deleted from the server the moment it is opened; a timed one when it expires. Even we can't recover it."
         }
       ]
     },
@@ -150,13 +151,13 @@
         },
         {
           "label": "In transit",
-          "value": "TLS 1.3",
+          "value": "TLS",
           "body": "Only ciphertext ever leaves your device, carried over modern TLS. What we receive is an opaque blob we have no way to open."
         },
         {
           "label": "At rest",
-          "value": "Ciphertext + TTL",
-          "body": "We persist an encrypted blob and an expiry timestamp — nothing else. No plaintext, no keys, no sender or recipient metadata."
+          "value": "Ciphertext + hashes + expiry",
+          "body": "We persist the encrypted blob, one-way hashes of the values used to find or burn it, its lifetime and a rounded expiry — nothing else. No plaintext, no keys, no sender or recipient metadata."
         }
       ]
     },
@@ -173,12 +174,12 @@
         {
           "label": "Privacy-conscious users",
           "title": "Share without a trace",
-          "body": "Works over Tor without degraded functionality. No CAPTCHAs, no browser fingerprinting, no external requests. Every font and asset is self-hosted. Zero metadata leakage."
+          "body": "Works in Tor Browser at the Safer level. No CAPTCHAs, no browser fingerprinting, no external requests. Every font and asset is self-hosted."
         },
         {
           "label": "IT & Onboarding",
           "title": "Provision access securely",
-          "body": "Send new hires initial credentials, VPN configs, or Wi-Fi passwords without leaving traces in email threads or ticketing systems. Generate multiple unique links for batch onboarding."
+          "body": "Send new hires initial credentials, VPN configs, or Wi-Fi passwords without leaving traces in email threads or ticketing systems. Script it through the API for batch onboarding."
         },
         {
           "label": "Legal & Regulatory",
@@ -199,7 +200,7 @@
     },
     "cta": {
       "title": "Stop sharing sensitive info in plaintext",
-      "intro": "Create a one-time encrypted link in seconds. Or create a multi-view encrypted link that expires in a few hours or days. Add extra protection with a password. No account needed. No data collected.",
+      "intro": "Create a one-time encrypted link in seconds. Or create a multi-view encrypted link that expires in a few hours or days. Add extra protection with a password. No account needed. Nothing that identifies you is kept.",
       "button": "Create a one-time secret"
     }
   },
@@ -332,7 +333,6 @@
   },
   "ui": {
     "form-files-remove": "Remove",
-    "result-copied": "Copied",
     "result-destroyed": "Destroyed. The secret is gone from the server.",
     "result-chip-single": "One-time view",
     "result-chip-multi": "Open until it expires",

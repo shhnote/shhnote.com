@@ -221,7 +221,7 @@ If you think you've found a security problem with this site, please email [secur
 
 We will:
 
-- reply within [number] working days;
+- reply within 5 working days;
 - keep you updated while we fix it;
 - credit you when we publish the fix, if you'd like.
 

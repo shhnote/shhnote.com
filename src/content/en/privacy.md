@@ -2,7 +2,7 @@
 title: "Privacy policy"
 description: "What shhnote.com stores, for how long, and what it never does. We can't read your secrets, and we keep as little else as we can."
 eyebrow: "Legal"
-updated: "[date]"
+updated: "5 November 2026"
 ---
 
 > **Draft.** This policy is a starting point and has not been reviewed by a lawyer.
@@ -38,11 +38,11 @@ Deletion removes the record. As on any computer, encrypted leftovers may linger 
 - We don't ask you to create an account.
 - We don't sell or share your data.
 
-Your theme choice (light or dark) is remembered in your browser's local storage and never sent anywhere.
+Your theme choice and, if you pick one in the language menu, your language are remembered in your browser's local storage and never sent anywhere.
 
 ## Server logs
 
-Like most websites, our server may briefly record technical details of each request, such as your IP address and the time, to keep the service secure and working. [Describe how long logs are kept, or state that they are not kept.] Logs never contain secret keys, because browsers don't send the part of the link that holds the key.
+This site keeps no request logs: the web server in front of it does not log requests, and the shhnote server keeps no per-secret access log or IP history (rate limiting uses a keyed hash of the address under a salt that rotates). Cloudflare terminates TLS for this site and sees IP addresses under its own privacy policy; it never sees a link fragment or any key, because browsers don't send the part of the link that holds the key.
 
 ## Your rights
 

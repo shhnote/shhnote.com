@@ -2,7 +2,7 @@
 title: "Acceptable use"
 description: "What shhnote.com may and may not be used for, and how enforcement works on a service that cannot see what it stores."
 eyebrow: "Legal"
-updated: "[date]"
+updated: "5 November 2026"
 ---
 
 > **Draft.** This policy is a starting point and has not been reviewed by a lawyer.

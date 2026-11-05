@@ -43,7 +43,7 @@ const defaultExpiry = '86400';
                 <span class="dropzone-content">
                   <svg class="dropzone-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75V16.5m-13.5-9L12 3m0 0 4.5 4.5M12 3v13.5"/></svg>
                   <span class="dropzone-title"><span class="color-accent">{h.form.filesDrop}</span> {h.form.filesClick}</span>
-                  <span class="dropzone-hint" id="files-hint">{h.form.filesHint}</span>
+                  <span class="dropzone-hint" id="files-hint">{h.form.filesHint}<span data-shh-files-limit hidden> · {h.form.filesLimit}</span></span>
                 </span>
               </label>
               <ul class="dropzone-files" data-shh-file-list></ul>
@@ -257,6 +257,7 @@ const defaultExpiry = '86400';
 </Base>
 
 <script>
+  import { getConfig } from '@shhnote/client';
   import { createT, wireCreate } from '@shhnote/client/ui';
   import { apiBase, argon2Url } from '../../lib/instance';
 
@@ -265,4 +266,20 @@ const defaultExpiry = '86400';
   // which the controller reads and compares itself.
   const page = document.querySelector<HTMLElement>('[data-shh-page="create"]');
   if (page) wireCreate(page, { t: createT(), apiBase, argon2Url });
+
+  // The size hint under the drop zone comes from the instance (`max_blob_bytes`, the
+  // largest padded size it stores), through the package's shared `getConfig`, so it is
+  // the same single /config request the controller and the footer make. The string holds
+  // a `{limit}` placeholder; the span stays hidden until it is filled.
+  const limit = document.querySelector<HTMLElement>('[data-shh-files-limit]');
+  if (limit) {
+    getConfig(apiBase)
+      .then((config) => {
+        const mib = Math.floor(config.max_blob_bytes / 1048576);
+        const size = mib >= 1 ? `${mib} MB` : `${Math.floor(config.max_blob_bytes / 1024)} KB`;
+        limit.textContent = limit.textContent!.replace('{limit}', size);
+        limit.hidden = false;
+      })
+      .catch(() => {});
+  }
 </script>
