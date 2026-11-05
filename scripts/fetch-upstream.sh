@@ -18,6 +18,7 @@ out="$here/src/generated/docs.md"
 site_url=https://shhnote.com
 api_url=https://shhnote.com/api   # the instance API root; the docs append /v1 themselves
 project_url=https://github.com/shhnote/shhnote
+spec_url=$project_url/blob/main/SPEC.md   # the server derives it the same way from its source URL
 version=${ref#v}
 
 if [ -z "$ref" ]; then
@@ -54,6 +55,7 @@ mkdir -p "$(dirname "$out")"
   sed -e "s#{{site_url}}#$site_url#g" \
       -e "s#{{api_url}}#$api_url#g" \
       -e "s#{{project_url}}#$project_url#g" \
+      -e "s#{{spec_url}}#$spec_url#g" \
       -e "s#{{version}}#$version#g" "$tmp"
 } > "$out"
 

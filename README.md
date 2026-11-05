@@ -44,11 +44,15 @@ source), styles in `src/styles/`.
 
 ## Releases
 
-A `v*` tag builds the site, runs the external-URL check and publishes a GitHub
-release with `shhnote.com-<tag>.tar.gz` (the contents of `dist/`), `SHA256SUMS`
-and a build provenance attestation (`.github/workflows/release.yml`). Nothing
-here deploys; the server pulls a release. Response headers for the server are
-in `docs/headers.md`.
+`scripts/bump-version.sh patch|minor|major|rc|release|<version>` writes the
+next version to `package.json` and `package-lock.json`, commits it as
+`release: <version>` and creates the signed tag `v<version>`; push with
+`git push origin main --follow-tags`. The tag builds the site, runs the
+external-URL check and publishes a GitHub release with
+`shhnote.com-<tag>.tar.gz` (the contents of `dist/`), `SHA256SUMS` and a build
+provenance attestation (`.github/workflows/release.yml`); a tag that does not
+match `package.json` is refused. Nothing here deploys; the server pulls a
+release. Response headers for the server are in `docs/headers.md`.
 
 ## Conformance
 

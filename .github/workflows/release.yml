@@ -14,7 +14,26 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
+  version:
+    # The tag must match the version in package.json (scripts/bump-version.sh keeps them
+    # together), or the release stops here before anything is built or published.
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - name: Check the tag against package.json
+        run: |
+          tag="${GITHUB_REF_NAME#v}"
+          pkg=$(node -p "require('./package.json').version")
+          echo "tag=$tag package.json=$pkg"
+          [ "$tag" = "$pkg" ] || { echo "version mismatch: tag v$tag, package.json $pkg" >&2; exit 1; }
+
   release:
+    needs: version
     runs-on: ubuntu-24.04
     timeout-minutes: 20
     permissions:
