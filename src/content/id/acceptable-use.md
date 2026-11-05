@@ -2,7 +2,7 @@
 title: "Penggunaan yang dapat diterima"
 description: "Untuk apa shhnote.com boleh dan tidak boleh digunakan, dan bagaimana penegakan aturan berjalan di layanan yang tidak bisa melihat apa yang disimpannya."
 eyebrow: "Hukum"
-updated: "[date]"
+updated: "5 November 2026"
 ---
 
 > **Draf.** Kebijakan ini adalah titik awal dan belum ditinjau oleh pengacara.

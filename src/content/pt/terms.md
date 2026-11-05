@@ -2,7 +2,7 @@
 title: "Termos de serviço"
 description: "Os termos de uso do shhnote.com — o que o serviço faz, para que você não pode usá-lo e o que podemos e não podemos prometer."
 eyebrow: "Jurídico"
-updated: "[date]"
+updated: "5 de novembro de 2026"
 ---
 
 > **Rascunho.** Estes termos são um ponto de partida e não foram revisados por um advogado.

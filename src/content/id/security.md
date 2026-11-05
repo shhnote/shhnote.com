@@ -221,7 +221,7 @@ Jika Anda yakin telah menemukan masalah keamanan di situs ini, mohon kirim email
 
 Kami akan:
 
-- membalas dalam [number] hari kerja;
+- membalas dalam 5 hari kerja;
 - terus mengabari Anda selama kami memperbaikinya;
 - mencantumkan nama Anda saat kami merilis perbaikannya, jika Anda menginginkannya.
 

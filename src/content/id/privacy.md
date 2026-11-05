@@ -2,7 +2,7 @@
 title: "Kebijakan privasi"
 description: "Apa yang disimpan shhnote.com, berapa lama, dan apa yang tidak pernah dilakukannya. Kami tidak bisa membaca rahasia Anda, dan kami menyimpan sesedikit mungkin hal lain."
 eyebrow: "Hukum"
-updated: "[date]"
+updated: "5 November 2026"
 ---
 
 > **Draf.** Kebijakan ini adalah titik awal dan belum ditinjau oleh pengacara.
@@ -38,11 +38,11 @@ Penghapusan menghilangkan catatannya. Seperti di komputer mana pun, sisa data te
 - Kami tidak meminta Anda membuat akun.
 - Kami tidak menjual atau membagikan data Anda.
 
-Pilihan tema Anda (terang atau gelap) diingat di local storage browser Anda dan tidak pernah dikirim ke mana pun.
+Pilihan tema Anda dan, jika Anda memilihnya di menu bahasa, bahasa Anda diingat di local storage browser Anda dan tidak pernah dikirim ke mana pun.
 
 ## Log server
 
-Seperti kebanyakan situs web, server kami mungkin mencatat sebentar detail teknis setiap permintaan, seperti alamat IP Anda dan waktunya, untuk menjaga layanan tetap aman dan berfungsi. [Describe how long logs are kept, or state that they are not kept.] Log tidak pernah berisi kunci rahasia, karena browser tidak mengirimkan bagian tautan yang memuat kunci.
+Situs ini tidak menyimpan log permintaan: server web di depannya tidak mencatat permintaan, dan server shhnote tidak menyimpan log akses per rahasia maupun riwayat IP (pembatasan laju memakai hash berkunci dari alamat dengan salt yang berganti secara berkala). Cloudflare mengakhiri TLS untuk situs ini dan melihat alamat IP berdasarkan kebijakan privasinya sendiri; Cloudflare tidak pernah melihat fragmen tautan atau kunci apa pun, karena browser tidak mengirimkan bagian tautan yang memuat kunci.
 
 ## Hak Anda
 

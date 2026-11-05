@@ -221,7 +221,7 @@ Se você acha que encontrou um problema de segurança neste site, escreva para [
 
 Nós vamos:
 
-- responder em até [number] dias úteis;
+- responder em até 5 dias úteis;
 - manter você informado enquanto corrigimos;
 - dar o crédito a você quando publicarmos a correção, se quiser.
 

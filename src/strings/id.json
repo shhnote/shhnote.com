@@ -2,7 +2,7 @@
   "site": {
     "name": "shhnote",
     "title": "shhnote — bagikan rahasia dengan tautan yang menghancurkan diri",
-    "description": "Berbagi rahasia sumber terbuka, terenkripsi ujung ke ujung, tanpa pengetahuan (zero-knowledge). Teks dan file. Server tidak pernah melihat data Anda."
+    "description": "Berbagi rahasia sumber terbuka, terenkripsi ujung ke ujung, tanpa pengetahuan (zero-knowledge). Teks dan file. Server tidak pernah melihat rahasia Anda."
   },
   "nav": {
     "skip": "Lewati ke konten",
@@ -49,7 +49,8 @@
       "filesLabel": "File untuk dilampirkan",
       "filesDrop": "Letakkan file di sini",
       "filesClick": "atau klik untuk melampirkan",
-      "filesHint": "Dienkripsi di browser Anda sebelum diunggah · hingga 25 MB, 25 file",
+      "filesHint": "Dienkripsi di browser Anda sebelum diunggah",
+      "filesLimit": "total hingga {limit}",
       "filesRemove": "Hapus",
       "expiryLabel": "Kedaluwarsa dalam",
       "expiry": {
@@ -77,7 +78,7 @@
     "chips": {
       "e2e": "Terenkripsi ujung ke ujung",
       "zeroKnowledge": "Zero-knowledge",
-      "noLogs": "Tanpa log",
+      "noLogs": "Tanpa log akses",
       "openSource": "Sumber terbuka"
     },
     "result": {
@@ -91,8 +92,8 @@
       "chipLifetime": "Sekali lihat",
       "chipExpiry": "Kedaluwarsa dalam 1 hari",
       "passphraseReminder": "Rahasia ini memiliki frasa sandi. Kirimkan frasa sandi lewat saluran yang berbeda dari tautannya.",
-      "calloutTitle": "Satu tautan, sekali baca.",
-      "callout": "Siapa pun yang memegang tautan lengkapnya dapat membuka rahasia ini — satu kali. Jika Anda memasang frasa sandi, kirimkan lewat saluran yang berbeda dari tautannya.",
+      "calloutTitle": "Satu tautan, satu rahasia.",
+      "callout": "Siapa pun yang memegang tautan lengkapnya dapat membuka rahasia ini: tautan sekali pakai satu kali, tautan berjangka sampai kedaluwarsa. Jika Anda memasang frasa sandi, kirimkan lewat saluran yang berbeda dari tautannya.",
       "divider": "kontrol pribadi · simpan untuk diri sendiri",
       "burnLabel": "Tautan pemusnah",
       "burnAside": "— musnahkan sendiri, kapan saja",
@@ -119,7 +120,7 @@
         {
           "title": "Buka",
           "aside": "lalu hilang",
-          "body": "Browser penerima membukanya secara lokal dan server memusnahkan salinannya. Bahkan kami pun tidak bisa memulihkannya."
+          "body": "Browser penerima membukanya secara lokal. Rahasia sekali pakai dihapus dari server begitu dibuka; rahasia berjangka dihapus saat kedaluwarsa. Bahkan kami pun tidak bisa memulihkannya."
         }
       ]
     },
@@ -150,13 +151,13 @@
         },
         {
           "label": "Saat transit",
-          "value": "TLS 1.3",
+          "value": "TLS",
           "body": "Hanya ciphertext yang pernah meninggalkan perangkat Anda, dikirim lewat TLS modern. Yang kami terima hanyalah gumpalan data buram yang tidak bisa kami buka."
         },
         {
           "label": "Saat disimpan",
-          "value": "Ciphertext + TTL",
-          "body": "Kami hanya menyimpan gumpalan data terenkripsi dan stempel waktu kedaluwarsa — tidak lebih. Tanpa plaintext, tanpa kunci, tanpa metadata pengirim atau penerima."
+          "value": "Ciphertext + hash + kedaluwarsa",
+          "body": "Kami menyimpan gumpalan data terenkripsi, hash satu arah dari nilai yang dipakai untuk menemukan atau memusnahkannya, masa berlakunya, dan waktu kedaluwarsa yang dibulatkan — tidak lebih. Tanpa plaintext, tanpa kunci, tanpa metadata pengirim atau penerima."
         }
       ]
     },
@@ -173,12 +174,12 @@
         {
           "label": "Pengguna yang peduli privasi",
           "title": "Berbagi tanpa jejak",
-          "body": "Berfungsi lewat Tor tanpa fitur yang berkurang. Tanpa CAPTCHA, tanpa sidik jari browser, tanpa permintaan eksternal. Setiap font dan aset di-host sendiri. Nol kebocoran metadata."
+          "body": "Berfungsi di Tor Browser pada tingkat \"Safer\". Tanpa CAPTCHA, tanpa sidik jari browser, tanpa permintaan eksternal. Setiap font dan aset di-host sendiri."
         },
         {
           "label": "TI & Onboarding",
           "title": "Berikan akses dengan aman",
-          "body": "Kirim kredensial awal, konfigurasi VPN, atau kata sandi Wi-Fi kepada karyawan baru tanpa meninggalkan jejak di utas email atau sistem tiket. Buat banyak tautan unik sekaligus untuk onboarding massal."
+          "body": "Kirim kredensial awal, konfigurasi VPN, atau kata sandi Wi-Fi kepada karyawan baru tanpa meninggalkan jejak di utas email atau sistem tiket. Untuk onboarding massal, buat skripnya lewat API."
         },
         {
           "label": "Hukum & Regulasi",
@@ -199,7 +200,7 @@
     },
     "cta": {
       "title": "Berhenti berbagi info sensitif dalam bentuk teks biasa",
-      "intro": "Buat tautan terenkripsi sekali pakai dalam hitungan detik. Atau buat tautan terenkripsi yang bisa dilihat berkali-kali dan kedaluwarsa dalam beberapa jam atau hari. Tambahkan perlindungan ekstra dengan kata sandi. Tanpa akun. Tanpa pengumpulan data.",
+      "intro": "Buat tautan terenkripsi sekali pakai dalam hitungan detik. Atau buat tautan terenkripsi yang bisa dilihat berkali-kali dan kedaluwarsa dalam beberapa jam atau hari. Tambahkan perlindungan ekstra dengan kata sandi. Tanpa akun. Tidak ada yang disimpan yang dapat mengidentifikasi Anda.",
       "button": "Buat rahasia sekali lihat"
     }
   },
@@ -332,7 +333,6 @@
   },
   "ui": {
     "form-files-remove": "Hapus",
-    "result-copied": "Tersalin",
     "result-destroyed": "Dimusnahkan. Rahasia sudah hilang dari server.",
     "result-chip-single": "Sekali lihat",
     "result-chip-multi": "Bisa dibuka sampai kedaluwarsa",

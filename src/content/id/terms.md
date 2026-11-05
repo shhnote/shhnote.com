@@ -2,7 +2,7 @@
 title: "Ketentuan layanan"
 description: "Ketentuan penggunaan shhnote.com — apa yang dilakukan layanan ini, apa yang tidak boleh Anda lakukan dengannya, dan apa yang bisa dan tidak bisa kami janjikan."
 eyebrow: "Hukum"
-updated: "[date]"
+updated: "5 November 2026"
 ---
 
 > **Draf.** Ketentuan ini adalah titik awal dan belum ditinjau oleh pengacara.

@@ -2,7 +2,7 @@
 title: "Uso aceitável"
 description: "Para que o shhnote.com pode e não pode ser usado, e como funciona a fiscalização num serviço que não consegue ver o que armazena."
 eyebrow: "Jurídico"
-updated: "[date]"
+updated: "5 de novembro de 2026"
 ---
 
 > **Rascunho.** Esta política é um ponto de partida e não foi revisada por um advogado.
