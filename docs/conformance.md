@@ -31,9 +31,9 @@ clicks and key presses are trusted input.
 
 ## Manual checks still to run
 
-- **`actionlint`** on `.github/workflows/release.yml`, then the first tag
-  (`scripts/bump-version.sh 0.1.0-rc.1`) and a look at the release: the archive,
-  `SHA256SUMS` and the provenance attestation.
+- **The first tag** (`scripts/bump-version.sh 0.1.0-rc.1`) and a look at the release:
+  the archive, `SHA256SUMS` and the provenance attestation. `actionlint` passed on
+  `.github/workflows/release.yml` with no findings (2026-11-05).
 - **Tor Browser, "Safer":** full create and reveal of a text, a file and a passphrase
   secret; passphrase reveal must work (WebAssembly is allowed at Safer).
 - **Tor Browser, "Safest":** every page renders; the create page shows the JavaScript
