@@ -237,6 +237,7 @@
       "intro": "Este segredo foi descriptografado no seu navegador. Se você recarregar esta página, ele desaparece daqui.",
       "outputLabel": "segredo · descriptografado localmente",
       "copy": "Copiar",
+      "copied": "Copiado",
       "download": "Baixar",
       "closeWarning": "Trate-o com cuidado — depois que você fechar esta aba, não há como recuperá-lo, nem por você nem por nós.",
       "createOwn": "Criar o seu próprio segredo"

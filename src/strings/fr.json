@@ -237,6 +237,7 @@
       "intro": "Ce secret a été déchiffré dans votre navigateur. Si vous actualisez cette page, il disparaît d’ici.",
       "outputLabel": "secret · déchiffré localement",
       "copy": "Copier",
+      "copied": "Copié",
       "download": "Télécharger",
       "closeWarning": "Manipulez-le avec soin : une fois cet onglet fermé, il n’y a plus aucun moyen de le récupérer, ni chez vous, ni chez nous.",
       "createOwn": "Créer votre propre secret"

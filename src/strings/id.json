@@ -237,6 +237,7 @@
       "intro": "Rahasia ini didekripsi di browser Anda. Muat ulang halaman ini dan rahasianya hilang dari sini.",
       "outputLabel": "rahasia · didekripsi secara lokal",
       "copy": "Salin",
+      "copied": "Tersalin",
       "download": "Unduh",
       "closeWarning": "Tangani dengan hati-hati — begitu Anda menutup tab ini, tidak ada cara untuk mengambilnya lagi, baik dari Anda maupun dari kami.",
       "createOwn": "Buat rahasia Anda sendiri"

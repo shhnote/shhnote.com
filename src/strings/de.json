@@ -237,6 +237,7 @@
       "intro": "Dieses Geheimnis wurde in deinem Browser entschlüsselt. Lädst du die Seite neu, ist es hier weg.",
       "outputLabel": "Geheimnis · lokal entschlüsselt",
       "copy": "Kopieren",
+      "copied": "Kopiert",
       "download": "Herunterladen",
       "closeWarning": "Geh sorgsam damit um. Sobald du diesen Tab schließt, lässt es sich nicht mehr abrufen, weder von dir noch von uns.",
       "createOwn": "Eigenes Geheimnis erstellen"

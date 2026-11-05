@@ -237,6 +237,7 @@
       "intro": "Acest secret a fost decriptat în browserul tău. Dacă reîncarci pagina, dispare de aici.",
       "outputLabel": "secret · decriptat local",
       "copy": "Copiază",
+      "copied": "Copiat",
       "download": "Descarcă",
       "closeWarning": "Ai grijă cu el — după ce închizi această filă nu mai există nicio cale de a-l recupera, nici de la tine, nici de la noi.",
       "createOwn": "Creează-ți propriul secret"

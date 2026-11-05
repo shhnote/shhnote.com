@@ -38,7 +38,7 @@ const base = `/${locale}/`;
               </p>
             </noscript>
 
-            <form class="stack--sm" data-shh-form="reveal">
+            <form class="stack--sm" data-shh-form="reveal" hidden>
               <button type="submit" class="btn btn--primary btn--lg w-full" data-shh-reveal><span>{s.armed.reveal}</span></button>
               <p class="input-help text-center">{s.armed.passphraseNote}</p>
               <p class="status text-center" role="status" aria-live="polite" data-shh-status></p>
@@ -121,7 +121,7 @@ const base = `/${locale}/`;
                 <span>{s.revealed.outputLabel}</span>
                 <button type="button" class="iconbtn" data-shh-copy="text">
                   <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="1.5"/><path d="M5 15V6a1.5 1.5 0 0 1 1.5-1.5H15"/></svg>
-                  <span>{s.revealed.copy}</span>
+                  <span class="copy-label">{s.revealed.copy}</span><span class="copy-label copy-label--done">{s.revealed.copied}</span>
                 </button>
               </div>
               <pre data-shh-text></pre>

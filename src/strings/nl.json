@@ -237,6 +237,7 @@
       "intro": "Dit geheim is in je browser ontsleuteld. Vernieuw je deze pagina, dan is het hier verdwenen.",
       "outputLabel": "geheim · lokaal ontsleuteld",
       "copy": "Kopiëren",
+      "copied": "Gekopieerd",
       "download": "Downloaden",
       "closeWarning": "Ga er zorgvuldig mee om: zodra je dit tabblad sluit, kun je het op geen enkele manier terughalen, niet bij jou en niet bij ons.",
       "createOwn": "Zelf een geheim aanmaken"

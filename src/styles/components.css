@@ -371,6 +371,19 @@
   color: var(--color-accent);
 }
 
+/* copy buttons: wireCopy sets data-shh-copied="true" for a moment and never touches the
+   content, so the two labels are swapped here. */
+.copy-label--done {
+  display: none;
+}
+[data-shh-copied="true"] > .copy-label {
+  display: none;
+}
+[data-shh-copied="true"] > .copy-label--done {
+  display: inline;
+  color: var(--color-accent);
+}
+
 /* info chips */
 .info-chips {
   display: flex;

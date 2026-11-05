@@ -237,6 +237,7 @@
       "intro": "Hemligheten dekrypterades i din webbläsare. Om du laddar om sidan är den borta härifrån.",
       "outputLabel": "hemlighet · dekrypterad lokalt",
       "copy": "Kopiera",
+      "copied": "Kopierad",
       "download": "Ladda ner",
       "closeWarning": "Var rädd om den – när du stänger fliken går den inte att hämta igen, varken från dig eller från oss.",
       "createOwn": "Skapa en egen hemlighet"

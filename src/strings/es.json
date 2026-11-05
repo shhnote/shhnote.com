@@ -237,6 +237,7 @@
       "intro": "Este secreto se ha descifrado en tu navegador. Si recargas esta página, desaparecerá de aquí.",
       "outputLabel": "secreto · descifrado en local",
       "copy": "Copiar",
+      "copied": "Copiado",
       "download": "Descargar",
       "closeWarning": "Trátalo con cuidado: en cuanto cierres esta pestaña no habrá forma de recuperarlo, ni por tu parte ni por la nuestra.",
       "createOwn": "Crea tu propio secreto"

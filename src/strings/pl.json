@@ -237,6 +237,7 @@
       "intro": "Ten sekret został odszyfrowany w twojej przeglądarce. Po odświeżeniu strony zniknie stąd.",
       "outputLabel": "sekret · odszyfrowany lokalnie",
       "copy": "Kopiuj",
+      "copied": "Skopiowano",
       "download": "Pobierz",
       "closeWarning": "Obchodź się z nim ostrożnie — po zamknięciu tej karty nie da się go już odzyskać, ani u ciebie, ani u nas.",
       "createOwn": "Utwórz własny sekret"

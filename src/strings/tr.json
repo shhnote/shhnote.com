@@ -237,6 +237,7 @@
       "intro": "Bu sır tarayıcınızda çözüldü. Sayfayı yenilerseniz buradan kaybolur.",
       "outputLabel": "sır · yerelde çözüldü",
       "copy": "Kopyala",
+      "copied": "Kopyalandı",
       "download": "İndir",
       "closeWarning": "Dikkatli olun: bu sekmeyi kapattığınızda onu bir daha ne sizden ne de bizden almanın bir yolu olmaz.",
       "createOwn": "Kendi sırrınızı oluşturun"
