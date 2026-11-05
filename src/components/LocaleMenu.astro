@@ -33,7 +33,7 @@ const hrefFor = (code: Locale) => (onPage.has(code) ? `/${code}/${rest}` : `/${c
   <div class="menu__panel menu__panel--grid" role="list" aria-label={t.nav.languageList}>
     {locales.map((code) =>
       available.has(code) ? (
-        <a role="listitem" class="menu__item" href={hrefFor(code)} hreflang={code} lang={code} aria-current={code === locale ? 'true' : undefined}>{localeNames[code]}</a>
+        <a role="listitem" class="menu__item" href={hrefFor(code)} hreflang={code} lang={code} data-shh-locale-choice={code} aria-current={code === locale ? 'true' : undefined}>{localeNames[code]}</a>
       ) : (
         <span role="listitem" class="menu__item menu__item--soon" lang={code} aria-disabled="true" title={t.nav.languageSoon}>{localeNames[code]}</span>
       ),
