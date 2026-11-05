@@ -8,7 +8,7 @@ reference for the Caddy configuration; the repository carries no deploy logic.
 
 ```caddyfile
 header {
-    Content-Security-Policy "default-src 'self'; script-src 'self' 'wasm-unsafe-eval'; style-src 'self'; img-src 'self' data:; font-src 'self'; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'"
+    Content-Security-Policy "default-src 'self'; script-src 'self' 'wasm-unsafe-eval'; style-src 'self'; img-src 'self'; font-src 'self'; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'"
     Strict-Transport-Security "max-age=63072000; includeSubDomains; preload"
     X-Content-Type-Options "nosniff"
     X-Frame-Options "DENY"
@@ -24,8 +24,10 @@ What each one relies on in this repository:
 
 - **CSP.** No inline scripts or styles exist in `dist/` (`build.inlineStylesheets:
   'never'`, `vite.build.assetsInlineLimit: 0`, Markdown syntax highlighting off,
-  no `style=` attributes). `'wasm-unsafe-eval'` is for `argon2.wasm`. `img-src
-  data:` covers the select chevron; nothing else is inlined.
+  no `style=` attributes). `'wasm-unsafe-eval'` is for `argon2.wasm`. No `data:`
+  URL is used anywhere (the select chevron is drawn with CSS), so `img-src` is
+  `'self'` alone. Should a build ever introduce one (the grep under "Checking"
+  finds it), prefer removing it to widening the policy.
 - **Referrer-Policy.** The pages also carry `<meta name="referrer"
   content="no-referrer">`, so a share link's path never leaks even if the header
   is missing.
@@ -113,18 +115,32 @@ cache layer in front of `/api/*`.
   table does this; keep it.
 - `/_astro/*` files carry a content hash: `Cache-Control: public, max-age=31536000,
   immutable`.
+- `/fonts/*` and `/argon2.wasm` do not: the font files keep their plain names and
+  the module is versioned by a query string, which a cache may ignore. They get a
+  week without `immutable`, so a replaced file is picked up within that.
 - HTML pages, `sitemap.xml` and `robots.txt`: `Cache-Control: public, max-age=600`
   or shorter. The secret interstitials are static and may be cached like any
   page; nothing per-secret is ever in a response from the site.
 
 ```caddyfile
-@assets path /_astro/* /fonts/*
-header @assets Cache-Control "public, max-age=31536000, immutable"
+@hashed path /_astro/*
+header @hashed Cache-Control "public, max-age=31536000, immutable"
+@plain path /fonts/* /argon2.wasm
+header @plain Cache-Control "public, max-age=604800"
 ```
+
+## Logging
+
+The hosted Caddyfile keeps access logging off for this site: no `log` directive in
+the site block (Caddy logs no requests unless asked), and the API's own logging is
+the shhnote server's business. A share link's secret never reaches the server in
+any case (it is a fragment), but the path `/s/` plus a timestamp and an address is
+still metadata the privacy policy says is not kept. If a log is ever needed for
+debugging, enable it briefly and remove it again rather than leaving it on.
 
 ## Checking
 
 After a deploy, from outside: `curl -sI https://shhnote.com/en/` shows every
-header above; `curl -sI -H 'Accept-Language: de' https://shhnote.com/s` is a `307`
+header above (and `grep -rlE "[(\"']data:" dist/` on the build finds nothing); `curl -sI -H 'Accept-Language: de' https://shhnote.com/s` is a `307`
 to `/de/s` with `Vary: Accept-Language`, and without the header a `307` to `/en/s`;
 `curl -sI https://shhnote.com/argon2.wasm` says `application/wasm`.

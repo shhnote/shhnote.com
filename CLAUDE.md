@@ -24,7 +24,7 @@ origin, so this site owns every public page and the API lives at `/api/v1`.
   `compare/` pages are the only exception).
 - No inline scripts or styles. The CSP is
   `default-src 'self'; script-src 'self' 'wasm-unsafe-eval'; style-src 'self';
-  img-src 'self' data:; font-src 'self'; connect-src 'self';
+  img-src 'self'; font-src 'self'; connect-src 'self';
   frame-ancestors 'none'; base-uri 'none'; form-action 'self'`.
 - `/s`, `/burn` and `/report` request nothing until a trusted user
   activation. The `@shhnote/client/ui` controllers enforce this; never add a
