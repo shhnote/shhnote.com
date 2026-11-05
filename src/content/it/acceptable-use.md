@@ -2,7 +2,7 @@
 title: "Uso consentito"
 description: "Per cosa si può e non si può usare shhnote.com, e come funzionano i controlli su un servizio che non vede ciò che conserva."
 eyebrow: "Note legali"
-updated: "[date]"
+updated: "5 novembre 2026"
 ---
 
 > **Bozza.** Questa informativa è un punto di partenza e non è stata esaminata da un avvocato.

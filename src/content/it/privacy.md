@@ -2,7 +2,7 @@
 title: "Informativa sulla privacy"
 description: "Cosa conserva shhnote.com, per quanto tempo e cosa non fa mai. Non possiamo leggere i tuoi segreti e conserviamo il meno possibile."
 eyebrow: "Note legali"
-updated: "[date]"
+updated: "5 novembre 2026"
 ---
 
 > **Bozza.** Questa informativa è un punto di partenza e non è stata esaminata da un avvocato.
@@ -38,11 +38,11 @@ L'eliminazione rimuove il record. Come su qualsiasi computer, residui cifrati po
 - Non ti chiediamo di creare un account.
 - Non vendiamo né condividiamo i tuoi dati.
 
-La tua scelta del tema (chiaro o scuro) viene memorizzata nel local storage del tuo browser e non viene mai inviata altrove.
+La tua scelta del tema e, se ne scegli una nel menu delle lingue, la tua lingua vengono memorizzate nel local storage del tuo browser e non vengono mai inviate altrove.
 
 ## Log del server
 
-Come la maggior parte dei siti web, il nostro server può registrare brevemente alcuni dettagli tecnici di ogni richiesta, come il tuo indirizzo IP e l'orario, per mantenere il servizio sicuro e funzionante. [Describe how long logs are kept, or state that they are not kept.] I log non contengono mai le chiavi dei segreti, perché i browser non inviano la parte del link che contiene la chiave.
+Questo sito non conserva log delle richieste: il server web che lo precede non registra le richieste, e il server shhnote non tiene un log di accesso per segreto né una cronologia degli IP (il rate limiting usa un hash con chiave dell'indirizzo sotto un salt che ruota). Cloudflare termina il TLS per questo sito e vede gli indirizzi IP secondo la propria informativa sulla privacy; non vede mai il frammento di un link né alcuna chiave, perché i browser non inviano la parte del link che contiene la chiave.
 
 ## I tuoi diritti
 

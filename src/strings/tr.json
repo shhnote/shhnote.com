@@ -2,7 +2,7 @@
   "site": {
     "name": "shhnote",
     "title": "shhnote — kendini imha eden bağlantılarla sır paylaşın",
-    "description": "Açık kaynaklı, uçtan uca şifreli, sıfır bilgi ilkesine dayalı sır paylaşımı. Metin ve dosyalar. Sunucu verilerinizi asla görmez."
+    "description": "Açık kaynaklı, uçtan uca şifreli, sıfır bilgi ilkesine dayalı sır paylaşımı. Metin ve dosyalar. Sunucu sırlarınızı asla görmez."
   },
   "nav": {
     "skip": "İçeriğe geç",
@@ -49,7 +49,8 @@
       "filesLabel": "Eklenecek dosyalar",
       "filesDrop": "Dosyaları buraya bırakın",
       "filesClick": "ya da eklemek için tıklayın",
-      "filesHint": "Yüklenmeden önce tarayıcınızda şifrelenir · en fazla 25 MB, 25 dosya",
+      "filesHint": "Yüklenmeden önce tarayıcınızda şifrelenir",
+      "filesLimit": "toplam en fazla {limit}",
       "filesRemove": "Kaldır",
       "expiryLabel": "Geçerlilik süresi",
       "expiry": {
@@ -77,7 +78,7 @@
     "chips": {
       "e2e": "Uçtan uca şifreli",
       "zeroKnowledge": "Sıfır bilgi",
-      "noLogs": "Kayıt tutulmaz",
+      "noLogs": "Erişim kaydı tutulmaz",
       "openSource": "Açık kaynak"
     },
     "result": {
@@ -91,8 +92,8 @@
       "chipLifetime": "Tek seferlik görüntüleme",
       "chipExpiry": "1 gün sonra sona erer",
       "passphraseReminder": "Bu sırrın bir parolası var. Parolayı bağlantının kendisinden farklı bir kanaldan gönderin.",
-      "calloutTitle": "Tek bağlantı, tek okuma.",
-      "callout": "Tam bağlantıya sahip olan herkes sırrı açabilir; ama yalnızca bir kez. Parola belirlediyseniz onu bağlantının kendisinden farklı bir kanaldan gönderin.",
+      "calloutTitle": "Tek bağlantı, tek sır.",
+      "callout": "Tam bağlantıya sahip olan herkes sırrı açabilir: tek seferlik bir bağlantıyı bir kez, süreli bir bağlantıyı süresi dolana kadar. Parola belirlediyseniz onu bağlantının kendisinden farklı bir kanaldan gönderin.",
       "divider": "özel kontroller · kendinize saklayın",
       "burnLabel": "İmha bağlantısı",
       "burnAside": "— dilediğiniz an kendiniz imha edin",
@@ -119,7 +120,7 @@
         {
           "title": "Aç",
           "aside": "ve yok olur",
-          "body": "Alıcının tarayıcısı sırrı yerelde açar ve sunucu kendi kopyasını imha eder. Biz bile geri getiremeyiz."
+          "body": "Alıcının tarayıcısı sırrı yerelde açar. Tek seferlik bir sır açıldığı anda sunucudan silinir; süreli bir sır ise süresi dolduğunda. Biz bile geri getiremeyiz."
         }
       ]
     },
@@ -150,13 +151,13 @@
         },
         {
           "label": "Aktarımda",
-          "value": "TLS 1.3",
+          "value": "TLS",
           "body": "Cihazınızdan yalnızca şifreli metin çıkar ve modern TLS üzerinden taşınır. Bize ulaşan, açmamızın hiçbir yolu olmayan opak bir veri bloğudur."
         },
         {
           "label": "Depolamada",
-          "value": "Şifreli metin + TTL",
-          "body": "Yalnızca şifreli bir veri bloğu ve bir son geçerlilik zaman damgası saklarız, başka hiçbir şey. Düz metin yok, anahtar yok, gönderen veya alıcıya dair üst veri yok."
+          "value": "Şifreli metin + özetler + son geçerlilik",
+          "body": "Yalnızca şifreli veri bloğunu, onu bulmak veya imha etmek için kullanılan değerlerin tek yönlü özetlerini, ömrünü ve yuvarlanmış bir son geçerlilik zamanını saklarız, başka hiçbir şey. Düz metin yok, anahtar yok, gönderen veya alıcıya dair üst veri yok."
         }
       ]
     },
@@ -173,12 +174,12 @@
         {
           "label": "Gizliliğe önem verenler",
           "title": "İz bırakmadan paylaşın",
-          "body": "Tor üzerinden hiçbir işlev kaybı olmadan çalışır. CAPTCHA yok, tarayıcı parmak izi yok, harici istek yok. Tüm yazı tipleri ve dosyalar kendi sunucumuzda barındırılır. Sıfır üst veri sızıntısı."
+          "body": "Tor Browser'da \"Daha güvenli\" düzeyinde çalışır. CAPTCHA yok, tarayıcı parmak izi yok, harici istek yok. Tüm yazı tipleri ve dosyalar kendi sunucumuzda barındırılır."
         },
         {
           "label": "BT ve işe alım",
           "title": "Erişimi güvenle tanımlayın",
-          "body": "Yeni çalışanlara ilk giriş bilgilerini, VPN yapılandırmalarını veya Wi-Fi şifrelerini e-posta yazışmalarında ya da destek talebi sistemlerinde iz bırakmadan gönderin. Toplu işe alımlar için birden fazla benzersiz bağlantı oluşturun."
+          "body": "Yeni çalışanlara ilk giriş bilgilerini, VPN yapılandırmalarını veya Wi-Fi şifrelerini e-posta yazışmalarında ya da destek talebi sistemlerinde iz bırakmadan gönderin. Toplu işe alımlar için API üzerinden betik yazın."
         },
         {
           "label": "Hukuk ve mevzuat",
@@ -199,7 +200,7 @@
     },
     "cta": {
       "title": "Hassas bilgileri düz metin olarak paylaşmayı bırakın",
-      "intro": "Saniyeler içinde tek seferlik, şifreli bir bağlantı oluşturun. Ya da birkaç saat veya gün içinde süresi dolan, birden fazla kez görüntülenebilen şifreli bir bağlantı oluşturun. Bir parolayla ek koruma ekleyin. Hesap gerekmez. Veri toplanmaz.",
+      "intro": "Saniyeler içinde tek seferlik, şifreli bir bağlantı oluşturun. Ya da birkaç saat veya gün içinde süresi dolan, birden fazla kez görüntülenebilen şifreli bir bağlantı oluşturun. Bir parolayla ek koruma ekleyin. Hesap gerekmez. Sizi tanımlayan hiçbir şey saklanmaz.",
       "button": "Tek seferlik bir sır oluştur"
     }
   },
@@ -332,7 +333,6 @@
   },
   "ui": {
     "form-files-remove": "Kaldır",
-    "result-copied": "Kopyalandı",
     "result-destroyed": "İmha edildi. Sır artık sunucuda yok.",
     "result-chip-single": "Tek seferlik görüntüleme",
     "result-chip-multi": "Süresi dolana kadar açık",

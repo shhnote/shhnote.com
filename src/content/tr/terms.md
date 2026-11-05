@@ -2,7 +2,7 @@
 title: "Kullanım koşulları"
 description: "shhnote.com'u kullanma koşulları: hizmetin ne yaptığı, ne için kullanılamayacağı ve neyi vaat edip edemeyeceğimiz."
 eyebrow: "Yasal"
-updated: "[date]"
+updated: "5 Kasım 2026"
 ---
 
 > **Taslak.** Bu koşullar bir başlangıç noktasıdır ve bir avukat tarafından incelenmemiştir.

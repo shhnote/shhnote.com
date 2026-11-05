@@ -2,7 +2,7 @@
 title: "Utilizare acceptabilă"
 description: "Pentru ce poate și pentru ce nu poate fi folosit shhnote.com și cum se aplică regulile pe un serviciu care nu vede ce stochează."
 eyebrow: "Legal"
-updated: "[date]"
+updated: "5 noiembrie 2026"
 ---
 
 > **Ciornă.** Această politică este un punct de plecare și nu a fost verificată de un avocat.

@@ -221,7 +221,7 @@ Om du tror att du har hittat ett säkerhetsproblem på den här webbplatsen kan 
 
 Vi kommer att:
 
-- svara inom [number] arbetsdagar;
+- svara inom 5 arbetsdagar;
 - hålla dig uppdaterad medan vi åtgärdar problemet;
 - nämna dig när vi publicerar åtgärden, om du vill.
 

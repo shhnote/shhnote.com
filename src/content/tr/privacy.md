@@ -2,7 +2,7 @@
 title: "Gizlilik politikası"
 description: "shhnote.com'un neyi, ne kadar süreyle sakladığı ve asla ne yapmadığı. Sırlarınızı okuyamayız; geri kalan her şeyden de olabildiğince azını tutarız."
 eyebrow: "Yasal"
-updated: "[date]"
+updated: "5 Kasım 2026"
 ---
 
 > **Taslak.** Bu politika bir başlangıç noktasıdır ve bir avukat tarafından incelenmemiştir.
@@ -38,11 +38,11 @@ Silme işlemi kaydı kaldırır. Her bilgisayarda olduğu gibi, şifreli kalınt
 - Hesap oluşturmanızı istemeyiz.
 - Verilerinizi satmayız veya paylaşmayız.
 
-Tema tercihiniz (açık veya koyu) tarayıcınızın yerel depolamasında hatırlanır ve hiçbir yere gönderilmez.
+Tema tercihiniz ve dil menüsünden seçtiyseniz diliniz tarayıcınızın yerel depolamasında hatırlanır ve hiçbir yere gönderilmez.
 
 ## Sunucu kayıtları
 
-Çoğu web sitesi gibi sunucumuz da hizmeti güvenli ve çalışır durumda tutmak için her isteğin IP adresiniz ve zamanı gibi teknik ayrıntılarını kısa süreliğine kaydedebilir. [Describe how long logs are kept, or state that they are not kept.] Kayıtlar hiçbir zaman sır anahtarlarını içermez, çünkü tarayıcılar bağlantının anahtarı taşıyan kısmını göndermez.
+Bu site istek kaydı tutmaz: önündeki web sunucusu istekleri kaydetmez ve shhnote sunucusu sır başına erişim kaydı ya da IP geçmişi tutmaz (hız sınırlama, dönüşümlü bir tuz altında adresin anahtarlı özetini kullanır). Cloudflare bu site için TLS'yi sonlandırır ve IP adreslerini kendi gizlilik politikası kapsamında görür; tarayıcılar bağlantının anahtarı taşıyan kısmını göndermediği için bir bağlantı parçasını ya da herhangi bir anahtarı asla görmez.
 
 ## Haklarınız
 

@@ -221,7 +221,7 @@ Se pensi di aver trovato un problema di sicurezza in questo sito, scrivi a [secu
 
 Ci impegniamo a:
 
-- risponderti entro [number] giorni lavorativi;
+- risponderti entro 5 giorni lavorativi;
 - tenerti aggiornato mentre lo correggiamo;
 - citarti quando pubblichiamo la correzione, se lo desideri.
 

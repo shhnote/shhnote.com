@@ -2,7 +2,7 @@
 title: "Termeni de utilizare"
 description: "Termenii de utilizare pentru shhnote.com — ce face serviciul, pentru ce nu îl poți folosi și ce putem și nu putem promite."
 eyebrow: "Legal"
-updated: "[date]"
+updated: "5 noiembrie 2026"
 ---
 
 > **Ciornă.** Acești termeni sunt un punct de plecare și nu au fost verificați de un avocat.

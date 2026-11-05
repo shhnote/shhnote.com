@@ -2,7 +2,7 @@
 title: "Kabul edilebilir kullanım"
 description: "shhnote.com'un ne için kullanılabileceği ve kullanılamayacağı, ve sakladığı şeyi göremeyen bir hizmette kuralların nasıl uygulandığı."
 eyebrow: "Yasal"
-updated: "[date]"
+updated: "5 Kasım 2026"
 ---
 
 > **Taslak.** Bu politika bir başlangıç noktasıdır ve bir avukat tarafından incelenmemiştir.

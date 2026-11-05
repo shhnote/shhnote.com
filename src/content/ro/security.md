@@ -221,7 +221,7 @@ Dacă crezi că ai găsit o problemă de securitate pe acest site, te rugăm să
 
 Ne angajăm să:
 
-- răspundem în [number] zile lucrătoare;
+- răspundem în 5 zile lucrătoare;
 - te ținem la curent cât timp remediem problema;
 - îți recunoaștem contribuția când publicăm remedierea, dacă dorești.
 

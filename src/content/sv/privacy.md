@@ -2,7 +2,7 @@
 title: "Integritetspolicy"
 description: "Vad shhnote.com lagrar, hur länge och vad den aldrig gör. Vi kan inte läsa dina hemligheter, och vi sparar så lite annat som möjligt."
 eyebrow: "Juridik"
-updated: "[date]"
+updated: "5 november 2026"
 ---
 
 > **Utkast.** Den här policyn är en utgångspunkt och har inte granskats av en jurist.
@@ -38,11 +38,11 @@ Raderingen tar bort posten. Som på alla datorer kan krypterade rester finnas kv
 - Vi ber dig inte skapa något konto.
 - Vi säljer eller delar inte dina data.
 
-Ditt val av tema (ljust eller mörkt) sparas i webbläsarens lokala lagring och skickas aldrig någonstans.
+Ditt val av tema och, om du väljer ett i språkmenyn, ditt språk sparas i webbläsarens lokala lagring och skickas aldrig någonstans.
 
 ## Serverloggar
 
-Som de flesta webbplatser kan vår server kortvarigt registrera tekniska uppgifter om varje förfrågan, till exempel din IP-adress och tidpunkten, för att hålla tjänsten säker och fungerande. [Describe how long logs are kept, or state that they are not kept.] Loggarna innehåller aldrig hemliga nycklar, eftersom webbläsare inte skickar den del av länken som innehåller nyckeln.
+Den här webbplatsen sparar inga loggar över förfrågningar: webbservern framför den loggar inga förfrågningar, och shhnote-servern för ingen åtkomstlogg per hemlighet och ingen IP-historik (hastighetsbegränsningen använder en nyckelad hash av adressen under ett salt som byts ut). Cloudflare terminerar TLS för den här webbplatsen och ser IP-adresser enligt sin egen integritetspolicy; den ser aldrig ett länkfragment eller någon nyckel, eftersom webbläsare inte skickar den del av länken som innehåller nyckeln.
 
 ## Dina rättigheter
 

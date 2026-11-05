@@ -2,7 +2,7 @@
 title: "Politica de confidențialitate"
 description: "Ce stochează shhnote.com, cât timp și ce nu face niciodată. Nu îți putem citi secretele și păstrăm cât mai puțin altceva."
 eyebrow: "Legal"
-updated: "[date]"
+updated: "5 noiembrie 2026"
 ---
 
 > **Ciornă.** Această politică este un punct de plecare și nu a fost verificată de un avocat.
@@ -38,11 +38,11 @@ Un secret este șters când expiră sau imediat după ce a fost deschis, dacă e
 - Nu îți cerem să îți creezi un cont.
 - Nu vindem și nu partajăm datele tale.
 
-Tema aleasă (luminoasă sau întunecată) este reținută în spațiul de stocare local al browserului tău și nu este trimisă nicăieri.
+Tema aleasă și, dacă alegi una din meniul de limbi, limba ta sunt reținute în spațiul de stocare local al browserului tău și nu sunt trimise nicăieri.
 
 ## Jurnalele serverului
 
-Ca majoritatea site-urilor, serverul nostru poate înregistra pentru scurt timp detalii tehnice ale fiecărei cereri, cum ar fi adresa IP și ora, pentru a menține serviciul sigur și funcțional. [Describe how long logs are kept, or state that they are not kept.] Jurnalele nu conțin niciodată cheile secretelor, pentru că browserele nu trimit partea linkului care conține cheia.
+Acest site nu păstrează jurnale ale cererilor: serverul web din fața lui nu înregistrează cererile, iar serverul shhnote nu ține un jurnal de acces per secret și nici un istoric al adreselor IP (limitarea ratei folosește un hash cu cheie al adresei sub un salt care se rotește). Cloudflare termină TLS-ul pentru acest site și vede adresele IP conform propriei politici de confidențialitate; nu vede niciodată fragmentul unui link sau vreo cheie, pentru că browserele nu trimit partea linkului care conține cheia.
 
 ## Drepturile tale
 

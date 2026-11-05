@@ -221,7 +221,7 @@ Bu sitede bir güvenlik sorunu bulduğunuzu düşünüyorsanız, lütfen başka 
 
 Bizim yapacaklarımız:
 
-- [number] iş günü içinde yanıt vermek;
+- 5 iş günü içinde yanıt vermek;
 - düzeltme sürecinde sizi bilgilendirmek;
 - isterseniz, düzeltmeyi yayımladığımızda adınızı anmak.
 

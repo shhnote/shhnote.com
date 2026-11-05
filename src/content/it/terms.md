@@ -2,7 +2,7 @@
 title: "Termini di servizio"
 description: "Le condizioni d'uso di shhnote.com: cosa fa il servizio, per cosa non puoi usarlo e cosa possiamo e non possiamo garantire."
 eyebrow: "Note legali"
-updated: "[date]"
+updated: "5 novembre 2026"
 ---
 
 > **Bozza.** Questi termini sono un punto di partenza e non sono stati esaminati da un avvocato.

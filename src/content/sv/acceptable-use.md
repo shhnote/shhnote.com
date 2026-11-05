@@ -2,7 +2,7 @@
 title: "Godtagbar användning"
 description: "Vad shhnote.com får och inte får användas till, och hur regler upprätthålls av en tjänst som inte kan se vad den lagrar."
 eyebrow: "Juridik"
-updated: "[date]"
+updated: "5 november 2026"
 ---
 
 > **Utkast.** Den här policyn är en utgångspunkt och har inte granskats av en jurist.

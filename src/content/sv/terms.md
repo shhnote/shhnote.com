@@ -2,7 +2,7 @@
 title: "Användarvillkor"
 description: "Villkoren för att använda shhnote.com – vad tjänsten gör, vad du inte får använda den till och vad vi kan och inte kan lova."
 eyebrow: "Juridik"
-updated: "[date]"
+updated: "5 november 2026"
 ---
 
 > **Utkast.** De här villkoren är en utgångspunkt och har inte granskats av en jurist.
