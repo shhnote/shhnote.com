@@ -2,7 +2,7 @@
   "site": {
     "name": "shhnote",
     "title": "shhnote — comparte secretos con enlaces que se autodestruyen",
-    "description": "Comparte secretos con cifrado de extremo a extremo y conocimiento cero, en código abierto. Texto y archivos. El servidor nunca ve tus datos."
+    "description": "Comparte secretos con cifrado de extremo a extremo y conocimiento cero, en código abierto. Texto y archivos. El servidor nunca ve tus secretos."
   },
   "nav": {
     "skip": "Saltar al contenido",
@@ -49,7 +49,8 @@
       "filesLabel": "Archivos adjuntos",
       "filesDrop": "Suelta los archivos aquí",
       "filesClick": "o haz clic para adjuntar",
-      "filesHint": "Se cifran en tu navegador antes de subirse · hasta 25 MB y 25 archivos",
+      "filesHint": "Se cifran en tu navegador antes de subirse",
+      "filesLimit": "hasta {limit} en total",
       "filesRemove": "Quitar",
       "expiryLabel": "Caduca en",
       "expiry": {
@@ -77,7 +78,7 @@
     "chips": {
       "e2e": "Cifrado de extremo a extremo",
       "zeroKnowledge": "Conocimiento cero",
-      "noLogs": "Sin registros",
+      "noLogs": "Sin registros de acceso",
       "openSource": "Código abierto"
     },
     "result": {
@@ -91,8 +92,8 @@
       "chipLifetime": "Visualización única",
       "chipExpiry": "Caduca en 1 día",
       "passphraseReminder": "Este secreto tiene una frase de contraseña. Envíala por un canal distinto al del enlace.",
-      "calloutTitle": "Un enlace, una lectura.",
-      "callout": "Cualquiera que tenga el enlace completo puede abrir el secreto, una sola vez. Si pusiste una frase de contraseña, envíala por un canal distinto al del enlace.",
+      "calloutTitle": "Un enlace, un secreto.",
+      "callout": "Cualquiera que tenga el enlace completo puede abrir el secreto: un enlace de un solo uso, una vez; un enlace con plazo, hasta que caduque. Si pusiste una frase de contraseña, envíala por un canal distinto al del enlace.",
       "divider": "controles privados · guárdalos para ti",
       "burnLabel": "Enlace de destrucción",
       "burnAside": "— destrúyelo tú mismo cuando quieras",
@@ -119,7 +120,7 @@
         {
           "title": "Recupera",
           "aside": "y desaparece",
-          "body": "El navegador del destinatario lo descifra en local y el servidor destruye su copia. Ni siquiera nosotros podemos recuperarlo."
+          "body": "El navegador del destinatario lo descifra en local. Un secreto de un solo uso se borra del servidor en cuanto se abre; uno con plazo, cuando caduca. Ni siquiera nosotros podemos recuperarlo."
         }
       ]
     },
@@ -150,13 +151,13 @@
         },
         {
           "label": "En tránsito",
-          "value": "TLS 1.3",
+          "value": "TLS",
           "body": "Solo el texto cifrado sale de tu dispositivo, a través de TLS moderno. Lo que recibimos es un bloque opaco que no tenemos forma de abrir."
         },
         {
           "label": "En reposo",
-          "value": "Texto cifrado + TTL",
-          "body": "Guardamos un bloque cifrado y una marca de tiempo de caducidad, nada más. Ni texto sin cifrar, ni claves, ni metadatos del remitente o del destinatario."
+          "value": "Texto cifrado + hashes + caducidad",
+          "body": "Guardamos el bloque cifrado, hashes unidireccionales de los valores que sirven para encontrarlo o destruirlo, su duración y una caducidad redondeada, nada más. Ni texto sin cifrar, ni claves, ni metadatos del remitente o del destinatario."
         }
       ]
     },
@@ -173,12 +174,12 @@
         {
           "label": "Usuarios que cuidan su privacidad",
           "title": "Comparte sin dejar rastro",
-          "body": "Funciona en Tor sin perder funciones. Sin CAPTCHA, sin huella digital del navegador, sin solicitudes externas. Todas las fuentes y recursos están alojados en el propio sitio. Cero fugas de metadatos."
+          "body": "Funciona en Tor Browser en el nivel «Más seguro». Sin CAPTCHA, sin huella digital del navegador, sin solicitudes externas. Todas las fuentes y recursos están alojados en el propio sitio."
         },
         {
           "label": "TI e incorporación",
           "title": "Da acceso de forma segura",
-          "body": "Envía a las nuevas incorporaciones sus credenciales iniciales, configuraciones de VPN o contraseñas de Wi-Fi sin dejar rastro en hilos de correo ni en sistemas de tickets. Genera varios enlaces únicos para incorporaciones en grupo."
+          "body": "Envía a las nuevas incorporaciones sus credenciales iniciales, configuraciones de VPN o contraseñas de Wi-Fi sin dejar rastro en hilos de correo ni en sistemas de tickets. Para incorporaciones en grupo, automatízalo con la API."
         },
         {
           "label": "Legal y normativa",
@@ -199,7 +200,7 @@
     },
     "cta": {
       "title": "Deja de compartir información sensible en texto plano",
-      "intro": "Crea un enlace cifrado de un solo uso en segundos. O crea un enlace cifrado de varias visualizaciones que caduque en unas horas o unos días. Añade protección extra con una contraseña. Sin cuenta. Sin recopilar datos.",
+      "intro": "Crea un enlace cifrado de un solo uso en segundos. O crea un enlace cifrado de varias visualizaciones que caduque en unas horas o unos días. Añade protección extra con una contraseña. Sin cuenta. No se conserva nada que te identifique.",
       "button": "Crear un secreto de un solo uso"
     }
   },
@@ -332,7 +333,6 @@
   },
   "ui": {
     "form-files-remove": "Quitar",
-    "result-copied": "Copiado",
     "result-destroyed": "Destruido. El secreto ya no está en el servidor.",
     "result-chip-single": "Visualización única",
     "result-chip-multi": "Disponible hasta que caduque",

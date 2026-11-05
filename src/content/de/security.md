@@ -221,7 +221,7 @@ Wenn du glaubst, ein Sicherheitsproblem mit dieser Website gefunden zu haben, sc
 
 Wir werden:
 
-- innerhalb von [number] Werktagen antworten;
+- innerhalb von 5 Werktagen antworten;
 - dich auf dem Laufenden halten, während wir es beheben;
 - dich bei der Veröffentlichung der Lösung nennen, wenn du möchtest.
 

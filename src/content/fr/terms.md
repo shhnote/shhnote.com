@@ -2,7 +2,7 @@
 title: "Conditions d’utilisation"
 description: "Les conditions d’utilisation de shhnote.com : ce que fait le service, ce à quoi il ne doit pas servir, et ce que nous pouvons ou non promettre."
 eyebrow: "Mentions légales"
-updated: "[date]"
+updated: "5 novembre 2026"
 ---
 
 > **Brouillon.** Ces conditions sont un point de départ et n’ont pas été relues par un juriste.

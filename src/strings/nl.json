@@ -2,7 +2,7 @@
   "site": {
     "name": "shhnote",
     "title": "shhnote — deel geheimen met zelfvernietigende links",
-    "description": "Open source, end-to-end versleuteld, zero-knowledge geheimen delen. Tekst en bestanden. De server ziet je gegevens nooit."
+    "description": "Open source, end-to-end versleuteld, zero-knowledge geheimen delen. Tekst en bestanden. De server ziet je geheimen nooit."
   },
   "nav": {
     "skip": "Naar de inhoud",
@@ -49,7 +49,8 @@
       "filesLabel": "Bijlagen",
       "filesDrop": "Sleep bestanden hierheen",
       "filesClick": "of klik om toe te voegen",
-      "filesHint": "Versleuteld in je browser vóór het uploaden · tot 25 MB, 25 bestanden",
+      "filesHint": "Versleuteld in je browser vóór het uploaden",
+      "filesLimit": "tot {limit} in totaal",
       "filesRemove": "Verwijderen",
       "expiryLabel": "Verloopt over",
       "expiry": {
@@ -77,7 +78,7 @@
     "chips": {
       "e2e": "End-to-end versleuteld",
       "zeroKnowledge": "Zero-knowledge",
-      "noLogs": "Geen logs",
+      "noLogs": "Geen toegangslogs",
       "openSource": "Open source"
     },
     "result": {
@@ -91,8 +92,8 @@
       "chipLifetime": "Eenmalig bekijken",
       "chipExpiry": "Verloopt over 1 dag",
       "passphraseReminder": "Dit geheim heeft een wachtwoordzin. Stuur die via een ander kanaal dan de link zelf.",
-      "calloutTitle": "Eén link, één keer lezen.",
-      "callout": "Iedereen met de volledige link kan het geheim openen, één keer. Heb je een wachtwoordzin ingesteld, stuur die dan via een ander kanaal dan de link zelf.",
+      "calloutTitle": "Eén link, één geheim.",
+      "callout": "Iedereen met de volledige link kan het geheim openen: een eenmalige link één keer, een link met looptijd tot hij verloopt. Heb je een wachtwoordzin ingesteld, stuur die dan via een ander kanaal dan de link zelf.",
       "divider": "privé-opties · houd dit voor jezelf",
       "burnLabel": "Vernietigingslink",
       "burnAside": "— vernietig het zelf, wanneer je maar wilt",
@@ -119,7 +120,7 @@
         {
           "title": "Openen",
           "aside": "en weg is het",
-          "body": "De browser van de ontvanger ontsleutelt het lokaal en de server vernietigt zijn kopie. Zelfs wij kunnen het niet terughalen."
+          "body": "De browser van de ontvanger ontsleutelt het lokaal. Een eenmalig geheim wordt van de server verwijderd zodra het wordt geopend; een geheim met looptijd zodra het verloopt. Zelfs wij kunnen het niet terughalen."
         }
       ]
     },
@@ -150,13 +151,13 @@
         },
         {
           "label": "Onderweg",
-          "value": "TLS 1.3",
+          "value": "TLS",
           "body": "Alleen versleutelde data verlaat je apparaat, via moderne TLS. Wat wij ontvangen is een ondoorzichtige blob die we op geen enkele manier kunnen openen."
         },
         {
           "label": "Opgeslagen",
-          "value": "Versleutelde data + TTL",
-          "body": "We bewaren een versleutelde blob en een vervaltijdstip, verder niets. Geen leesbare tekst, geen sleutels, geen metadata over afzender of ontvanger."
+          "value": "Versleutelde data + hashes + vervaltijd",
+          "body": "We bewaren de versleutelde blob, eenrichtingshashes van de waarden waarmee hij wordt gevonden of vernietigd, zijn looptijd en een afgerond vervaltijdstip, verder niets. Geen leesbare tekst, geen sleutels, geen metadata over afzender of ontvanger."
         }
       ]
     },
@@ -173,12 +174,12 @@
         {
           "label": "Privacybewuste gebruikers",
           "title": "Delen zonder sporen",
-          "body": "Werkt via Tor zonder in te leveren op functionaliteit. Geen CAPTCHA's, geen browser-fingerprinting, geen externe verzoeken. Elk lettertype en elk bestand wordt zelf gehost. Geen enkel lek van metadata."
+          "body": "Werkt in Tor Browser op het niveau 'Veiliger'. Geen CAPTCHA's, geen browser-fingerprinting, geen externe verzoeken. Elk lettertype en elk bestand wordt zelf gehost."
         },
         {
           "label": "IT & onboarding",
           "title": "Veilig toegang regelen",
-          "body": "Stuur nieuwe collega's hun eerste inloggegevens, VPN-configuraties of wifi-wachtwoorden zonder sporen achter te laten in e-mailgesprekken of ticketsystemen. Maak meerdere unieke links aan voor onboarding in één keer."
+          "body": "Stuur nieuwe collega's hun eerste inloggegevens, VPN-configuraties of wifi-wachtwoorden zonder sporen achter te laten in e-mailgesprekken of ticketsystemen. Voor onboarding in één keer scripte je het via de API."
         },
         {
           "label": "Juridisch & compliance",
@@ -199,7 +200,7 @@
     },
     "cta": {
       "title": "Stop met het delen van gevoelige informatie als leesbare tekst",
-      "intro": "Maak in een paar seconden een eenmalige versleutelde link. Of maak een versleutelde link die vaker te openen is en na een paar uur of dagen verloopt. Bescherm hem extra met een wachtwoord. Geen account nodig. Er worden geen gegevens verzameld.",
+      "intro": "Maak in een paar seconden een eenmalige versleutelde link. Of maak een versleutelde link die vaker te openen is en na een paar uur of dagen verloopt. Bescherm hem extra met een wachtwoord. Geen account nodig. Er wordt niets bewaard dat jou identificeert.",
       "button": "Eenmalig geheim aanmaken"
     }
   },
@@ -332,7 +333,6 @@
   },
   "ui": {
     "form-files-remove": "Verwijderen",
-    "result-copied": "Gekopieerd",
     "result-destroyed": "Vernietigd. Het geheim is van de server verdwenen.",
     "result-chip-single": "Eenmalig bekijken",
     "result-chip-multi": "Te openen tot het verloopt",

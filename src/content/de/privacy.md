@@ -2,7 +2,7 @@
 title: "Datenschutzerklärung"
 description: "Was shhnote.com speichert, wie lange und was es nie tut. Wir können deine Geheimnisse nicht lesen, und alles andere speichern wir so wenig wie möglich."
 eyebrow: "Rechtliches"
-updated: "[date]"
+updated: "5. November 2026"
 ---
 
 > **Entwurf.** Diese Erklärung ist ein Ausgangspunkt und wurde nicht anwaltlich geprüft.
@@ -38,11 +38,11 @@ Löschen entfernt den Eintrag. Wie auf jedem Computer können verschlüsselte Re
 - Du musst kein Konto anlegen.
 - Wir verkaufen deine Daten nicht und geben sie nicht weiter.
 
-Deine Wahl des Designs (hell oder dunkel) wird im lokalen Speicher deines Browsers gemerkt und nirgendwohin gesendet.
+Deine Wahl des Designs und, wenn du eine im Sprachmenü triffst, deine Sprache werden im lokalen Speicher deines Browsers gemerkt und nirgendwohin gesendet.
 
 ## Server-Protokolle
 
-Wie die meisten Websites kann unser Server technische Angaben zu jeder Anfrage kurz festhalten, etwa deine IP-Adresse und die Uhrzeit, um den Dienst sicher und funktionsfähig zu halten. [Describe how long logs are kept, or state that they are not kept.] Protokolle enthalten nie geheime Schlüssel, weil Browser den Teil des Links mit dem Schlüssel nicht mitsenden.
+Diese Website führt keine Anfrageprotokolle: Der Webserver davor protokolliert keine Anfragen, und der shhnote-Server führt kein Zugriffsprotokoll pro Geheimnis und keine IP-Historie (die Ratenbegrenzung verwendet einen Schlüssel-Hash der Adresse unter einem rotierenden Salt). Cloudflare terminiert TLS für diese Website und sieht IP-Adressen gemäß seiner eigenen Datenschutzerklärung; ein Link-Fragment oder einen Schlüssel sieht es nie, weil Browser den Teil des Links mit dem Schlüssel nicht mitsenden.
 
 ## Deine Rechte
 

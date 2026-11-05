@@ -2,7 +2,7 @@
 title: "Política de privacidad"
 description: "Qué almacena shhnote.com, durante cuánto tiempo y qué no hace nunca. No podemos leer tus secretos y guardamos lo mínimo posible de todo lo demás."
 eyebrow: "Legal"
-updated: "[date]"
+updated: "5 de noviembre de 2026"
 ---
 
 > **Borrador.** Esta política es un punto de partida y no la ha revisado ningún abogado.
@@ -38,11 +38,11 @@ El borrado elimina el registro. Como en cualquier ordenador, pueden quedar resto
 - No te pedimos que crees una cuenta.
 - No vendemos ni compartimos tus datos.
 
-Tu elección de tema (claro u oscuro) se recuerda en el almacenamiento local de tu navegador y nunca se envía a ninguna parte.
+Tu elección de tema y, si eliges uno en el menú de idiomas, tu idioma se recuerdan en el almacenamiento local de tu navegador y nunca se envían a ninguna parte.
 
 ## Registros del servidor
 
-Como la mayoría de los sitios web, nuestro servidor puede registrar brevemente datos técnicos de cada solicitud, como tu dirección IP y la hora, para mantener el servicio seguro y en funcionamiento. [Describe how long logs are kept, or state that they are not kept.] Los registros nunca contienen claves de secretos, porque los navegadores no envían la parte del enlace que contiene la clave.
+Este sitio no guarda registros de solicitudes: el servidor web que tiene delante no registra las solicitudes, y el servidor shhnote no guarda registros de acceso por secreto ni historial de IP (la limitación de frecuencia usa un hash con clave de la dirección bajo una sal que rota). Cloudflare termina el TLS de este sitio y ve direcciones IP según su propia política de privacidad; nunca ve el fragmento de un enlace ni ninguna clave, porque los navegadores no envían la parte del enlace que contiene la clave.
 
 ## Tus derechos
 

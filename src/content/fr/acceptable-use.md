@@ -2,7 +2,7 @@
 title: "Utilisation acceptable"
 description: "Ce à quoi shhnote.com peut ou ne peut pas servir, et comment les règles sont appliquées par un service qui ne voit pas ce qu’il stocke."
 eyebrow: "Mentions légales"
-updated: "[date]"
+updated: "5 novembre 2026"
 ---
 
 > **Brouillon.** Cette politique est un point de départ et n’a pas été relue par un juriste.

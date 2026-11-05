@@ -20,10 +20,10 @@ that the English version is authoritative (`content.translationNote` in the stri
 
 | locale | language | source | address form | date | status |
 |---|---|---|---|---|---|
-| `de` | Deutsch | UI strings: the main repository's `locales/de/main.ftl` (v0.3.0) where a key matches, the rest translated from `en`. Pages: `terms`, `privacy`, `acceptable-use` and the last section of `security` reuse the main repository's `content/de/*.md` wording where the English matches; the rest translated from `en`. | du | 2026-11-03 | machine translation, pending review |
-| `es` | Español | Translated from `en` | tú | 2026-11-03 | machine translation, pending review |
-| `fr` | Français | Translated from `en` | vous | 2026-11-03 | machine translation, pending review |
-| `nl` | Nederlands | Translated from `en` | je/jij | 2026-11-03 | machine translation, pending review |
+| `de` | Deutsch | UI strings: the main repository's `locales/de/main.ftl` (v0.3.0) where a key matches, the rest translated from `en`. Pages: `terms`, `privacy`, `acceptable-use` and the last section of `security` reuse the main repository's `content/de/*.md` wording where the English matches; the rest translated from `en`. | du | 2026-11-05 | machine translation, pending review |
+| `es` | Español | Translated from `en` | tú | 2026-11-05 | machine translation, pending review |
+| `fr` | Français | Translated from `en` | vous | 2026-11-05 | machine translation, pending review |
+| `nl` | Nederlands | Translated from `en` | je/jij | 2026-11-05 | machine translation, pending review |
 | `hi` | हिन्दी | Translated from `en` | आप | 2026-11-03 | machine translation, pending review |
 | `ja` | 日本語 | Translated from `en` | です/ます | 2026-11-03 | machine translation, pending review |
 | `pl` | Polski | Translated from `en` | ty | 2026-11-03 | machine translation, pending review |

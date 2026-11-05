@@ -2,7 +2,7 @@
 title: "Aanvaardbaar gebruik"
 description: "Waarvoor shhnote.com wel en niet gebruikt mag worden, en hoe handhaving werkt bij een dienst die niet kan zien wat hij opslaat."
 eyebrow: "Juridisch"
-updated: "[date]"
+updated: "5 november 2026"
 ---
 
 > **Concept.** Dit beleid is een eerste opzet en is niet door een jurist beoordeeld.

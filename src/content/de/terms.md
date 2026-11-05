@@ -2,7 +2,7 @@
 title: "Nutzungsbedingungen"
 description: "Die Bedingungen für die Nutzung von shhnote.com: was der Dienst tut, wofür du ihn nicht nutzen darfst und was wir versprechen können und was nicht."
 eyebrow: "Rechtliches"
-updated: "[date]"
+updated: "5. November 2026"
 ---
 
 > **Entwurf.** Diese Bedingungen sind ein Ausgangspunkt und wurden nicht anwaltlich geprüft.

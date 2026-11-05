@@ -2,7 +2,7 @@
 title: "Privacybeleid"
 description: "Wat shhnote.com opslaat, hoe lang, en wat het nooit doet. We kunnen je geheimen niet lezen en bewaren verder zo weinig mogelijk."
 eyebrow: "Juridisch"
-updated: "[date]"
+updated: "5 november 2026"
 ---
 
 > **Concept.** Dit beleid is een eerste opzet en is niet door een jurist beoordeeld.
@@ -38,11 +38,11 @@ Verwijderen haalt het record weg. Zoals op elke computer kunnen versleutelde res
 - We vragen je niet om een account aan te maken.
 - We verkopen of delen je gegevens niet.
 
-Je themakeuze (licht of donker) wordt onthouden in de lokale opslag van je browser en nergens naartoe gestuurd.
+Je themakeuze en, als je er een kiest in het taalmenu, je taal worden onthouden in de lokale opslag van je browser en nergens naartoe gestuurd.
 
 ## Serverlogs
 
-Zoals de meeste websites kan onze server kort technische gegevens van elk verzoek vastleggen, zoals je IP-adres en het tijdstip, om de dienst veilig en werkend te houden. [Describe how long logs are kept, or state that they are not kept.] Logs bevatten nooit geheime sleutels, omdat browsers het deel van de link waar de sleutel in staat niet meesturen.
+Deze site bewaart geen verzoeklogs: de webserver ervoor logt geen verzoeken, en de shhnote-server houdt geen toegangslog per geheim en geen IP-geschiedenis bij (rate limiting gebruikt een gesleutelde hash van het adres onder een roterende salt). Cloudflare beëindigt TLS voor deze site en ziet IP-adressen volgens zijn eigen privacybeleid; een linkfragment of een sleutel ziet het nooit, omdat browsers het deel van de link waar de sleutel in staat niet meesturen.
 
 ## Je rechten
 

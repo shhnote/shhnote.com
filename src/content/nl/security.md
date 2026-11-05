@@ -221,7 +221,7 @@ Denk je een beveiligingsprobleem met deze site te hebben gevonden? Mail dan naar
 
 Wij zullen:
 
-- binnen [number] werkdagen reageren;
+- binnen 5 werkdagen reageren;
 - je op de hoogte houden terwijl we het oplossen;
 - je vermelden wanneer we de oplossing publiceren, als je dat wilt.
 

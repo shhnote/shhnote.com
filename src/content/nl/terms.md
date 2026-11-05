@@ -2,7 +2,7 @@
 title: "Gebruiksvoorwaarden"
 description: "De voorwaarden voor het gebruik van shhnote.com: wat de dienst doet, waarvoor je hem niet mag gebruiken en wat we wel en niet kunnen beloven."
 eyebrow: "Juridisch"
-updated: "[date]"
+updated: "5 november 2026"
 ---
 
 > **Concept.** Deze voorwaarden zijn een eerste opzet en zijn niet door een jurist beoordeeld.

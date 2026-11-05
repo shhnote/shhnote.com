@@ -2,7 +2,7 @@
 title: "Nutzungsrichtlinie"
 description: "Wofür shhnote.com genutzt werden darf und wofür nicht, und wie Regeln auf einem Dienst durchgesetzt werden, der nicht sehen kann, was er speichert."
 eyebrow: "Rechtliches"
-updated: "[date]"
+updated: "5. November 2026"
 ---
 
 > **Entwurf.** Diese Richtlinie ist ein Ausgangspunkt und wurde nicht anwaltlich geprüft.

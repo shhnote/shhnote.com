@@ -2,7 +2,7 @@
 title: "Politique de confidentialité"
 description: "Ce que shhnote.com conserve, combien de temps, et ce qu’il ne fait jamais. Nous ne pouvons pas lire vos secrets, et nous gardons le moins possible du reste."
 eyebrow: "Mentions légales"
-updated: "[date]"
+updated: "5 novembre 2026"
 ---
 
 > **Brouillon.** Cette politique est un point de départ et n’a pas été relue par un juriste.
@@ -38,11 +38,11 @@ La suppression efface l’enregistrement. Comme sur tout ordinateur, des restes 
 - Nous ne vous demandons pas de créer de compte.
 - Nous ne vendons ni ne partageons vos données.
 
-Votre choix de thème (clair ou sombre) est mémorisé dans le stockage local de votre navigateur et n’est jamais envoyé nulle part.
+Votre choix de thème et, si vous en choisissez une dans le menu des langues, votre langue sont mémorisés dans le stockage local de votre navigateur et ne sont jamais envoyés nulle part.
 
 ## Journaux du serveur
 
-Comme la plupart des sites web, notre serveur peut enregistrer brièvement des informations techniques sur chaque requête, comme votre adresse IP et l’heure, afin d’assurer la sécurité et le bon fonctionnement du service. [Describe how long logs are kept, or state that they are not kept.] Les journaux ne contiennent jamais de clés de secret, car les navigateurs n’envoient pas la partie du lien qui contient la clé.
+Ce site ne conserve aucun journal de requêtes : le serveur web qui le précède n’enregistre pas les requêtes, et le serveur shhnote ne tient ni journal d’accès par secret ni historique d’adresses IP (la limitation de débit utilise une empreinte à clé de l’adresse sous un sel qui change régulièrement). Cloudflare termine le TLS de ce site et voit les adresses IP selon sa propre politique de confidentialité ; il ne voit jamais le fragment d’un lien ni aucune clé, car les navigateurs n’envoient pas la partie du lien qui contient la clé.
 
 ## Vos droits
 

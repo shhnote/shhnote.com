@@ -2,7 +2,7 @@
   "site": {
     "name": "shhnote",
     "title": "shhnote — partagez des secrets avec des liens autodestructeurs",
-    "description": "Partage de secrets open source, chiffré de bout en bout et à divulgation nulle de connaissance. Texte et fichiers. Le serveur ne voit jamais vos données."
+    "description": "Partage de secrets open source, chiffré de bout en bout et à divulgation nulle de connaissance. Texte et fichiers. Le serveur ne voit jamais vos secrets."
   },
   "nav": {
     "skip": "Aller au contenu",
@@ -49,7 +49,8 @@
       "filesLabel": "Fichiers à joindre",
       "filesDrop": "Déposez vos fichiers ici",
       "filesClick": "ou cliquez pour joindre",
-      "filesHint": "Chiffrés dans votre navigateur avant l’envoi · jusqu’à 25 MB, 25 fichiers",
+      "filesHint": "Chiffrés dans votre navigateur avant l’envoi",
+      "filesLimit": "jusqu’à {limit} au total",
       "filesRemove": "Retirer",
       "expiryLabel": "Expire dans",
       "expiry": {
@@ -77,7 +78,7 @@
     "chips": {
       "e2e": "Chiffré de bout en bout",
       "zeroKnowledge": "Zéro connaissance",
-      "noLogs": "Aucun journal",
+      "noLogs": "Aucun journal d’accès",
       "openSource": "Open source"
     },
     "result": {
@@ -91,8 +92,8 @@
       "chipLifetime": "Consultation unique",
       "chipExpiry": "Expire dans 1 jour",
       "passphraseReminder": "Ce secret est protégé par une phrase de passe. Envoyez-la par un autre canal que le lien.",
-      "calloutTitle": "Un lien, une lecture.",
-      "callout": "Toute personne disposant du lien complet peut ouvrir le secret, une seule fois. Si vous avez défini une phrase de passe, envoyez-la par un autre canal que le lien.",
+      "calloutTitle": "Un lien, un secret.",
+      "callout": "Toute personne disposant du lien complet peut ouvrir le secret : un lien à usage unique, une seule fois ; un lien à durée limitée, jusqu’à son expiration. Si vous avez défini une phrase de passe, envoyez-la par un autre canal que le lien.",
       "divider": "contrôles privés · à garder pour vous",
       "burnLabel": "Lien de destruction",
       "burnAside": "— détruisez-le vous-même, à tout moment",
@@ -119,7 +120,7 @@
         {
           "title": "Récupérer",
           "aside": "et c’est fini",
-          "body": "Le navigateur du destinataire le déchiffre localement et le serveur détruit sa copie. Même nous ne pouvons pas le récupérer."
+          "body": "Le navigateur du destinataire le déchiffre localement. Un secret à usage unique est supprimé du serveur dès son ouverture ; un secret à durée limitée, à son expiration. Même nous ne pouvons pas le récupérer."
         }
       ]
     },
@@ -150,13 +151,13 @@
         },
         {
           "label": "En transit",
-          "value": "TLS 1.3",
+          "value": "TLS",
           "body": "Seules des données chiffrées quittent votre appareil, via un TLS moderne. Ce que nous recevons est un bloc opaque que nous n’avons aucun moyen d’ouvrir."
         },
         {
           "label": "Au repos",
-          "value": "Données chiffrées + TTL",
-          "body": "Nous conservons un bloc chiffré et une date d’expiration, rien d’autre. Pas de texte en clair, pas de clés, pas de métadonnées sur l’expéditeur ou le destinataire."
+          "value": "Données chiffrées + empreintes + expiration",
+          "body": "Nous conservons le bloc chiffré, des empreintes à sens unique des valeurs qui servent à le retrouver ou à le détruire, sa durée de vie et une date d’expiration arrondie, rien d’autre. Pas de texte en clair, pas de clés, pas de métadonnées sur l’expéditeur ou le destinataire."
         }
       ]
     },
@@ -173,12 +174,12 @@
         {
           "label": "Soucieux de leur vie privée",
           "title": "Partager sans laisser de trace",
-          "body": "Fonctionne via Tor sans perte de fonctionnalités. Pas de CAPTCHA, pas d’empreinte de navigateur, pas de requêtes externes. Chaque police et chaque ressource est auto-hébergée. Aucune fuite de métadonnées."
+          "body": "Fonctionne dans le Navigateur Tor au niveau « Plus sûr ». Pas de CAPTCHA, pas d’empreinte de navigateur, pas de requêtes externes. Chaque police et chaque ressource est auto-hébergée."
         },
         {
           "label": "IT et intégration",
           "title": "Fournir des accès en toute sécurité",
-          "body": "Envoyez aux nouvelles recrues leurs premiers identifiants, leurs configurations VPN ou leurs mots de passe Wi-Fi sans laisser de traces dans les fils d’e-mails ou les outils de ticketing. Générez plusieurs liens uniques pour intégrer plusieurs personnes à la fois."
+          "body": "Envoyez aux nouvelles recrues leurs premiers identifiants, leurs configurations VPN ou leurs mots de passe Wi-Fi sans laisser de traces dans les fils d’e-mails ou les outils de ticketing. Pour intégrer plusieurs personnes à la fois, scriptez-le via l’API."
         },
         {
           "label": "Juridique et réglementaire",
@@ -199,7 +200,7 @@
     },
     "cta": {
       "title": "Arrêtez de partager des informations sensibles en clair",
-      "intro": "Créez un lien chiffré à usage unique en quelques secondes. Ou un lien chiffré consultable plusieurs fois qui expire au bout de quelques heures ou de quelques jours. Ajoutez une protection supplémentaire avec un mot de passe. Aucun compte nécessaire. Aucune donnée collectée.",
+      "intro": "Créez un lien chiffré à usage unique en quelques secondes. Ou un lien chiffré consultable plusieurs fois qui expire au bout de quelques heures ou de quelques jours. Ajoutez une protection supplémentaire avec un mot de passe. Aucun compte nécessaire. Rien qui vous identifie n’est conservé.",
       "button": "Créer un secret à usage unique"
     }
   },
@@ -332,7 +333,6 @@
   },
   "ui": {
     "form-files-remove": "Retirer",
-    "result-copied": "Copié",
     "result-destroyed": "Détruit. Le secret a disparu du serveur.",
     "result-chip-single": "Consultation unique",
     "result-chip-multi": "Consultable jusqu’à expiration",

@@ -221,7 +221,7 @@ Si vous pensez avoir trouvé un problème de sécurité sur ce site, écrivez à
 
 Nous nous engageons à :
 
-- répondre sous [number] jours ouvrés ;
+- répondre sous 5 jours ouvrés ;
 - vous tenir informé pendant la correction ;
 - vous créditer lors de la publication du correctif, si vous le souhaitez.
 

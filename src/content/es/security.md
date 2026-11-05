@@ -221,7 +221,7 @@ Si crees que has encontrado un problema de seguridad en este sitio, escríbenos 
 
 Nos comprometemos a:
 
-- responder en un plazo de [number] días hábiles;
+- responder en un plazo de 5 días hábiles;
 - mantenerte informado mientras lo corregimos;
 - reconocer tu aportación cuando publiquemos la corrección, si así lo deseas.
 
