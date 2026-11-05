@@ -22,7 +22,9 @@ origin, so this site owns every public page and the API lives at `/api/v1`.
   images, scripts or embeds. `scripts/check-external.sh` fails the build on
   any `http(s)://` URL in `dist/` outside its allow-list (citation links on
   `compare/` pages are the only exception).
-- No inline scripts or styles. The CSP is
+- No inline executable scripts or styles; the one inline element per page is
+  a `<script type="application/json" data-shh-i18n>` data block the controllers
+  read their strings from. The CSP is
   `default-src 'self'; script-src 'self' 'wasm-unsafe-eval'; style-src 'self';
   img-src 'self'; font-src 'self'; connect-src 'self';
   frame-ancestors 'none'; base-uri 'none'; form-action 'self'`.
@@ -38,26 +40,43 @@ origin, so this site owns every public page and the API lives at `/api/v1`.
 ## Layout
 
 - `src/pages/[locale]/…` — one route per page per locale, prerendered.
+  `src/pages/{s,burn,report}.astro` serve the English pages at the root, for
+  the locale-less links the client builds; `index.astro` redirects to `/en/`.
 - `src/content/<locale>/` — Markdown content collections.
 - `src/strings/<locale>.json` — UI strings; `en` is the source of truth.
-- `src/lib/strings.ts` — builds the `t` function passed to the controllers.
+- `src/lib/i18n.ts` — the locale list, names, direction and `og:locale` tags.
+- `src/lib/strings.ts` — loads a locale's strings with `en` fallback
+  (`getStrings`) and the controller strings for the page's data block
+  (`uiStrings`); the controllers' `t` is the package's own `createT`.
+- `src/lib/instance.ts` — API base and `argon2Url`, from the package version.
+- `src/scripts/chrome.ts` — theme, menus, password toggles (from `/ui`),
+  footer server version, `theme-color` sync. `src/scripts/locale.ts` — the
+  stored language choice and its redirect.
+- `src/integrations/argon2.ts` — copies the package's `argon2.wasm` into the
+  build and serves it in dev.
 - `src/styles/tokens.css` — colour, type and spacing tokens; four themes.
-- `scripts/` — `check-external.sh`, `fetch-upstream.sh` (reads `.shhnote-ref`).
-- `docs/` — headers reference, conformance record, translations record.
+- `scripts/` — `check-external.sh`, `fetch-upstream.sh` (reads `.shhnote-ref`),
+  `bump-version.sh` (version, commit and signed tag for a release).
+- `docs/` — headers reference, conformance record, translations record,
+  compare-page sources.
 
 ## Conventions
 
-- Locales: 18 codes in `astro.config` `i18n.locales`; `prefixDefaultLocale`
-  on, so `/en/` exists. `he` is RTL. Missing strings fall back to `en`.
+- Locales: 18 codes in `src/lib/i18n.ts`, imported by `astro.config`;
+  `prefixDefaultLocale` on, so `/en/` exists. `he` is RTL. Missing strings fall
+  back to `en`.
 - Controllers bind by `data-shh-*` attributes. Markup contains every state a
   controller toggles (hidden with the `hidden` attribute), so pages render
-  fully without JavaScript.
+  fully without JavaScript. Forms and buttons that only work with a controller
+  ship `hidden` and are shown by it; a `<noscript>` notice stands in.
 - Strings for the controllers come from the locale files, never from text in
   components.
 - `.shhnote-ref` pins the main repository tag that `docs` is rendered from.
   Bump it deliberately, in its own commit.
 - Versions: `package.json` is the frontend version in the footer; the backend
-  version comes from `GET /api/v1/config` at runtime.
+  version comes from `GET /api/v1/config` at runtime, through the package's
+  shared `getConfig`, so a page makes that request once.
+- Type check: `npm run check` (`astro check`) must stay at zero errors.
 - No deploy logic here. Releases are tarballs on GitHub; the server pulls.
 - Do not make commits yourself, show the commit message at the end of a task: `<area>: <what changed>`, under 70 characters.
 
@@ -66,6 +85,10 @@ origin, so this site owns every public page and the API lives at `/api/v1`.
 ```
 npm ci
 # a local shhnote instance in api mode on http://localhost:3000, setup gate cleared
-PUBLIC_SHH_API_BASE=http://localhost:3000/api/v1 npm run dev
-npm run build && scripts/check-external.sh
+npm run dev                  # proxies /api there (SHH_DEV_PROXY to change)
+npm run build && scripts/check-external.sh && npm run check
 ```
+
+The dev server does not see file changes on a Windows mount under WSL; restart
+it after edits. `PUBLIC_SHH_API_BASE` is only for an API on another origin,
+which must allow this one (CORS), so it is not the local setup.

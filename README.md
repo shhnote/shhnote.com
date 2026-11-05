@@ -9,7 +9,8 @@ behind the same origin at `/api/v1`.
 
 The site makes no request to any origin but its own: fonts, styles, scripts and
 the Argon2 module are served from here, there is no analytics, and no inline
-script or style (the CSP forbids them). Every page works without JavaScript
+executable script or style (the CSP forbids them; the one inline element is a
+JSON data block of strings). Every page works without JavaScript
 except the secret flows, which say so. `scripts/check-external.sh` fails if an
 external URL slips into the build; the only exception is the citation links on
 the `compare/` pages.
