@@ -2,7 +2,7 @@
   "site": {
     "name": "shhnote",
     "title": "shhnote — udostępniaj sekrety przez linki, które same się niszczą",
-    "description": "Otwartoźródłowe, szyfrowane end-to-end udostępnianie sekretów w modelu zero-knowledge. Tekst i pliki. Serwer nigdy nie widzi twoich danych."
+    "description": "Otwartoźródłowe, szyfrowane end-to-end udostępnianie sekretów w modelu zero-knowledge. Tekst i pliki. Serwer nigdy nie widzi twoich sekretów."
   },
   "nav": {
     "skip": "Przejdź do treści",
@@ -49,7 +49,8 @@
       "filesLabel": "Załączniki",
       "filesDrop": "Upuść pliki tutaj",
       "filesClick": "lub kliknij, aby dołączyć",
-      "filesHint": "Szyfrowane w przeglądarce przed wysłaniem · do 25 MB, 25 plików",
+      "filesHint": "Szyfrowane w przeglądarce przed wysłaniem",
+      "filesLimit": "łącznie do {limit}",
       "filesRemove": "Usuń",
       "expiryLabel": "Wygasa za",
       "expiry": {
@@ -77,7 +78,7 @@
     "chips": {
       "e2e": "Szyfrowanie end-to-end",
       "zeroKnowledge": "Zero-knowledge",
-      "noLogs": "Bez logów",
+      "noLogs": "Bez logów dostępu",
       "openSource": "Open source"
     },
     "result": {
@@ -91,8 +92,8 @@
       "chipLifetime": "Jednorazowe wyświetlenie",
       "chipExpiry": "Wygasa za 1 dzień",
       "passphraseReminder": "Ten sekret ma hasło. Wyślij je innym kanałem niż sam link.",
-      "calloutTitle": "Jeden link, jedno odczytanie.",
-      "callout": "Każdy, kto ma pełny link, może otworzyć sekret — jeden raz. Jeśli sekret ma hasło, wyślij je innym kanałem niż sam link.",
+      "calloutTitle": "Jeden link, jeden sekret.",
+      "callout": "Każdy, kto ma pełny link, może otworzyć sekret: link jednorazowy jeden raz, link z terminem ważności aż wygaśnie. Jeśli sekret ma hasło, wyślij je innym kanałem niż sam link.",
       "divider": "prywatne opcje · zachowaj dla siebie",
       "burnLabel": "Link do spalenia",
       "burnAside": "— zniszcz sekret samodzielnie, w dowolnej chwili",
@@ -119,7 +120,7 @@
         {
           "title": "Odbierz",
           "aside": "i już go nie ma",
-          "body": "Przeglądarka odbiorcy odszyfrowuje sekret lokalnie, a serwer niszczy swoją kopię. Nawet my nie możemy go odzyskać."
+          "body": "Przeglądarka odbiorcy odszyfrowuje sekret lokalnie. Sekret jednorazowy jest usuwany z serwera w chwili otwarcia, a sekret z terminem ważności, gdy wygaśnie. Nawet my nie możemy go odzyskać."
         }
       ]
     },
@@ -150,13 +151,13 @@
         },
         {
           "label": "W transmisji",
-          "value": "TLS 1.3",
+          "value": "TLS",
           "body": "Twoje urządzenie opuszcza wyłącznie szyfrogram, przesyłany przez nowoczesny TLS. Otrzymujemy nieprzejrzysty blob, którego nie mamy jak otworzyć."
         },
         {
           "label": "W spoczynku",
-          "value": "Szyfrogram + TTL",
-          "body": "Zapisujemy zaszyfrowany blob i znacznik czasu wygaśnięcia — nic więcej. Żadnego tekstu jawnego, żadnych kluczy, żadnych metadanych o nadawcy czy odbiorcy."
+          "value": "Szyfrogram + skróty + wygaśnięcie",
+          "body": "Zapisujemy zaszyfrowany blob, jednokierunkowe skróty wartości służących do odnalezienia lub zniszczenia go, jego czas życia i zaokrąglony czas wygaśnięcia — nic więcej. Żadnego tekstu jawnego, żadnych kluczy, żadnych metadanych o nadawcy czy odbiorcy."
         }
       ]
     },
@@ -173,12 +174,12 @@
         {
           "label": "Dbający o prywatność",
           "title": "Udostępniaj bez śladu",
-          "body": "Działa przez Tor bez ograniczeń funkcjonalności. Bez CAPTCHA, bez fingerprintingu przeglądarki, bez zewnętrznych żądań. Każda czcionka i każdy zasób są hostowane lokalnie. Zero wycieku metadanych."
+          "body": "Działa w Tor Browser na poziomie „Bezpieczniejszy”. Bez CAPTCHA, bez fingerprintingu przeglądarki, bez zewnętrznych żądań. Każda czcionka i każdy zasób są hostowane lokalnie."
         },
         {
           "label": "IT i onboarding",
           "title": "Bezpieczne nadawanie dostępów",
-          "body": "Wysyłaj nowym pracownikom pierwsze dane logowania, konfiguracje VPN czy hasła do Wi-Fi bez zostawiania śladów w wątkach e-mail lub systemach zgłoszeń. Generuj wiele unikalnych linków przy wdrażaniu całych grup."
+          "body": "Wysyłaj nowym pracownikom pierwsze dane logowania, konfiguracje VPN czy hasła do Wi-Fi bez zostawiania śladów w wątkach e-mail lub systemach zgłoszeń. Wdrażanie całych grup można oskryptować przez API."
         },
         {
           "label": "Prawo i regulacje",
@@ -199,7 +200,7 @@
     },
     "cta": {
       "title": "Przestań udostępniać poufne dane otwartym tekstem",
-      "intro": "Utwórz jednorazowy zaszyfrowany link w kilka sekund. Albo zaszyfrowany link do wielokrotnego wyświetlania, który wygaśnie po kilku godzinach lub dniach. Dodaj hasło dla dodatkowej ochrony. Bez konta. Bez zbierania danych.",
+      "intro": "Utwórz jednorazowy zaszyfrowany link w kilka sekund. Albo zaszyfrowany link do wielokrotnego wyświetlania, który wygaśnie po kilku godzinach lub dniach. Dodaj hasło dla dodatkowej ochrony. Bez konta. Nie przechowujemy niczego, co cię identyfikuje.",
       "button": "Utwórz jednorazowy sekret"
     }
   },
@@ -332,7 +333,6 @@
   },
   "ui": {
     "form-files-remove": "Usuń",
-    "result-copied": "Skopiowano",
     "result-destroyed": "Zniszczono. Sekretu nie ma już na serwerze.",
     "result-chip-single": "Jednorazowe wyświetlenie",
     "result-chip-multi": "Dostępny do wygaśnięcia",

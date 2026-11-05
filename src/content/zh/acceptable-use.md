@@ -2,7 +2,7 @@
 title: "可接受使用政策"
 description: "shhnote.com 可以和不可以用于什么，以及一个看不到所存内容的服务如何执行规则。"
 eyebrow: "法律"
-updated: "[date]"
+updated: "2026年11月5日"
 ---
 
 > **草案。** 本政策仅为初稿，尚未经过律师审阅。

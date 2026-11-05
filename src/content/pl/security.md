@@ -221,7 +221,7 @@ Jeśli trafisz na problem z bezpieczeństwem tej strony, napisz na [security@shh
 
 Zobowiązujemy się:
 
-- odpowiedzieć w ciągu [number] dni roboczych;
+- odpowiedzieć w ciągu 5 dni roboczych;
 - informować cię na bieżąco w trakcie naprawy;
 - wymienić cię przy publikacji poprawki, jeśli sobie tego życzysz.
 

@@ -2,7 +2,7 @@
 title: "服务条款"
 description: "使用 shhnote.com 的条款——服务能做什么、不得用于什么，以及我们能承诺和不能承诺的事。"
 eyebrow: "法律"
-updated: "[date]"
+updated: "2026年11月5日"
 ---
 
 > **草案。** 本条款仅为初稿，尚未经过律师审阅。

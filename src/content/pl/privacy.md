@@ -2,7 +2,7 @@
 title: "Polityka prywatności"
 description: "Co przechowuje shhnote.com, jak długo i czego nigdy nie robi. Nie możemy czytać twoich sekretów, a poza nimi przechowujemy jak najmniej."
 eyebrow: "Informacje prawne"
-updated: "[date]"
+updated: "5 listopada 2026"
 ---
 
 > **Wersja robocza.** Ta polityka jest punktem wyjścia i nie została sprawdzona przez prawnika.
@@ -38,11 +38,11 @@ Usunięcie kasuje rekord. Jak na każdym komputerze, zaszyfrowane pozostałości
 - Nie prosimy o założenie konta.
 - Nie sprzedajemy ani nie udostępniamy twoich danych.
 
-Wybrany motyw (jasny lub ciemny) jest zapamiętywany w pamięci lokalnej twojej przeglądarki i nigdzie nie jest wysyłany.
+Wybrany motyw oraz, jeśli wybierzesz go w menu języków, twój język są zapamiętywane w pamięci lokalnej twojej przeglądarki i nigdzie nie są wysyłane.
 
 ## Logi serwera
 
-Jak większość stron internetowych, nasz serwer może krótko rejestrować techniczne szczegóły każdego żądania, takie jak twój adres IP i czas, aby usługa była bezpieczna i działała. [Describe how long logs are kept, or state that they are not kept.] Logi nigdy nie zawierają kluczy sekretów, ponieważ przeglądarki nie wysyłają części linku, w której znajduje się klucz.
+Ta strona nie prowadzi logów żądań: serwer WWW przed nią nie rejestruje żądań, a serwer shhnote nie prowadzi logu dostępu do poszczególnych sekretów ani historii adresów IP (ograniczanie częstotliwości używa skrótu adresu z kluczem i rotowaną solą). Cloudflare terminuje TLS dla tej strony i widzi adresy IP zgodnie z własną polityką prywatności; nigdy nie widzi fragmentu linku ani żadnego klucza, ponieważ przeglądarki nie wysyłają części linku, w której znajduje się klucz.
 
 ## Twoje prawa
 

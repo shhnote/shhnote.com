@@ -24,10 +24,10 @@ that the English version is authoritative (`content.translationNote` in the stri
 | `es` | Español | Translated from `en` | tú | 2026-11-05 | machine translation, pending review |
 | `fr` | Français | Translated from `en` | vous | 2026-11-05 | machine translation, pending review |
 | `nl` | Nederlands | Translated from `en` | je/jij | 2026-11-05 | machine translation, pending review |
-| `hi` | हिन्दी | Translated from `en` | आप | 2026-11-03 | machine translation, pending review |
-| `ja` | 日本語 | Translated from `en` | です/ます | 2026-11-03 | machine translation, pending review |
-| `pl` | Polski | Translated from `en` | ty | 2026-11-03 | machine translation, pending review |
-| `zh` | 中文 (简体) | Translated from `en` | 你 | 2026-11-03 | machine translation, pending review |
+| `hi` | हिन्दी | Translated from `en` | आप | 2026-11-05 | machine translation, pending review |
+| `ja` | 日本語 | Translated from `en` | です/ます | 2026-11-05 | machine translation, pending review |
+| `pl` | Polski | Translated from `en` | ty | 2026-11-05 | machine translation, pending review |
+| `zh` | 中文 (简体) | Translated from `en` | 你 | 2026-11-05 | machine translation, pending review |
 | `el` | Ελληνικά | Translated from `en` | εσείς | 2026-11-03 | machine translation, pending review |
 | `id` | Bahasa Indonesia | Translated from `en` | Anda | 2026-11-03 | machine translation, pending review |
 | `ko` | 한국어 | Translated from `en` | 해요체; 합니다체 on the policy pages | 2026-11-03 | machine translation, pending review |

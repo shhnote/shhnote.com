@@ -2,7 +2,7 @@
 title: "Zasady korzystania"
 description: "Do czego wolno, a do czego nie wolno używać shhnote.com i jak egzekwuje się zasady w usłudze, która nie widzi tego, co przechowuje."
 eyebrow: "Informacje prawne"
-updated: "[date]"
+updated: "5 listopada 2026"
 ---
 
 > **Wersja robocza.** Te zasady są punktem wyjścia i nie zostały sprawdzone przez prawnika.

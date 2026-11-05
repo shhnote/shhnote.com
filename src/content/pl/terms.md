@@ -2,7 +2,7 @@
 title: "Regulamin"
 description: "Zasady korzystania z shhnote.com — co robi usługa, do czego nie wolno jej używać oraz co możemy, a czego nie możemy obiecać."
 eyebrow: "Informacje prawne"
-updated: "[date]"
+updated: "5 listopada 2026"
 ---
 
 > **Wersja robocza.** Ten regulamin jest punktem wyjścia i nie został sprawdzony przez prawnika.
