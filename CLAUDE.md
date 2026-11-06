@@ -55,8 +55,8 @@ origin, so this site owns every public page and the API lives at `/api/v1`.
 - `src/integrations/argon2.ts` — copies the package's `argon2.wasm` into the
   build and serves it in dev.
 - `src/styles/tokens.css` — colour, type and spacing tokens; four themes.
-- `scripts/` — `check-external.sh`, `fetch-upstream.sh` (reads `.shhnote-ref`),
-  `bump-version.sh` (version, commit and signed tag for a release).
+- `scripts/` — `check-external.sh`, `fetch-upstream.sh` (reads `.shhnote-ref`).
+- `src/lib/build.ts` — the commit the build was made from, for the footer.
 - `docs/` — headers reference, conformance record, translations record,
   compare-page sources.
 
@@ -73,11 +73,14 @@ origin, so this site owns every public page and the API lives at `/api/v1`.
   components.
 - `.shhnote-ref` pins the main repository tag that `docs` is rendered from.
   Bump it deliberately, in its own commit.
-- Versions: `package.json` is the frontend version in the footer; the backend
+- Versions: the footer shows the commit the site was built from (there are no
+  frontend version numbers, and `package.json`'s version is not used); the backend
   version comes from `GET /api/v1/config` at runtime, through the package's
   shared `getConfig`, so a page makes that request once.
 - Type check: `npm run check` (`astro check`) must stay at zero errors.
-- No deploy logic here. Releases are tarballs on GitHub; the server pulls.
+- No deploy logic here. A push to the `production` branch (a commit already on
+  `main`) publishes a release tagged `prod-<date>-<commit>`: a tarball on GitHub
+  that the server pulls. Nobody tags or bumps versions by hand.
 - Do not make commits yourself, show the commit message at the end of a task: `<area>: <what changed>`, under 70 characters.
 
 ## Local development

@@ -36,9 +36,10 @@ burn both "not found".
 
 ## Manual checks still to run
 
-- **The first tag** (`scripts/bump-version.sh 0.1.0-rc.1`) and a look at the release:
-  the archive, `SHA256SUMS` and the provenance attestation. `actionlint` passed on
-  `.github/workflows/release.yml` with no findings (2026-11-05).
+- **The first production release** (`git push origin main:production`) and a look at
+  the release: the `prod-…` tag on the pushed commit, the archive, `SHA256SUMS` and the
+  provenance attestation (`gh attestation verify`), and the footer showing that commit.
+  Run `actionlint` on the reworked `.github/workflows/release.yml` first.
 - **Tor Browser, "Safer":** full create and reveal of a text, a file and a passphrase
   secret; passphrase reveal must work (WebAssembly is allowed at Safer).
 - **Tor Browser, "Safest":** every page renders; the create page shows the JavaScript

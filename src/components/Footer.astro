@@ -1,7 +1,7 @@
 ---
-import pkg from '../../package.json';
 import { defaultLocale, type Locale } from '../lib/i18n';
 import { getStrings } from '../lib/strings';
+import { build } from '../lib/build';
 import { site } from '../lib/site';
 import LocaleMenu from './LocaleMenu.astro';
 import ThemeMenu from './ThemeMenu.astro';
@@ -70,7 +70,8 @@ const repo = site.repo;
       <div>{t.footer.copyright}</div>
       <div class="footer-versions">
         {t.footer.poweredBy} <a href={repo} target="_blank" rel="noopener">shhnote</a>{' '}
-        (<span data-shh-server-version>—</span>) · <a href={site.clientRepo} target="_blank" rel="noopener">{t.footer.client}</a> {pkg.version}
+        (<span data-shh-server-version>—</span>) · <a href={site.clientRepo} target="_blank" rel="noopener">{t.footer.client}</a>
+        {build.commitUrl && <>{' '}<a href={build.commitUrl} target="_blank" rel="noopener">{build.shortCommit}</a></>}
       </div>
     </div>
   </div>
