@@ -341,22 +341,14 @@ html:not([data-theme]) .theme-mode[data-mode='system'],
 }
 .footer .footer-bottom {
   margin-top: 2.5rem;
-  padding-block: 1.5rem;
-  border-top: 1px solid var(--color-border);
+  padding-block: 0.75rem;
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 0.25rem;
+  text-align: center;
   color: var(--color-text-faint);
   width: 100%;
-}
-@media screen and (min-width: 768px) {
-  .footer .footer-bottom {
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: 0.25rem 2rem;
-    justify-content: space-between;
-    align-items: baseline;
-  }
 }
 .footer .footer-bottom a {
   color: var(--color-text-muted);
@@ -365,7 +357,6 @@ html:not([data-theme]) .theme-mode[data-mode='system'],
   color: var(--color-text);
 }
 .footer .footer-versions {
-  font-family: var(--font-mono);
   font-size: var(--font-size-12);
 }
 .footer .footer-versions a {
