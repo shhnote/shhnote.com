@@ -67,12 +67,10 @@ const repo = site.repo;
     </div>
 
     <div class="footer-bottom">
-      <div class="footer-bottom__text">
-        <div>{t.footer.copyright}</div>
-        <div class="footer-versions">
-          {t.footer.poweredBy} <a href={repo} target="_blank" rel="noopener">shhnote</a> ({pkg.version})
-          · {t.footer.backend} <span data-shh-server-version>—</span>
-        </div>
+      <div>{t.footer.copyright}</div>
+      <div class="footer-versions">
+        {t.footer.poweredBy} <a href={repo} target="_blank" rel="noopener">shhnote</a>{' '}
+        (<span data-shh-server-version>—</span>) · <a href={site.clientRepo} target="_blank" rel="noopener">{t.footer.client}</a> {pkg.version}
       </div>
     </div>
   </div>

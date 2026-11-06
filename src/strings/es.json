@@ -32,7 +32,7 @@
     "selfHost": "Guía de autoalojamiento",
     "copyright": "© 2026 shhnote. Código abierto bajo AGPLv3.",
     "poweredBy": "Funciona con",
-    "backend": "servidor",
+    "client": "cliente",
     "report": "Denunciar un enlace",
     "compare": "Comparar",
     "useCases": "Casos de uso"

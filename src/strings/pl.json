@@ -32,7 +32,7 @@
     "selfHost": "Własna instalacja",
     "copyright": "© 2026 shhnote. Open source na licencji AGPLv3.",
     "poweredBy": "Działa na",
-    "backend": "serwer",
+    "client": "klient",
     "report": "Zgłoś link",
     "compare": "Porównanie",
     "useCases": "Zastosowania"
