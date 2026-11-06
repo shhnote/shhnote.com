@@ -5,6 +5,6 @@ export const site = {
   contactEmail: 'contact@shhnote.com',
   securityEmail: 'security@shhnote.com',
   repo: 'https://github.com/shhnote/shhnote',
-  // This site's own repository: the frontend whose version the footer prints.
+  // This site's own repository: the footer links it and the commit the build came from.
   clientRepo: 'https://github.com/shhnote/shhnote.com',
 } as const;

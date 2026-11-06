@@ -45,15 +45,28 @@ source), styles in `src/styles/`.
 
 ## Releases
 
-`scripts/bump-version.sh patch|minor|major|rc|release|<version>` writes the
-next version to `package.json` and `package-lock.json`, commits it as
-`release: <version>` and creates the signed tag `v<version>`; push with
-`git push origin main --follow-tags`. The tag builds the site, runs the
-external-URL check and publishes a GitHub release with
-`shhnote.com-<tag>.tar.gz` (the contents of `dist/`), `SHA256SUMS` and a build
-provenance attestation (`.github/workflows/release.yml`); a tag that does not
-match `package.json` is refused. Nothing here deploys; the server pulls a
-release. Response headers for the server are in `docs/headers.md`.
+This site has no version numbers; a release is a commit. To release, move the
+`production` branch forward to a commit on `main`:
+
+```
+git push origin main:production
+```
+
+The push builds the site, runs the external-URL check and publishes a GitHub
+release tagged `prod-<date>-<commit>` with `shhnote.com-<tag>.tar.gz` (the
+contents of `dist/`), `SHA256SUMS` and a build provenance attestation
+(`.github/workflows/release.yml`). A commit that is not on `main` is refused.
+The footer of every page links the commit it was built from. Nothing here
+deploys: the server pulls the latest release, and rolling back is pulling an
+earlier one. Response headers for the server are in `docs/headers.md`.
+
+To check a release before unpacking it:
+
+```
+gh release download --repo shhnote/shhnote.com --pattern '*.tar.gz' --pattern SHA256SUMS
+sha256sum -c SHA256SUMS
+gh attestation verify shhnote.com-*.tar.gz --repo shhnote/shhnote.com
+```
 
 ## Conformance
 
