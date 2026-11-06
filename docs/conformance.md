@@ -1,7 +1,7 @@
 # Frontend conformance record
 
 The checklist is `docs/frontend-conformance.md` in the main repository at the tag in
-`.shhnote-ref` (`v0.4.1`). This records how each item is met by this site and how it was
+`.shhnote-ref` (`v0.5.0`). This records how each item is met by this site and how it was
 checked. "By construction" means the `@shhnote/client/ui` controller does it and the
 site adds no handler that bypasses it. Checks were first run on 2026-11-03 against
 shhnote 0.3.0 and re-run on 2026-11-05 against a local instance (`SHH_WEB=api`, shhnote
