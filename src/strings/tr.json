@@ -32,7 +32,7 @@
     "selfHost": "Kendi sunucunda barındırma rehberi",
     "copyright": "© 2026 shhnote. AGPLv3 lisansıyla açık kaynak.",
     "poweredBy": "Altyapı:",
-    "backend": "sunucu",
+    "client": "istemci",
     "report": "Bağlantı bildir",
     "compare": "Karşılaştır",
     "useCases": "Kullanım örnekleri"

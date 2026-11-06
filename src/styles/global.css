@@ -344,17 +344,19 @@ html:not([data-theme]) .theme-mode[data-mode='system'],
   padding-block: 1.5rem;
   border-top: 1px solid var(--color-border);
   display: flex;
-  flex-wrap: wrap;
-  gap: 1rem 2rem;
-  justify-content: space-between;
-  align-items: center;
+  flex-direction: column;
+  gap: 0.25rem;
   color: var(--color-text-faint);
   width: 100%;
 }
-.footer .footer-bottom__text {
-  display: flex;
-  flex-direction: column;
-  gap: 0.25rem;
+@media screen and (min-width: 768px) {
+  .footer .footer-bottom {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 0.25rem 2rem;
+    justify-content: space-between;
+    align-items: baseline;
+  }
 }
 .footer .footer-bottom a {
   color: var(--color-text-muted);

@@ -32,7 +32,7 @@
     "selfHost": "Guide d’auto-hébergement",
     "copyright": "© 2026 shhnote. Open source sous licence AGPLv3.",
     "poweredBy": "Propulsé par",
-    "backend": "serveur",
+    "client": "client",
     "report": "Signaler un lien",
     "compare": "Comparer",
     "useCases": "Cas d’usage"

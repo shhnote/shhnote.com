@@ -32,7 +32,7 @@
     "selfHost": "Guide för egen drift",
     "copyright": "© 2026 shhnote. Öppen källkod under AGPLv3.",
     "poweredBy": "Drivs av",
-    "backend": "server",
+    "client": "klient",
     "report": "Anmäl en länk",
     "compare": "Jämför",
     "useCases": "Användningsområden"

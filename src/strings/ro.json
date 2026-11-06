@@ -32,7 +32,7 @@
     "selfHost": "Ghid de găzduire proprie",
     "copyright": "© 2026 shhnote. Open source sub licența AGPLv3.",
     "poweredBy": "Rulează pe",
-    "backend": "server",
+    "client": "client",
     "report": "Raportează un link",
     "compare": "Comparații",
     "useCases": "Cazuri de utilizare"
