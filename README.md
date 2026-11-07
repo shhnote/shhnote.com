@@ -4,16 +4,16 @@ The public website of the hosted [shhnote](https://github.com/shhnote/shhnote)
 instance at https://shhnote.com: a static site built with Astro, in 18 languages.
 The pages are this site's own; the secret-sharing behaviour (encryption in the
 browser, the create, reveal, burn and report flows) comes from the
-`@shhnote/client` package, and the API it talks to is the shhnote server running
-behind the same origin at `/api/v1`.
+`@shhnote/client` package, and the API it talks to is the shhnote server at
+`https://api.shhnote.com/v1`.
 
-The site makes no request to any origin but its own: fonts, styles, scripts and
-the Argon2 module are served from here, there is no analytics, and no inline
+The site makes no request to any origin but its own and the instance's API host:
+fonts, styles, scripts and the Argon2 module are served from here, there is no analytics, and no inline
 executable script or style (the CSP forbids them; the one inline element is a
 JSON data block of strings). Every page works without JavaScript
 except the secret flows, which say so. `scripts/check-external.sh` fails if an
-external URL slips into the build; the only exception is the citation links on
-the `compare/` pages.
+external URL slips into the build; the only exceptions are the API base the
+build was given and the citation links on the `compare/` pages.
 
 ## Local development
 
@@ -28,11 +28,13 @@ npm run preview             # serves dist/
 ```
 
 - `npm run dev` proxies `/api` to `http://localhost:3000`, so the site and the
-  API share an origin as they do in production. Set `SHH_DEV_PROXY` to proxy
+  API share an origin locally. Set `SHH_DEV_PROXY` to proxy
   somewhere else, e.g. `SHH_DEV_PROXY=http://localhost:8080 npm run dev`.
 - `PUBLIC_SHH_API_BASE` points the pages at an API on another origin instead of
-  `/api/v1` (that instance must list this origin in its allowed origins). It is
-  read at build time; see `.env.example`. Every limit (blob size, text length,
+  `/api/v1` (that instance must allow this origin). It is read at build time; see
+  `.env.example`. The release build takes it from the repository's Actions
+  variable of the same name (`https://api.shhnote.com/v1` for the hosted
+  instance); run `scripts/check-external.sh` with the same value the build had. Every limit (blob size, text length,
   lifetimes) comes from that instance's `GET /config` at runtime.
 - The `docs` page renders the main repository's API documentation at the tag in
   `.shhnote-ref` (`SHHNOTE_REF` overrides it). `scripts/fetch-upstream.sh` runs

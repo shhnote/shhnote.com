@@ -42,6 +42,7 @@ To check your change locally: `npm ci`, then `npm run build` and
 ## Other changes
 
 Bug reports about the site (layout, broken links, accessibility) are welcome as
-issues. The site makes no request to any origin but its own and uses no inline
+issues. The site makes no request to any origin but its own and the instance's
+API host, and uses no inline
 scripts or styles; changes that would break that can't be accepted. Security
 issues: see [SECURITY.md](SECURITY.md) and don't open a public issue.

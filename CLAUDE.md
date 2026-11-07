@@ -3,8 +3,9 @@
 The public frontend for the hosted shhnote instance at https://shhnote.com.
 An Astro static site; the secret-sharing behaviour comes from the
 `@shhnote/client` package published from https://github.com/shhnote/shhnote.
-In production the server runs in `SHH_WEB=api` mode behind Caddy on the same
-origin, so this site owns every public page and the API lives at `/api/v1`.
+In production the server runs in `SHH_WEB=api` mode with domain routing, so this
+site owns every public page and the API lives at `https://api.shhnote.com/v1`; the
+release build gets that from the Actions variable `PUBLIC_SHH_API_BASE`.
 
 ## What this repository is not
 
@@ -18,15 +19,16 @@ origin, so this site owns every public page and the API lives at `/api/v1`.
 
 ## Non-negotiables (the instance's own claims)
 
-- No request to any origin but this site. No analytics, no external fonts,
-  images, scripts or embeds. `scripts/check-external.sh` fails the build on
-  any `http(s)://` URL in `dist/` outside its allow-list (citation links on
-  `compare/` pages are the only exception).
+- No request to any origin but this site and the instance's API host. No
+  analytics, no external fonts, images, scripts or embeds.
+  `scripts/check-external.sh` fails the build on any `http(s)://` URL in `dist/`
+  outside its allow-list (the origin of `PUBLIC_SHH_API_BASE` and citation
+  links on `compare/` pages are the only exceptions).
 - No inline executable scripts or styles; the one inline element per page is
   a `<script type="application/json" data-shh-i18n>` data block the controllers
   read their strings from. The CSP is
   `default-src 'self'; script-src 'self' 'wasm-unsafe-eval'; style-src 'self';
-  img-src 'self'; font-src 'self'; connect-src 'self';
+  img-src 'self'; font-src 'self'; connect-src 'self' https://api.shhnote.com;
   frame-ancestors 'none'; base-uri 'none'; form-action 'self'`.
 - `/s`, `/burn` and `/report` request nothing until a trusted user
   activation. The `@shhnote/client/ui` controllers enforce this; never add a
@@ -48,7 +50,8 @@ origin, so this site owns every public page and the API lives at `/api/v1`.
 - `src/lib/strings.ts` — loads a locale's strings with `en` fallback
   (`getStrings`) and the controller strings for the page's data block
   (`uiStrings`); the controllers' `t` is the package's own `createT`.
-- `src/lib/instance.ts` — API base and `argon2Url`, from the package version.
+- `src/lib/instance.ts` — API base (`PUBLIC_SHH_API_BASE`, empty or unset means
+  `/api/v1`) and `argon2Url`, from the package version.
 - `src/scripts/chrome.ts` — theme, menus, password toggles (from `/ui`),
   footer server version, `theme-color` sync. `src/scripts/locale.ts` — the
   stored language choice and its redirect.
@@ -75,7 +78,7 @@ origin, so this site owns every public page and the API lives at `/api/v1`.
   Bump it deliberately, in its own commit.
 - Versions: the footer shows the commit the site was built from (there are no
   frontend version numbers, and `package.json`'s version is not used); the backend
-  version comes from `GET /api/v1/config` at runtime, through the package's
+  version comes from the API's `GET /config` at runtime, through the package's
   shared `getConfig`, so a page makes that request once.
 - Type check: `npm run check` (`astro check`) must stay at zero errors.
 - No deploy logic here. A push to the `production` branch (a commit already on
@@ -94,4 +97,5 @@ npm run build && scripts/check-external.sh && npm run check
 
 The dev server does not see file changes on a Windows mount under WSL; restart
 it after edits. `PUBLIC_SHH_API_BASE` is only for an API on another origin,
-which must allow this one (CORS), so it is not the local setup.
+which must allow this one (CORS), so it is not the local setup; the release
+build sets it, and `check-external.sh` needs the same value in its environment.

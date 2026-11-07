@@ -1,14 +1,17 @@
 # Response headers and routing for shhnote.com
 
-The site is static files in `dist/`, served by Caddy on the same origin as the
-shhnote server (`SHH_WEB=api` mode), which answers under `/api/v1`. This is the
-reference for the Caddy configuration; the repository carries no deploy logic.
+The site is static files in `dist/`, served by Caddy. The shhnote server runs in
+`SHH_WEB=api` mode with `SHH_API_ROUTING=domain`, so the API has its own host,
+`https://api.shhnote.com/v1`, and the site host does not proxy `/api` at all. The
+release build points the pages there through the repository's Actions variable
+`PUBLIC_SHH_API_BASE`. This is the reference for the Caddy configuration of the site
+host; the repository carries no deploy logic.
 
 ## Headers on every response
 
 ```caddyfile
 header {
-    Content-Security-Policy "default-src 'self'; script-src 'self' 'wasm-unsafe-eval'; style-src 'self'; img-src 'self'; font-src 'self'; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'"
+    Content-Security-Policy "default-src 'self'; script-src 'self' 'wasm-unsafe-eval'; style-src 'self'; img-src 'self'; font-src 'self'; connect-src 'self' https://api.shhnote.com; frame-ancestors 'none'; base-uri 'none'; form-action 'self'"
     Strict-Transport-Security "max-age=63072000; includeSubDomains; preload"
     X-Content-Type-Options "nosniff"
     X-Frame-Options "DENY"
@@ -28,6 +31,10 @@ What each one relies on in this repository:
   URL is used anywhere (the select chevron is drawn with CSS), so `img-src` is
   `'self'` alone. Should a build ever introduce one (the grep under "Checking"
   finds it), prefer removing it to widening the policy.
+- **connect-src** names the API host and nothing else: it must be the origin of
+  the `PUBLIC_SHH_API_BASE` the release was built with (the server does the same
+  for its own pages in domain mode, `'self' {api_url}`). For a build left at the
+  default `/api/v1` it is `'self'` alone.
 - **Referrer-Policy.** The pages also carry `<meta name="referrer"
   content="no-referrer">`, so a share link's path never leaks even if the header
   is missing.
@@ -93,20 +100,25 @@ With another server or a static host, do the same: answer those four paths with 
 add no fragment of your own, and send `Vary: Accept-Language`. Without any
 redirect the root pages simply serve English.
 
-The API is proxied to the shhnote server; everything else is the static site:
+Everything else is the static site:
 
 ```caddyfile
-handle /api/* {
-    reverse_proxy 127.0.0.1:3000
-}
 handle {
     root * /srv/shhnote.com/dist
     file_server
 }
 ```
 
-The server sets `Cache-Control: no-store` on API responses itself; do not add a
-cache layer in front of `/api/*`.
+`api.shhnote.com` is a site block of its own that proxies to the shhnote server, as
+the main repository's deploy documentation describes for domain routing. The server
+answers CORS for its `SHH_URL` origin, so `SHH_URL` must be the origin this site is
+served from. The server sets `Cache-Control: no-store` on API responses itself; do
+not add a cache layer in front of the API.
+
+A build left at the default `/api/v1` (the Actions variable unset) expects the API on
+this origin instead: the site block then needs `handle /api/* { reverse_proxy
+127.0.0.1:3000 }` before the catch-all, the server path routing, and `connect-src
+'self'`.
 
 ## Content types and caching
 
@@ -143,4 +155,6 @@ debugging, enable it briefly and remove it again rather than leaving it on.
 After a deploy, from outside: `curl -sI https://shhnote.com/en/` shows every
 header above (and `grep -rlE "[(\"']data:" dist/` on the build finds nothing); `curl -sI -H 'Accept-Language: de' https://shhnote.com/s` is a `307`
 to `/de/s` with `Vary: Accept-Language`, and without the header a `307` to `/en/s`;
-`curl -sI https://shhnote.com/argon2.wasm` says `application/wasm`.
+`curl -sI https://shhnote.com/argon2.wasm` says `application/wasm`;
+`curl -sI -H 'Origin: https://shhnote.com' https://api.shhnote.com/v1/config`
+answers `Access-Control-Allow-Origin: https://shhnote.com`.
