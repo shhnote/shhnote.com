@@ -4,6 +4,16 @@
     "title": "shhnote — share secrets with self-destructing links",
     "description": "Open-source, end-to-end encrypted, zero-knowledge secret sharing. Text and files. The server never sees your secrets."
   },
+  "setup": {
+    "badge": "Not set up",
+    "title": "This site is not set up yet",
+    "intro": "It serves nothing public until its operator has finished three things in the admin panel:",
+    "steps": [
+      "created an admin API key (the first one is created with the bootstrap credential from the server's environment),",
+      "given the site a name,",
+      "given it a contact address."
+    ]
+  },
   "nav": {
     "skip": "Skip to content",
     "home": "shhnote home",

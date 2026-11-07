@@ -4,6 +4,16 @@
     "title": "shhnote — Geheimnisse teilen mit Links, die sich selbst zerstören",
     "description": "Quelloffen, Ende-zu-Ende-verschlüsselt, Zero-Knowledge: Geheimnisse sicher teilen. Text und Dateien. Der Server sieht deine Geheimnisse nie."
   },
+  "setup": {
+    "badge": "Nicht eingerichtet",
+    "title": "Diese Website ist noch nicht eingerichtet",
+    "intro": "Sie liefert nichts Öffentliches, bis der Betreiber drei Dinge im Admin-Bereich erledigt hat:",
+    "steps": [
+      "einen Admin-API-Schlüssel erstellt (der erste wird mit den Bootstrap-Zugangsdaten aus der Serverumgebung erstellt),",
+      "der Website einen Namen gegeben,",
+      "ihr eine Kontaktadresse gegeben."
+    ]
+  },
   "nav": {
     "skip": "Zum Inhalt springen",
     "home": "shhnote Startseite",

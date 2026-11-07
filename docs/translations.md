@@ -16,6 +16,11 @@ What is not translated, on purpose:
 - the `compare/` and `use-cases/` pages, English only for now;
 - the Open Graph image (`/og.png`), one English card for every locale.
 
+The setup notice (`setup` in the strings, added 2026-11-07; shown when the instance has
+not finished setup) is English in every locale except `de`, which takes the main
+repository's `locales/de/main.ftl` wording; the others fall back to `en` until they
+are translated.
+
 The operator placeholders in the policy pages (the date, the reply time, the server-log
 section) were filled on 2026-11-05 in every language.
 
