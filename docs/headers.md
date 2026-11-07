@@ -150,6 +150,47 @@ any case (it is a fragment), but the path `/s/` plus a timestamp and an address 
 still metadata the privacy policy says is not kept. If a log is ever needed for
 debugging, enable it briefly and remove it again rather than leaving it on.
 
+## Behind Cloudflare
+
+The hosted instance sits behind Cloudflare's proxy, which terminates TLS (the
+privacy policy says so). Several Cloudflare features rewrite the HTML on its way
+through, adding inline script or script from Cloudflare's hosts. The CSP above blocks
+all of it, so each one shows up as a console error on every page. Without the CSP, it
+would run third-party script on a site that says it loads none. Turn them off for the
+zone:
+
+- **Bot Fight Mode** (Security → Bots) injects an inline script that loads
+  `/cdn-cgi/challenge-platform/…`. It applies to the whole zone, so it can also answer
+  a request to `api.shhnote.com` with a challenge page instead of JSON, which no API
+  client can get past.
+- **Web Analytics**, automatic setup (Analytics & Logs → Web Analytics), injects
+  `static.cloudflareinsights.com/beacon.min.js`.
+- **Email Address Obfuscation** (Scrape Shield) replaces every `mailto:` address
+  with `[email protected]` and a decoder script under `/cdn-cgi/scripts/`. The
+  contact, privacy and acceptable-use pages carry `mailto:` links in every locale; with
+  the decoder blocked, the addresses are gone for every visitor, with or without
+  JavaScript.
+- **Rocket Loader** (Speed → Optimization) rewrites the page's module scripts and
+  loads its own from `/cdn-cgi/scripts/`.
+- **Zaraz** and any other feature that adds script to pages (`/cdn-cgi/zaraz/…`).
+
+Cloudflare also adds `Report-To` and `NEL` headers to responses (Network Error
+Logging), so Chromium-based browsers report failed connections to
+`a.nel.cloudflare.com`, a request to another origin that no page makes. The CSP does
+not cover it. If the zone offers no way to switch it off, the privacy policy has to
+say so.
+
+Dashboard locations move; search the dashboard for the feature name. If one of these
+has to stay on, keep the CSP as it is and let the injection fail: do not add
+`'unsafe-inline'`, a hash or a Cloudflare host to the policy.
+
+Cloudflare's cache does not key on `Accept-Language`, so no cache rule ("Cache
+Everything" or similar) may cover the four redirecting paths under "Routes and
+redirects"; without one, Cloudflare does not cache HTML or a `307`.
+
+`scripts/check-external.sh` checks `dist/`, not what the edge serves, so none of this
+shows up in the build; the last check under "Checking" catches it.
+
 ## Checking
 
 After a deploy, from outside: `curl -sI https://shhnote.com/en/` shows every
@@ -158,3 +199,14 @@ to `/de/s` with `Vary: Accept-Language`, and without the header a `307` to `/en/
 `curl -sI https://shhnote.com/argon2.wasm` says `application/wasm`;
 `curl -sI -H 'Origin: https://shhnote.com' https://api.shhnote.com/v1/config`
 answers `Access-Control-Allow-Origin: https://shhnote.com`.
+
+Nothing is injected at the edge: this finds nothing (no output, exit status 1):
+
+```sh
+for p in en/ en/contact/; do
+  curl -s "https://shhnote.com/$p"
+done | grep -E 'cdn-cgi|cloudflareinsights|email-protection'
+```
+
+and `curl -sI https://shhnote.com/en/ | grep -iE '^(nel|report-to):'` shows whether
+Network Error Logging is still on.
