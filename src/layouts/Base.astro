@@ -68,6 +68,27 @@ const xDefault = new URL(`/${defaultLocale}/${rest}`, site.url).href;
     <Header locale={locale} locales={locales} />
     <main id="content" tabindex="-1">
       <slot />
+      {/* Shown by chrome.ts, in place of the page, when the instance answers 503
+          `not_configured` (setup not finished in the admin panel). The server shows the
+          same page itself when it serves the pages; in `api` mode this stands in for it. */}
+      <article class="page" data-shh-setup hidden>
+        <section class="section">
+          <div class="container">
+            <div class="vault">
+              <div class="panel stack">
+                <span class="badge badge--muted badge--start"><span class="dot"></span>{t.setup.badge}</span>
+                <div class="stack--sm">
+                  <h1 class="panel__heading">{t.setup.title}</h1>
+                  <p>{t.setup.intro}</p>
+                </div>
+                <ol class="prose">
+                  {t.setup.steps.map((step) => <li>{step}</li>)}
+                </ol>
+              </div>
+            </div>
+          </div>
+        </section>
+      </article>
     </main>
     <Footer locale={locale} locales={locales} />
   </body>
