@@ -1,7 +1,13 @@
 #!/usr/bin/env sh
 # Fails if the built site references any http(s) URL outside the allow-list.
-# The site makes no request to any origin but its own; the only URLs that may
-# appear are links to the project's own domains and its GitHub organisation.
+# The site makes no request to any origin but its own and the instance's API;
+# the only URLs that may appear are links to the project's own domains and its
+# GitHub organisation, and the API base the build was given.
+#
+# The API: when `PUBLIC_SHH_API_BASE` is an absolute URL (the release build
+# sets it from the repository's Actions variable), URLs on exactly that origin
+# (scheme, host and port) are allowed in every file. Run this with the same
+# value the build had; a relative base (the default `/api/v1`) adds nothing.
 #
 # The one exception: the comparison pages (`<locale>/compare/`) cite the public
 # pages of the services they compare (docs/compare-sources.md). Those citation
@@ -29,6 +35,14 @@ url_re='https?://[^"'"'"' <>)]+'
 end='([/?#"]|$)'
 
 found=$(grep -rEo "$url_re" "$dist" | grep -Ev "^[^:]+:https?://(www\.)?$allow$end" || true)
+
+# Drop URLs on the API origin, if the build was given an absolute API base.
+api_origin=$(printf '%s' "${PUBLIC_SHH_API_BASE:-}" | sed -nE 's#^(https?://[^/?#]+).*#\1#p')
+if [ -n "$api_origin" ]; then
+  api_re=$(printf '%s' "$api_origin" | sed 's/[.[\*^$+?(){}|]/\\&/g')
+  found=$(printf '%s\n' "$found" | grep -Ev "^[^:]+:$api_re$end" || true)
+  echo "check-external: allowing the API origin $api_origin"
+fi
 
 # Drop citation links in compare pages; anything else stays an error.
 found=$(printf '%s\n' "$found" | grep -Ev "^$dist/[^/]+/compare/[^:]*:https?://(www\.)?$cite$end" || true)

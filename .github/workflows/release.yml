@@ -58,10 +58,18 @@ jobs:
       # `prebuild` runs scripts/fetch-upstream.sh. There is no checkout of the main
       # repository here, so it downloads docs.md from GitHub at the tag in .shhnote-ref.
       # The footer prints the commit the build was made from (src/lib/build.ts).
+      # The API base is the repository's Actions variable PUBLIC_SHH_API_BASE (the
+      # hosted instance routes the API by domain: https://api.shhnote.com/v1); unset,
+      # the pages use /api/v1 on their own origin. The external-URL check reads it too,
+      # to allow exactly that origin.
       - name: Build
+        env:
+          PUBLIC_SHH_API_BASE: ${{ vars.PUBLIC_SHH_API_BASE }}
         run: npm run build
 
       - name: Check for external URLs
+        env:
+          PUBLIC_SHH_API_BASE: ${{ vars.PUBLIC_SHH_API_BASE }}
         run: scripts/check-external.sh
 
       - name: Package

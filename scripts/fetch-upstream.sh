@@ -16,7 +16,13 @@ path=crates/shhnote-server/content/en/docs.md
 out="$here/src/generated/docs.md"
 
 site_url=https://shhnote.com
-api_url=https://shhnote.com/api   # the instance API root; the docs append /v1 themselves
+# The instance API root; the docs append /v1 themselves. It follows the API base the
+# pages are built with: an absolute PUBLIC_SHH_API_BASE (the release build's, e.g.
+# https://api.shhnote.com/v1) minus its /v1, otherwise this site's /api.
+case ${PUBLIC_SHH_API_BASE:-} in
+  http://*|https://*) api_url=${PUBLIC_SHH_API_BASE%/}; api_url=${api_url%/v1} ;;
+  *) api_url=$site_url/api ;;
+esac
 project_url=https://github.com/shhnote/shhnote
 spec_url=$project_url/blob/main/SPEC.md   # the server derives it the same way from its source URL
 version=${ref#v}
