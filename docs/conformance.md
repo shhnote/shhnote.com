@@ -1,7 +1,7 @@
 # Frontend conformance record
 
 The checklist is `docs/frontend-conformance.md` in the main repository at the tag in
-`.shhnote-ref` (`v0.6.0`). This records how each item is met by this site and how it was
+`.shhnote-ref` (`v0.7.0`). This records how each item is met by this site and how it was
 checked. "By construction" means the `@shhnote/client/ui` controller does it and the
 site adds no handler that bypasses it. Checks were first run on 2026-11-03 against
 shhnote 0.3.0 and re-run on 2026-11-05 against a local instance (`SHH_WEB=api`, shhnote
@@ -11,7 +11,13 @@ shhnote 0.5.0 with `@shhnote/client` 0.5.0, and then against shhnote 0.6.0 with
 `@shhnote/client` 0.6.0 (both releases changed server configuration only): one
 `/config` request on home, one `POST /secrets` per create, no request on `/s` or `/burn`
 before the click, the fragment scrubbed after reveal, a second open and an open after
-burn both "not found".
+burn both "not found". On 2026-11-08 they were run against shhnote 0.7.0 with
+`@shhnote/client` 0.7.0 (server and deployment fixes only), on a local instance with
+SQLite and the local blob tier (`SHH_WEB=full`; the pages came from this site's dev
+server, which proxies `/api`), with the same results. That run also covered a passphrase
+secret, a 3 MiB file above `inline_max` (written to the blob directory, revealed
+byte-identical, then "not found"), and `/burn` and `/report`, each sending one request on
+the press and none on load.
 
 | # | Item | Status | How it is met / checked |
 |---|------|--------|-------------------------|
@@ -24,7 +30,7 @@ burn both "not found".
 | 7 | Decrypted material wiped on leave | **By construction** | `wireReveal` registers the `pagehide` wipe; the pages add no copies of the payload elsewhere. |
 | 8 | No expiry information shown | **Verified** | A TTL secret reveals with the lifetime badge hidden and no mention of hours, days or expiry on the page; a single-view one says "Revealed" until the confirm succeeds, then "Destroyed · this was the only view and the server has deleted it". The interstitial carries no expiry chip (the design's "Expires in 23 hours" chip was dropped). |
 | 9 | WebAssembly unavailable is a clear failure | **By construction, manual check pending** | `loadArgon2` rejects with `argon2_unavailable`; the strings `reveal-error-wasm` / `create-error-wasm` are wired. Headless Chromium here could not be started without WebAssembly, so the on-screen message is to be confirmed in Tor Browser at "Safer" (below). |
-| 10 | `argon2.wasm` fetched on every create and reveal page | **Verified** | Loading `/en/` and `/s#<valid>` each requests `/argon2.wasm?v=0.6.0` (a `<link rel=prefetch>` plus the controller's `prefetchArgon2`; same URL, served from the prefetch cache the second time). A bare `/en/s/` shows "not found", fetches the module once through the page's prefetch tag only, and makes no API request. The module is served from this origin at `/argon2.wasm`, the URL passed to the controllers as `argon2Url`. |
+| 10 | `argon2.wasm` fetched on every create and reveal page | **Verified** | Loading `/en/` and `/s#<valid>` each requests `/argon2.wasm?v=0.7.0` (a `<link rel=prefetch>` plus the controller's `prefetchArgon2`; same URL, served from the prefetch cache the second time). A bare `/en/s/` shows "not found", fetches the module once through the page's prefetch tag only, and makes no API request. The module is served from this origin at `/argon2.wasm`, the URL passed to the controllers as `argon2Url`. |
 | 11 | Empty passphrase is not a passphrase | **By construction** | The controllers skip a blank field. |
 | 12 | Content Security Policy | **Build verified, headers at deploy** | `dist/` contains no inline script, no `<style>`, no `style=` attribute and no `on*=` handler (checked on every build); the only inline `<script>` is a `type="application/json"` data block, which the CSP does not execute. The header itself (`docs/headers.md`) is Caddy's; confirm after deploy with `curl -sI`. Behind Cloudflare, HTML-rewriting features (Bot Fight Mode, Web Analytics, Email Address Obfuscation, Rocket Loader) add script the build never had; confirm with the edge-injection check in `docs/headers.md`. |
 | 13 | No external origins | **Verified** | `scripts/check-external.sh` fails the build on any URL outside the allow-list (only XML namespace identifiers, `github.com/shhnote` links and the origin of the build's `PUBLIC_SHH_API_BASE` pass). Every request recorded while driving the pages went to the site origin. Fonts, styles, scripts and the wasm module are local. |
