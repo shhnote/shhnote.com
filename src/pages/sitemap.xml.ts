@@ -3,8 +3,9 @@ import { getCollection } from 'astro:content';
 import { availableLocales, defaultLocale, isLocale } from '../lib/i18n';
 import { site } from '../lib/site';
 
-// Every indexable page: the home page and the content pages per built locale (the
-// compare and use-case pages exist in English only), and the API docs (English only). The secret interstitials (/s, /burn, /report) are deliberately left out.
+// Every indexable page: the home page and the content pages per built locale, and the
+// API docs (English only). The secret interstitials (/s, /burn, /report) are
+// deliberately left out.
 export const GET: APIRoute = async () => {
   const pages = await getCollection('pages');
   const urls = new Set<string>();

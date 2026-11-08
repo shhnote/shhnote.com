@@ -13,7 +13,6 @@ are welcome; see `CONTRIBUTING.md`.
 What is not translated, on purpose:
 
 - the API documentation (`/en/docs/`), rendered from the main repository in English;
-- the `compare/` and `use-cases/` pages, English only for now;
 - the Open Graph image (`/og.png`), one English card for every locale.
 
 The setup notice (`setup` in the strings, added 2026-11-07; shown when the instance has

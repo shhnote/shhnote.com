@@ -18,8 +18,6 @@ const base = `/${locale}/`;
 // The API documentation is built in English only.
 const docs = `/${defaultLocale}/docs/`;
 const docsLang = locale === defaultLocale ? undefined : defaultLocale;
-// The comparison and use-case pages exist in English only so far.
-const en = `/${defaultLocale}/`;
 const repo = site.repo;
 ---
 
@@ -41,8 +39,6 @@ const repo = site.repo;
           <li><a href={`${base}security/`}>{t.nav.security}</a></li>
           <li><a href={`${base}faq/`}>{t.nav.faq}</a></li>
           <li><a href={docs} hreflang={docsLang}>{t.nav.api}</a></li>
-          <li><a href={`${en}use-cases/`} hreflang={docsLang}>{t.footer.useCases}</a></li>
-          <li><a href={`${en}compare/`} hreflang={docsLang}>{t.footer.compare}</a></li>
         </ul>
       </div>
       <div class="footer-col">
@@ -66,13 +62,14 @@ const repo = site.repo;
       </div>
     </div>
 
-    <div class="footer-bottom">
-      <div>{t.footer.copyright}</div>
-      <div class="footer-versions">
+    <p class="footer-bottom">
+      <span>{t.footer.copyright}</span>
+      <span aria-hidden="true">·</span>
+      <span class="footer-versions">
         {t.footer.poweredBy} <a href={repo} target="_blank" rel="noopener">shhnote</a>{' '}
         (<span data-shh-server-version>—</span>) · <a href={site.clientRepo} target="_blank" rel="noopener">{t.footer.client}</a>
         {build.commitUrl && <>{' '}<a href={build.commitUrl} target="_blank" rel="noopener">{build.shortCommit}</a></>}
-      </div>
-    </div>
+      </span>
+    </p>
   </div>
 </footer>
