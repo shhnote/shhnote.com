@@ -12,8 +12,8 @@ fonts, styles, scripts and the Argon2 module are served from here, there is no a
 executable script or style (the CSP forbids them; the one inline element is a
 JSON data block of strings). Every page works without JavaScript
 except the secret flows, which say so. `scripts/check-external.sh` fails if an
-external URL slips into the build; the only exceptions are the API base the
-build was given and the citation links on the `compare/` pages.
+external URL slips into the build; the only exception is the API base the
+build was given.
 
 ## Local development
 

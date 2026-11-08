@@ -22,8 +22,8 @@ release build gets that from the Actions variable `PUBLIC_SHH_API_BASE`.
 - No request to any origin but this site and the instance's API host. No
   analytics, no external fonts, images, scripts or embeds.
   `scripts/check-external.sh` fails the build on any `http(s)://` URL in `dist/`
-  outside its allow-list (the origin of `PUBLIC_SHH_API_BASE` and citation
-  links on `compare/` pages are the only exceptions).
+  outside its allow-list (the origin of `PUBLIC_SHH_API_BASE` is the only
+  exception).
 - No inline executable scripts or styles; the one inline element per page is
   a `<script type="application/json" data-shh-i18n>` data block the controllers
   read their strings from. The CSP is
@@ -60,8 +60,7 @@ release build gets that from the Actions variable `PUBLIC_SHH_API_BASE`.
 - `src/styles/tokens.css` — colour, type and spacing tokens; four themes.
 - `scripts/` — `check-external.sh`, `fetch-upstream.sh` (reads `.shhnote-ref`).
 - `src/lib/build.ts` — the commit the build was made from, for the footer.
-- `docs/` — headers reference, conformance record, translations record,
-  compare-page sources.
+- `docs/` — headers reference, conformance record, translations record.
 
 ## Conventions
 
