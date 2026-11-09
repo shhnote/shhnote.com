@@ -1,0 +1,10 @@
+---
+import ErrorPage from '../../layouts/Error.astro';
+import { availableLocales, type Locale } from '../../lib/i18n';
+
+export function getStaticPaths() {
+  return availableLocales.map((locale) => ({ params: { locale } }));
+}
+---
+
+<ErrorPage locale={Astro.params.locale as Locale} kind="server" />

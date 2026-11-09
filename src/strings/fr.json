@@ -302,6 +302,26 @@
       "home": "Aller à l’accueil"
     }
   },
+  "error": {
+    "notFound": {
+      "title": "Page introuvable",
+      "badge": "404 · Introuvable",
+      "heading": "Cette page n’existe pas.",
+      "intro": "L’adresse est peut-être mal saisie, ou la page a été déplacée ou supprimée.",
+      "callout": "Vous suivez un lien vers un secret ? Il se termine par /s# suivi d’un long code. Vérifiez qu’il a été copié en entier, y compris tout ce qui suit le #. Rien n’a été ouvert ici.",
+      "home": "Aller à l’accueil",
+      "how": "Comment fonctionne shhnote"
+    },
+    "server": {
+      "title": "Une erreur s’est produite",
+      "badge": "Erreur",
+      "heading": "Une erreur s’est produite.",
+      "intro": "Le site n’a pas pu répondre à cette requête. C’est généralement passager : réessayez dans un instant. Si cela continue, prévenez-nous.",
+      "retry": "Réessayer",
+      "home": "Aller à l’accueil",
+      "contact": "Contact"
+    }
+  },
   "content": {
     "updated": "Dernière mise à jour :",
     "translationNote": "Cette traduction est fournie pour votre commodité. En cas de divergence avec la version anglaise, c’est la version anglaise qui fait foi.",

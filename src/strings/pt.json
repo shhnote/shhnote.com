@@ -302,6 +302,26 @@
       "home": "Ir para a página inicial"
     }
   },
+  "error": {
+    "notFound": {
+      "title": "Página não encontrada",
+      "badge": "404 · Não encontrada",
+      "heading": "Esta página não existe.",
+      "intro": "O endereço pode ter sido digitado errado, ou a página pode ter sido movida ou removida.",
+      "callout": "Está abrindo um link de segredo? Ele termina em /s# e um código longo. Confira se ele foi copiado por inteiro, incluindo tudo depois do #. Nada foi aberto aqui.",
+      "home": "Ir para a página inicial",
+      "how": "Como o shhnote funciona"
+    },
+    "server": {
+      "title": "Algo deu errado",
+      "badge": "Erro",
+      "heading": "Algo deu errado.",
+      "intro": "O site não conseguiu responder a esta solicitação. Isso costuma ser passageiro: tente de novo em instantes. Se continuar acontecendo, avise-nos.",
+      "retry": "Tentar de novo",
+      "home": "Ir para a página inicial",
+      "contact": "Contato"
+    }
+  },
   "content": {
     "updated": "Última atualização:",
     "translationNote": "Esta é uma tradução para a sua conveniência. Se houver diferença em relação à versão em inglês, vale a versão em inglês.",

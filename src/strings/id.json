@@ -302,6 +302,26 @@
       "home": "Ke beranda"
     }
   },
+  "error": {
+    "notFound": {
+      "title": "Halaman tidak ditemukan",
+      "badge": "404 · Tidak ditemukan",
+      "heading": "Halaman ini tidak ada.",
+      "intro": "Alamatnya mungkin salah ketik, atau halamannya sudah dipindahkan atau dihapus.",
+      "callout": "Membuka tautan rahasia? Tautan itu berakhir dengan /s# dan sebuah kode panjang. Pastikan tautan tersalin utuh, termasuk semua yang ada setelah #. Tidak ada yang dibuka di sini.",
+      "home": "Ke beranda",
+      "how": "Cara kerja shhnote"
+    },
+    "server": {
+      "title": "Terjadi kesalahan",
+      "badge": "Kesalahan",
+      "heading": "Terjadi kesalahan.",
+      "intro": "Situs tidak dapat menjawab permintaan ini. Biasanya hanya sebentar: coba lagi sesaat lagi. Jika terus terjadi, beri tahu kami.",
+      "retry": "Coba lagi",
+      "home": "Ke beranda",
+      "contact": "Kontak"
+    }
+  },
   "content": {
     "updated": "Terakhir diperbarui:",
     "translationNote": "Ini adalah terjemahan untuk kemudahan Anda. Jika ada perbedaan dengan versi bahasa Inggris, yang berlaku adalah versi bahasa Inggris.",

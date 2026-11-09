@@ -20,6 +20,11 @@ not finished setup) is English in every locale except `de`, which takes the main
 repository's `locales/de/main.ftl` wording; the others fall back to `en` until they
 are translated.
 
+The error pages (`error` in the strings, added 2026-11-08) were translated from `en`
+by an AI model in every locale on that date, pending review like the rest; the button
+labels "How shhnote works" and "Contact" reuse each locale's existing strings. In `he`,
+the `/s#` inside a sentence may need a reviewer's eye for bidi order.
+
 The operator placeholders in the policy pages (the date, the reply time, the server-log
 section) were filled on 2026-11-05 in every language.
 

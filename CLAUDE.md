@@ -44,6 +44,9 @@ release build gets that from the Actions variable `PUBLIC_SHH_API_BASE`.
 - `src/pages/[locale]/…` — one route per page per locale, prerendered.
   `src/pages/{s,burn,report}.astro` serve the English pages at the root, for
   the locale-less links the client builds; `index.astro` redirects to `/en/`.
+  `[locale]/404.astro` and `[locale]/error.astro` are the error pages (layout
+  `src/layouts/Error.astro`), `404.astro` the English one at `/404.html`; Caddy
+  picks one per failed URL (`docs/headers.md`, Error pages).
 - `src/content/<locale>/` — Markdown content collections.
 - `src/strings/<locale>.json` — UI strings; `en` is the source of truth.
 - `src/lib/i18n.ts` — the locale list, names, direction and `og:locale` tags.

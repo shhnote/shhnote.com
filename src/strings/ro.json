@@ -302,6 +302,26 @@
       "home": "Mergi la pagina principală"
     }
   },
+  "error": {
+    "notFound": {
+      "title": "Pagina nu a fost găsită",
+      "badge": "404 · Negăsită",
+      "heading": "Această pagină nu există.",
+      "intro": "Poate că adresa a fost scrisă greșit sau pagina a fost mutată ori ștearsă.",
+      "callout": "Deschizi un link către un secret? Se termină cu /s# și un cod lung. Verifică dacă a fost copiat în întregime, inclusiv tot ce urmează după #. Aici nu s-a deschis nimic.",
+      "home": "Mergi la pagina principală",
+      "how": "Cum funcționează shhnote"
+    },
+    "server": {
+      "title": "Ceva n-a mers bine",
+      "badge": "Eroare",
+      "heading": "Ceva n-a mers bine.",
+      "intro": "Site-ul nu a putut răspunde la această cerere. De obicei durează puțin: încearcă din nou peste câteva momente. Dacă se tot întâmplă, anunță-ne.",
+      "retry": "Încearcă din nou",
+      "home": "Mergi la pagina principală",
+      "contact": "Contact"
+    }
+  },
   "content": {
     "updated": "Ultima actualizare:",
     "translationNote": "Aceasta este o traducere oferită pentru comoditate. Dacă diferă de versiunea în limba engleză, se aplică versiunea în limba engleză.",

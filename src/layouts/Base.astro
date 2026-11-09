@@ -17,17 +17,26 @@ interface Props {
   prefetchArgon2?: boolean;
   /** The locales this page is built in; the hreflang alternates and the switcher use it. */
   locales?: readonly Locale[];
+  /**
+   * An error page (404 and the rest). The server answers with it at whatever URL failed,
+   * so it claims no URL of its own: no canonical, no `og:url`, no hreflang alternates
+   * (which also keeps `locale.ts` from moving it), and the switcher links to each
+   * language's home page. Implies `noindex`.
+   */
+  errorPage?: boolean;
 }
 
-const { locale, title, description, noindex = false, prefetchArgon2 = false, locales = availableLocales } = Astro.props;
+const { locale, title, description, prefetchArgon2 = false, errorPage = false } = Astro.props;
+const noindex = errorPage || (Astro.props.noindex ?? false);
+const locales = errorPage ? [] : (Astro.props.locales ?? availableLocales);
 const t = getStrings(locale);
 const pageTitle = title ?? t.site.title;
 const pageDescription = description ?? t.site.description;
-const canonical = new URL(Astro.url.pathname, site.url).href;
+const canonical = errorPage ? undefined : new URL(Astro.url.pathname, site.url).href;
 // The same page in every locale it is built in; `x-default` is the English version.
 const rest = Astro.url.pathname.replace(/^\/[^/]+\/?/, '');
 const alternates = locales.map((code) => ({ code, href: new URL(`/${code}/${rest}`, site.url).href }));
-const xDefault = new URL(`/${defaultLocale}/${rest}`, site.url).href;
+const xDefault = errorPage ? undefined : new URL(`/${defaultLocale}/${rest}`, site.url).href;
 ---
 
 <!doctype html>
@@ -39,9 +48,9 @@ const xDefault = new URL(`/${defaultLocale}/${rest}`, site.url).href;
     <meta name="description" content={pageDescription} />
     <meta name="referrer" content="no-referrer" />
     {noindex && <meta name="robots" content="noindex" />}
-    <link rel="canonical" href={canonical} />
+    {canonical && <link rel="canonical" href={canonical} />}
     {alternates.map(({ code, href }) => <link rel="alternate" hreflang={code} href={href} />)}
-    <link rel="alternate" hreflang="x-default" href={xDefault} />
+    {xDefault && <link rel="alternate" hreflang="x-default" href={xDefault} />}
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#0e0e10" />
     <meta name="theme-color" media="(prefers-color-scheme: light)" content="#faf9f7" />
@@ -51,7 +60,7 @@ const xDefault = new URL(`/${defaultLocale}/${rest}`, site.url).href;
     {locales.filter((code) => code !== locale).map((code) => <meta property="og:locale:alternate" content={ogLocales[code]} />)}
     <meta property="og:title" content={pageTitle} />
     <meta property="og:description" content={pageDescription} />
-    <meta property="og:url" content={canonical} />
+    {canonical && <meta property="og:url" content={canonical} />}
     <meta property="og:image" content={new URL('/og.png', site.url).href} />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
