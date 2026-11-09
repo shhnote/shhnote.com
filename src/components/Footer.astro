@@ -28,7 +28,7 @@ const repo = site.repo;
         <a href={base} class="logo__text" aria-label={t.nav.home}><span class="color-accent">shh</span>note</a>
         <p>{t.site.description}</p>
         <div class="footer-controls">
-          <LocaleMenu locale={locale} locales={locales} icon="globe" />
+          <LocaleMenu locale={locale} locales={locales} icon="globe" up />
           <ThemeMenu locale={locale} />
         </div>
       </div>
@@ -62,13 +62,13 @@ const repo = site.repo;
       </div>
     </div>
 
+    {/* One run of text: the copyright, then the server's version (filled from /config by
+        chrome.ts) linked to the shhnote repository, then the commit this site was built
+        from linked to this site's repository. */}
     <p class="footer-bottom">
-      <span>{t.footer.copyright}</span>
-      <span aria-hidden="true">·</span>
+      {t.footer.copyright}{' '}
       <span class="footer-versions">
-        {t.footer.poweredBy} <a href={repo} target="_blank" rel="noopener">shhnote</a>{' '}
-        (<span data-shh-server-version>—</span>) · <a href={site.clientRepo} target="_blank" rel="noopener">{t.footer.client}</a>
-        {build.commitUrl && <>{' '}<a href={build.commitUrl} target="_blank" rel="noopener">{build.shortCommit}</a></>}
+        {t.footer.poweredBy} shhnote <a href={repo} target="_blank" rel="noopener noreferrer"><span data-shh-server-version>—</span></a>{build.commitUrl && <>{' / '}<a href={build.commitUrl} target="_blank" rel="noopener noreferrer">{build.shortCommit}</a></>}.
       </span>
     </p>
   </div>
