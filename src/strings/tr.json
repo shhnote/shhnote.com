@@ -302,6 +302,26 @@
       "home": "Ana sayfaya git"
     }
   },
+  "error": {
+    "notFound": {
+      "title": "Sayfa bulunamadı",
+      "badge": "404 · Bulunamadı",
+      "heading": "Bu sayfa mevcut değil.",
+      "intro": "Adres yanlış yazılmış olabilir ya da sayfa taşınmış veya kaldırılmış olabilir.",
+      "callout": "Bir sır bağlantısını mı açıyorsunuz? Bağlantı /s# ve uzun bir kodla biter. # işaretinden sonraki her şey dâhil, tamamının kopyalandığından emin olun. Burada hiçbir şey açılmadı.",
+      "home": "Ana sayfaya git",
+      "how": "shhnote nasıl çalışır"
+    },
+    "server": {
+      "title": "Bir şeyler ters gitti",
+      "badge": "Hata",
+      "heading": "Bir şeyler ters gitti.",
+      "intro": "Site bu isteğe yanıt veremedi. Bu genellikle kısa sürer: birazdan tekrar deneyin. Sorun devam ederse bize bildirin.",
+      "retry": "Tekrar dene",
+      "home": "Ana sayfaya git",
+      "contact": "İletişim"
+    }
+  },
   "content": {
     "updated": "Son güncelleme:",
     "translationNote": "Bu çeviri kolaylık olsun diye sunulmuştur. İngilizce sürümle farklılık gösterirse İngilizce sürüm geçerlidir.",

@@ -120,6 +120,51 @@ this origin instead: the site block then needs `handle /api/* { reverse_proxy
 127.0.0.1:3000 }` before the catch-all, the server path routing, and `connect-src
 'self'`.
 
+## Error pages
+
+The build has two error pages per locale: `/<locale>/404/` (the page does not exist)
+and `/<locale>/error/` (anything else), plus `/404.html`, the English not-found page
+that static hosts and Astro's dev server look for by name. They work without
+JavaScript and claim no URL of their own (no canonical, no hreflang alternates,
+`noindex`), because the server answers with them at the URL that failed, keeping its
+status code. The language comes from that URL's prefix; anything without one gets
+English.
+
+At the site block's level, next to the `handle` blocks:
+
+```caddyfile
+handle_errors {
+    # The failed path's locale prefix if the site has it, otherwise English.
+    map {path} {shh_err_locale} {
+        ~^/(en|de|es|fr|nl|hi|ja|pl|zh|el|id|ko|pt|sv|he|it|ro|tr)/  ${1}
+        default  en
+    }
+    map {err.status_code} {shh_err_page} {
+        404      404
+        default  error
+    }
+    root * /srv/shhnote.com/dist
+    rewrite * /{shh_err_locale}/{shh_err_page}/
+    # An error is never cached, whatever the path rule above would say.
+    header Cache-Control "no-store"
+    file_server
+}
+```
+
+The regex lists `src/lib/i18n.ts` `availableLocales`, like the language `map`; keep
+them in step. A prefix the site does not build would rewrite to a page that does not
+exist, and Caddy would fall back to its own empty error. `file_server` inside
+`handle_errors` answers with the error's status, not `200`. The `header` block above
+has already run when `file_server` fails, so the error response carries the same
+security headers; check both under "Checking", since this configuration was written
+without a Caddy to run it against. With another static host, point its not-found page
+at `/404.html` (most do that by default).
+
+Only errors Caddy itself raises reach these pages. When the origin cannot be reached
+at all, Cloudflare answers with its own error page (5xx); replacing that is a
+Cloudflare setting, not part of this build. The API host answers its own errors as
+JSON.
+
 ## Content types and caching
 
 - `argon2.wasm` must be served as `application/wasm`
@@ -197,6 +242,10 @@ After a deploy, from outside: `curl -sI https://shhnote.com/en/` shows every
 header above (and `grep -rlE "[(\"']data:" dist/` on the build finds nothing); `curl -sI -H 'Accept-Language: de' https://shhnote.com/s` is a `307`
 to `/de/s` with `Vary: Accept-Language`, and without the header a `307` to `/en/s`;
 `curl -sI https://shhnote.com/argon2.wasm` says `application/wasm`;
+`curl -s -D - -o /dev/null https://shhnote.com/de/nope` is a `404` with the
+`Content-Security-Policy` header and `Cache-Control: no-store`, and its body (drop
+`-o /dev/null`) is the German not-found page (`<html lang="de"`);
+`curl -sI https://shhnote.com/nope` is a `404` too, in English;
 `curl -sI -H 'Origin: https://shhnote.com' https://api.shhnote.com/v1/config`
 answers `Access-Control-Allow-Origin: https://shhnote.com`.
 

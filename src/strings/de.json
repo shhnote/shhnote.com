@@ -312,6 +312,26 @@
       "home": "Zur Startseite"
     }
   },
+  "error": {
+    "notFound": {
+      "title": "Seite nicht gefunden",
+      "badge": "404 · Nicht gefunden",
+      "heading": "Diese Seite gibt es nicht.",
+      "intro": "Die Adresse ist vielleicht falsch geschrieben, oder die Seite wurde verschoben oder entfernt.",
+      "callout": "Folgst du einem Geheimnis-Link? Er endet auf /s# und einen langen Code. Prüfe, ob er vollständig kopiert wurde, inklusive allem nach dem #. Hier wurde nichts geöffnet.",
+      "home": "Zur Startseite",
+      "how": "So funktioniert shhnote"
+    },
+    "server": {
+      "title": "Etwas ist schiefgelaufen",
+      "badge": "Fehler",
+      "heading": "Etwas ist schiefgelaufen.",
+      "intro": "Die Website konnte diese Anfrage nicht beantworten. Das dauert meist nicht lange: Versuche es gleich noch einmal. Wenn es weiter passiert, sag uns Bescheid.",
+      "retry": "Erneut versuchen",
+      "home": "Zur Startseite",
+      "contact": "Kontakt"
+    }
+  },
   "content": {
     "updated": "Zuletzt aktualisiert:",
     "translationNote": "Dies ist eine Übersetzung zu deiner Bequemlichkeit. Weicht sie von der englischen Fassung ab, gilt die englische Fassung.",

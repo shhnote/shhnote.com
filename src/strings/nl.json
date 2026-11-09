@@ -302,6 +302,26 @@
       "home": "Naar de startpagina"
     }
   },
+  "error": {
+    "notFound": {
+      "title": "Pagina niet gevonden",
+      "badge": "404 · Niet gevonden",
+      "heading": "Deze pagina bestaat niet.",
+      "intro": "Het adres is misschien verkeerd getypt, of de pagina is verplaatst of verwijderd.",
+      "callout": "Volg je een link naar een geheim? Die eindigt op /s# en een lange code. Controleer of hij helemaal is gekopieerd, inclusief alles na de #. Hier is niets geopend.",
+      "home": "Naar de startpagina",
+      "how": "Hoe shhnote werkt"
+    },
+    "server": {
+      "title": "Er ging iets mis",
+      "badge": "Fout",
+      "heading": "Er ging iets mis.",
+      "intro": "De site kon dit verzoek niet beantwoorden. Meestal duurt dat niet lang: probeer het zo opnieuw. Blijft het gebeuren, laat het ons dan weten.",
+      "retry": "Opnieuw proberen",
+      "home": "Naar de startpagina",
+      "contact": "Contact"
+    }
+  },
   "content": {
     "updated": "Laatst bijgewerkt:",
     "translationNote": "Dit is een vertaling voor je gemak. Als die afwijkt van de Engelse versie, geldt de Engelse versie.",

@@ -1,0 +1,71 @@
+---
+// The error pages. The server answers a failed request with one of them, at the URL that
+// failed, in the language of that URL's prefix (`docs/headers.md`, Error pages): `404`
+// for a missing page, `error` for everything else. Static, no JavaScript needed, and
+// nothing on them reads the URL, so a mangled share link's fragment stays in the browser.
+import Base from './Base.astro';
+import type { Locale } from '../lib/i18n';
+import { getStrings } from '../lib/strings';
+
+interface Props {
+  locale: Locale;
+  kind: 'notFound' | 'server';
+}
+
+const { locale, kind } = Astro.props;
+const t = getStrings(locale);
+const base = `/${locale}/`;
+const nf = t.error.notFound;
+const sv = t.error.server;
+const e = kind === 'notFound' ? nf : sv;
+---
+
+<Base locale={locale} title={`${e.title} — shhnote`} errorPage>
+  <article class="page">
+    <section class="section section--panel">
+      <div class="container">
+        <div class="vault">
+          <div class="panel panel--center stack">
+            <span class="badge badge--muted"><span class="dot"></span>{e.badge}</span>
+
+            <div class="lock-badge lock-badge--muted">
+              {kind === 'notFound' ? (
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5 21 21"/><path d="M8.6 8.6a2 2 0 1 1 2.6 2.4c-.5.2-.7.6-.7 1.1v.4"/><path d="M10.5 14.6h.01"/></svg>
+              ) : (
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M10.3 4.3 1.8 19a1.5 1.5 0 0 0 1.3 2.2h17.8a1.5 1.5 0 0 0 1.3-2.2L13.7 4.3a1.5 1.5 0 0 0-2.6 0z"/><path d="M12 9.5v4"/><path d="M12 17h.01"/></svg>
+              )}
+            </div>
+
+            <div class="stack--sm">
+              <h1 class="panel__heading">{e.heading}</h1>
+              <p>{e.intro}</p>
+            </div>
+
+            {kind === 'notFound' && (
+              <div class="callout">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M12 3l7 3v5c0 4.2-3 7.4-7 9-4-1.6-7-4.8-7-9V6z"/><path d="M9 12l2 2 4-4"/></svg>
+                <span>{nf.callout}</span>
+              </div>
+            )}
+
+            <div class="btn-row btn-row--center">
+              {kind === 'notFound' ? (
+                <>
+                  <a class="btn btn--primary btn--lg" href={base}><span>{nf.home}</span></a>
+                  <a class="btn btn--quiet" href={`${base}how-it-works/`}><span>{nf.how}</span></a>
+                </>
+              ) : (
+                <>
+                  {/* An empty href is the current URL: a reload that needs no JavaScript. */}
+                  <a class="btn btn--primary btn--lg" href=""><span>{sv.retry}</span></a>
+                  <a class="btn btn--quiet" href={base}><span>{sv.home}</span></a>
+                  <a class="btn btn--quiet" href={`${base}contact/`}><span>{sv.contact}</span></a>
+                </>
+              )}
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </article>
+</Base>

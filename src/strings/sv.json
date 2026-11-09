@@ -302,6 +302,26 @@
       "home": "Gå till startsidan"
     }
   },
+  "error": {
+    "notFound": {
+      "title": "Sidan hittades inte",
+      "badge": "404 · Hittades inte",
+      "heading": "Den här sidan finns inte.",
+      "intro": "Adressen kan vara felstavad, eller så har sidan flyttats eller tagits bort.",
+      "callout": "Öppnar du en länk till en hemlighet? Den slutar med /s# och en lång kod. Kontrollera att hela länken kopierades, även allt efter #. Ingenting har öppnats här.",
+      "home": "Till startsidan",
+      "how": "Så fungerar shhnote"
+    },
+    "server": {
+      "title": "Något gick fel",
+      "badge": "Fel",
+      "heading": "Något gick fel.",
+      "intro": "Webbplatsen kunde inte svara på den här begäran. Det brukar gå över snabbt: försök igen om en stund. Om det fortsätter, hör av dig till oss.",
+      "retry": "Försök igen",
+      "home": "Till startsidan",
+      "contact": "Kontakt"
+    }
+  },
   "content": {
     "updated": "Senast uppdaterad:",
     "translationNote": "Det här är en översättning för din bekvämlighet. Om den skiljer sig från den engelska versionen gäller den engelska versionen.",

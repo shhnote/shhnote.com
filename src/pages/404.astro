@@ -1,0 +1,6 @@
+---
+// `dist/404.html`, the not-found page that Astro's dev server and most static hosts look
+// for by name, in English. Caddy picks the localized `/<locale>/404/` itself
+// (`docs/headers.md`, Error pages).
+return Astro.rewrite('/en/404/');
+---

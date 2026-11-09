@@ -312,6 +312,26 @@
       "home": "Go to the home page"
     }
   },
+  "error": {
+    "notFound": {
+      "title": "Page not found",
+      "badge": "404 · Not found",
+      "heading": "This page doesn't exist.",
+      "intro": "The address may be mistyped, or the page may have moved or been removed.",
+      "callout": "Following a secret link? It ends in /s# and a long code. Check that it was copied in full, including everything after the #. Nothing was opened here.",
+      "home": "Go to the home page",
+      "how": "How shhnote works"
+    },
+    "server": {
+      "title": "Something went wrong",
+      "badge": "Error",
+      "heading": "Something went wrong.",
+      "intro": "The site couldn't answer this request. It is usually brief: try again in a moment. If it keeps happening, let us know.",
+      "retry": "Try again",
+      "home": "Go to the home page",
+      "contact": "Contact"
+    }
+  },
   "content": {
     "updated": "Last updated:",
     "translationNote": "This is a translation for your convenience. If it differs from the English version, the English version applies.",

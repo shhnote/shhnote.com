@@ -302,6 +302,26 @@
       "home": "Ir a la página de inicio"
     }
   },
+  "error": {
+    "notFound": {
+      "title": "Página no encontrada",
+      "badge": "404 · No encontrada",
+      "heading": "Esta página no existe.",
+      "intro": "Puede que la dirección esté mal escrita, o que la página se haya movido o eliminado.",
+      "callout": "¿Vienes de un enlace a un secreto? Termina en /s# y un código largo. Comprueba que se copió entero, incluido todo lo que va después del #. Aquí no se ha abierto nada.",
+      "home": "Ir a la página de inicio",
+      "how": "Cómo funciona shhnote"
+    },
+    "server": {
+      "title": "Algo salió mal",
+      "badge": "Error",
+      "heading": "Algo salió mal.",
+      "intro": "El sitio no pudo responder a esta solicitud. Suele ser algo breve: vuelve a intentarlo en un momento. Si sigue pasando, avísanos.",
+      "retry": "Reintentar",
+      "home": "Ir a la página de inicio",
+      "contact": "Contacto"
+    }
+  },
   "content": {
     "updated": "Última actualización:",
     "translationNote": "Esta traducción se ofrece para tu comodidad. Si difiere de la versión en inglés, prevalece la versión en inglés.",
