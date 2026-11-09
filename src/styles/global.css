@@ -339,15 +339,10 @@ html:not([data-theme]) .theme-mode[data-mode='system'],
     grid-template-columns: 2fr repeat(3, 1fr);
   }
 }
-/* Copyright and versions on one line; on a narrow screen they wrap at the separator. */
+/* Copyright and versions as one run of text, wrapping like a sentence. */
 .footer .footer-bottom {
   margin-top: 2.5rem;
-  padding-block: 0.75rem;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  column-gap: 0.5rem;
-  row-gap: 0.25rem;
+  padding-block: 0.75rem 2rem;
   text-align: center;
   font-size: var(--font-size-12);
   color: var(--color-text-faint);

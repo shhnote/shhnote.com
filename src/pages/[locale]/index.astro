@@ -267,6 +267,28 @@ const defaultExpiry = '86400';
   const page = document.querySelector<HTMLElement>('[data-shh-page="create"]');
   if (page) wireCreate(page, { t: createT(), apiBase, argon2Url });
 
+  // Progress in the button. The controller disables the submit button while it works and
+  // writes its progress ("Encrypting…", "Uploading…") and its errors to the one status line
+  // under it. While the button is disabled, its label shows that line's text and the line
+  // is for screen readers only, so the form does not grow for a moment before the result
+  // replaces it. An error is written in the same task that enables the button again, so it
+  // stays under the button. Presentation only: the controller's state is read, never set.
+  const form = page?.querySelector<HTMLFormElement>('[data-shh-form="create"]');
+  const submit = form?.querySelector<HTMLButtonElement>('button[type="submit"]');
+  const label = submit?.querySelector('span');
+  const status = form?.querySelector<HTMLElement>('[data-shh-status]');
+  if (submit && label && status) {
+    const idle = label.textContent;
+    const sync = () => {
+      const busy = submit.disabled && status.textContent !== '';
+      label.textContent = busy ? status.textContent : idle;
+      status.classList.toggle('visually-hidden', busy);
+    };
+    const observer = new MutationObserver(sync);
+    observer.observe(status, { childList: true, characterData: true, subtree: true });
+    observer.observe(submit, { attributes: true, attributeFilter: ['disabled'] });
+  }
+
   // The size hint under the drop zone comes from the instance (`max_blob_bytes`, the
   // largest padded size it stores), through the package's shared `getConfig`, so it is
   // the same single /config request the controller and the footer make. The string holds

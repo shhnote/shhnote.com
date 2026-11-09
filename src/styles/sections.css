@@ -40,7 +40,8 @@
 #content .page .section .section__header-group .section__intro:has(+ p) {
   margin-block-end: 1.5rem;
 }
-#content .page .section p:not(.eyebrow) {
+/* Body paragraphs; form help text keeps its own (components.css, .input-help). */
+#content .page .section p:not(.eyebrow, .input-help) {
   font-size: var(--font-size-15);
   font-weight: 400;
   line-height: 1.4;
